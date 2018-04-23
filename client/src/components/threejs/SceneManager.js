@@ -27,7 +27,7 @@ export default canvas => {
 
     function buildScene() {
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color("#FFF");
+        scene.background = new THREE.Color("#A1A1A1");
 
         return scene;
     }
@@ -77,9 +77,9 @@ export default canvas => {
     }
 
     function updateCameraPositionRelativeToMouse() {
-        camera.position.x += (  (mousePosition.x * 0.01) - camera.position.x ) * 0.01;
-        camera.position.y += ( -(mousePosition.y * 0.01) - camera.position.y ) * 0.01;
-        camera.lookAt(origin);
+        // camera.position.x += (  (mousePosition.x * 0.01) - camera.position.x ) * 0.01;
+        // camera.position.y += ( -(mousePosition.y * 0.01) - camera.position.y ) * 0.01;
+        // camera.lookAt(origin);
     }
 
     function onWindowResize() {

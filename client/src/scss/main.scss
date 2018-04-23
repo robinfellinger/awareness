@@ -1,9 +1,19 @@
 /*///////////////////////////////////////////////////////////////////////
 /////// MAIN SCSS FILE -> IMPORT ALL SUBFILES*/
 
+@import "import_fonts";
 @import "variables";
+@import "standardSettings";
 
+
+/*import components*/
+@import "./components/three.scss";
+@import "./components/text.scss";
 
 body {
   background-color: $bg-color;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
 }

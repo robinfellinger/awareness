@@ -10,6 +10,7 @@ class Page_statistics extends Component {
         return(
         <div>
             <h1>WELCOME TO THE STATISTICS PAGE</h1>
+
         </div>
         );
     }

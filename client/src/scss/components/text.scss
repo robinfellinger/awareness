@@ -1,0 +1,28 @@
+.headline {
+  &-xl {
+    font-family: "Libre Baskerville", serif;
+    color: $text-main;
+    font-size: $f-xl;
+    font-weight: 400;
+  }
+  &-lg {
+    font-family: "Montserrat", sans-serif;
+    color: $text-main;
+    font-size: $f-md;
+    font-weight: 400;
+
+  }
+}
+
+.t-transform {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-lowercase {
+    text-transform: lowercase;
+  }
+}
+
+.t-italic {
+  font-style: italic;
+}

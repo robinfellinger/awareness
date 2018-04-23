@@ -4,6 +4,7 @@ import './App.css';
 import threeEntryPoint from "./components/threejs/ThreeEntryPoint"
 import Page_statistics from "./pages/page_statistics"
 import Interaction from "./components/interaction";
+import StartInfo from "./StartInfo";
 
 import {render} from 'react-dom';
 import {Router, Route, Link} from 'react-router';
@@ -32,10 +33,9 @@ class App extends Component {
     return (
         <div>
 
-          <h1>startpage</h1>
-
-            {/*imports the three.js model (maybe commented out for better performance)*/}
-            <div ref={element => this.threeRootElement = element} />
+            <div className={"pos-absolute"}>
+            <StartInfo></StartInfo>
+            </div>
     <button onClick={() => this.toggleExperience()}>Start Experience</button>
             {this.state.startExperience &&
                 <div>
@@ -46,6 +46,11 @@ class App extends Component {
 
                 </div>
             }
+
+            {/*imports the three.js model (maybe commented out for better performance)*/}
+            <div className="three__canvas">
+                <div ref={element => this.threeRootElement = element} />
+            </div>
         </div>
 
     );
