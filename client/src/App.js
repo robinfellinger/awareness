@@ -35,10 +35,11 @@ class App extends Component {
 
             <div className={"pos-absolute"}>
             <StartInfo></StartInfo>
+                <button onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
-    <button onClick={() => this.toggleExperience()}>Start Experience</button>
+
             {this.state.startExperience &&
-                <div>
+                <div className={"pos-absolute"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
                     <button onClick={""}>TO STATISTIC PAGE</button>
