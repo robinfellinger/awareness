@@ -1,0 +1,23 @@
+{"answers":[
+  {
+    "question": "ANSWER1",
+    "emotion": "happy",
+    "direction": 2,
+    "content": "Hello"
+  },
+
+  {
+    "question": "ANSWER2",
+    "emotion": "sad",
+    "direction": 1,
+    "content": "Hello2"
+  },
+
+  {
+    "question": "ANSWER3",
+    "emotion": "hate",
+    "direction": 3,
+    "content": "Hello3"
+  }
+]
+}

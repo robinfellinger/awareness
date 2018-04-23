@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Message from "./message.js";
+import Message from "./message.js";
+import Answers from "./answers.js";
 
 class Interaction extends Component {
 
@@ -12,8 +13,10 @@ class Interaction extends Component {
 
 
             <div className={"classe"}>
+                {<Message content={"FRAGE"} q/>}
                 <button>
-                    {/*<Message emotion={"Happy"} content={"Hello"} question={"3"} direction={"6"}/>*/}
+                    {<Answers content={"ANTWORT"}q/>}
+
                 </button>
             </div>
         );
