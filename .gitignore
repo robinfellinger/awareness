@@ -5,3 +5,5 @@ npm-debug.log
 .idea/awareness.iml
 *.xml
 client/src/components/message.js
+client/src/scss/standardSettings
+client/src/index.css
