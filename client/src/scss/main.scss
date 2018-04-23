@@ -1,0 +1,9 @@
+/*///////////////////////////////////////////////////////////////////////
+/////// MAIN SCSS FILE -> IMPORT ALL SUBFILES*/
+
+@import "variables";
+
+
+body {
+  background-color: $bg-color;
+}
