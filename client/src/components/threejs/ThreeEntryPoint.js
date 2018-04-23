@@ -27,19 +27,20 @@ export default container => {
 
     function resizeCanvas() {
         canvas.style.width = '100%';
-        canvas.style.height= '100%';
+        // canvas.style.height= '100%';
 
-        canvas.width  = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-        canvasHalfWidth = Math.round(canvas.offsetWidth/2);
-        canvasHalfHeight = Math.round(canvas.offsetHeight/2);
+
+        // canvasHalfWidth = Math.round(canvas.offsetWidth/2);
+        // canvasHalfHeight = Math.round(canvas.offsetHeight/2);
 
         sceneManager.onWindowResize()
     }
 
     function mouseMove({screenX, screenY}) {
-        sceneManager.onMouseMove(screenX-canvasHalfWidth, screenY-canvasHalfHeight);
+        // sceneManager.onMouseMove(screenX-canvasHalfWidth, screenY-canvasHalfHeight);
     }
 
     function render(time) {
