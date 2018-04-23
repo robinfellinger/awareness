@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+// require('./scss/main.scss');
 import './App.css';
 // import model from './components/model.js'
 import threeEntryPoint from "./components/threejs/ThreeEntryPoint"
 import Page_statistics from "./pages/page_statistics"
 import Interaction from "./components/interaction";
+
+
 
 import {render} from 'react-dom';
 import {Router, Route, Link} from 'react-router';
@@ -26,8 +29,6 @@ class App extends Component {
         threeEntryPoint(this.threeRootElement);
     }
 
-
-  render() {
     render() {
     return (
         <div>
