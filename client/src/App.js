@@ -33,7 +33,7 @@ class App extends Component {
     return (
         <div>
 
-            <div className={"pos-absolute"}>
+            <div className={"pos-absolute pos-centerText"}>
             <StartInfo></StartInfo>
                 <button onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
