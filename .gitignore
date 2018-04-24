@@ -10,3 +10,6 @@ client/src/index.css
 *.lock
 client/yarn.lock
 *.lock
+client/package-lock.json
+package-lock.json
+package-lock.json
