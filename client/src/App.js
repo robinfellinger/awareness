@@ -28,7 +28,6 @@ class App extends Component {
     }
 
 
-
     render() {
     return (
         <div>
@@ -42,7 +41,9 @@ class App extends Component {
                 <div className={"pos-absolute"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button onClick={""}>TO STATISTIC PAGE</button>
+                    <form method="post">
+                    <button type= "submit">TO STATISTIC PAGE</button>
+                    </form>
                     <Page_statistics></Page_statistics>
 
                 </div>
