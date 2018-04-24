@@ -9,10 +9,15 @@
 /*import components*/
 @import "./components/three.scss";
 @import "./components/text.scss";
+@import "./components/startPage.scss";
+@import "./components/buttons.scss";
 
 body {
   background-color: $bg-color;
+  background: radial-gradient(ellipse at center, #dedfe8 0%, #b5bac4 100%);
 
+  background-repeat: no-repeat;
+  height:100vh;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;

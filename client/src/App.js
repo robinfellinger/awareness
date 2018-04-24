@@ -16,15 +16,20 @@ class App extends Component {
         super();
         this.state = {
             startExperience: false,
+            canvasClasses: "three__canvas three-blur",
         }
     }
 
     toggleExperience(){
         (this.state.startExperience = false) ? (this.setState({startExperience : true})) : (this.setState({startExperience : true}));
+        this.returnClasses();
     }
 
+    returnClasses(){
+        (this.state.startExperience = false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
+    }
     componentDidMount() {
-        threeEntryPoint(this.threeRootElement);
+      threeEntryPoint(this.threeRootElement);
     }
 
 
@@ -33,9 +38,9 @@ class App extends Component {
     return (
         <div>
 
-            <div className={"pos-absolute pos-centerText"}>
+            <div className={"pos-absolute pos-centerText startInfo_pos"}>
             <StartInfo></StartInfo>
-                <button onClick={() => this.toggleExperience()}>Start Experience</button>
+                <button className={"button-basic text-sm t-transform-lowercase button-startAnim"}onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
 
             {this.state.startExperience &&
@@ -49,7 +54,7 @@ class App extends Component {
             }
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
-            <div className="three__canvas">
+            <div className={this.state.canvasClasses}>
                 <div ref={element => this.threeRootElement = element} />
             </div>
         </div>

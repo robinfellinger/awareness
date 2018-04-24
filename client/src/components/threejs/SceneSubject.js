@@ -11,8 +11,8 @@ export default scene => {
     var cRot = 0.0;
     var tRot = 0.01;
     const group = new THREE.Group();
-    const subjectGeometry = new THREE.SphereGeometry( 11, 32, 32 );
-    const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#6b6b6b", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
+    const subjectGeometry = new THREE.SphereGeometry( 8, 32, 32 );
+    const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#d3d2e1", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
 
 
     const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
@@ -28,7 +28,7 @@ export default scene => {
 
 
     // group.position.set(10,10,0);
-    let position = { x : 0, y: 0 };
+    let position = { x : 0, y: 10 };
     // let target = { x : 0, y: 2 };
     let tween = new TWEEN.Tween(position)
         .to({x: 0, y: -0.5, rotation: 0}, 3000)
@@ -86,8 +86,8 @@ function wakov(){
         planeMaterial.opacity = 0.2;
 
         var plane = new THREE.Mesh( planeGeometry, planeMaterial );
-        plane.position.set(0,-40,0);
-        plane.rotation.x = Math.PI / -2;
+        plane.position.set(0,-17,0);
+        plane.rotation.x = Math.PI / -1.7;
 
         // object3d.castShadow = true;
         plane.receiveShadow = true;
