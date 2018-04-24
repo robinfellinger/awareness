@@ -16,7 +16,7 @@ class StartInfo extends Component {
 
     render() {
         return (
-            <div>
+            <div className={"startInfo_pos"}>
                 <h2 className={"headline-xl t-transform-lowercase t-italic"}>Hi, ich bin Alex|</h2>
                 <h3 className={"headline-lg"}>wollen wir miteinander chatten?</h3>
             </div>
