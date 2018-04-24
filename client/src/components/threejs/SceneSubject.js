@@ -32,7 +32,7 @@ export default scene => {
     // let target = { x : 0, y: 2 };
     let tween = new TWEEN.Tween(position)
         .to({x: 0, y: -0.5, rotation: 0}, 3000)
-        .delay(900)
+        .delay(900*cRot)
         .easing(TWEEN.Easing.Elastic.Out)
         .onUpdate(function(){
             group.position.x = position.x;
@@ -42,8 +42,8 @@ export default scene => {
 
 
     let tweenBack = new TWEEN.Tween(position)
-        .to({x: 0, y: 0.5, rotation: 0}, 3000)
-        .delay(900)
+        .to({x: 0, y: 0.*cRot, rotation: 0}, 3000)
+        .delay(900*cRot)
         .easing(TWEEN.Easing.Elastic.Out)
         .onUpdate(function(){
             group.position.x = position.x;
@@ -53,20 +53,19 @@ export default scene => {
     tween.chain(tweenBack);
     tweenBack.chain(tween);
     tween.start();
+
+//creates random parameter for more realistic animations
 function wakov(){
     if(Math.floor(Math.random()< 0.01)){
-        // if(tRot > 300){
-        //     tRot = 0;
-        // }else{
-        //     tRot += Math.random(0.1f, .25f);
-            tRot += Math.floor(Math.random() * .1) + .25;
+        if(tRot > 400){
+            tRot = 0;
+        }else{
+            tRot += Math.floor(Math.random() * .1) + 5.25;
 
-        // }
-    }else{
-
+        }
     }
      cRot+=(tRot-cRot)/100000;
-    console.log(cRot);
+    //console.log(cRot);
 }
 
 
