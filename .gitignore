@@ -7,3 +7,6 @@ npm-debug.log
 client/src/components/message.js
 client/src/scss/standardSettings
 client/src/index.css
+*.lock
+client/yarn.lock
+*.lock
