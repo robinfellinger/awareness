@@ -8,10 +8,8 @@ import * as THREE from 'three'
 export default scene => {
 
     const lightIn = new THREE.PointLight("#c9c6c9", 4, 0.0, 0.01);
-    const lightFront = new THREE.DirectionalLight( 0xffffff, 1 );//("#f0eef3", 5, 900, 2);
+    const lightFront = new THREE.DirectionalLight( 0xffffff, 1 );
     const lightOut = new THREE.AmbientLight( 0x404040, 4.5 );
-
-    // const spotLight = new THREE.SpotLight( 0xffffff );
 
     lightOut.position.set(40,20,40);
     lightIn.position.set(-110,-100,-190);
@@ -23,7 +21,6 @@ export default scene => {
     scene.add(lightIn);
     scene.add(lightOut);
     scene.add(lightFront);
-    // scene.add(spotLight);
 
     const rad = 80;
 
