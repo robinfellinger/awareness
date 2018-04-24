@@ -38,6 +38,15 @@ export default canvas => {
         renderer.setPixelRatio(DPR);
         renderer.setSize(width, height);
 
+
+        renderer.shadowMapEnabled = true;
+        // renderer.shadowMapType = THREE.PCFSoftShadowMap;
+        // renderer.shadowMapType = THREE.WebGLRenderer.shadowMapType;
+        renderer.shadowMapType = THREE.PCFSoftShadowMap;
+
+
+
+
         renderer.gammaInput = true;
         renderer.gammaOutput = true;
 
