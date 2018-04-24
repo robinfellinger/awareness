@@ -5,11 +5,6 @@ class Interaction extends Component {
 
     render() {
         return (
-        /*const flex = {
-            color: 'blue',
-            display: flex,
-        };*/
-
 
             <div className={"classe"}>
                 <button>
