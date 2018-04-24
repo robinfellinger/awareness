@@ -12,19 +12,153 @@ export default scene => {
 
     const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
     subjectMesh.castShadow = true;
+    subjectMesh.geometry.dynamic = true;
 
     group.add(subjectMesh);
-    // group.add(subjectWireframe);
     scene.add(group);
-    drawShape();
     drawFloor();
     group.rotation.z = Math.PI/4;
 
     const speed = 0.02;
     const textureOffsetSpeed = 0.02;
 
+    createSprings();
 
 
+
+
+
+    /**
+     * Creates a virtual spring between adjacent vertices in a
+     * face. Since vertices are shared between faces
+     * in the geometry, the faces are inherently connected to
+     * each other
+     */
+    function createSprings() {
+
+        var sphereFaces = subjectMesh.geometry.faces;
+
+        for(var f = 0; f < sphereFaces.length; f++) {
+            var face = sphereFaces[f];
+
+            if(face instanceof THREE.Face3) {
+
+                createSpring(face.a, face.b);
+                createSpring(face.b, face.c);
+                createSpring(face.c, face.a);
+
+            } else {
+
+                createSpring(face.a, face.b);
+                createSpring(face.b, face.c);
+                createSpring(face.c, face.d);
+                createSpring(face.d, face.a);
+
+            }
+        }
+    }
+
+    /**
+     * Displaces the vertices of a face
+     *
+     * @param {THREE.Face3|4} face The face to be displaced
+     * @param {Number} magnitude By how much the face should be displaced
+     */
+    function displaceFace(face, magnitude) {
+
+        // displace the first three vertices
+        displaceVertex(face.a, magnitude);
+        displaceVertex(face.b, magnitude);
+        displaceVertex(face.c, magnitude);
+
+        // if this is a face4 do the final one
+        if (face instanceof THREE.Face4) {
+            displaceVertex(face.d, magnitude);
+        }
+    }
+
+
+
+    /**
+     * Creates an individual spring
+     *
+     * @param {Number} start The index of the vertex for the spring's start
+     * @param {Number} end The index of the vertex for the spring's start
+     */
+    function createSpring(start, end) {
+        var sphereVertices = subjectMesh.geometry.vertices;
+        var startVertex    = sphereVertices[start];
+        var endVertex      = sphereVertices[end];
+
+        // if the springs array does not
+        // exist for a particular vertex
+        // create it
+        if(!startVertex.springs) {
+            startVertex.springs = [];
+
+            // take advantage of the one-time init
+            // and create some other useful vars
+            startVertex.normal = startVertex.clone().normalize();
+            startVertex.originalPosition = startVertex.clone();
+        }
+
+        // repeat the above for the end vertex
+        if(!endVertex.springs) {
+            endVertex.springs = [];
+            endVertex.normal = startVertex.clone().normalize();
+            endVertex.originalPosition = endVertex.clone();
+        }
+
+        if(!startVertex.velocity) {
+            startVertex.velocity = new THREE.Vector3();
+        }
+
+        // finally create a spring
+        startVertex.springs.push({
+
+            start   : startVertex,
+            end     : endVertex,
+            length  : startVertex.length(
+                endVertex
+            )
+
+        });
+    }
+
+    /**
+     * Displaces an individual vertex
+     *
+     * @param {Number} vertex The index of the vertex in the geometry
+     * @param {Number} magnitude The degree of displacement
+     */
+    function displaceVertex(vertex, magnitude) {
+
+        var sphereVertices = subjectMesh.geometry.vertices;
+
+        // add to the velocity of the vertex in question
+        // but make sure we're doing so along the normal
+        // of the vertex, i.e. along the line from the
+        // sphere centre to the vertex
+        sphereVertices[vertex].velocity.add(
+
+            sphereVertices[vertex].normal.
+            clone().
+            multiplyScalar(magnitude)
+
+        );
+    }
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+////// PARTICLES
+
+
+/////////////////////////////////////////////////////////////////////////////
+////// SHADOW (FLOOR)
     function drawFloor(){
 
 
@@ -42,39 +176,13 @@ export default scene => {
         scene.add( plane );
 
     }
-    function drawShape(){
-        var x = 0, y = 0;
-
-        var heartShape = new THREE.Shape();
-
-        heartShape.moveTo( 0,0 );
-        // heartShape.bezierCurveTo( 0, 200, 0, 200);
-        // heartShape.bezierCurveTo( 6, 0,0, 7,6, 0 );
-        // heartShape.bezierCurveTo( 6, 11,0, 15.4, 5, 0 );
-        // heartShape.bezierCurveTo( 12, 15.4, 0, 11, 16,0 );
-        // heartShape.bezierCurveTo( 16, 7, 0, 0, 10,0 );
-        // heartShape.bezierCurveTo( 7, 0,0, 5, 5,0 );
-
-        var geometry = new THREE.ShapeGeometry( heartShape );
-        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        var mesh = new THREE.Mesh( geometry, material ) ;
-        scene.add( mesh );
-    }
-    function update(time) {
-        const angle = time*speed;
-        group.rotation.y = angle;
-        particlemove();
-        const scale = (Math.sin(angle*8)+6.4)/5;
-
-    }
-
 /////////////////////////////////////////////////////////////////////////////
 ////// PARTICLES
 
     var particleSphere;
     var mesh2;
     var particleVertices;
-    particles();
+    // particles();
 // CREATE PARTICLES
     function particles(){
         var geometry = new THREE.SphereGeometry(110, 40, 40);
@@ -101,7 +209,6 @@ export default scene => {
         mesh2.sortParticles = true;
         scene.add(mesh2);
     }
-
 // MOVES PARTICLES
     function particlemove(){
 
@@ -131,15 +238,25 @@ export default scene => {
 
     }
 
+/////////////////////////////////////////////////////////////////////////////
+////// UPDATE COMPONENT
+    function update(time) {
+        const angle = time*speed;
+        group.rotation.y = angle;
+        if (particleSphere) {
+            particlemove();
+        }
+        const scale = (Math.sin(angle*8)+6.4)/5;
+        // updateVertexSprings();
+        //
+        // // flag that the sphere's geometry has
+        // // changed and recalculate the normals
+        // sphere.geometry.verticesNeedUpdate = true;
+        // sphere.geometry.normalsNeedUpdate = true;
+        // sphere.geometry.computeFaceNormals();
+        // sphere.geometry.computeVertexNormals();
 
-
-
-
-
-
-
-
-
+    }
     return {
         update
     }
