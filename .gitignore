@@ -1,6 +1,4 @@
-node_modules
 client/package-lock.json
-node_modules
 npm-debug.log
 .idea/awareness.iml
 *.xml
