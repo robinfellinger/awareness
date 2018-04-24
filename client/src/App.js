@@ -17,37 +17,52 @@ class App extends Component {
         this.state = {
             startExperience: false,
             canvasClasses: "three__canvas three-blur",
-        }
+
+        };
+        this.scrollExperience = this.scrollExperience.bind(this);
+        this.toggleExperience = this.toggleExperience.bind(this);
+
     }
 
-    toggleExperience(){
-        (this.state.startExperience = false) ? (this.setState({startExperience : true})) : (this.setState({startExperience : true}));
-        this.returnClasses();
+    componentDidMount() {
+      threeEntryPoint(this.threeRootElement);
     }
 
     returnClasses(){
         (this.state.startExperience = false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
     }
-    componentDidMount() {
-      threeEntryPoint(this.threeRootElement);
+    toggleExperience(){
+        // (this.state.startExperience = false) ? (this.setState({startExperience : true})) : (this.setState({startExperience : true}));
+        this.setState({startExperience: true});
+        this.returnClasses();
+    }
+    scrollExperience(event){
+        // if (event.deltaY < -30) {console.log('scrolling up');}
+        if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
+
+    }
+
+    //events need to be removed, before the component is deleted from the dom
+    componentWillUnmount() {
+         window.removeEventListener('wheel', this.scrollExperience);
     }
 
 
 
     render() {
     return (
-        <div>
+        <div onWheel = {(e) => this.scrollExperience(e)}>
 
             <div className={"pos-absolute pos-centerText startInfo_pos"}>
-            <StartInfo></StartInfo>
-                <button className={"button-basic text-sm t-transform-lowercase button-startAnim"}onClick={() => this.toggleExperience()}>Start Experience</button>
+            <StartInfo start={this.state.startExperience}></StartInfo>
+                <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
 
             {this.state.startExperience &&
                 <div className={"pos-absolute"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button onClick={""}>TO STATISTIC PAGE</button>
+                    <button>TO STATISTIC PAGE</button>
                     <Page_statistics></Page_statistics>
 
                 </div>

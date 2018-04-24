@@ -8,6 +8,10 @@
     margin-bottom: 0;
     animation:   headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */
 
+    &-animBack {
+      animation:   headline-xl-toggleBack 2s forwards; /* IE 10+, Fx 29+ */
+    }
+
   }
   &-lg {
     font-family: "Montserrat", sans-serif;
@@ -16,6 +20,9 @@
     letter-spacing: 3px;
     font-weight: 400;
     animation:   headline-lg-toggle 5s forwards; /* IE 10+, Fx 29+ */
+    &-animBack {
+      animation:   headline-lg-toggleBack 2s forwards; /* IE 10+, Fx 29+ */
+    }
   }
 }
 
@@ -45,6 +52,9 @@
 }
 
 
+
+
+/* TEXT ANIMATIONS */
 @keyframes headline-xl-toggle {
   0% {
     opacity: 0;
@@ -64,5 +74,28 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+
+@keyframes headline-xl-toggleBack {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.3rem);
+  }
+}
+
+@keyframes headline-lg-toggleBack {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-0.1rem);
   }
 }
