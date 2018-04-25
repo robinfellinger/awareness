@@ -1,0 +1,10 @@
+.accesslinks {
+  &_pos {
+    right: 40px;
+  }
+  &_link {
+    &:first-child {
+      margin-right: 40px;
+    }
+  }
+}

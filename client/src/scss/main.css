@@ -23,6 +23,7 @@
 /*import components*/
 .three__canvas {
   position: absolute;
+  width: 100%;
   top: 0;
   transition: filter 2s cubic-bezier(0.1, 0.7, 1, 0.1);
   -webkit-transition: -webkit-filter 500ms linear;
@@ -75,6 +76,15 @@
 
 .t-italic {
   font-style: italic;
+}
+
+.a-sm {
+  text-decoration: none;
+  font-weight: 400;
+}
+.a-startAnim {
+  animation: headline-xl-toggle 5s forwards;
+  /* IE 10+, Fx 29+ */
 }
 
 /* TEXT ANIMATIONS */
@@ -144,6 +154,17 @@
     opacity: 1;
   }
 }
+.accesslinks_pos {
+  right: 40px;
+}
+.accesslinks_link:first-child {
+  margin-right: 40px;
+}
+
+html {
+  background-color: #c0c4cf;
+}
+
 body {
   background-color: #404040;
   background: radial-gradient(ellipse at center, #dedfe8 0%, #b5bac4 100%);

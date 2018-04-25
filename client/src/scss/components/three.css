@@ -1,5 +1,6 @@
 .three__canvas {
   position: absolute;
+  width: 100%;
   top: 0;
   transition: filter 2s cubic-bezier(0.1, 0.7, 1, 0.1);
   -webkit-transition: -webkit-filter 500ms linear; }

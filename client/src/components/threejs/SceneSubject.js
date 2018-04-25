@@ -102,7 +102,7 @@ function wakov(){
     var mesh2;
     var particleVertices;
     // particles();
-    // particles();
+
 // CREATE PARTICLES
     function particles(){
         var geometry = new THREE.SphereGeometry(110, 40, 40);
