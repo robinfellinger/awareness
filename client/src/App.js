@@ -78,14 +78,14 @@ class App extends Component {
 
 
 }
-ReactDom.render((
+/*ReactDom.render((
     <HashRouter>
         <div>
         <Route exact path="/" component={Home} />
         
       </div>
     </HashRouter>
-  ), document.getElementById('root'))
+  ), document.getElementById('root')) */
 // render((
 //     <Router>
 //         <Route path={"/"} component={App}>
