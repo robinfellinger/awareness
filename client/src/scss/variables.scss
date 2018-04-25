@@ -9,8 +9,14 @@ $bg-color: #404040;
 /*TEXT-COLORS*/
 $text-main: #ffff;
 
-/*TEXT SIZE*/
-$f-xs: 0.6rem;
-$f-md: 1.0rem;
-$f-lg: 1.2rem;
-$f-xl: 4.6rem;
+/*TEXT SIZE
+$f-xs: 0.6rem; //16 * 0.6 = 9,6px
+$f-md: 1.0rem; //16 * 1.0 = 16px
+$f-lg: 1.2rem; //16 * 1.2 = 19,2px
+$f-xl: 4.6rem; //16 * 4.6 = 73,6px
+*/
+
+$f-xs: 0.96rem; //16 * 0.6 = 9,6px
+$f-md: 1.6rem; //16 * 1.0 = 16px
+$f-lg: 1.92rem; //16 * 1.2 = 19,2px
+$f-xl: 7.36rem; //16 * 4.6 = 73,6px
