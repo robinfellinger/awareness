@@ -15,6 +15,7 @@
     "debug": "~2.6.9",
     "ejs": "^2.5.9",
     "express": "^4.16.3",
+    "extend": "^3.0.1",
     "flexbox-react": "^4.4.0",
     "http-errors": "~1.6.2",
     "inflight": "^1.0.6",
