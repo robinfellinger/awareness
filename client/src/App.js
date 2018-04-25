@@ -10,6 +10,7 @@ import {render} from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+
 const Home = () => <h1>Home</h1>;
 
 
@@ -51,7 +52,9 @@ class App extends Component {
          window.removeEventListener('wheel', this.scrollExperience);
     }
 
-     App = () => (
+    render(){
+        return
+    
         <div onWheel = {(e) => this.scrollExperience(e)}>
 
             <div className={"pos-absolute pos-centerText startInfo_pos"}>
@@ -74,25 +77,26 @@ class App extends Component {
                 <div ref={element => this.threeRootElement = element} />
             </div>
         </div>
-    )
-
+    
+    }
 
 }
-/*ReactDom.render((
-    <HashRouter>
-        <div>
-        <Route exact path="/" component={Home} />
+
+// ReactDom.render((
+//     <HashRouter>
+//         <div>
+//         <Route exact path="/" component={Home} />
         
-      </div>
-    </HashRouter>
-  ), document.getElementById('root')) */
-// render((
-//     <Router>
-//         <Route path={"/"} component={App}>
-//         <Route path="statistics" component={Page_statistics}>
-//         </Route>
-//     </Router>
-// ), document.body)
+//       </div>
+//     </HashRouter>
+//   ), document.getElementById('root')) 
+
+ render((
+     <HashRouter>
+        <Route exact path="/" component={Home}/>
+            
+     </HashRouter>
+ ), document.body)
 
 
 // ReactDOM.render(<MyComponent />, document.getElementById('id'));

@@ -8,10 +8,10 @@ var indexRouter = require('./routes/index');
 
 var app = express(); 
 
-app.set('port', process.env.PORT || 3001);
-var server = app.listen(app.get('port'), function() {
- // debug('Express server listening on port ' + server.address().port);
-});
+// app.set('port', process.env.PORT || 3001);
+// var server = app.listen(app.get('port'), function() {
+//  // debug('Express server listening on port ' + server.address().port);
+// });
 
 // view engine setup
 app.engine('html', require('ejs').renderFile);
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 //routing backend
 app.use('/', indexRouter);
 
-const port = process.env.PORT || 5000;
-app.listen(port);
+// const port = process.env.PORT || 5000;
+// app.listen(port);
 console.log("server started");
 module.exports = app;
