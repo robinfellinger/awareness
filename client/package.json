@@ -20,7 +20,11 @@
     "save": "^2.3.2",
     "scss": "^0.2.4",
     "three": "^0.92.0",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0"
   },
   "scripts": {
     "start": "react-scripts start",
