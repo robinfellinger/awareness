@@ -4,8 +4,6 @@ import floor from './floor.png';
 import * as THREE from 'three'
 var TWEEN = require('@tweenjs/tween.js');
 
-import { WebGLRenderer } from "three";
-import { EffectComposer, ShaderPass, GlitchPass, RenderPass, BlurPass } from "postprocessing";
 // import alphaTexture from '../../../../assets/textures/stripes_gradient.jpg';
 
 export default scene => {
@@ -22,7 +20,7 @@ export default scene => {
     subjectMesh.geometry.dynamic = true;
 
     group.add(subjectMesh);
-    // group.add(subjectWireframe);
+   //  group.add(subjectWireframe);
     scene.add(group);
     drawShape();
     drawFloor();
@@ -43,44 +41,16 @@ export default scene => {
             group.position.x = position.x;
             group.position.y = position.y;
         });
-    const cube1 = new THREE.Mesh( new THREE.CubeGeometry( 20, 20, 0 ), new THREE.MeshNormalMaterial() );
-    cube1.position.y = 5;
-    cube1.position.x = -5;
-
-
-    const cube2 = new THREE.Mesh( new THREE.CubeGeometry( 18.5, 18.5, 1.1 ), new THREE.MeshBasicMaterial( {color: 0x000000} ));
-    cube2.position.y = 5;
-    cube2.position.x = -5;
-
-   // const cube = cube1.subtract(cube2);
-    scene.add(cube1);
-    scene.add(cube2);
-
- //   const geometry2 = new THREE.BoxGeometry( 15, 1, 0 );
-  //  const geometry3 = new THREE.BoxGeometry( 1, 15, 20 );
-
-  //  const material2 = new THREE.MeshBasicMaterial( {color: 0x000000} );
-//    const cube1 = new THREE.Mesh( geometry2, material2 );
-
- //   cube1.position.y = -15;
-   // cube1.position.x = 30;
-  //  const cube2 = new THREE.Mesh( geometry3, material2 );
-   // scene.add( cube1 );
- //   scene.add( cube2 );
 
 
 
 
     function rotate(){
         subjectMesh.rotateY += 500;
-      //  createShader();
-       // subjectMesh.position.x += 0.1;
+
+        //subjectMesh.position.x += 0.1;
 
     }
-
-
-
-
 
 
     let tweenBack = new TWEEN.Tween(position)
@@ -137,6 +107,46 @@ function wakov(){
         scene.add( plane );
 
     }
+
+    function makeGradientCube(c1, c2, w, d, h, opacity){
+        if(typeof opacity === 'undefined')opacity = 1.0;
+        if(typeof c1 === 'number')c1 = new THREE.Color( c1 );
+        if(typeof c2 === 'number')c2 = new THREE.Color( c2 );
+
+        var cubeGeometry = new THREE.BoxGeometry(w, h, d);
+
+
+
+
+        var cubeMaterial = new THREE.MeshPhongMaterial({
+            vertexColors:THREE.VertexColors
+        });
+
+        if(opacity < 1.0){
+            cubeMaterial.opacity = opacity;
+            cubeMaterial.transparent = true;
+        }
+
+        for(var ix=0;ix<12;++ix){
+            if(ix==4 || ix==5){ //Top edge, all c2
+                cubeGeometry.faces[ix].vertexColors = [c2,c2,c2];
+            }
+            else if(ix==6 || ix==7){ //Bottom edge, all c1
+                cubeGeometry.faces[ix].vertexColors = [c1,c1,c1];
+            }
+            else if(ix%2 ==0){ //First triangle on each side edge
+                cubeGeometry.faces[ix].vertexColors = [c2,c1,c2];
+            }
+            else{ //Second triangle on each side edge
+                cubeGeometry.faces[ix].vertexColors = [c1,c1,c2];
+            }
+        }
+
+        return new THREE.Mesh(cubeGeometry, cubeMaterial);
+    }
+
+
+
     function drawShape(){
 
 
@@ -154,23 +164,41 @@ function wakov(){
 
         });
 
+        const part1 = makeGradientCube(0xadebff, 0xEDB2D9, 0.5,0.1,16, 1);
+        part1.position.z = 0;
+        part1.position.x = -11;
+        part1.position.y = 3;
+        scene.add( part1 );
+
+        const part2 = makeGradientCube(0xadebff, 0xEDB2D9, 0.5,0.1,16, 1);
+        part2.position.z = 0;
+        part2.position.x = 4.5;
+        part2.position.y = 3;
+        scene.add( part2 );
+
+        const part3G = new THREE.BoxGeometry(16, 0.5, 0.1);
+        const part3M = new THREE.MeshPhongMaterial({ color: "#adebff" });
+        const part3 = new THREE.Mesh(part3G, part3M);
+        part3.position.z = 0;
+        part3.position.x = -3.19;
+        part3.position.y = -4.8;
+        scene.add( part3 );
+
+        const part4G = new THREE.BoxGeometry(16, 0.5, 0.1);
+        const part4M = new THREE.MeshPhongMaterial({ color: "#EDB2D9" });
+        const part4 = new THREE.Mesh(part4G, part4M);
+        part4.position.z = 0;
+        part4.position.x = -3.19;
+        part4.position.y = 10.8;
+        scene.add( part4 );
 
 
 
-        var geometry1 = new THREE.Geometry();
-        geometry1.vertices.push(
-            new THREE.Vector3( -15, 15, 0 ),
-            new THREE.Vector3( 5, 15, 0 ),
-            new THREE.Vector3( 5, -5, 0 ),
-            new THREE.Vector3( -15, -5, 0 ),
-            new THREE.Vector3( -15, 15, 0 )
-        );
 
-        var line = new THREE.Line( geometry1, material1 );
-        scene.add( line );
+
 
         var geometry = new THREE.ShapeGeometry( heartShape );
-        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        var material = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("img/eye.jpg") });
         var mesh = new THREE.Mesh( geometry, material ) ;
         scene.add( mesh );
     }
