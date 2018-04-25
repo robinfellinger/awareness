@@ -13,3 +13,9 @@ client/yarn.lock
 client/package-lock.json
 package-lock.json
 package-lock.json
+client/src/scss/components/text.css
+client/src/scss/components/three.css
+client/src/scss/main.css
+client/src/scss/components/three.css.map
+client/src/scss/variables.css
+client/src/scss/variables.css.map
