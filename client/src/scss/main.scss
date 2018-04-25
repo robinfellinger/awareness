@@ -1,8 +1,10 @@
 /*///////////////////////////////////////////////////////////////////////
 /////// MAIN SCSS FILE -> IMPORT ALL SUBFILES*/
 
-@import "statistics/main-statistics";
-
+//@import "statistics/main-statistics";
+@import 'statistics/base';
+@import 'statistics/sections';
+@import 'statistics/typography';
 
 @import "import_fonts";
 @import "variables";

@@ -1,0 +1,17 @@
+.trans-in-oe {
+    background: radial-gradient(circle, $color-white-gradient-1, $color-white-gradient-2);
+    display: grid;
+    grid-row: 1 / 6;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.bedeutung-trans {
+    background: $color-grey-bg;
+    display: grid;
+    grid-row: 6 / 12;
+    align-content: center;
+    justify-items: center;
+    text-align: left;
+}
