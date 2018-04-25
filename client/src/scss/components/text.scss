@@ -1,18 +1,42 @@
 .headline {
   &-xl {
-    font-family: "Libre Baskerville", serif;
+    font-family: "Butler", serif;
     color: $text-main;
     font-size: $f-xl;
     font-weight: 400;
+    line-height: 0.6;
+    margin-bottom: 0;
+    animation:   headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */
+
+    &-animBack {
+      animation:   headline-xl-toggleBack 2s forwards; /* IE 10+, Fx 29+ */
+    }
+
   }
   &-lg {
     font-family: "Montserrat", sans-serif;
     color: $text-main;
     font-size: $f-md;
+    letter-spacing: 3px;
     font-weight: 400;
-
+    animation:   headline-lg-toggle 5s forwards; /* IE 10+, Fx 29+ */
+    &-animBack {
+      animation:   headline-lg-toggleBack 2s forwards; /* IE 10+, Fx 29+ */
+    }
   }
 }
+
+.text {
+  &-sm {
+    font-family: "Montserrat", sans-serif;
+    color: $text-main;
+    font-size: $f-xs;
+    letter-spacing: 3px;
+  }
+}
+
+
+
 
 .t-transform {
   &-uppercase {
@@ -25,4 +49,53 @@
 
 .t-italic {
   font-style: italic;
+}
+
+
+
+
+/* TEXT ANIMATIONS */
+@keyframes headline-xl-toggle {
+  0% {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes headline-lg-toggle {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.2rem);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes headline-xl-toggleBack {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.3rem);
+  }
+}
+
+@keyframes headline-lg-toggleBack {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-0.1rem);
+  }
 }

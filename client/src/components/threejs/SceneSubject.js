@@ -2,29 +2,82 @@
 //// MODEL
 import floor from './floor.png';
 import * as THREE from 'three'
+var TWEEN = require('@tweenjs/tween.js');
+
 // import alphaTexture from '../../../../assets/textures/stripes_gradient.jpg';
 
 export default scene => {
+
+    var cRot = 0.0;
+    var tRot = 0.01;
     const group = new THREE.Group();
-    const subjectGeometry = new THREE.SphereGeometry( 11, 32, 32 );
-    const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#6b6b6b", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
+    const subjectGeometry = new THREE.SphereGeometry( 8, 32, 32 );
+    const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#d3d2e1", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
 
 
     const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
     subjectMesh.castShadow = true;
+    subjectMesh.geometry.dynamic = true;
 
     group.add(subjectMesh);
-    // group.add(subjectWireframe);
     scene.add(group);
-    drawShape();
     drawFloor();
     group.rotation.z = Math.PI/4;
-
     const speed = 0.02;
     const textureOffsetSpeed = 0.02;
 
 
+    // group.position.set(10,10,0);
+    let position = { x : 0, y: 10 };
+    // let target = { x : 0, y: 2 };
+    let tween = new TWEEN.Tween(position)
+        .to({x: 0, y: -0.5, rotation: 0}, 3000)
+        .delay(900*cRot)
+        .easing(TWEEN.Easing.Elastic.Out)
+        .onUpdate(function(){
+            group.position.x = position.x;
+            group.position.y = position.y;
+        });
 
+
+
+    let tweenBack = new TWEEN.Tween(position)
+        .to({x: 0, y: 0.*cRot, rotation: 0}, 3000)
+        .delay(900*cRot)
+        .easing(TWEEN.Easing.Elastic.Out)
+        .onUpdate(function(){
+            group.position.x = position.x;
+            group.position.y = position.y;
+        });
+
+    tween.chain(tweenBack);
+    tweenBack.chain(tween);
+    tween.start();
+
+//creates random parameter for more realistic animations
+function wakov(){
+    if(Math.floor(Math.random()< 0.01)){
+        if(tRot > 400){
+            tRot = 0;
+        }else{
+            tRot += Math.floor(Math.random() * .1) + 5.25;
+
+        }
+    }
+     cRot+=(tRot-cRot)/100000;
+    //console.log(cRot);
+}
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+////// PARTICLES
+
+
+/////////////////////////////////////////////////////////////////////////////
+////// SHADOW (FLOOR)
     function drawFloor(){
 
 
@@ -33,8 +86,8 @@ export default scene => {
         planeMaterial.opacity = 0.2;
 
         var plane = new THREE.Mesh( planeGeometry, planeMaterial );
-        plane.position.set(0,-40,0);
-        plane.rotation.x = Math.PI / -2;
+        plane.position.set(0,-17,0);
+        plane.rotation.x = Math.PI / -1.7;
 
         // object3d.castShadow = true;
         plane.receiveShadow = true;
@@ -42,39 +95,14 @@ export default scene => {
         scene.add( plane );
 
     }
-    function drawShape(){
-        var x = 0, y = 0;
-
-        var heartShape = new THREE.Shape();
-
-        heartShape.moveTo( 0,0 );
-        // heartShape.bezierCurveTo( 0, 200, 0, 200);
-        // heartShape.bezierCurveTo( 6, 0,0, 7,6, 0 );
-        // heartShape.bezierCurveTo( 6, 11,0, 15.4, 5, 0 );
-        // heartShape.bezierCurveTo( 12, 15.4, 0, 11, 16,0 );
-        // heartShape.bezierCurveTo( 16, 7, 0, 0, 10,0 );
-        // heartShape.bezierCurveTo( 7, 0,0, 5, 5,0 );
-
-        var geometry = new THREE.ShapeGeometry( heartShape );
-        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        var mesh = new THREE.Mesh( geometry, material ) ;
-        scene.add( mesh );
-    }
-    function update(time) {
-        const angle = time*speed;
-        group.rotation.y = angle;
-        particlemove();
-        const scale = (Math.sin(angle*8)+6.4)/5;
-
-    }
-
 /////////////////////////////////////////////////////////////////////////////
 ////// PARTICLES
 
     var particleSphere;
     var mesh2;
     var particleVertices;
-    particles();
+    // particles();
+    // particles();
 // CREATE PARTICLES
     function particles(){
         var geometry = new THREE.SphereGeometry(110, 40, 40);
@@ -101,7 +129,6 @@ export default scene => {
         mesh2.sortParticles = true;
         scene.add(mesh2);
     }
-
 // MOVES PARTICLES
     function particlemove(){
 
@@ -131,15 +158,40 @@ export default scene => {
 
     }
 
+/////////////////////////////////////////////////////////////////////////////
+////// UPDATE COMPONENT
+    Math.easeOutCubic = function (t, b, c, d) {
+        t /= d;
+        t--;
+        return c*(t*t*t + 1) + b;
+    };
+
+    function update(time) {
+
+        const angle = time*speed;
+        group.rotation.y = angle;
+        if (particleSphere) {
+            particlemove();
+        }
+        const scale = (Math.sin(angle*8)+6.4)/5;
+        subjectMesh.geometry.verticesNeedUpdate = true;
+        subjectMesh.geometry.normalsNeedUpdate = true;
+        // group.position.set(0, (tangle), 0);
 
 
+        // let tangleSPEED = 0;
+        // if(tangle <= -2 ){
+        //     tangle +=0.02;
+        //     tangleSPEED+=2;
+        // }else {
+        //     tangleSPEED =0;
+        //     tangle -=0.01;
+        // }
+        // tween.update();
+        wakov();
+       TWEEN.update();
 
-
-
-
-
-
-
+    }
     return {
         update
     }
