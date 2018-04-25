@@ -7,7 +7,11 @@ import Interaction from "./components/interaction";
 import StartInfo from "./StartInfo";
 
 import {render} from 'react-dom';
-import {Router, Route, Link} from 'react-router';
+import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+const Home = () => <h1>Home</h1>;
+
 
 
 class App extends Component {
@@ -47,10 +51,7 @@ class App extends Component {
          window.removeEventListener('wheel', this.scrollExperience);
     }
 
-
-
-    render() {
-    return (
+     App = () => (
         <div onWheel = {(e) => this.scrollExperience(e)}>
 
             <div className={"pos-absolute pos-centerText startInfo_pos"}>
@@ -73,12 +74,18 @@ class App extends Component {
                 <div ref={element => this.threeRootElement = element} />
             </div>
         </div>
-
-    );
-  }
+    )
 
 
 }
+ReactDom.render((
+    <HashRouter>
+        <div>
+        <Route exact path="/" component={Home} />
+        
+      </div>
+    </HashRouter>
+  ), document.getElementById('root'))
 // render((
 //     <Router>
 //         <Route path={"/"} component={App}>
