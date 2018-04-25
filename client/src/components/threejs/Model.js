@@ -13,15 +13,10 @@ class Model extends Component {
         }
 
     }
-    componentDidMount(){
-        // this.updateThree(this.props);
-
-    }
     componentWillMount() {
         console.log(this.context);
         console.log("MODELLLLs");
-        // loop();
-        var geometry = new THREE.SphereGeometry( 8, 32, 32 );
+        var geometry = new THREE.SphereGeometry( 6, 32, 32 );
         var mat = new THREE.MeshLambertMaterial({ color: this.props.color, transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
         var mesh = new THREE.Mesh(geometry, mat);
         mesh.castShadow = true;

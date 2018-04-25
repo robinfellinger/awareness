@@ -29,12 +29,8 @@ class TestScene extends Component {
         this.updateThree(this.props);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapType = THREE.PCFSoftShadowMap;
-
         this.renderer.gammaInput = true;
         this.renderer.gammaOutput = true;
-
-        // console.log(this.props.children[0]);
-
 
         const camera =  buildCamera(screenDimensions);
         this.renderer.setSize(screenDimensions);
@@ -45,7 +41,7 @@ class TestScene extends Component {
 
         light(this.scene);
 
-        var planeShadow = new THREE.DirectionalLight( 0xf3007a, 0.2 );
+        var planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );
         planeShadow.position.set(0,20,0);
         let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
         planeShadow.shadowDarkness = 0.1;
@@ -59,18 +55,6 @@ class TestScene extends Component {
         planeShadow.shadow.mapSize.height = 512; // default
         planeShadow.shadow.camera.near = 0.5;    // default
         planeShadow.shadow.camera.far = 120;     // default
-
-
-
-        // function gameLoop(renderer, scene){
-        //     // TWEEN.update();
-        //     requestAnimationFrame(gameLoop);
-        //
-        //     // renderer.render(scene, camera);
-        // }
-        // gameLoop(this.renderer, this.scene);
-
-
 
     function light(scene){
         const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
@@ -111,8 +95,7 @@ class TestScene extends Component {
             screenDimensions.height = window.innerHeight;
             camera.aspect = screenDimensions.width / screenDimensions.height;
             camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        // console.log("RESIZE");
+            renderer.setSize(window.innerWidth, window.innerHeight);
 
     }
 
@@ -128,7 +111,6 @@ class TestScene extends Component {
 
     updateThree(props) {
         const { width, height } = props;
-        // this.renderer.setSize(width, height);
     }
 
     getChildContext() {
@@ -138,40 +120,23 @@ class TestScene extends Component {
         }
     }
     onWindowResize(renderer) {
-        // screenDimensions.width = window.innerWidth;
-        // screenDimensions.height = window.innerHeight;
-        // camera.aspect = screenDimensions.width / screenDimensions.height;
-        // camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
-        // console.log("RESIZE");
 
     }
 
     render(){
-       // const {width, height} = this.props;
-        const {scene} = this.props;
-        const { width, height, style } = this.props;
-        const newwidth = 3000;
-        const newHeight = 3000;
+
+
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (
             <div ref="anchor">
-                {/*<Model scene={scene}/>*/}
                 {this.props.children}
             </div>
 
         );
     }
-    // loop();
 }
-function loop(){
-    requestAnimationFrame(loop);
 
-    // cube.rotation.x += 0.03;
-    // cube.rotation.y += 0.03;
-
-    this.renderer.render(this.scene, this.camera);
-}
 
 TestScene.childContextTypes = {
     scene: PropTypes.object,
