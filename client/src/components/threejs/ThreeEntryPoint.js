@@ -39,6 +39,8 @@ export default container => {
         sceneManager.onWindowResize()
     }
 
+
+
     function mouseMove({screenX, screenY}) {
         // sceneManager.onMouseMove(screenX-canvasHalfWidth, screenY-canvasHalfHeight);
     }

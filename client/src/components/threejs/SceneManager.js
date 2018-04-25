@@ -5,6 +5,10 @@ import * as THREE from 'three';
 import SceneSubject from './SceneSubject';
 import GeneralLights from './GeneralLights';
 
+import { WebGLRenderer } from "three";
+import { EffectComposer, ShaderPass, GlitchPass, RenderPass, BlurPass } from "postprocessing";
+
+
 export default canvas => {
 
     const clock = new THREE.Clock();
@@ -28,6 +32,9 @@ export default canvas => {
     function buildScene() {
         const scene = new THREE.Scene();
         scene.background = new THREE.Color("#A1A1A1");
+        scene.fog = new THREE.FogExp2( 0x071E30, 1 ); // intensität?
+        scene.fog = new THREE.Fog( 0x071E30, 4, 100 );
+        scene.fog.color.setHSL( 0.51, 0.5, 0.9 );
 
         return scene;
     }
@@ -52,6 +59,8 @@ export default canvas => {
 
         return renderer;
     }
+
+
 
     function buildCamera({ width, height }) {
         const aspectRatio = width / height;
@@ -91,6 +100,22 @@ export default canvas => {
         // camera.lookAt(origin);
     }
 
+    function createShader(){
+        const composer = new EffectComposer(new WebGLRenderer());
+        const blurP = new BlurPass();
+        blurP.renderToScreen = true;
+        blurP.enabled = false;
+
+
+
+
+
+        composer.addPass(blurP);
+
+
+    }
+
+
     function onWindowResize() {
         const { width, height } = canvas;
 
@@ -111,6 +136,7 @@ export default canvas => {
     return {
         update,
         onWindowResize,
-        onMouseMove
+        onMouseMove,
+        createShader
     }
 }

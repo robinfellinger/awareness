@@ -1,7 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////////
 //// MODEL
 import floor from './floor.png';
+
 import * as THREE from 'three'
+import { WebGLRenderer } from "three";
+import { EffectComposer, ShaderPass, GlitchPass, RenderPass, BlurPass } from "postprocessing";
 // import alphaTexture from '../../../../assets/textures/stripes_gradient.jpg';
 
 export default scene => {
@@ -10,8 +13,11 @@ export default scene => {
     const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#6b6b6b", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
 
 
-    const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
+     const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
     subjectMesh.castShadow = true;
+
+
+
 
     group.add(subjectMesh);
     // group.add(subjectWireframe);
@@ -22,6 +28,43 @@ export default scene => {
 
     const speed = 0.02;
     const textureOffsetSpeed = 0.02;
+
+
+    const cube1 = new THREE.Mesh( new THREE.CubeGeometry( 20, 20, 0 ), new THREE.MeshNormalMaterial() );
+    cube1.position.y = 5;
+    cube1.position.x = -5;
+
+
+    const cube2 = new THREE.Mesh( new THREE.CubeGeometry( 18.5, 18.5, 1.1 ), new THREE.MeshBasicMaterial( {color: 0x000000} ));
+    cube2.position.y = 5;
+    cube2.position.x = -5;
+
+   // const cube = cube1.subtract(cube2);
+    scene.add(cube1);
+    scene.add(cube2);
+
+ //   const geometry2 = new THREE.BoxGeometry( 15, 1, 0 );
+  //  const geometry3 = new THREE.BoxGeometry( 1, 15, 20 );
+
+  //  const material2 = new THREE.MeshBasicMaterial( {color: 0x000000} );
+//    const cube1 = new THREE.Mesh( geometry2, material2 );
+
+ //   cube1.position.y = -15;
+   // cube1.position.x = 30;
+  //  const cube2 = new THREE.Mesh( geometry3, material2 );
+   // scene.add( cube1 );
+ //   scene.add( cube2 );
+
+
+
+
+    function rotate(){
+        subjectMesh.rotateY += 500;
+      //  createShader();
+       // subjectMesh.position.x += 0.1;
+
+    }
+
 
 
 
@@ -43,17 +86,36 @@ export default scene => {
 
     }
     function drawShape(){
+
+
         var x = 0, y = 0;
 
         var heartShape = new THREE.Shape();
 
-        heartShape.moveTo( 0,0 );
-        // heartShape.bezierCurveTo( 0, 200, 0, 200);
-        // heartShape.bezierCurveTo( 6, 0,0, 7,6, 0 );
-        // heartShape.bezierCurveTo( 6, 11,0, 15.4, 5, 0 );
-        // heartShape.bezierCurveTo( 12, 15.4, 0, 11, 16,0 );
-        // heartShape.bezierCurveTo( 16, 7, 0, 0, 10,0 );
-        // heartShape.bezierCurveTo( 7, 0,0, 5, 5,0 );
+      //  heartShape.moveTo( 100,100 );
+      //   heartShape.bezierCurveTo( 100, 100, 100, 200);
+     //   heartShape.bezierCurveTo( 100, 200, 200, 200);
+     //   heartShape.bezierCurveTo( 200, 200, 200, 100);
+     //   heartShape.bezierCurveTo( 200, 100, 100, 100);
+        var material1 = new THREE.LineBasicMaterial({
+            color: 0x0000ff,
+
+        });
+
+
+
+
+        var geometry1 = new THREE.Geometry();
+        geometry1.vertices.push(
+            new THREE.Vector3( -15, 15, 0 ),
+            new THREE.Vector3( 5, 15, 0 ),
+            new THREE.Vector3( 5, -5, 0 ),
+            new THREE.Vector3( -15, -5, 0 ),
+            new THREE.Vector3( -15, 15, 0 )
+        );
+
+        var line = new THREE.Line( geometry1, material1 );
+        scene.add( line );
 
         var geometry = new THREE.ShapeGeometry( heartShape );
         var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
@@ -65,6 +127,7 @@ export default scene => {
         group.rotation.y = angle;
         particlemove();
         const scale = (Math.sin(angle*8)+6.4)/5;
+        rotate();
 
     }
 

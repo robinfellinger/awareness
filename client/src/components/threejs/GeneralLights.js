@@ -4,6 +4,8 @@
 
 
 import * as THREE from 'three'
+import { WebGLRenderer } from "three";
+import { EffectComposer, ShaderPass, GlitchPass, RenderPass, BlurPass } from "postprocessing";
 
 export default scene => {
 
@@ -16,21 +18,26 @@ export default scene => {
     lightFront.position.set(40,40,40);
 
 
+
     addPlaneShadow();
+
 
     scene.add(lightIn);
     scene.add(lightOut);
     scene.add(lightFront);
 
+
     const rad = 80;
 
 
     function addPlaneShadow(){
-        const planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );//("#f0eef3", 5, 900, 2);
+        const planeShadow = new THREE.DirectionalLight("#fffff", 0.2);//("#f0eef3", 5, 900, 2);
         planeShadow.position.set(0,40,40);
-        let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
-        planeShadow.shadowDarkness = 0.1;
+        let helper = new THREE.DirectionalLightHelper( planeShadow, 1 );
+
+        helper.shadowDarkness = 0;
         planeShadow.castShadow = true;
+        planeShadow.shadowDarkness = 0;
         planeShadow.shadowCameraVisible = true;
         scene.add(helper);
         scene.add(planeShadow);
@@ -42,6 +49,9 @@ export default scene => {
 
 
     }
+
+
+
     function update(time) {
         // const x = rad * Math.sin(time*0.2)
         // lightOut.position.x = x;
