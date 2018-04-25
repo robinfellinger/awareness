@@ -9,9 +9,9 @@ import { EffectComposer, ShaderPass, GlitchPass, RenderPass, BlurPass } from "po
 
 export default scene => {
 
-    const lightIn = new THREE.PointLight("#c9c6c9", 4, 0.0, 0.01);
-    const lightFront = new THREE.DirectionalLight( 0xffffff, 1 );
-    const lightOut = new THREE.AmbientLight( 0x404040, 4.5 );
+    const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
+    const lightFront = new THREE.DirectionalLight( 0xffffff, 0.3 );
+    const lightOut = new THREE.AmbientLight( 0x404040, 3 );
 
     lightOut.position.set(40,20,40);
     lightIn.position.set(-110,-100,-190);

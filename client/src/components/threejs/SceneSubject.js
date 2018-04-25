@@ -1,23 +1,25 @@
 ////////////////////////////////////////////////////////////////////////////////////
 //// MODEL
 import floor from './floor.png';
-
 import * as THREE from 'three'
+var TWEEN = require('@tweenjs/tween.js');
+
 import { WebGLRenderer } from "three";
 import { EffectComposer, ShaderPass, GlitchPass, RenderPass, BlurPass } from "postprocessing";
 // import alphaTexture from '../../../../assets/textures/stripes_gradient.jpg';
 
 export default scene => {
+
+    var cRot = 0.0;
+    var tRot = 0.01;
     const group = new THREE.Group();
-    const subjectGeometry = new THREE.SphereGeometry( 11, 32, 32 );
-    const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#6b6b6b", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
+    const subjectGeometry = new THREE.SphereGeometry( 8, 32, 32 );
+    const subjectMaterial = new THREE.MeshLambertMaterial({ color: "#d3d2e1", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
 
 
      const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
     subjectMesh.castShadow = true;
-
-
-
+    subjectMesh.geometry.dynamic = true;
 
     group.add(subjectMesh);
     // group.add(subjectWireframe);
@@ -30,6 +32,17 @@ export default scene => {
     const textureOffsetSpeed = 0.02;
 
 
+    // group.position.set(10,10,0);
+    let position = { x : 0, y: 10 };
+    // let target = { x : 0, y: 2 };
+    let tween = new TWEEN.Tween(position)
+        .to({x: 0, y: -0.5, rotation: 0}, 3000)
+        .delay(900*cRot)
+        .easing(TWEEN.Easing.Elastic.Out)
+        .onUpdate(function(){
+            group.position.x = position.x;
+            group.position.y = position.y;
+        });
     const cube1 = new THREE.Mesh( new THREE.CubeGeometry( 20, 20, 0 ), new THREE.MeshNormalMaterial() );
     cube1.position.y = 5;
     cube1.position.x = -5;
@@ -68,6 +81,45 @@ export default scene => {
 
 
 
+
+
+    let tweenBack = new TWEEN.Tween(position)
+        .to({x: 0, y: 0.*cRot, rotation: 0}, 3000)
+        .delay(900*cRot)
+        .easing(TWEEN.Easing.Elastic.Out)
+        .onUpdate(function(){
+            group.position.x = position.x;
+            group.position.y = position.y;
+        });
+
+    tween.chain(tweenBack);
+    tweenBack.chain(tween);
+    tween.start();
+
+//creates random parameter for more realistic animations
+function wakov(){
+    if(Math.floor(Math.random()< 0.01)){
+        if(tRot > 400){
+            tRot = 0;
+        }else{
+            tRot += Math.floor(Math.random() * .1) + 5.25;
+
+        }
+    }
+     cRot+=(tRot-cRot)/100000;
+    //console.log(cRot);
+}
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+////// PARTICLES
+
+
+/////////////////////////////////////////////////////////////////////////////
+////// SHADOW (FLOOR)
     function drawFloor(){
 
 
@@ -76,8 +128,8 @@ export default scene => {
         planeMaterial.opacity = 0.2;
 
         var plane = new THREE.Mesh( planeGeometry, planeMaterial );
-        plane.position.set(0,-40,0);
-        plane.rotation.x = Math.PI / -2;
+        plane.position.set(0,-17,0);
+        plane.rotation.x = Math.PI / -1.7;
 
         // object3d.castShadow = true;
         plane.receiveShadow = true;
@@ -194,15 +246,40 @@ export default scene => {
 
     }
 
+/////////////////////////////////////////////////////////////////////////////
+////// UPDATE COMPONENT
+    Math.easeOutCubic = function (t, b, c, d) {
+        t /= d;
+        t--;
+        return c*(t*t*t + 1) + b;
+    };
+
+    function update(time) {
+
+        const angle = time*speed;
+        group.rotation.y = angle;
+        if (particleSphere) {
+            particlemove();
+        }
+        const scale = (Math.sin(angle*8)+6.4)/5;
+        subjectMesh.geometry.verticesNeedUpdate = true;
+        subjectMesh.geometry.normalsNeedUpdate = true;
+        // group.position.set(0, (tangle), 0);
 
 
+        // let tangleSPEED = 0;
+        // if(tangle <= -2 ){
+        //     tangle +=0.02;
+        //     tangleSPEED+=2;
+        // }else {
+        //     tangleSPEED =0;
+        //     tangle -=0.01;
+        // }
+        // tween.update();
+        wakov();
+       TWEEN.update();
 
-
-
-
-
-
-
+    }
     return {
         update
     }

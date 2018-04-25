@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,aAAW;EACT,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAC,EAAE;AAEZ,eAAa;EACX,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM",
+"sources": ["standardSettings.scss"],
+"names": [],
+"file": "standardSettings.css"
+}

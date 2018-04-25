@@ -1,0 +1,25 @@
+.button {
+  &-basic {
+    background: none;
+    padding: 12px;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+
+  &-startAnim {
+    animation: button-move-start 5s forwards; /* IE 10+, Fx 29+ */
+    margin-top: 5rem;
+  }
+}
+
+
+@keyframes button-move-start {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.2rem);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

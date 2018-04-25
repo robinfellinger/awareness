@@ -16,40 +16,60 @@ class App extends Component {
         super();
         this.state = {
             startExperience: false,
-        }
-    }
+            canvasClasses: "three__canvas three-blur",
 
-    toggleExperience(){
-        (this.state.startExperience = false) ? (this.setState({startExperience : true})) : (this.setState({startExperience : true}));
+        };
+        this.scrollExperience = this.scrollExperience.bind(this);
+        this.toggleExperience = this.toggleExperience.bind(this);
+
     }
 
     componentDidMount() {
-        threeEntryPoint(this.threeRootElement);
+      threeEntryPoint(this.threeRootElement);
+    }
+
+    returnClasses(){
+        (this.state.startExperience = false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
+    }
+    toggleExperience(){
+        // (this.state.startExperience = false) ? (this.setState({startExperience : true})) : (this.setState({startExperience : true}));
+        this.setState({startExperience: true});
+        this.returnClasses();
+    }
+    scrollExperience(event){
+        // if (event.deltaY < -30) {console.log('scrolling up');}
+        if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
+
+    }
+
+    //events need to be removed, before the component is deleted from the dom
+    componentWillUnmount() {
+         window.removeEventListener('wheel', this.scrollExperience);
     }
 
 
 
     render() {
     return (
-        <div>
+        <div onWheel = {(e) => this.scrollExperience(e)}>
 
-            <div className={"pos-absolute pos-centerText"}>
-            <StartInfo></StartInfo>
-                <button onClick={() => this.toggleExperience()}>Start Experience</button>
+            <div className={"pos-absolute pos-centerText startInfo_pos"}>
+            <StartInfo start={this.state.startExperience}></StartInfo>
+                <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
 
             {this.state.startExperience &&
                 <div className={"pos-absolute"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button onClick={""}>TO STATISTIC PAGE</button>
+                    <button>TO STATISTIC PAGE</button>
                     <Page_statistics></Page_statistics>
 
                 </div>
             }
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
-            <div className="three__canvas">
+            <div className={this.state.canvasClasses}>
                 <div ref={element => this.threeRootElement = element} />
             </div>
         </div>
