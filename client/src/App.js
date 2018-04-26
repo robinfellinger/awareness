@@ -8,7 +8,9 @@ import StartInfo from "./StartInfo";
 
 import {render} from 'react-dom';
 import { HashRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+
 
 
 const Home = () => <h1>Home</h1>;
@@ -52,8 +54,8 @@ class App extends Component {
          window.removeEventListener('wheel', this.scrollExperience);
     }
 
-    render(){
-        return
+    render() {
+        return (
     
         <div onWheel = {(e) => this.scrollExperience(e)}>
 
@@ -66,7 +68,7 @@ class App extends Component {
                 <div className={"pos-absolute"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button>TO STATISTIC PAGE</button>
+                    <button><Link to='/statistics'>Statistics</Link></button>
                     <Page_statistics></Page_statistics>
 
                 </div>
@@ -77,10 +79,12 @@ class App extends Component {
                 <div ref={element => this.threeRootElement = element} />
             </div>
         </div>
-    
+    );
     }
-
 }
+
+
+
 
 // ReactDom.render((
 //     <HashRouter>
@@ -91,12 +95,6 @@ class App extends Component {
 //     </HashRouter>
 //   ), document.getElementById('root')) 
 
- render((
-     <HashRouter>
-        <Route exact path="/" component={Home}/>
-            
-     </HashRouter>
- ), document.body)
 
 
 // ReactDOM.render(<MyComponent />, document.getElementById('id'));

@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Page2 = React.createClass({
+var Statistics = React.createElement({
     render: function() {
         return(
             <h1>STATISTIKEN</h1>
@@ -8,4 +8,4 @@ var Page2 = React.createClass({
     }
 });
 
-module.exports = Page2;
+module.exports = Statistics;

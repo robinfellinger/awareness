@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 //routing backend
 app.use('/', indexRouter);
 
-// const port = process.env.PORT || 5000;
-// app.listen(port);
+const port = process.env.PORT || 5001;
+app.listen(port);
 console.log("server started");
 module.exports = app;
