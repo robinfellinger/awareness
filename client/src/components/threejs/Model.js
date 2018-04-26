@@ -8,6 +8,8 @@ var mesh = null;
 var particleSphere = null;
 var particleVertices = null;
 var mesh2 = null;
+var testColor = new THREE.Color(0xBDE100);
+var testColor2 = new THREE.Color(new THREE.Color("hsl(10%, 0%, 0%)"));
 
 class Model extends Component {
 
@@ -15,23 +17,57 @@ class Model extends Component {
         super(props);
         this.state = {
             mColor: this.props.modelColor,
+            colorUpdate: false,
+            rgbColors: {r: 0, g: 90, b: 0},
         }
 
     }
+    componentWillReceiveProps(){
+        if(!(this.props.modelColor === this.state.mColor)){
+            updateColor(this.props.rgbColors);
+            this.setState({colorUpdate: true})
+        }
+
+        function updateColor(rgb){
+            var updateColor = new THREE.Color("rgb("+rgb.r+"%, "+rgb.g+"%, "+rgb.b+"%)");
+            var tweenColor = new TWEEN.Tween(mesh.material.color)
+                .easing(TWEEN.Easing.Quartic.In)
+                .delay(2000)
+                .onUpdate(function() {
+                    mesh.material.color = updateColor;
+                    mesh.material.alphaTest= 0.5;
+                }).start();
+        }
+        mesh.material.needsUpdate = true;
+        mesh.matrixAutoUpdate  = false;
+        mesh.updateMatrix();
+
+    }
     componentDidMount() {
-        console.log(this.context);
-        console.log("MODELLLLs");
+
         var geometry = new THREE.SphereGeometry( 8, 32, 32 );
-        console.log("COLOR" +this.state.mColor);
-        var mat = new THREE.MeshLambertMaterial({ color: this.state.mColor, transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
+        var mat = new THREE.MeshLambertMaterial({ color: new THREE.Color("hsl(90%, 90%, 90%)"), transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
+
         mesh = new THREE.Mesh(geometry, mat);
         mesh.castShadow = true;
         mesh.geometry.dynamic = true;
+        mesh.material.needsUpdate = true;
         this.context.scene.add(mesh);
 
+        console.log("DIDMOUNT");
 
-
-        // mesh.material.color.setHex( this.state.mColor );
+        // if(this.state.colorUpdate){
+            console.log("DIDMOUNT UPDATE");
+        // var updateColor = new THREE.Color().setRGB(this.props.rgbColors.r,this.props.rgbColors.g,this.props.rgbColors.b);
+        // var tweenColor = new TWEEN.Tween(mesh.material.color)
+        //     .easing(TWEEN.Easing.Quartic.In)
+        //     .delay(2000)
+        //     .onUpdate(function() {
+        //         mesh.material.color = testColor;
+        //         mesh.material.alphaTest= 0.5;
+        //     }).start();
+        //     tweenColor.chain(tweenColor);
+        // }
 
         let position = { x : 0, y: 10 };
         let tween = new TWEEN.Tween(position)
@@ -43,7 +79,7 @@ class Model extends Component {
                 mesh.position.y = position.y;
             });
 
-
+        // mesh.material.color = testColor;
 
         let tweenBack = new TWEEN.Tween(position)
             .to({x: 0, y: 0., rotation: 0}, 3000)
@@ -216,22 +252,22 @@ class Model extends Component {
 
 
 
+
         function gameLoop(){
             TWEEN.update();
             if (particleSphere) {
                 particlemove();
             }
+
+            // if(this.props.modelColor){
+            //     this.setState({colorUpdate: true})
+            // }
         }
 
         gameLoop();
     }
-
-    loop(){
-        // TWEEN.update();
-    }
     render(){
         return null;
-       // this.loop();
     }
 
 }

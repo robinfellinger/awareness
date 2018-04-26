@@ -20,6 +20,7 @@ class App extends Component {
             height: window.innerHeight,
             color: "#d3d2e1",
             tRot: 0,
+            rgbColors: {r: 0, g: 0, b: 0},
 
 
 
@@ -38,7 +39,6 @@ class App extends Component {
         if(Math.floor(Math.random()< 0.01)){
             if(this.state.tRot >5){
 
-                // this.setState({color: "#e25800"})
             }
             this.setState({tRot: this.state.tRot+2})
         }
@@ -60,19 +60,18 @@ class App extends Component {
     }
     toggleExperience(){
         this.setState({startExperience: true}, this.returnClasses);
-        this.setState({color: "#E1DB00"});
-        console.log("COLOR CHANGE");
+        this.setState({color: "E1DB00"});
+        this.setState({rgbColors: {
+            r: 0,
+            g: 90,
+            b: 90,
+        }});
     }
     toggleStatisticPage(){
         this.setState({showStatisticPage: true});
     }
     scrollExperience(event){
-        // if (event.deltaY > 30 && (this.state.startExperience === true)) {
-        //     this.setState({showStatisiticsPage: true});
-        //     console.log("SECOND TOGGLE");
-        // }
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
-
     }
 
     updateDimensions() {
@@ -115,13 +114,13 @@ class App extends Component {
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className={this.state.canvasClasses}>
                 {/*<div ref={element => this.threeRootElement = element} />*/}
-                <TestScene width={this.state.width} height={this.state.height}>
+                <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
                     <PerspectiveCamera fov={60}
                                        near={4}
                                        aspect={this.state.width/this.state.height}
                                        far={100}
                                        position={{x: 0, y: 0, z: 40}}>
-                    <Model modelColor={this.state.color}></Model>
+                    <Model rgbColors={this.state.rgbColors} modelColor={this.state.color}></Model>
                     </PerspectiveCamera>
                 </TestScene>
             </div>
