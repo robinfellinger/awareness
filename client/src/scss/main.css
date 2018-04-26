@@ -24,10 +24,11 @@ html {
 .statistics-container {
   width: 100vw;
   display: grid;
-  grid-template-rows: repeat(3, [page] 100vh);
+  grid-template-rows: repeat(5, [page] 100vh);
+  font-family: "Montserrat", sans-serif;
 }
 
-.trans-in-oe {
+.white {
   background: radial-gradient(circle, rgba(232, 232, 232, 0.8), rgba(217, 217, 217, 0.8));
   display: grid;
   align-content: center;
@@ -35,14 +36,14 @@ html {
   text-align: center;
 }
 
-.bedeutung-trans {
+.black {
   background: rgba(0, 0, 0, 0.8);
   display: grid;
   grid-template-rows: repeat(10, 10vh);
   grid-template-columns: 1fr repeat(12, 12rem) 1fr;
 }
 
-.diskriminierung {
+.gradient {
   background: linear-gradient(128.67deg, rgba(229, 233, 255, 0.8439) 18.34%, rgba(255, 195, 195, 0.7743) 95.15%), #000000;
   display: grid;
   grid-template-rows: repeat(10, 10vh);
@@ -55,16 +56,14 @@ html {
   grid-column: 1 / 5;
   padding: 5rem;
   padding-left: 8rem;
+  color: #FFFFFF;
 }
 .navigation span {
   font-family: "Montserrat", sans-serif;
   padding-left: 2.5rem;
 }
 
-.trans-in-oe__text {
-  letter-spacing: 1.13rem;
-}
-.trans-in-oe__text--titel {
+.white__titel {
   font-family: "Libre Baskerville", serif;
   font-size: 5.4rem;
   font-style: italic;
@@ -72,76 +71,60 @@ html {
   letter-spacing: 0.702rem;
   margin-bottom: 5rem;
 }
-.trans-in-oe__text--titel__highlight {
+.white__titel--highlight {
   font-style: normal;
   font-weight: 800;
 }
-.trans-in-oe__text--content {
-  font-family: "Montserrat", sans-serif;
+.white__content {
   font-size: 1.8rem;
   font-weight: 600;
   width: 46rem;
   line-height: 2.88rem;
   letter-spacing: 0.234rem;
 }
-.trans-in-oe__text--link {
+.white__link {
   margin-top: 10rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #000;
   padding: 0.5rem 1rem;
   display: inline-block;
-  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.375rem;
   border: solid 2px;
 }
 
-.bedeutung-trans {
-  font-family: "Montserrat", sans-serif;
-  color: #FFFFFF;
-  font-style: normal;
-}
-.bedeutung-trans__titel {
+.black__titel {
   grid-row: 3 / 4;
   grid-column: 2 / 10;
-  width: 899px;
-  height: 137px;
   font-weight: 600;
-  line-height: normal;
-  font-size: 48px;
-  letter-spacing: 0.2em;
+  font-size: 4.8rem;
+  letter-spacing: 0.96rem;
+  color: #FFFFFF;
 }
-.bedeutung-trans__text--1 {
+.black__text {
+  width: 411px;
+  font-weight: 300;
+  line-height: 28px;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: #BDBDBD;
+}
+.black__text--1 {
   grid-row: 5 / 10;
   grid-column: 3 / 10;
-  width: 411px;
-  height: 628px;
-  font-weight: 300;
-  line-height: 28px;
-  font-size: 20px;
-  letter-spacing: 0.06em;
-  color: #BDBDBD;
 }
-.bedeutung-trans__text--2 {
+.black__text--2 {
   grid-row: 5 / 8;
   grid-column: 8 / 10;
-  width: 411px;
-  height: 307px;
-  font-weight: 300;
-  line-height: 28px;
-  font-size: 20px;
-  letter-spacing: 0.06em;
-  color: #BDBDBD;
 }
 
-.diskriminierung {
-  font-family: "Montserrat", sans-serif;
+.gradient {
   color: #FFFFFF;
   font-style: normal;
 }
-.diskriminierung__titel {
+.gradient__titel {
   grid-row: 3 / 4;
   grid-column: 2 / 10;
   text-transform: uppercase;
@@ -152,7 +135,7 @@ html {
   font-size: 48px;
   letter-spacing: 0.2em;
 }
-.diskriminierung__text {
+.gradient__text {
   margin-left: 7rem;
   grid-row: 5 / 10;
   grid-column: 3 / 10;
@@ -163,7 +146,7 @@ html {
   font-size: 20px;
   letter-spacing: 0.06em;
 }
-.diskriminierung__statistic {
+.gradient__statistic {
   text-align: center;
   padding-top: 5rem;
   grid-row: 2 / 10;
@@ -174,20 +157,20 @@ html {
   letter-spacing: 0.06em;
   transform: translateX(-6rem);
 }
-.diskriminierung__statistic p {
+.gradient__statistic p {
   margin-bottom: 5rem;
 }
-.diskriminierung__statistic span {
+.gradient__statistic span {
   font-weight: normal;
   line-height: normal;
   font-size: 36px;
   text-align: center;
   letter-spacing: 0.15em;
 }
-.diskriminierung__statistic :first-child {
+.gradient__statistic :first-child {
   text-transform: uppercase;
 }
-.diskriminierung__statistic :first-child span {
+.gradient__statistic :first-child span {
   font-size: 112px;
 }
 

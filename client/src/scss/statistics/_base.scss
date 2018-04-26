@@ -34,6 +34,7 @@ html {
 .statistics-container {
     width: 100vw;
     display: grid;
-    grid-template-rows: repeat(3, [page] 100vh);
+    grid-template-rows: repeat(5, [page] 100vh);
+    font-family: $font-primary;
 }
 

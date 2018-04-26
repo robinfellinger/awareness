@@ -4,6 +4,7 @@
     grid-column: 1 / 5;
     padding: 5rem;
     padding-left: 8rem;
+    color: #FFFFFF;
 
     span {
         font-family: $font-primary;
@@ -11,36 +12,37 @@
     }
 }
 
-.trans-in-oe__text {
-    letter-spacing: 1.13rem;
-    &--titel {
+.white {
+
+    &__titel {
         font-family: $font-secondary;
         font-size: 5.4rem;
         font-style: italic;
         font-weight: 300;
         letter-spacing: 5.4rem * 0.13;
         margin-bottom: 5rem;
-        &__highlight {
+
+        &--highlight {
             font-style: normal;
             font-weight: 800;
         }
     }
-    &--content {
-        font-family: $font-primary;
+
+    &__content {
         font-size: 1.8rem;
         font-weight: 600;
         width: 46rem;
         line-height: 1.8rem * 1.6;
         letter-spacing: 1.8rem * 0.13;
     }
-    &--link {
+
+    &__link {
         margin-top: 10rem;
         text-decoration: none;
         text-transform: uppercase;
         color: #000;
         padding: 0.5rem 1rem;
         display: inline-block;
-        font-family: $font-primary;
         font-size: 1.5rem;
         font-weight: 800;
         letter-spacing: 1.5rem * 0.25;
@@ -48,46 +50,39 @@
     }
 }
 
-.bedeutung-trans {
-    font-family: $font-primary;
-    color: #FFFFFF;
-    font-style: normal;
+.black {
+
     &__titel {
         grid-row: 3 / 4;
         grid-column: 2 / 10;
-        width: 899px;
-        height: 137px;
         font-weight: 600;
-        line-height: normal;
-        font-size: 48px;
-        letter-spacing: 0.2em;
+        font-size: 4.8rem;
+        letter-spacing: 4.8rem * 0.2;
+        color: #FFFFFF;
     }
-    &__text--1 {
-        grid-row: 5 / 10;
-        grid-column: 3 / 10;
+
+    &__text {
+
         width: 411px;
-        height: 628px;
         font-weight: 300;
         line-height: 28px;
         font-size: 20px;
         letter-spacing: 0.06em;
         color: #BDBDBD;
-    }
-    &__text--2 {
-        grid-row: 5 / 8;
-        grid-column: 8 / 10;
-        width: 411px;
-        height: 307px;
-        font-weight: 300;
-        line-height: 28px;
-        font-size: 20px;
-        letter-spacing: 0.06em;
-        color: #BDBDBD;
+
+        &--1 {
+            grid-row: 5 / 10;
+            grid-column: 3 / 10;
+        }
+
+        &--2 {
+            grid-row: 5 / 8;
+            grid-column: 8 / 10;
+        }
     }
 }
 
-.diskriminierung {
-    font-family: $font-primary;
+.gradient {
     color: #FFFFFF;
     font-style: normal;
     &__titel {
