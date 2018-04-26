@@ -34,8 +34,8 @@ class App extends Component {
 
         if(Math.floor(Math.random()< 0.01)){
             if(this.state.tRot >5){
-                console.log("COLOR CHANGE");
-                this.setState({color: "#e25800"})
+
+                // this.setState({color: "#e25800"})
             }
             this.setState({tRot: this.state.tRot+2})
         }
@@ -47,7 +47,7 @@ class App extends Component {
     gameLoop = () => {
         requestAnimationFrame(this.gameLoop);
         const { color } = this.state;
-        this.setState({color: "#e25800"});
+        this.setState({tRot: 0});
         this.wakov();
     }
 
@@ -57,6 +57,8 @@ class App extends Component {
     }
     toggleExperience(){
         this.setState({startExperience: true}, this.returnClasses);
+        this.setState({color: "#E1DB00"});
+        console.log("COLOR CHANGE");
     }
     scrollExperience(event){
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
@@ -81,7 +83,6 @@ class App extends Component {
 
     render() {
         const { color } = this.state;
-
         return (
         <div onWheel = {(e) => this.scrollExperience(e)}>
             <AccessLinks></AccessLinks>
@@ -108,8 +109,8 @@ class App extends Component {
                                        near={4}
                                        aspect={this.state.width/this.state.height}
                                        far={100}
-                                       position={{x: 0, y: 0, z: 30}}>
-                    <Model color={this.state.color}></Model>
+                                       position={{x: 0, y: 0, z: 40}}>
+                    <Model modelColor={this.state.color}></Model>
                     </PerspectiveCamera>
                 </TestScene>
             </div>

@@ -9,10 +9,10 @@ import Model from './Model'
 
 class TestScene extends Component {
 
-
+    // startWidth = width.innerHeight;
+    // startHeight = height.innerHeight;;
     scene = new THREE.Scene();
-    renderer = new THREE.WebGLRenderer({alpha: true });
-
+    renderer = new THREE.WebGLRenderer({  alpha: true  });
     constructor(){
         super();
         this.state = {
@@ -27,6 +27,7 @@ class TestScene extends Component {
             height: window.innerHeight
         };
         this.updateThree(this.props);
+        console.log(this.renderer);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapType = THREE.PCFSoftShadowMap;
         this.renderer.gammaInput = true;
@@ -35,6 +36,11 @@ class TestScene extends Component {
         const camera =  buildCamera(screenDimensions);
         this.renderer.setSize(screenDimensions);
 
+
+        this.scene.fog = new THREE.FogExp2( 0x071E30, 1 ); // intensität?
+        this.scene.fog = new THREE.Fog( 0x071E30, 4, 100 );
+        this.scene.fog.color.setHSL( 0.51, 0.5, 0.9 );
+
         this.refs.anchor.appendChild(this.renderer.domElement);
         this.renderer.render(this.scene, camera);
 
@@ -42,19 +48,22 @@ class TestScene extends Component {
         light(this.scene);
 
         var planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );
-        planeShadow.position.set(0,20,0);
+        planeShadow.position.set(0,40,40);
         let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
-        planeShadow.shadowDarkness = 0.1;
+        planeShadow.shadowDarkness = 0.7;
         planeShadow.castShadow = true;
         planeShadow.shadowCameraVisible = true;
 
         this.scene.add(helper);
         this.scene.add(planeShadow);
 
-        planeShadow.shadow.mapSize.width = 512;  // default
-        planeShadow.shadow.mapSize.height = 512; // default
-        planeShadow.shadow.camera.near = 0.5;    // default
-        planeShadow.shadow.camera.far = 120;     // default
+
+
+
+        // planeShadow.shadow.mapSize.width = 512;  // default
+        // planeShadow.shadow.mapSize.height = 512; // default
+        // planeShadow.shadow.camera.near = 0.5;    // default
+        // planeShadow.shadow.camera.far = 120;     // default
 
     function light(scene){
         const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
@@ -70,17 +79,7 @@ class TestScene extends Component {
         scene.add(lightOut);
         scene.add(lightFront);
     }
-    function buildRender({ width, height }) {
-            const renderer = new THREE.WebGLRenderer({  alpha: true  });
-            const DPR = window.devicePixelRatio ? window.devicePixelRatio : 1;
-            renderer.setPixelRatio(DPR);
-            renderer.setSize(width, height);
-            renderer.shadowMapEnabled = true;
-            renderer.shadowMapType = THREE.PCFSoftShadowMap;
-            renderer.gammaInput = true;
-            renderer.gammaOutput = true;
-            return renderer;
-        }
+
     function buildCamera({ width, height }) {
             const aspectRatio = width / height;
             const fieldOfView = 60;
