@@ -15,14 +15,15 @@ var TWEEN = require('@tweenjs/tween.js');
 var time = 0;
 var mesh = null;
 var warpVector = null;
-
+var vStart = null;
 
 var config = {
-    size: 60,
-    speed: 90,
-    radius: 90,
+    size: 4,
+    speed: 20,
+    radius: 100,
     widthSeg: 20,
     heightSeg: 60,
+    magnitude: 130,
 };
 
 var rowsAndCols = 120;
@@ -34,7 +35,7 @@ class Model extends Component {
         this.state = {
             mColor: this.props.modelColor,
             colorUpdate: false,
-            rgbColors: {r: 0, g: 90, b: 0},
+            rgbColors: {r: 90, g: 0, b: 0},
             bFrequence: this.props.bounceFrequence,
         }
 
@@ -44,14 +45,26 @@ class Model extends Component {
     }
 
     componentDidMount() {
+        var light = new THREE.DirectionalLight( 0xff0000, 100000000000000, 9000000 );
+        light.position.set( 50, 2000, 0 );
+        let helper = new THREE.DirectionalLightHelper( light, 5 );
+        this.context.scene.add(helper);
+        this.context.scene.add( light );
+
+
+        var rectLight = new THREE.RectAreaLight( 0xffffff, 2000,  9000, 9000 );
+        rectLight.position.set( 5, 100, 0 );
+        rectLight.lookAt(0,0,0);
+        this.context.scene.add( rectLight )
+
 
         var geometry = new THREE.SphereGeometry(
             config.radius,
             config.widthSeg,
             config.heightSeg);
 
-        var mat = new THREE.MeshLambertMaterial({
-            color: new THREE.Color("hsl(90%, 90%, 90%)"),
+        var mat = new THREE.MeshBasicMaterial({
+            color: new THREE.Color(90, 10, 10),
             transparent: true,
             side: THREE.DoubleSide,
             alphaTest: 0.5
@@ -59,6 +72,7 @@ class Model extends Component {
 
         mesh = new THREE.Mesh(geometry, mat);
         mesh.castShadow = true;
+        mesh.receiveLights = true;
         mesh.geometry.dynamic = true;
         mesh.material.needsUpdate = true;
         this.context.scene.add(mesh);
@@ -75,6 +89,21 @@ class Model extends Component {
     componentDidUpdate() {
 
 
+
+function wave(){
+    const { size, magnitude, speed } = config;
+
+    for (let i = 0; i < mesh.geometry.vertices.length; i++) {
+
+        const v = mesh.geometry.vertices[i];
+        const dist = new THREE.Vector3(v.x, v.y).sub(warpVector);
+        v.z = Math.sin(dist.length() / -size + (time / speed)) * (magnitude / 20);
+    }
+    mesh.geometry.verticesNeedUpdate = true;
+    time++;
+}
+
+    function wobble(){
         const { vertices } = mesh.geometry;
         const { size, speed, radius } = config;
 
@@ -98,6 +127,13 @@ class Model extends Component {
         mesh.geometry.elementsNeedUpdate = true;
         mesh.geometry.normalsNeedUpdate = true;
         time++;
+    }
+        // wobble();
+        wave();
+
+
+
+
 
         function gameLoop(){
 
