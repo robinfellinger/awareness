@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-// import model from './components/model.js'
-import threeEntryPoint from "./components/threejs/ThreeEntryPoint"
 import Page_statistics from "./pages/page_statistics"
 import Interaction from "./components/interaction";
+import AccessLinks from "./components/directaccesslinks";
 import StartInfo from "./StartInfo";
-
-import {render} from 'react-dom';
-import {Router, Route, Link} from 'react-router';
-
-
+import TestScene from "./components/threejs/TestScene"
+import Model from "./components/threejs/Model"
+import PerspectiveCamera from "./components/threejs/Camera";
+console.log(Model);
 class App extends Component {
 
     constructor() {
@@ -17,42 +15,77 @@ class App extends Component {
         this.state = {
             startExperience: false,
             canvasClasses: "three__canvas three-blur",
+            width: window.innerWidth,
+            height: window.innerHeight,
+            color: "#d3d2e1",
+            tRot: 0,
+
 
         };
+
         this.scrollExperience = this.scrollExperience.bind(this);
         this.toggleExperience = this.toggleExperience.bind(this);
+        this.updateDimensions = this.updateDimensions.bind(this);
+        this.wakov = this.wakov.bind(this);
+
 
     }
+    wakov(){
 
+        if(Math.floor(Math.random()< 0.01)){
+            if(this.state.tRot >5){
+
+                // this.setState({color: "#e25800"})
+            }
+            this.setState({tRot: this.state.tRot+2})
+        }
+    }
     componentDidMount() {
-      threeEntryPoint(this.threeRootElement);
+        this.gameLoop();
+        window.addEventListener("resize", this.updateDimensions);
     }
+    gameLoop = () => {
+        requestAnimationFrame(this.gameLoop);
+        const { color } = this.state;
+        this.setState({tRot: 0});
+        this.wakov();
+    }
+
 
     returnClasses(){
-        (this.state.startExperience = false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
+        (this.state.startExperience === false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
     }
     toggleExperience(){
-        // (this.state.startExperience = false) ? (this.setState({startExperience : true})) : (this.setState({startExperience : true}));
-        this.setState({startExperience: true});
-        this.returnClasses();
+        this.setState({startExperience: true}, this.returnClasses);
+        this.setState({color: "#E1DB00"});
+        console.log("COLOR CHANGE");
     }
     scrollExperience(event){
-        // if (event.deltaY < -30) {console.log('scrolling up');}
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
 
     }
 
+    updateDimensions() {
+        this.setState({width: window.innerWidth, height: window.innerHeight});
+    }
+    componentWillMount() {
+        this.updateDimensions();
+    }
+
+
     //events need to be removed, before the component is deleted from the dom
     componentWillUnmount() {
          window.removeEventListener('wheel', this.scrollExperience);
+        window.removeEventListener("resize", this.updateDimensions);
     }
 
 
 
     render() {
-    return (
+        const { color } = this.state;
+        return (
         <div onWheel = {(e) => this.scrollExperience(e)}>
-
+            <AccessLinks></AccessLinks>
             <div className={"pos-absolute pos-centerText startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
                 <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Start Experience</button>
@@ -70,8 +103,19 @@ class App extends Component {
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className={this.state.canvasClasses}>
-                <div ref={element => this.threeRootElement = element} />
+                {/*<div ref={element => this.threeRootElement = element} />*/}
+                <TestScene width={this.state.width} height={this.state.height}>
+                    <PerspectiveCamera fov={60}
+                                       near={4}
+                                       aspect={this.state.width/this.state.height}
+                                       far={100}
+                                       position={{x: 0, y: 0, z: 40}}>
+                    <Model modelColor={this.state.color}></Model>
+                    </PerspectiveCamera>
+                </TestScene>
             </div>
+
+
         </div>
 
     );

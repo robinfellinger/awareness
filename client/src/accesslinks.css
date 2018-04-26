@@ -1,5 +1,5 @@
 /*
-Errno::ENOENT: No such file or directory - standardSettings
+Errno::ENOENT: No such file or directory - accesslinks.scss
 
 Backtrace:
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:454:in `read'
@@ -19,4 +19,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory - standardSettings"; }
+  content: "Errno::ENOENT: No such file or directory - accesslinks.scss"; }

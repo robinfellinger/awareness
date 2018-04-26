@@ -16,7 +16,11 @@
 @import "./components/text.scss";
 @import "./components/startPage.scss";
 @import "./components/buttons.scss";
+@import "./components/accesslinks.scss";
 
+html {
+  background-color: #c0c4cf;
+}
 body {
   background-color: $bg-color;
   background: radial-gradient(ellipse at center, #dedfe8 0%, #b5bac4 100%);
