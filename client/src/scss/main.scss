@@ -18,6 +18,9 @@
 @import "./components/buttons.scss";
 @import "./components/accesslinks.scss";
 
+/*interaction*/
+@import "./components/interaction/interactionPage.scss";
+
 html {
   background-color: #c0c4cf;
 }

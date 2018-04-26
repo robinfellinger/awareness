@@ -1,0 +1,29 @@
+.interaction_pos {
+  bottom: 8vh; }
+.interaction-page {
+  width: 50%;
+  alignment: center; }
+.interaction-flex {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+.interaction-button {
+  color: #404040;
+  text-align: center;
+  background: none;
+  background-color: #FFFFFF;
+  width: 75%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 15px 15px 15px 0px; }
+.interaction-questions {
+  text-align: center; }
+
+/*# sourceMappingURL=interactionPage.css.map */

@@ -14,25 +14,25 @@ class Interaction extends Component {
 
     updateID(id){
         this.setState({IDTest: id})
-        //this.setState();
     }
 
 // rowdata.name == start or rowdata.name == subrowdata.link
     render() {
         //const question = data.passages.map(function(data){data});
         return (
-            <div>{
+            <div className={"pos-centerText"}>{
                 data.passages.map((rowdata, i) =>
-                    <div className={"headline-lg"} key={rowdata.pid}>
+                    <div className={"headline-xl t-italic"} key={rowdata.pid}>
                         {rowdata.name === this.state.IDTest && rowdata.text}
+                        {rowdata.tag !== null && rowdata.tag}
                         {
                             (typeof(rowdata.links)=='object')?
 
                             rowdata.links.map((subrowdata)=>
 
-                            <div key={subrowdata.pid*Math.random()}>
+                            <div className={"interaction-flex"} key={subrowdata.pid*Math.random()}>
                                 {rowdata.name === this.state.IDTest &&
-                                <button  className={"button-basic text-sm t-transform-lowercase"} onClick={() => this.updateID(subrowdata.link)}>{subrowdata.name}</button>
+                                <button  className={"interaction-button text-sm col-sm-8"} onClick={() => this.updateID(subrowdata.link)}>{subrowdata.name}</button>
                                 }
                             </div>
 
