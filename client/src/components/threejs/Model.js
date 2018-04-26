@@ -19,13 +19,13 @@ class Model extends Component {
             mColor: this.props.modelColor,
             colorUpdate: false,
             rgbColors: {r: 0, g: 90, b: 0},
+            bFrequence: this.props.bounceFrequence,
         }
 
     }
     componentWillReceiveProps(){
         if(!(this.props.modelColor === this.state.mColor)){
             updateColor(this.props.rgbColors);
-            this.setState({colorUpdate: true})
         }
 
         function updateColor(rgb){
@@ -38,11 +38,10 @@ class Model extends Component {
                     mesh.material.alphaTest= 0.5;
                 }).start();
         }
-        mesh.material.needsUpdate = true;
-        mesh.matrixAutoUpdate  = false;
-        mesh.updateMatrix();
+
 
     }
+
     componentDidMount() {
 
         var geometry = new THREE.SphereGeometry( 8, 32, 32 );
@@ -54,24 +53,13 @@ class Model extends Component {
         mesh.material.needsUpdate = true;
         this.context.scene.add(mesh);
 
-        console.log("DIDMOUNT");
+        console.log("props:" +this.props.bounceFrequence);
 
-        // if(this.state.colorUpdate){
             console.log("DIDMOUNT UPDATE");
-        // var updateColor = new THREE.Color().setRGB(this.props.rgbColors.r,this.props.rgbColors.g,this.props.rgbColors.b);
-        // var tweenColor = new TWEEN.Tween(mesh.material.color)
-        //     .easing(TWEEN.Easing.Quartic.In)
-        //     .delay(2000)
-        //     .onUpdate(function() {
-        //         mesh.material.color = testColor;
-        //         mesh.material.alphaTest= 0.5;
-        //     }).start();
-        //     tweenColor.chain(tweenColor);
-        // }
-
+        const { bounceFrequence } = this.props;
         let position = { x : 0, y: 10 };
         let tween = new TWEEN.Tween(position)
-            .to({x: 0, y: -0.5, rotation: 0}, 3000)
+            .to({x: 0, y: -0.5, rotation: 0}, 2000)
             .delay(900)
             .easing(TWEEN.Easing.Elastic.Out)
             .onUpdate(function(){
@@ -82,7 +70,7 @@ class Model extends Component {
         // mesh.material.color = testColor;
 
         let tweenBack = new TWEEN.Tween(position)
-            .to({x: 0, y: 0., rotation: 0}, 3000)
+            .to({x: 0, y: 0., rotation: 0}, 2000)
             .delay(900)
             .easing(TWEEN.Easing.Elastic.Out)
             .onUpdate(function(){
@@ -93,6 +81,7 @@ class Model extends Component {
         tween.chain(tweenBack);
         tweenBack.chain(tween);
         tween.start();
+
 
         // console.log(mesh);
         drawFloor(this.context.scene);
@@ -218,8 +207,9 @@ class Model extends Component {
 
     }
     componentDidUpdate() {
+        const { rotationSpeed } = this.props;
         const {mColor} = this.props;
-
+        console.log("CALLED UPDATE");
 
         // MOVES PARTICLES
         function particlemove(){
@@ -254,14 +244,16 @@ class Model extends Component {
 
 
         function gameLoop(){
+
+
             TWEEN.update();
+            // if(this.props.rotationSpeed){
+            //     mesh.rotation.z += this.props.rotationSpeed;
+            // }
+
             if (particleSphere) {
                 particlemove();
             }
-
-            // if(this.props.modelColor){
-            //     this.setState({colorUpdate: true})
-            // }
         }
 
         gameLoop();

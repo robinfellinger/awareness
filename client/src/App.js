@@ -21,6 +21,8 @@ class App extends Component {
             color: "#d3d2e1",
             tRot: 0,
             rgbColors: {r: 0, g: 0, b: 0},
+            bounceFrequence: 0,
+            rotationSpeed: 0,
 
 
 
@@ -48,13 +50,14 @@ class App extends Component {
         window.addEventListener("resize", this.updateDimensions);
     }
     gameLoop = () => {
+        const { rotationSpeed } = this.state;
+
         requestAnimationFrame(this.gameLoop);
         const { color } = this.state;
         this.setState({tRot: 0});
+        this.setState({rotationSpeed: this.state.rotationSpeed+0.03});
         this.wakov();
-    }
-
-
+    };
     returnClasses(){
         (this.state.startExperience === false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
     }
@@ -66,6 +69,7 @@ class App extends Component {
             g: 90,
             b: 90,
         }});
+        this.setState({bounceFrequence: 800});
     }
     toggleStatisticPage(){
         this.setState({showStatisticPage: true});
@@ -120,7 +124,9 @@ class App extends Component {
                                        aspect={this.state.width/this.state.height}
                                        far={100}
                                        position={{x: 0, y: 0, z: 40}}>
-                    <Model rgbColors={this.state.rgbColors} modelColor={this.state.color}></Model>
+                    <Model rgbColors={this.state.rgbColors} modelColor={this.state.color} bounceFrequence={this.state.bounceFrequence}
+                           rotationSpeed={this.state.rotationSpeed}
+                    ></Model>
                     </PerspectiveCamera>
                 </TestScene>
             </div>
