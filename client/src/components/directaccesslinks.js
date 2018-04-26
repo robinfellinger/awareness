@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class AccessLinks extends Component {
     constructor(){
@@ -10,8 +11,8 @@ class AccessLinks extends Component {
     render(){
         return (
             <div className={"pos-absolute accesslinks_pos"}>
-                <a className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"} href="">werde aktiv</a>
-                <a className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"} href="">glossar</a>
+                <Link to='/aktiv' className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"}>werde aktiv</Link>
+                <Link to='/glossar' className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"} >glossar</Link>
             </div>
         );
     }

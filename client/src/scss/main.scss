@@ -31,3 +31,8 @@ body {
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
 }
+.interaction {
+  &-pos {
+    z-index: 50;
+  }
+}
