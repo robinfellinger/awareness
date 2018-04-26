@@ -55,7 +55,7 @@ class App extends Component {
         requestAnimationFrame(this.gameLoop);
         const { color } = this.state;
         this.setState({tRot: 0});
-        this.setState({rotationSpeed: this.state.rotationSpeed+0.03});
+        this.setState({rotationSpeed: this.state.rotationSpeed+0.1});
         this.wakov();
     };
     returnClasses(){

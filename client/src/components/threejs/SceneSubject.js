@@ -101,7 +101,7 @@ function wakov(){
     var particleSphere;
     var mesh2;
     var particleVertices;
-    // particles();
+   //  particles();
 
 // CREATE PARTICLES
     function particles(){

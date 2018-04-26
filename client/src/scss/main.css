@@ -191,7 +191,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 .text-sm {
   font-family: "Montserrat", sans-serif;
   color: #ffff;
-  font-size: 0.96rem;
+  font-size: calc(0.96rem + 0.2rem);
   letter-spacing: 3px;
 }
 
@@ -301,4 +301,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
+}
+
+.interaction-pos {
+  z-index: 50;
 }

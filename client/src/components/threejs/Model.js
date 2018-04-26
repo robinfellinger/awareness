@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+/////MODEL COMPONENT
+/////RECEIVES: colorproperties: modelcolor (default) and rgbColors (in percent)
+////           rotationSpeed
+////           bounceFrequence ()
+
+
+
 import React, { Component } from 'react';
 import * as THREE from 'three'
 import three from 'three';
@@ -52,10 +60,14 @@ class Model extends Component {
         mesh.geometry.dynamic = true;
         mesh.material.needsUpdate = true;
         this.context.scene.add(mesh);
-
+        console.log(mesh.geometry.vertices);
         console.log("props:" +this.props.bounceFrequence);
 
-            console.log("DIDMOUNT UPDATE");
+
+
+
+
+
         const { bounceFrequence } = this.props;
         let position = { x : 0, y: 10 };
         let tween = new TWEEN.Tween(position)
@@ -156,7 +168,7 @@ class Model extends Component {
         }
 /////////////////////////////////////////////////////////////////////////////
 ////// PARTICLES
-//          particles(this.context.scene);
+          particles(this.context.scene);
 
 // CREATE PARTICLES
         function particles(scene){
@@ -208,8 +220,8 @@ class Model extends Component {
     }
     componentDidUpdate() {
         const { rotationSpeed } = this.props;
+        // mesh.rotation.z = rotationSpeed;
         const {mColor} = this.props;
-        console.log("CALLED UPDATE");
 
         // MOVES PARTICLES
         function particlemove(){
@@ -239,24 +251,44 @@ class Model extends Component {
             mesh2.geometry.verticesNeedUpdate = true;
 
         }
+        function wabbewobbel(){
+        mesh.geometry.vertices.forEach(function(particle){
+            if(particle.x > particle.xp+window.innerWidth){
+                particle.x = particle.xp;
+            }
+            var num = Math.floor(Math.random()*2) + 1;
+            num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+            particle.x +=num/900;
+            particle.y -= num/900;
+        });
+        mesh.geometry.verticesNeedUpdate = true;
+        }
+        wabbelWobbel2();
 
+        function wabbelWobbel2(){
+            for (let ix = 0; ix < mesh.geometry.vertices.length; ix++) {
+                for (let iz = 0; iz < mesh.geometry.vertices.length; iz++) {
+                    // let vert = new Vector3()
+                    // vert.x = ix * this.SEPERATION - ((this.WIDTH * this.SEPERATION) / 2)
+                    // vert.y = (Math.cos((ix / this.WIDTH) * Math.PI * 6) + Math.sin((iz / this.HEIGHT) * Math.PI * 6))
+                    // vert.z = iz * this.SEPERATION - ((this.HEIGHT * this.SEPERATION) / 2)
+                    // this.particleGeometry.vertices.push(vert)
+                    // console.log("wabbelwobbbbbel");
+                }
+            }
 
-
-
+        }
         function gameLoop(){
 
 
             TWEEN.update();
-            // if(this.props.rotationSpeed){
-            //     mesh.rotation.z += this.props.rotationSpeed;
-            // }
-
             if (particleSphere) {
                 particlemove();
             }
         }
 
         gameLoop();
+        wabbewobbel();
     }
     render(){
         return null;
