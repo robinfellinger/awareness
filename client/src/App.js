@@ -4,9 +4,10 @@ import Page_statistics from "./pages/page_statistics"
 import Interaction from "./components/interaction";
 import AccessLinks from "./components/directaccesslinks";
 import StartInfo from "./StartInfo";
-import TestScene from "./components/threejs/TestScene"
-import Model from "./components/threejs/Model"
+import TestScene from "./components/threejs/TestScene";
+import Model from "./components/threejs/Model";
 import PerspectiveCamera from "./components/threejs/Camera";
+
 console.log(Model);
 class App extends Component {
 
@@ -103,6 +104,7 @@ class App extends Component {
             {this.state.startExperience &&
                 <div className={"pos-absolute pos-centerText interaction_pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
+
                     <Interaction></Interaction>
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
                     {this.state.showStatisticPage &&

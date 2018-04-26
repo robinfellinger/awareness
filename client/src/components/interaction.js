@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import data from "./text.json";
-
+import Type from "./type.js"
 
 class Interaction extends Component {
 
@@ -16,14 +16,16 @@ class Interaction extends Component {
         this.setState({IDTest: id})
     }
 
-// rowdata.name == start or rowdata.name == subrowdata.link
+
+
     render() {
         //const question = data.passages.map(function(data){data});
         return (
             <div className={"pos-centerText"}>{
                 data.passages.map((rowdata, i) =>
-                    <div className={"headline-xl t-italic"} key={rowdata.pid}>
-                        {rowdata.name === this.state.IDTest && rowdata.text}
+                    <div className={"interaction-question t-italic"} key={rowdata.pid}>
+                      
+                        {rowdata.name === this.state.IDTest && <Type strings={[rowdata.name]}/>}
                         {rowdata.tag !== null && rowdata.tag}
                         {
                             (typeof(rowdata.links)=='object')?
@@ -32,7 +34,8 @@ class Interaction extends Component {
 
                             <div className={"interaction-flex"} key={subrowdata.pid*Math.random()}>
                                 {rowdata.name === this.state.IDTest &&
-                                <button  className={"interaction-button text-sm col-sm-8"} onClick={() => this.updateID(subrowdata.link)}>{subrowdata.name}</button>
+                                <button  className={"interaction-button text-sm col-sm-8"}
+                                         onClick={() => this.updateID(subrowdata.link)}>{subrowdata.name}</button>
                                 }
                             </div>
 
