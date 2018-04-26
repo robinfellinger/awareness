@@ -14,8 +14,7 @@ class Page_statistics extends Component {
             <section class="statistics-container">
 
                 <section class="trans-in-oe">
-                    <h2 class="trans-in-oe__text--titel">trans in
-                    <span class="trans-in-oe__text--titel__highlight">österreich</span>
+                    <h2 class="trans-in-oe__text--titel">trans in <span class="trans-in-oe__text--titel__highlight">österreich</span>
                     </h2>
                     <p class="trans-in-oe__text--content">Durch die sich immer weiter verbesserten Rechtslage sowie der zunehmende Präsenz von Transgender&#8209;Frauen
                         und &#8209;Männern in den Medien, trauen sicher immer mehr Transgender sich zu outen.
