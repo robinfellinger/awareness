@@ -1,7 +1,6 @@
 .trans-in-oe {
     background: radial-gradient(circle, $color-white-gradient-1, $color-white-gradient-2);
     display: grid;
-    grid-row: 1 / 6;
     align-content: center;
     justify-items: center;
     text-align: center;
@@ -10,8 +9,13 @@
 .bedeutung-trans {
     background: $color-grey-bg;
     display: grid;
-    grid-row: 6 / 12;
-    align-content: center;
-    justify-items: center;
-    text-align: left;
+    grid-template-rows: repeat(10, 10vh);
+    grid-template-columns: 1fr repeat(12, 12rem) 1fr;
+}
+
+.diskriminierung {
+    background: linear-gradient(128.67deg, rgba(229, 233, 255, 0.8439) 18.34%, rgba(255, 195, 195, 0.7743) 95.15%), #000000;
+    display: grid;
+    grid-template-rows: repeat(10, 10vh);
+    grid-template-columns: 1fr repeat(12, 12rem) 1fr;
 }
