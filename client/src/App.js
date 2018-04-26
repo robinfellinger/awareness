@@ -21,9 +21,6 @@ class App extends Component {
             color: "#d3d2e1",
             tRot: 0,
             rgbColors: {r: 0, g: 0, b: 0},
-
-
-
         };
 
         this.scrollExperience = this.scrollExperience.bind(this);
@@ -31,7 +28,6 @@ class App extends Component {
         this.updateDimensions = this.updateDimensions.bind(this);
         this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
-
 
     }
     wakov(){
@@ -133,15 +129,6 @@ class App extends Component {
 
 
 }
-// render((
-//     <Router>
-//         <Route path={"/"} component={App}>
-//         <Route path="statistics" component={Page_statistics}>
-//         </Route>
-//     </Router>
-// ), document.body)
 
-
-// ReactDOM.render(<MyComponent />, document.getElementById('id'));
 
 export default App;
