@@ -14,6 +14,7 @@ class App extends Component {
         super();
         this.state = {
             startExperience: false,
+            showStatisticPage: false,
             canvasClasses: "three__canvas three-blur",
             width: window.innerWidth,
             height: window.innerHeight,
@@ -21,11 +22,13 @@ class App extends Component {
             tRot: 0,
 
 
+
         };
 
         this.scrollExperience = this.scrollExperience.bind(this);
         this.toggleExperience = this.toggleExperience.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
+        this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
 
 
@@ -60,7 +63,14 @@ class App extends Component {
         this.setState({color: "#E1DB00"});
         console.log("COLOR CHANGE");
     }
+    toggleStatisticPage(){
+        this.setState({showStatisticPage: true});
+    }
     scrollExperience(event){
+        // if (event.deltaY > 30 && (this.state.startExperience === true)) {
+        //     this.setState({showStatisiticsPage: true});
+        //     console.log("SECOND TOGGLE");
+        // }
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
 
     }
@@ -95,9 +105,10 @@ class App extends Component {
                 <div className={"pos-absolute"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button>TO STATISTIC PAGE</button>
-                    <Page_statistics></Page_statistics>
-
+                    <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
+                    {this.state.showStatisticPage &&
+                        <Page_statistics></Page_statistics>
+                    }
                 </div>
             }
 

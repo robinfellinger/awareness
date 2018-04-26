@@ -47,15 +47,15 @@ class TestScene extends Component {
 
         light(this.scene);
 
-        var planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );
-        planeShadow.position.set(0,40,40);
-        let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
-        planeShadow.shadowDarkness = 0.7;
-        planeShadow.castShadow = true;
-        planeShadow.shadowCameraVisible = true;
-
-        this.scene.add(helper);
-        this.scene.add(planeShadow);
+        // var planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );
+        // planeShadow.position.set(0,40,40);
+        // let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
+        // planeShadow.shadowDarkness = 0.7;
+        // planeShadow.castShadow = true;
+        // planeShadow.shadowCameraVisible = true;
+        //
+        // this.scene.add(helper);
+        // this.scene.add(planeShadow);
 
 
 
@@ -64,6 +64,51 @@ class TestScene extends Component {
         // planeShadow.shadow.mapSize.height = 512; // default
         // planeShadow.shadow.camera.near = 0.5;    // default
         // planeShadow.shadow.camera.far = 120;     // default
+glow(this.scene);
+
+
+    function glow(scene){
+        var bulbGeometry = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
+        const bulbLight = new THREE.PointLight( 0x000000, 1, 100, 2 );
+        const bulbMat = new THREE.MeshStandardMaterial( {
+            emissive: 0x000000,
+            emissiveIntensity: 1,
+            color: 0x000000
+        });
+        bulbLight.add( new THREE.Mesh( bulbGeometry, bulbMat ) );
+        bulbLight.position.set( 0, 100, 140 );
+        bulbLight.castShadow = true;
+        scene.add( bulbLight );
+        // bulbLight.add(part1);
+
+    color: "#6d6d76";
+        var bulbGeometry1 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
+        const bulbLight1 = new THREE.PointLight( 0x292929, 1, 100, 2 );
+        const bulbMat1 = new THREE.MeshStandardMaterial( {
+            emissive: 0x6d6d76,
+            emissiveIntensity: 10,
+            color: 0x000000
+        });
+        bulbLight1.add( new THREE.Mesh( bulbGeometry1, bulbMat1 ) );
+        bulbLight1.position.set( -20, 0, -5 );
+
+        scene.add( bulbLight1 );
+
+
+        var bulbGeometry2 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
+        const bulbLight2 = new THREE.PointLight( 0xcf309a, 1, 100, 2 );
+        const bulbMat2 = new THREE.MeshStandardMaterial( {
+            emissive: 0xEDB2D9,
+            emissiveIntensity: 10,
+            color: 0x000000
+        });
+        bulbLight2.add( new THREE.Mesh( bulbGeometry2, bulbMat2 ) );
+        bulbLight2.position.set( -10, 30, -5 );
+
+        scene.add( bulbLight2 );
+    }
+
+
 
     function light(scene){
         const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);

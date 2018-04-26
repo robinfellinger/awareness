@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 var TWEEN = require('@tweenjs/tween.js');
 //var TWEEN = require('@tweenjs/tween.js');
 var mesh = null;
+var particleSphere = null;
+var particleVertices = null;
+var mesh2 = null;
+
 class Model extends Component {
 
     constructor(props){
@@ -125,6 +129,37 @@ class Model extends Component {
             part4.position.y = 10.8;
             mScene.add( part4 );
         }
+/////////////////////////////////////////////////////////////////////////////
+////// PARTICLES
+//          particles(this.context.scene);
+
+// CREATE PARTICLES
+        function particles(scene){
+            var geometry = new THREE.SphereGeometry(110, 40, 40);
+            var material = new THREE.PointsMaterial({size: (Math.random()*0.2+0.09), color: 0xbababa, opacity: 0.2});
+
+            particleSphere = new THREE.Points(geometry, material);
+            meshitup(particleSphere, scene);
+        }
+// FUNCTION THAT CREATES A PARTICLE SYSTEM OUT OF BOX GEOMETRY
+        function meshitup(obj, scene){
+
+            var geometry2 = new THREE.Geometry();
+            particleVertices = obj.geometry.vertices;
+
+            particleVertices.forEach(function (p){
+                var particle = new THREE.Vector3(p.x*Math.random(), p.y, p.z);
+                particle.yp = particle.y;
+                particle.xp = particle.x;
+
+                particle.vy = 0.00005 + Math.random() * 0.05;
+                geometry2.vertices.push(particle);
+            });
+            mesh2 = new THREE.Points(geometry2, obj.material);
+            mesh2.sortParticles = true;
+            scene.add(mesh2);
+        }
+
 
 /////////////////////////////////////////////////////////////////////////////
 ////// SHADOW (FLOOR)
@@ -142,19 +177,50 @@ class Model extends Component {
             plane.receiveShadow = true;
             plane.name = "PLANE";
             model.add(plane);
-            console.log(model);
+            // console.log(model);
         }
 
     }
     componentDidUpdate() {
-        console.log(this.state.mColor);
         const {mColor} = this.props;
 
-         // console.log(this.state.mColor);
+
+        // MOVES PARTICLES
+        function particlemove(){
+
+            mesh2.rotation.y -=0.0002;
+            mesh2.rotation.z -=0.0002;
+            particleVertices = mesh2.geometry.vertices;
+
+
+            particleVertices.forEach(function(particle){
+
+                var yTop = particle.yp+600;
+                var yBottom = particle.yp-600;
+
+                if(particle.x > particle.xp+window.innerWidth){
+                    particle.x = particle.xp;
+                }
+                if(particle.y > particle.yp+window.innerHeight){
+                    particle.y = particle.yp;
+                }
+
+                var num = Math.floor(Math.random()*2) + 1;
+                num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+                particle.x +=num/200;
+                particle.y -= num/100;
+            });
+            mesh2.geometry.verticesNeedUpdate = true;
+
+        }
+
+
 
         function gameLoop(){
             TWEEN.update();
-
+            if (particleSphere) {
+                particlemove();
+            }
         }
 
         gameLoop();
