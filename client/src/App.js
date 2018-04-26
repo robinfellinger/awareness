@@ -6,6 +6,7 @@ import AccessLinks from "./components/directaccesslinks";
 import StartInfo from "./StartInfo";
 import TestScene from "./components/threejs/TestScene"
 import Model from "./components/threejs/Model"
+import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
 console.log(Model);
 class App extends Component {
@@ -118,11 +119,12 @@ class App extends Component {
                     <PerspectiveCamera fov={60}
                                        near={4}
                                        aspect={this.state.width/this.state.height}
-                                       far={100}
-                                       position={{x: 0, y: 0, z: 40}}>
-                    <Model rgbColors={this.state.rgbColors} modelColor={this.state.color} bounceFrequence={this.state.bounceFrequence}
-                           rotationSpeed={this.state.rotationSpeed}
-                    ></Model>
+                                       far={400}
+                                       position={{x: 0, y: 0, z: 320}}>
+                    {/*<Model rgbColors={this.state.rgbColors} modelColor={this.state.color} bounceFrequence={this.state.bounceFrequence}*/}
+                           {/*rotationSpeed={this.state.rotationSpeed}*/}
+                    {/*></Model>*/}
+                    <ModelLiquid/>
                     </PerspectiveCamera>
                 </TestScene>
             </div>

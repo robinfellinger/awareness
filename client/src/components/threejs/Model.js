@@ -262,18 +262,17 @@ class Model extends Component {
             particle.y -= num/900;
         });
         mesh.geometry.verticesNeedUpdate = true;
-        }
-        wabbelWobbel2();
+        }wabbelWobbel2();
 
         function wabbelWobbel2(){
-            for (let ix = 0; ix < mesh.geometry.vertices.length; ix++) {
-                for (let iz = 0; iz < mesh.geometry.vertices.length; iz++) {
+            for (let ix = 0; ix < mesh.geometry.width; ix++) {
+                for (let iz = 0; iz < mesh.geometry.height; iz++) {
                     // let vert = new Vector3()
                     // vert.x = ix * this.SEPERATION - ((this.WIDTH * this.SEPERATION) / 2)
                     // vert.y = (Math.cos((ix / this.WIDTH) * Math.PI * 6) + Math.sin((iz / this.HEIGHT) * Math.PI * 6))
                     // vert.z = iz * this.SEPERATION - ((this.HEIGHT * this.SEPERATION) / 2)
                     // this.particleGeometry.vertices.push(vert)
-                    // console.log("wabbelwobbbbbel");
+                    console.log("wabbelwobbbbbel");
                 }
             }
 
