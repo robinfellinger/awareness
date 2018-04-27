@@ -37,22 +37,36 @@ class Page_statistics extends Component {
         
         return(
             <section class="statistics-container">
-                <SectionWhite title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} />
+                <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} />
                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} />
                 <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} />
-                <SectionWhite title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
+                <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} />
             </section>
         );
     }
 }
 
-const SectionWhite = (props) => {
+const SectionHeader = (props) => {
+    return (
+        <section class="header">
+            <h2 class="header__titel">{props.title}<span class="header__titel--highlight">{props.span}</span></h2>
+            <p class="header__content">{props.text}</p>
+            <a href="http://www.hosilinz.at" class="header__link">hosilinz.at</a>
+        </section>
+    )
+}
+
+const SectionWhite2 = (props) => {
     return (
         <section class="white">
-            <h2 class="white__titel">{props.title}<span class="white__titel--highlight">{props.span}</span></h2>
-            <p class="white__content">{props.text}</p>
-            <a href="http://www.hosilinz.at" class="white__link">hosilinz.at</a>
+        <div class="line"></div>
+            <p class="navigation">navigation <span>01/04</span></p>
+
+            <h2 class="white__titel">{props.title}<br /><span class="white__titel--highlight">{props.span}</span></h2>
+            <p class="white__content white__content--large">{props.text}</p>
+
+            <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
         </section>
     )
 }
@@ -60,10 +74,14 @@ const SectionWhite = (props) => {
 const SectionBlack = (props) => {
     return (
         <section class="black">
+            <div class="line"></div>
             <p class="navigation">navigation <span>01/04</span></p>
+
             <h2 class="black__titel">{props.title}</h2>
             <p class="black__text black__text--1">{props.text_1}</p>
             <p class="black__text black__text--2">{props.text_2}</p>
+
+            <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
         </section>
     )
 }
@@ -71,10 +89,15 @@ const SectionBlack = (props) => {
 const SectionGradient = (props) => {
     return (
         <section class="gradient">
+        <div class="line"></div>
             <p class="navigation">navigation <span>02/04</span></p>
+
+
             <h2 class="gradient__titel">{props.title}</h2>
             <p class="gradient__text">{props.text_1}</p>
             {props.extra}
+
+            <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
         </section>
     )
 }
