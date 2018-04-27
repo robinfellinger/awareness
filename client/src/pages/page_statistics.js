@@ -1,13 +1,60 @@
 import React, { Component } from 'react';
 import Bar from '../components/Bar';
-
+import ScriptTag from 'react-script-tag';
+import { findDOMNode } from 'react-dom';
+import $ from 'jquery';
 
 
 class Page_statistics extends Component {
 
+    constructor(props){
+        super(props);
+        //this.animateValue("value", 100, 25, 2000);
+        
+    }
+
+    handle = (value, duration) => {
+        this.ref = value;
+        this.animateValue(duration);
+      }
+    animateValue(duration) {
+        var current = 0;
+        var end = this.ref.innerHTML.replace('%','');
+
+        var range = end - current;
+        var increment = 1; //further tweak for duration change
+        var stepTime = Math.abs(Math.floor(duration / range));
+        var obj = this.ref;
+        var timer = setInterval(request, stepTime);
+        function request(){
+            clearInterval(timer);
+            current += increment;
+            obj.innerHTML = Math.floor(current) + "%"; 
+            if (Math.floor(current) == end) {
+                clearInterval(timer);
+                return;
+            }
+            
+            var t = stepTime;
+            stepTime = stepTime - stepTime/100;
+
+            timer = setInterval(request, stepTime);
+        }
+    }
+
+
+
+    componentDidMount(){
+        this.handle(this.refs.value1, 500)    
+        this.handle(this.refs.value2, 1000)
+        this.handle(this.refs.value3, 1500)
+        this.handle(this.refs.value4, 2000)
+      }
+    
 
     render(){
         return(
+        
 
 
             /* <SectionBlack title={"Title der section"} content={}>*/
@@ -44,18 +91,14 @@ class Page_statistics extends Component {
                         zur folge.
                 </p>
                     <div class="diskriminierung__statistic">
-                        <p><span>54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
-                            <p><span>78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
-                                <p><span>37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
-                                    <p><span>60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p> </div>
-
-
+                        <p><span ref="value1"  >54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
+                            <p><span ref="value2">78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
+                                <p><span ref="value3" onLoad={() => this.handle(this.refs.value3, 2000)}>37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
+                                    <p><span ref="value4">60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p> </div>
                             <Bar />    
                 </section>
-    
-
-    
         </section>
+
         );
     }
 }

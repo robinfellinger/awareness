@@ -19,11 +19,12 @@ class Bar extends Component {
       const { height, onClick, position } = this.props;
       const { active } = this.state;
       return (
-        <div
-          className={`bar${active ? ' bar--active' : ''}`}
-          style={{ height, marginTop: 1000 - height}}
-          onClick={() => onClick(position)}
-        />
+        <h1>Bar</h1>
+        // <div
+        //   className={`bar${active ? ' bar--active' : ''}`}
+        //   style={{ height, marginTop: 1000 - height}}
+        //   onClick={() => onClick(position)}
+        // />
       );
     }
   }
