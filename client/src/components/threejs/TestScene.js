@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
+import OrbitControls from 'orbit-controls-es6';
 
 class TestScene extends Component {
 
@@ -33,8 +34,12 @@ class TestScene extends Component {
         this.renderer.gammaInput = true;
         this.renderer.gammaOutput = true;
 
+
         const camera =  buildCamera(screenDimensions);
         this.renderer.setSize(screenDimensions);
+
+
+
 
 
         this.scene.fog = new THREE.FogExp2( 0x071E30, 1 ); // intensität?

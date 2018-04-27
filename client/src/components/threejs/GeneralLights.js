@@ -7,20 +7,20 @@ import * as THREE from 'three'
 
 export default scene => {
 
-    const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
-    const lightFront = new THREE.DirectionalLight( 0xffffff, 0.3 );
+    const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 5);
+    const lightFront = new THREE.DirectionalLight( 0xffffff, 8 );
     const lightOut = new THREE.AmbientLight( 0x404040, 3 );
 
-    lightOut.position.set(40,20,40);
-    lightIn.position.set(-110,-100,-190);
-    lightFront.position.set(40,40,40);
+    // lightOut.position.set(40,60,-60);
+    // lightIn.position.set(-110,-100,-160);
+    // lightFront.position.set(40,60,60);
 
 
     addPlaneShadow();
 
-    scene.add(lightIn);
+    // scene.add(lightIn);
     scene.add(lightOut);
-    scene.add(lightFront);
+    // scene.add(lightFront);
 
     const rad = 80;
 
@@ -38,7 +38,7 @@ export default scene => {
         planeShadow.shadow.mapSize.width = 512;  // default
         planeShadow.shadow.mapSize.height = 512; // default
         planeShadow.shadow.camera.near = 0.5;    // default
-        planeShadow.shadow.camera.far = 120;     // default
+        planeShadow.shadow.camera.far = 590;     // default
 
 
     }

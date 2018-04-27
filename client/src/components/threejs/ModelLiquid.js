@@ -5,7 +5,7 @@
 ////           bounceFrequence ()
 
 
-
+import OrbitControls from 'orbit-controls-es6';
 import React, { Component } from 'react';
 import * as THREE from 'three'
 import three from 'three';
@@ -16,14 +16,14 @@ var time = 0;
 var mesh = null;
 var warpVector = null;
 var vStart = null;
-
+var rotationSpeed = 0;
 var config = {
-    size: 4,
-    speed: 20,
-    radius: 100,
+    size: 2,
+    speed: 120,
+    radius:40,
     widthSeg: 20,
     heightSeg: 60,
-    magnitude: 130,
+    magnitude: 20,
 };
 
 var rowsAndCols = 120;
@@ -45,11 +45,8 @@ class Model extends Component {
     }
 
     componentDidMount() {
-        var light = new THREE.DirectionalLight( 0xff0000, 100000000000000, 9000000 );
-        light.position.set( 50, 2000, 0 );
-        let helper = new THREE.DirectionalLightHelper( light, 5 );
-        this.context.scene.add(helper);
-        this.context.scene.add( light );
+        // color("#ff0000");
+
 
 
         var rectLight = new THREE.RectAreaLight( 0xffffff, 2000,  9000, 9000 );
@@ -58,13 +55,21 @@ class Model extends Component {
         this.context.scene.add( rectLight )
 
 
+
+        // const controls = new OrbitControls(mesh, this.context.renderer.domElement);
+        // controls.enabled = true;
+        // controls.maxDistance = 1500;
+        // controls.minDistance = 0;
+
+
+
         var geometry = new THREE.SphereGeometry(
             config.radius,
             config.widthSeg,
             config.heightSeg);
 
-        var mat = new THREE.MeshBasicMaterial({
-            color: new THREE.Color(90, 10, 10),
+        var mat = new THREE.MeshPhongMaterial({
+            color: new THREE.Color(0xF3007A),
             transparent: true,
             side: THREE.DoubleSide,
             alphaTest: 0.5
@@ -75,10 +80,25 @@ class Model extends Component {
         mesh.receiveLights = true;
         mesh.geometry.dynamic = true;
         mesh.material.needsUpdate = true;
+        mesh.scale.set(0.4, 0.4, 0.4);
+        mesh.rotation.y += 20;
         this.context.scene.add(mesh);
 
         warpVector = new THREE.Vector3(0, 200, 0);
-        console.log(mesh.geometry.vertices);
+        console.log(warpVector);
+
+        var light = new THREE.DirectionalLight( 0xFFC500, 2 );
+        light.position.set( 30, 0, 10 );
+        let helper = new THREE.DirectionalLightHelper( light, 5 );
+        this.context.scene.add(helper);
+        this.context.scene.add( light );
+        light.target = mesh;
+
+
+
+
+
+
 
     }
 
@@ -91,15 +111,30 @@ class Model extends Component {
 
 
 function wave(){
-    const { size, magnitude, speed } = config;
+    const { vertices } = mesh.geometry;
+    const { size, magnitude, speed, radius } = config;
 
     for (let i = 0; i < mesh.geometry.vertices.length; i++) {
 
         const v = mesh.geometry.vertices[i];
-        const dist = new THREE.Vector3(v.x, v.y).sub(warpVector);
-        v.z = Math.sin(dist.length() / -size + (time / speed)) * (magnitude / 20);
+        // const dist = new THREE.Vector3(v.x, v.y);//.sub(warpVector)
+        // v.z = Math.sin(dist.length() / -size + (time / speed)) * (magnitude);
+
+
+        const dist = v.distanceTo(warpVector);
+        const radian = (0.8 + 0.2 * Math.sin(dist / -size + (time/speed))) * radius;
+        v.normalize().multiplyScalar(radian);
+
+
+
     }
+
+
+    mesh.geometry.computeVertexNormals();
+    mesh.geometry.computeFaceNormals();
     mesh.geometry.verticesNeedUpdate = true;
+    mesh.geometry.elementsNeedUpdate = true;
+    mesh.geometry.normalsNeedUpdate = true;
     time++;
 }
 
@@ -128,8 +163,8 @@ function wave(){
         mesh.geometry.normalsNeedUpdate = true;
         time++;
     }
-        // wobble();
-        wave();
+        wobble();
+        // wave();
 
 
 
