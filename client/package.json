@@ -14,9 +14,12 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-easy-chart": "^1.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-scroll-trigger": "^0.3.1",
+    "react-scrollspy": "^3.3.5",
     "react-subpage": "^1.0.0",
     "scss": "^0.2.4",
     "three": "^0.92.0"

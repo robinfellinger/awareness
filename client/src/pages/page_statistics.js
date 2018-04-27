@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bar from '../components/Bar';
+import ScrollTrigger from 'react-scroll-trigger';
 
 let page = 1;
 
@@ -8,14 +8,18 @@ class Page_statistics extends Component {
 
     constructor(props){
         super(props);
-        //this.animateValue("value", 100, 25, 2000);
-        
+        this.state = {
+            percent1: false,
+        };
+        this.onEnterViewport = this.onEnterViewport.bind(this);
+        // this.onExitViewport = this.onExitViewport.bind(this);
     }
 
     handle = (value, duration) => {
         this.ref = value;
         this.animateValue(duration);
       }
+
     animateValue(duration) {
         var current = 0;
         var end = this.ref.innerHTML.replace('%','');
@@ -37,12 +41,23 @@ class Page_statistics extends Component {
         }
     }
 
-    componentDidMount(){
-        this.handle(this.refs.value1, 500)    
-        this.handle(this.refs.value2, 1000)
-        this.handle(this.refs.value3, 1500)
-        this.handle(this.refs.value4, 2000)
+    
+
+      onEnterViewport() {
+        if(this.state.percent1 === false){
+        this.setState({percent1: true});
+            this.handle(this.refs.value1, 500);
+            this.handle(this.refs.value2, 1000);
+            this.handle(this.refs.value3, 1500);
+            this.handle(this.refs.value4, 2000);
+        }
       }
+
+    //   onExitViewport() {
+    //     this.setState({
+    //       percent1: false,
+    //     });
+    //   }
 
     render(){
         const trans_in_oe = [
@@ -67,6 +82,7 @@ class Page_statistics extends Component {
         const diskriminierung = [
             "Diskriminierung",
             "Transgender Personen sind häufig Verletzungen ihrer Grundrechte wie Diskriminierung, Gewalt und Belästigung ausgesetzt, und zwar in einem weit höheren Maß, als dies von anderen Personen in der LGBT Community angegeben wird. Solche Erfahrungen bewirken ständige Angstgefühle und haben oft starke Depressionen und andere psychische Erkrankungen zur folge.",
+            
             <div class="gradient__statistic">
                 <p><span ref="value1">54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
                 <p><span ref="value2">78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
@@ -79,7 +95,7 @@ class Page_statistics extends Component {
             <div class="statistics-container">
                 <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} />
                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} />
-                <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} />
+                <ScrollTrigger onEnter={this.onEnterViewport} onExit={this.onExitViewport}><SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} /> </ScrollTrigger>
                 <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} />
             </div>
