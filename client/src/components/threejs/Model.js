@@ -15,7 +15,10 @@ var TWEEN = require('@tweenjs/tween.js');
 var mesh = null;
 var particleSphere = null;
 var particleVertices = null;
+var particleVertices1 = null;
 var mesh2 = null;
+var mesh3 = null;
+
 var testColor = new THREE.Color(0xBDE100);
 var testColor2 = new THREE.Color(new THREE.Color("hsl(10%, 0%, 0%)"));
 
@@ -195,6 +198,22 @@ class Model extends Component {
             mesh2 = new THREE.Points(geometry2, obj.material);
             mesh2.sortParticles = true;
             scene.add(mesh2);
+
+
+            var geometry3 = new THREE.Geometry();
+            particleVertices1 = obj.geometry.vertices;
+
+            particleVertices1.forEach(function (p){
+                var particle1 = new THREE.Vector3(p.x*Math.random(), p.y, p.z);
+                particle1.yp = particle1.y;
+                particle1.xp = particle1.x;
+
+                particle1.vy = 0.00005 + Math.random() * 0.05;
+                geometry3.vertices.push(particle1);
+            });
+            mesh3 = new THREE.Points(geometry3, obj.material);
+            mesh3.sortParticles = true;
+            scene.add(mesh3);
         }
 
 
@@ -205,12 +224,11 @@ class Model extends Component {
 
             var planeGeometry = new THREE.PlaneGeometry( 2000, 2000 );
             var planeMaterial = new THREE.ShadowMaterial();
-            planeMaterial.opacity = 0.2;
+            planeMaterial.opacity = 0.08; // shadow intensity
 
             var plane = new THREE.Mesh( planeGeometry, planeMaterial );
             plane.position.set(0,-18,0);
             plane.rotation.x = Math.PI / -1.7;
-            plane.castShadow = true;
             plane.receiveShadow = true;
             plane.name = "PLANE";
             model.add(plane);
@@ -256,13 +274,42 @@ class Model extends Component {
             if(particle.x > particle.xp+window.innerWidth){
                 particle.x = particle.xp;
             }
-            var num = Math.floor(Math.random()*2) + 1;
-            num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
-            particle.x +=num/900;
-            particle.y -= num/900;
+            var num = Math.random()*0.02 + 0.005;
+            // var num = Math.floor(Math.random()*2) + 1;
+            //  num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+            particle.x += num;
+            particle.y -= num;
         });
-        mesh.geometry.verticesNeedUpdate = true;
+            mesh2.geometry.verticesNeedUpdate = true;
+
+
+
+            mesh3.rotation.y -=0.0002;
+            mesh3.rotation.z -=0.0002;
+            particleVertices1 = mesh3.geometry.vertices;
+
+
+            particleVertices1.forEach(function(particle1){
+
+                var yTop = particle1.yp+600;
+                var yBottom = particle1.yp-600;
+
+                if(particle1.x > particle1.xp+window.innerWidth){
+                    particle1.x = particle1.xp;
+                }
+                if(particle1.y > particle1.yp+window.innerHeight){
+                    particle1.y = particle1.yp;
+                }
+
+                var num = Math.random()*0.02 + 0.005;
+                //   num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+                console.log(num);
+                particle1.x -= num;
+                particle1.y += num;
+            });
+            mesh3.geometry.verticesNeedUpdate = true;
         }
+
         wabbelWobbel2();
 
         function wabbelWobbel2(){

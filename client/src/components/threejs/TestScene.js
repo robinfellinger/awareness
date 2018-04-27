@@ -68,44 +68,37 @@ glow(this.scene);
 
 
     function glow(scene){
-        var bulbGeometry = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const bulbLight = new THREE.PointLight( 0x000000, 1, 100, 2 );
-        const bulbMat = new THREE.MeshStandardMaterial( {
-            emissive: 0x000000,
-            emissiveIntensity: 1,
-            color: 0x000000
-        });
-        bulbLight.add( new THREE.Mesh( bulbGeometry, bulbMat ) );
-        bulbLight.position.set( 0, 100, 140 );
-        bulbLight.castShadow = true;
-        scene.add( bulbLight );
-        // bulbLight.add(part1);
 
-    color: "#6d6d76";
-        var bulbGeometry1 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const bulbLight1 = new THREE.PointLight( 0x292929, 1, 100, 2 );
-        const bulbMat1 = new THREE.MeshStandardMaterial( {
-            emissive: 0x6d6d76,
+        const shadowLight = new THREE.PointLight( 0x000000, 1, 100, 2);
+        shadowLight.position.set( 0, 80, 60 );
+        shadowLight.castShadow = true;
+        scene.add( shadowLight );
+
+        color: "#6d6d76";
+        var blue = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
+        const blueLight = new THREE.PointLight( 0x33ccff, 1, 100, 2 );
+        const blueMat = new THREE.MeshStandardMaterial( {
+            emissive: 0x33ccff,
             emissiveIntensity: 10,
             color: 0x000000
         });
-        bulbLight1.add( new THREE.Mesh( bulbGeometry1, bulbMat1 ) );
-        bulbLight1.position.set( -20, 0, -5 );
+        blueLight.add( new THREE.Mesh( blue, blueMat ) );
+        blueLight.position.set( -20, 0, -5 );
 
-        scene.add( bulbLight1 );
+        scene.add( blueLight );
 
 
-        var bulbGeometry2 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const bulbLight2 = new THREE.PointLight( 0xcf309a, 1, 100, 2 );
-        const bulbMat2 = new THREE.MeshStandardMaterial( {
+        var pink = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
+        const pinkLight = new THREE.PointLight( 0xcf309a, 1, 100, 2 );
+        const pinkMat = new THREE.MeshStandardMaterial( {
             emissive: 0xEDB2D9,
             emissiveIntensity: 10,
             color: 0x000000
         });
-        bulbLight2.add( new THREE.Mesh( bulbGeometry2, bulbMat2 ) );
-        bulbLight2.position.set( -10, 30, -5 );
+        pinkLight.add( new THREE.Mesh( pink, pinkMat ) );
+        pinkLight.position.set( -10, 30, -5 );
 
-        scene.add( bulbLight2 );
+        scene.add( pinkLight );
     }
 
 
