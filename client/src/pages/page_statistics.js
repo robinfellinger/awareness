@@ -81,6 +81,9 @@ const SectionBlack = (props) => {
             <p class="black__text black__text--1">{props.text_1}</p>
             <p class="black__text black__text--2">{props.text_2}</p>
 
+            <div class="line line--hashtags"></div>
+            <p class="black__text black__text--hashtags">#binder #passing <br />#homelessTransTeens</p>
+
             <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
         </section>
     )

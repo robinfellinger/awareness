@@ -74,6 +74,7 @@ html {
 }
 .vl--1 {
   transform: translateX(-14px);
+  height: 60px;
 }
 .vl--3 {
   transform: translateX(14px);
@@ -102,6 +103,12 @@ html {
   width: 50px;
   display: block;
   background-color: currentColor;
+}
+.line--hashtags {
+  grid-row: 9;
+  grid-column: 8;
+  transform: translateY(-2rem);
+  justify-self: center;
 }
 
 .header {
@@ -192,6 +199,10 @@ html {
 .black__text--2 {
   grid-row: 5 / 8;
   grid-column: 8 / 10;
+}
+.black__text--hashtags {
+  grid-row: 9;
+  grid-column: 9 / 11;
 }
 
 .gradient__titel {

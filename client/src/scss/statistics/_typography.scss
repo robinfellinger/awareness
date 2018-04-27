@@ -23,6 +23,14 @@
     width: 50px;
     display: block;
     background-color: currentColor;
+
+    &--hashtags {
+        //align-self: left;
+        grid-row: 9;
+        grid-column: 8;
+        transform: translateY(-2rem);
+        justify-self: center;
+    }
 }
 
 .header {
@@ -131,7 +139,14 @@
             grid-row: 5 / 8;
             grid-column: 8 / 10;
         }
+
+        &--hashtags {
+            grid-row: 9;
+            grid-column: 9 / 11;
+        }
     }
+
+
 }
 
 .gradient {
