@@ -18,13 +18,26 @@ var warpVector = null;
 var vStart = null;
 var rotationSpeed = 0;
 var config = {
-    size: 2,
-    speed: 120,
+    size: 1,
+    speed: 170,
     radius:40,
+    widthSeg: 130,
+    heightSeg: 130,
+    magnitude: 20,
+    waveDepth: 0.01
+};
+
+/*
+
+ size: 60,
+    speed: 90,
+    radius: 90,
     widthSeg: 20,
     heightSeg: 60,
-    magnitude: 20,
-};
+
+
+
+ */
 
 var rowsAndCols = 120;
 
@@ -69,7 +82,7 @@ class Model extends Component {
             config.heightSeg);
 
         var mat = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xF3007A),
+            color: new THREE.Color(0xd3d2e1),
             transparent: true,
             side: THREE.DoubleSide,
             alphaTest: 0.5
@@ -81,13 +94,13 @@ class Model extends Component {
         mesh.geometry.dynamic = true;
         mesh.material.needsUpdate = true;
         mesh.scale.set(0.4, 0.4, 0.4);
-        mesh.rotation.y += 20;
+        mesh.rotation.y -= 200;
         this.context.scene.add(mesh);
 
-        warpVector = new THREE.Vector3(0, 200, 0);
+        warpVector = new THREE.Vector3(0, 50, 0);
         console.log(warpVector);
 
-        var light = new THREE.DirectionalLight( 0xFFC500, 2 );
+        var light = new THREE.DirectionalLight( 0xFFC500, 0.2 );
         light.position.set( 30, 0, 10 );
         let helper = new THREE.DirectionalLightHelper( light, 5 );
         this.context.scene.add(helper);
@@ -95,7 +108,7 @@ class Model extends Component {
         light.target = mesh;
 
 
-
+        console.log(mesh.geometry.vertices);
 
 
 
@@ -112,23 +125,25 @@ class Model extends Component {
 
 function wave(){
     const { vertices } = mesh.geometry;
-    const { size, magnitude, speed, radius } = config;
+    const { size, speed, radius, magnitude, waveDepth } = config;
 
-    for (let i = 0; i < mesh.geometry.vertices.length; i++) {
-
-        const v = mesh.geometry.vertices[i];
+    for (let i = 0; i < vertices.length; i++) {
+        const v = vertices[i];
+        // console.log("SPHERE" +mesh.geometry.vertices);
+        const dist = v.distanceTo(warpVector);
+        // const dist = new THREE.Vector3(v.x, v.y, v.z).sub(warpVector);
         // const dist = new THREE.Vector3(v.x, v.y);//.sub(warpVector)
         // v.z = Math.sin(dist.length() / -size + (time / speed)) * (magnitude);
-
-
-        const dist = v.distanceTo(warpVector);
-        const radian = (0.8 + 0.2 * Math.sin(dist / -size + (time/speed))) * radius;
+        const radian = (0.8 + waveDepth * Math.sin(dist / -size + (time/speed*magnitude))) * radius;
         v.normalize().multiplyScalar(radian);
-
-
-
     }
 
+    mesh.geometry.verticesNeedUpdate = true;
+
+    const warpSine = (Math.sin(time/(speed * 8))) * (radius * 2);
+    // warpVector.y = warpSine;
+    // warpVector.x = warpSine;
+    warpVector.z = warpSine;
 
     mesh.geometry.computeVertexNormals();
     mesh.geometry.computeFaceNormals();
@@ -136,7 +151,9 @@ function wave(){
     mesh.geometry.elementsNeedUpdate = true;
     mesh.geometry.normalsNeedUpdate = true;
     time++;
-}
+    }
+
+
 
     function wobble(){
         const { vertices } = mesh.geometry;
@@ -144,6 +161,7 @@ function wave(){
 
         for (let i = 0; i < vertices.length; i++) {
             const v = vertices[i];
+            // console.log("SPHERE" +mesh.geometry.vertices);
             const dist = v.distanceTo(warpVector);
             const radian = (0.8 + 0.2 * Math.sin(dist / -size + (time/speed))) * radius;
             v.normalize().multiplyScalar(radian);
@@ -152,8 +170,8 @@ function wave(){
         mesh.geometry.verticesNeedUpdate = true;
 
         const warpSine = (Math.sin(time/(speed * 8))) * (radius * 2);
-        warpVector.y = warpSine;
-        warpVector.x = warpSine;
+        // warpVector.y = warpSine;
+        // warpVector.x = warpSine;
         warpVector.z = warpSine;
 
         mesh.geometry.computeVertexNormals();
@@ -163,8 +181,8 @@ function wave(){
         mesh.geometry.normalsNeedUpdate = true;
         time++;
     }
-        wobble();
-        // wave();
+        //wobble();
+        wave();
 
 
 
