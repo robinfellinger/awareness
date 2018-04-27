@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Bar from '../components/Bar';
 
 
 
@@ -48,9 +48,12 @@ class Page_statistics extends Component {
                             <p><span>78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
                                 <p><span>37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
                                     <p><span>60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p> </div>
-                    
+
+
+                            <Bar />    
                 </section>
     
+
     
         </section>
         );
