@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /////MODEL COMPONENT
-/////RECEIVES: colorproperties: modelcolor (default) and rgbColors (in percent)
-////           rotationSpeed
-////           bounceFrequence ()
+/////RECEIVES:
+////
+////
 
 
 
@@ -31,24 +31,6 @@ class Model extends Component {
         }
 
     }
-    componentWillReceiveProps(){
-        if(!(this.props.modelColor === this.state.mColor)){
-            updateColor(this.props.rgbColors);
-        }
-
-        function updateColor(rgb){
-            var updateColor = new THREE.Color("rgb("+rgb.r+"%, "+rgb.g+"%, "+rgb.b+"%)");
-            var tweenColor = new TWEEN.Tween(mesh.material.color)
-                .easing(TWEEN.Easing.Quartic.In)
-                .delay(2000)
-                .onUpdate(function() {
-                    mesh.material.color = updateColor;
-                    mesh.material.alphaTest= 0.5;
-                }).start();
-        }
-
-
-    }
 
     componentDidMount() {
 
@@ -59,40 +41,6 @@ class Model extends Component {
         mesh.castShadow = true;
         mesh.geometry.dynamic = true;
         mesh.material.needsUpdate = true;
-        this.context.scene.add(mesh);
-        console.log(mesh.geometry.vertices);
-        console.log("props:" +this.props.bounceFrequence);
-
-
-
-
-
-
-        const { bounceFrequence } = this.props;
-        let position = { x : 0, y: 10 };
-        let tween = new TWEEN.Tween(position)
-            .to({x: 0, y: -0.5, rotation: 0}, 2000)
-            .delay(900)
-            .easing(TWEEN.Easing.Elastic.Out)
-            .onUpdate(function(){
-                mesh.position.x = position.x;
-                mesh.position.y = position.y;
-            });
-
-        // mesh.material.color = testColor;
-
-        let tweenBack = new TWEEN.Tween(position)
-            .to({x: 0, y: 0., rotation: 0}, 2000)
-            .delay(900)
-            .easing(TWEEN.Easing.Elastic.Out)
-            .onUpdate(function(){
-                mesh.position.x = position.x;
-                mesh.position.y = position.y;
-            });
-
-        tween.chain(tweenBack);
-        tweenBack.chain(tween);
-        tween.start();
 
 
         // console.log(mesh);
@@ -165,10 +113,11 @@ class Model extends Component {
             part4.position.x = -3.19;
             part4.position.y = 10.8;
             mScene.add( part4 );
+
         }
 /////////////////////////////////////////////////////////////////////////////
 ////// PARTICLES
-          particles(this.context.scene);
+//           particles(this.context.scene);
 
 // CREATE PARTICLES
         function particles(scene){

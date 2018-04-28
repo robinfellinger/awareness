@@ -158,7 +158,7 @@ module.exports = {
         // back to the "file" loader at the end of the loader list.
         oneOf: [
           // "url" loader works just like "file" loader but it also embeds
-          // assets smaller than specified size as data URLs to avoid requests.
+          // assets smaller than specified frequenz as data URLs to avoid requests.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
@@ -387,7 +387,7 @@ module.exports = {
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       filename: 'service-worker.js',
       logger(message) {
-        if (message.indexOf('Total precache size is') === 0) {
+        if (message.indexOf('Total precache frequenz is') === 0) {
           // This message occurs for every build and is a bit too noisy.
           return;
         }

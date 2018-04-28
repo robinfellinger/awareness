@@ -116,15 +116,16 @@ class App extends Component {
             <div className={this.state.canvasClasses}>
                 {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
-                    <PerspectiveCamera fov={430}
+                    <PerspectiveCamera fov={415}
                                        near={4}
                                        aspect={this.state.width/this.state.height}
                                        far={600}
                                        position={{x: 0, y: 0, z: 40}}>
-                    {/*<Model rgbColors={this.state.rgbColors} modelColor={this.state.color} bounceFrequence={this.state.bounceFrequence}*/}
-                           {/*rotationSpeed={this.state.rotationSpeed}*/}
-                    {/*></Model>*/}
-                    <ModelLiquid/>
+                    <Model rotationSpeed={this.state.rotationSpeed}/>
+                    <ModelLiquid rgbColors={this.state.rgbColors}
+                                 modelColor={this.state.color}
+                                 bounceFrequence={this.state.bounceFrequence}
+                                 rotationSpeed={this.state.rotationSpeed}/>
                     </PerspectiveCamera>
                 </TestScene>
             </div>

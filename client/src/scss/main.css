@@ -167,6 +167,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
   font-weight: 400;
   line-height: 1;
   margin-bottom: 0;
+  text-shadow: 1px 1px 2px #dbdbdb;
   animation: headline-xl-toggle 5s forwards;
   /* IE 10+, Fx 29+ */
 }
@@ -295,7 +296,7 @@ html {
 
 body {
   background-color: #404040;
-  background: radial-gradient(ellipse at center, #dedfe8 0%, #b5bac4 100%);
+  background: radial-gradient(ellipse at center, #eaeaea 0%, #e5e9f2 100%);
   background-repeat: no-repeat;
   height: 100vh;
   -webkit-font-smoothing: antialiased;
