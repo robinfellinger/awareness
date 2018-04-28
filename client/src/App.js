@@ -96,11 +96,12 @@ class App extends Component {
         return (
         <div onWheel = {(e) => this.scrollExperience(e)}>
             <AccessLinks></AccessLinks>
-            <div className={"pos-absolute pos-centerText startInfo_pos"}>
+            <div className={"pos-absolute startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
-                <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
-
+            <div className={"pos-absolute pos-centerText pos-bottom"}>
+            <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Starte die Experience</button>
+            </div>
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction-pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}

@@ -1,0 +1,13 @@
+.pos-absolute {
+  position: absolute;
+  z-index: 10; }
+.pos-centerText {
+  width: 100%;
+  text-align: center; }
+.pos-bottom {
+  bottom: 5vh; }
+
+.margin-line {
+  margin: 20px 0 20px; }
+
+/*# sourceMappingURL=standardSettings.css.map */
