@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ScrollTrigger from 'react-scroll-trigger';
 
-let page = 1;
-
-
 class Page_statistics extends Component {
 
     constructor(props){
@@ -91,13 +88,19 @@ class Page_statistics extends Component {
             </div>,
         ];
         
+        let index = 1;
+        
         return(
             <div class="statistics-container">
-                <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} />
-                <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} />
-                <ScrollTrigger onEnter={this.onEnterViewport} onExit={this.onExitViewport}><SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} /> </ScrollTrigger>
-                <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
-                <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} />
+                 <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} index={`${index++}`} />
+                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} index={`${index++}`} />
+           
+                 <ScrollTrigger onEnter={this.onEnterViewport} onExit={this.onExitViewport}>
+                 <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} index={`${index++}`} /> 
+                 </ScrollTrigger>
+                 
+                 <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} index={`${index++}`} />
+                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} index={`${index++}`} />
             </div>
         );
     }
@@ -105,7 +108,7 @@ class Page_statistics extends Component {
 
 const SectionHeader = (props) => {
     return (
-        <section class="header">
+        <section class="header ops-section active" data-index={props.index}>
             <h2 class="header__titel">{props.title}<span class="header__titel--highlight">{props.span}</span></h2>
             <p class="header__content">{props.text}</p>
             <a href="http://www.hosilinz.at" class="header__link">hosilinz.at</a>
@@ -115,9 +118,9 @@ const SectionHeader = (props) => {
 
 const SectionWhite2 = (props) => {
     return (
-        <section class="white">
+        <section class="white ops-section" data-index={props.index}>
         <div class="line"></div>
-            <p class="navigation">navigation <span>01/04</span></p>
+            <p class="navigation">navigation <span>0{props.index}/05</span></p>
 
             <h2 class="white__titel">{props.title}<br /><span class="white__titel--highlight">{props.span}</span></h2>
             <p class="white__content white__content--large">{props.text}</p>
@@ -129,9 +132,9 @@ const SectionWhite2 = (props) => {
 
 const SectionBlack = (props) => {
     return (
-        <section class="black">
+        <section class="black ops-section" data-index={props.index}>
             <div class="line"></div>
-            <p class="navigation">navigation <span>01/04</span></p>
+            <p class="navigation">navigation <span>0{props.index}/05</span></p>
 
             <h2 class="black__titel">{props.title}</h2>
             <p class="black__text black__text--1">{props.text_1}</p>
@@ -147,9 +150,9 @@ const SectionBlack = (props) => {
 
 const SectionGradient = (props) => {
     return (
-        <section class="gradient">
+        <section class="gradient ops-section" data-index={props.index}>
         <div class="line"></div>
-            <p class="navigation">navigation <span>02/04</span></p>
+            <p class="navigation">navigation <span>0{props.index}/05</span></p>
 
 
             <h2 class="gradient__titel">{props.title}</h2>

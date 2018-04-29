@@ -16,3 +16,5 @@ package-lock.json
 client/src/standardSettings.css
 *.css
 *.map
+client/debug.log
+client/src/scss/main.css
