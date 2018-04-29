@@ -5,19 +5,16 @@
 ////           bounceFrequence ()
 
 
-import OrbitControls from 'orbit-controls-es6';
+
 import React, { Component } from 'react';
 import * as THREE from 'three'
-import three from 'three';
 import PropTypes from 'prop-types';
 var TWEEN = require('@tweenjs/tween.js');
-//var TWEEN = require('@tweenjs/tween.js');
+
 var time = 0;
 var mesh = null;
 var warpVector = null;
 var warpVector2 = null;
-var vStart = null;
-var rotationSpeed = 0;
 var cRot = 0.3;
 var tRot = 0.01;
 var config = {

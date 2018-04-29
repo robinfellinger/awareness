@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
-import OrbitControls from 'orbit-controls-es6';
+
 
 class TestScene extends Component {
 
