@@ -14,3 +14,5 @@ client/package-lock.json
 package-lock.json
 package-lock.json
 client/src/standardSettings.css
+*.css
+*.map

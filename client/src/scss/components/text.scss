@@ -1,11 +1,12 @@
 .headline {
   &-xl {
-    font-family: "Butler", serif;
+    font-family: "Butler Stencil", serif;
     color: $text-main;
-    font-size: $f-xl;
-    font-weight: 400;
+    font-size: calc(#{$f-xl} + 0.4rem);
+    font-weight: 600;
     line-height: 1;
     margin-bottom: 0;
+    text-shadow: 1px 1px 2px #dbdbdb;
     animation:   headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */
 
     &-animBack {
@@ -16,7 +17,7 @@
   &-lg {
     font-family: "Montserrat", sans-serif;
     color: $text-main;
-    font-size: $f-md;
+    font-size: calc(#{$f-xs} + 0.2rem);
     letter-spacing: 3px;
     font-weight: 400;
     animation:   headline-lg-toggle 5s forwards; /* IE 10+, Fx 29+ */

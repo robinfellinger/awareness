@@ -6,6 +6,7 @@ import AccessLinks from "./components/directaccesslinks";
 import StartInfo from "./StartInfo";
 import TestScene from "./components/threejs/TestScene"
 import Model from "./components/threejs/Model"
+import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
 console.log(Model);
 class App extends Component {
@@ -95,11 +96,12 @@ class App extends Component {
         return (
         <div onWheel = {(e) => this.scrollExperience(e)}>
             <AccessLinks></AccessLinks>
-            <div className={"pos-absolute pos-centerText startInfo_pos"}>
+            <div className={"pos-absolute startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
-                <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Start Experience</button>
             </div>
-
+            <div className={"pos-absolute pos-centerText pos-bottom"}>
+            <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Starte die Experience</button>
+            </div>
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction-pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
@@ -115,14 +117,16 @@ class App extends Component {
             <div className={this.state.canvasClasses}>
                 {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
-                    <PerspectiveCamera fov={60}
+                    <PerspectiveCamera fov={415}
                                        near={4}
                                        aspect={this.state.width/this.state.height}
-                                       far={100}
+                                       far={600}
                                        position={{x: 0, y: 0, z: 40}}>
-                    <Model rgbColors={this.state.rgbColors} modelColor={this.state.color} bounceFrequence={this.state.bounceFrequence}
-                           rotationSpeed={this.state.rotationSpeed}
-                    ></Model>
+                    <Model rotationSpeed={this.state.rotationSpeed}/>
+                    <ModelLiquid rgbColors={this.state.rgbColors}
+                                 modelColor={this.state.color}
+                                 bounceFrequence={this.state.bounceFrequence}
+                                 rotationSpeed={this.state.rotationSpeed}/>
                     </PerspectiveCamera>
                 </TestScene>
             </div>
