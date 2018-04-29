@@ -10,8 +10,6 @@ import Model from './Model'
 
 class TestScene extends Component {
 
-    // startWidth = width.innerHeight;
-    // startHeight = height.innerHeight;;
     scene = new THREE.Scene();
     renderer = new THREE.WebGLRenderer({  alpha: true  });
     constructor(){
@@ -39,9 +37,6 @@ class TestScene extends Component {
         this.renderer.setSize(screenDimensions);
 
 
-
-
-
         this.scene.fog = new THREE.FogExp2( 0x071E30, 1 ); // intensität?
         this.scene.fog = new THREE.Fog( 0x071E30, 4, 100 );
         this.scene.fog.color.setHSL( 0.51, 0.5, 0.9 );
@@ -51,25 +46,7 @@ class TestScene extends Component {
 
 
         light(this.scene);
-
-        // var planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );
-        // planeShadow.position.set(0,40,40);
-        // let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
-        // planeShadow.shadowDarkness = 0.7;
-        // planeShadow.castShadow = true;
-        // planeShadow.shadowCameraVisible = true;
-        //
-        // this.scene.add(helper);
-        // this.scene.add(planeShadow);
-
-
-
-
-        // planeShadow.shadow.mapSize.width = 512;  // default
-        // planeShadow.shadow.mapSize.height = 512; // default
-        // planeShadow.shadow.camera.near = 0.5;    // default
-        // planeShadow.shadow.camera.far = 120;     // default
-glow(this.scene);
+        glow(this.scene);
 
 
     function glow(scene){
@@ -84,9 +61,8 @@ glow(this.scene);
         bulbLight.position.set( 0, 100, 140 );
         bulbLight.castShadow = true;
         scene.add( bulbLight );
-        // bulbLight.add(part1);
 
-    color: "#6d6d76";
+
         var bulbGeometry1 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
         const bulbLight1 = new THREE.PointLight( 0x292929, 1, 100, 2 );
         const bulbMat1 = new THREE.MeshStandardMaterial( {
@@ -112,9 +88,6 @@ glow(this.scene);
 
         scene.add( bulbLight2 );
     }
-
-
-
     function light(scene){
         const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
         const lightFront = new THREE.DirectionalLight( 0xffffff, 0.3 );
@@ -129,7 +102,6 @@ glow(this.scene);
         scene.add(lightOut);
         scene.add(lightFront);
     }
-
     function buildCamera({ width, height }) {
             const aspectRatio = width / height;
             const fieldOfView = 60;

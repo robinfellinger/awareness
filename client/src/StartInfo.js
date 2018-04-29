@@ -31,7 +31,8 @@ class StartInfo extends Component {
         return (
 
             <div>
-                <svg className="margin-line" width="60" height="5">
+
+                <svg className="margin-line" height="5">
                     <line className={"button--animate__arrowline"} x1="0" y1="0" x2="90" y2="0"
                           strokeWidth="3px" stroke="white"/>
                 </svg>

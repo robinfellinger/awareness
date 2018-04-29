@@ -4,8 +4,6 @@
 ////           rotationSpeed
 ////           bounceFrequence ()
 
-
-
 import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
@@ -19,15 +17,13 @@ var cRot = 0.3;
 var tRot = 0.01;
 var config = {
     frequenz: 1.4, //1.4 for wobble waves 0.2 for sublte rings 0.1 for extreme rings
-    speed: 60,
+    speed: 120, // + slower
     radius: 28,
-    widthSeg: 130,
-    heightSeg: 130,
+    widthSeg: 130, //resolution x
+    heightSeg: 130, // resolution y
     magnitude:8,
     waveDepth: 0.01
 };
-
-var rowsAndCols = 120;
 
 class Model extends Component {
 
@@ -135,6 +131,7 @@ class Model extends Component {
 
 
 componentDidUpdate() {
+
 function wave(){
     const { vertices } = mesh.geometry;
     const { frequenz, speed, radius, magnitude, waveDepth } = config;
@@ -142,10 +139,7 @@ function wave(){
     for (let i = 0; i < vertices.length; i++) {
         const v = vertices[i];
         const dist = v.distanceTo(warpVector);
-        const dist2 = v.distanceTo(warpVector2);
-
-        const radian = (0.8 + (waveDepth*cRot) * Math.sin(dist / -frequenz + (time/speed*magnitude))) * radius;
-        let waveToUse = radian;
+        let waveToUse = (0.8 + (waveDepth*cRot) * Math.sin(dist / -frequenz + (time/speed*magnitude))) * radius;
 
         v.normalize().multiplyScalar(waveToUse);
 
@@ -188,7 +182,6 @@ function wobble(){
         mesh.geometry.normalsNeedUpdate = true;
         time++;
     }
-
 function wakov(){
       if(Math.floor(Math.random()< 0.01)){
                 if(tRot > 1.5){
@@ -200,11 +193,17 @@ function wakov(){
       }
                 cRot+=(tRot-cRot)/100;
 }
+function handleEmotions(emotion){
+    if(emotion === "joy"){
+        if(config.frequenz > 0.7){
+            config.frequenz -=0.01;
+        }
+    }
+}
 
-        wakov();
-
-        // wobble();
-        wave();
+       wakov();//calculates random parameter for animations
+       handleEmotions(this.props.emotion);
+       wave();
 
         function gameLoop(){
             TWEEN.update();

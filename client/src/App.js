@@ -24,6 +24,7 @@ class App extends Component {
             rgbColors: {r: 0, g: 0, b: 0},
             bounceFrequence: 0,
             rotationSpeed: 0,
+            emotion: "none",
         };
 
         this.scrollExperience = this.scrollExperience.bind(this);
@@ -67,6 +68,7 @@ class App extends Component {
             b: 90,
         }});
         this.setState({bounceFrequence: 800});
+        this.setState({emotion: "joy"});
     }
     toggleStatisticPage(){
         this.setState({showStatisticPage: true});
@@ -126,7 +128,8 @@ class App extends Component {
                     <ModelLiquid rgbColors={this.state.rgbColors}
                                  modelColor={this.state.color}
                                  bounceFrequence={this.state.bounceFrequence}
-                                 rotationSpeed={this.state.rotationSpeed}/>
+                                 rotationSpeed={this.state.rotationSpeed}
+                                 emotion={this.state.emotion}/>
                     </PerspectiveCamera>
                 </TestScene>
             </div>

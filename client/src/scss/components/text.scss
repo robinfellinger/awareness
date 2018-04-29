@@ -1,8 +1,8 @@
 .headline {
   &-xl {
-    font-family: "Butler Stencil", serif;
+    font-family: "Butler Stencil", "Libre Baskerville", serif;
     color: $text-main;
-    font-size: calc(#{$f-xl} + 0.4rem);
+    font-size: calc(#{$f-xl} + 1.9rem);
     font-weight: 600;
     line-height: 1;
     margin-bottom: 0;

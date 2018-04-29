@@ -11,9 +11,9 @@ class AccessLinks extends Component {
     render(){
         return (
 
-            <div className={"pos-absolute"}>
+            <div className={"pos-absolute accesslinks__line-pos"}>
                 <svg className="margin-line" width="100%" height="5">
-                    <line className={"button--animate__arrowline"} x1="0" y1="0" x2="90" y2="0"
+                    <line className={"accesslinks__line"} x1="0" y1="0" x2="100%" y2="0"
                           strokeWidth="3px" stroke="white"/>
                 </svg>
                 <div className="accesslinks_pos">

@@ -1,6 +1,12 @@
 .accesslinks_pos {
   right: 15vh;
-  top: 10vh; }
+  top: -3vh;
+  position: absolute; }
+.accesslinks__line {
+  opacity: 0.4; }
+  .accesslinks__line-pos {
+    width: 100%;
+    top: 7vh; }
 .accesslinks_link:first-child {
   margin-right: 40px; }
 

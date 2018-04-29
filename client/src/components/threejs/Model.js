@@ -11,13 +11,11 @@ import * as THREE from 'three'
 import three from 'three';
 import PropTypes from 'prop-types';
 var TWEEN = require('@tweenjs/tween.js');
-//var TWEEN = require('@tweenjs/tween.js');
 var mesh = null;
 var particleSphere = null;
 var particleVertices = null;
 var mesh2 = null;
-var testColor = new THREE.Color(0xBDE100);
-var testColor2 = new THREE.Color(new THREE.Color("hsl(10%, 0%, 0%)"));
+
 
 class Model extends Component {
 
@@ -43,7 +41,6 @@ class Model extends Component {
         mesh.material.needsUpdate = true;
 
 
-        // console.log(mesh);
         drawFloor(this.context.scene);
         drawShape(this.context.scene);
 
@@ -85,16 +82,16 @@ class Model extends Component {
             return new THREE.Mesh(cubeGeometry, cubeMaterial);
         }
         function drawShape(mScene){
-
+        var xPlus=7; //move rectangle along x-axis
             const part1 = makeGradientCube(0xadebff, 0xEDB2D9, 0.5,0.1,16, 1);
             part1.position.z = 0;
-            part1.position.x = -11;
+            part1.position.x = -11+xPlus;
             part1.position.y = 3;
             mScene.add( part1 );
 
             const part2 = makeGradientCube(0xadebff, 0xEDB2D9, 0.5,0.1,16, 1);
             part2.position.z = 0;
-            part2.position.x = 4.5;
+            part2.position.x = 4.5+xPlus;
             part2.position.y = 3;
             mScene.add( part2 );
 
@@ -102,7 +99,7 @@ class Model extends Component {
             const part3M = new THREE.MeshPhongMaterial({ color: "#adebff" });
             const part3 = new THREE.Mesh(part3G, part3M);
             part3.position.z = 0;
-            part3.position.x = -3.19;
+            part3.position.x = -3.19+xPlus;
             part3.position.y = -4.8;
             mScene.add( part3 );
 
@@ -110,9 +107,10 @@ class Model extends Component {
             const part4M = new THREE.MeshPhongMaterial({ color: "#EDB2D9" });
             const part4 = new THREE.Mesh(part4G, part4M);
             part4.position.z = 0;
-            part4.position.x = -3.19;
+            part4.position.x = -3.19+xPlus;
             part4.position.y = 10.8;
             mScene.add( part4 );
+
 
         }
 /////////////////////////////////////////////////////////////////////////////
