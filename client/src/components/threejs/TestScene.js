@@ -7,6 +7,13 @@ import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
 
+
+<script src="./EffectComposer.js"></script>;
+<script src="./CopyShader.js"></script>;
+<script src="./RenderPass.js"></script>;
+<script src="./ShaderPass.js"></script>;
+
+
 class TestScene extends Component {
 
     // startWidth = width.innerHeight;
@@ -20,6 +27,8 @@ class TestScene extends Component {
             height: window.innerHeight,
         }
     }
+
+
 
     componentDidMount(){
         var screenDimensions = {
@@ -168,8 +177,9 @@ glow(this.scene);
 
     }
 
-    render(){
 
+
+    render(){
 
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (

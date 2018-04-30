@@ -7,6 +7,7 @@ import StartInfo from "./StartInfo";
 import TestScene from "./components/threejs/TestScene"
 import Model from "./components/threejs/Model"
 import PerspectiveCamera from "./components/threejs/Camera";
+import Postprocessing from "./components/postprocessing";
 console.log(Model);
 class App extends Component {
 
@@ -113,6 +114,7 @@ class App extends Component {
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className={this.state.canvasClasses}>
+                <Postprocessing></Postprocessing>
                 {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
                     <PerspectiveCamera fov={60}
@@ -124,6 +126,7 @@ class App extends Component {
                            rotationSpeed={this.state.rotationSpeed}
                     ></Model>
                     </PerspectiveCamera>
+
                 </TestScene>
             </div>
 
