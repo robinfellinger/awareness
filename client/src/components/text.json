@@ -1,4 +1,5 @@
-{"passages": [
+{
+  "passages": [
     {
       "text": "Hallo, ich bin Alex",
       "links": [
@@ -18,13 +19,10 @@
       "position": {
         "x": "400",
         "y": "25"
-      },
-      "tags": [
-        "quest"
-      ]
+      }
     },
     {
-      "text": "Mir geht's gut, hatte nur einen schlechten Tag...",
+      "text": "Mir geht's gut, hatte nur einen schlechten Tag..",
       "links": [
         {
           "name": "Wirklich, warum das?",
@@ -69,12 +67,12 @@
         {
           "name": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
           "link": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
-          "pid": "19"
+          "pid": "18"
         },
         {
           "name": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
           "link": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
-          "pid": "18"
+          "pid": "17"
         },
         {
           "name": "Wirklich?, was für ein Arsch was gäbe es da für eine Lösung?",
@@ -95,7 +93,7 @@
         {
           "name": "Gibt es in Österreich keine Unisex toiletten?",
           "link": "Gibt es in Österreich keine Unisex toiletten?",
-          "pid": "20"
+          "pid": "19"
         }
       ],
       "name": "Wirklich?, was für ein Arsch was gäbe es da für eine Lösung?",
@@ -191,7 +189,7 @@
         {
           "name": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
           "link": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
-          "pid": "21"
+          "pid": "20"
         },
         {
           "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
@@ -254,7 +252,7 @@
         {
           "name": "Wirklich?, Und die wären?",
           "link": "Wirklich?, Und die wären?",
-          "pid": "23"
+          "pid": "22"
         }
       ],
       "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
@@ -265,7 +263,7 @@
       }
     },
     {
-      "text": "Ja ist oft nicht so einfach, vor der Angleichung andere davon zu überzeugen, dass man ein anderes Geschlecht hat als es scheint.",
+      "text": "Ja ist oft nicht so einfach, vor der Angleichung andere davon zu überzeugen, dass man ein anderes Geschlecht hat als es scheint.\n\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]",
       "links": [
         {
           "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
@@ -286,7 +284,7 @@
         {
           "name": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
           "link": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
-          "pid": "22"
+          "pid": "21"
         },
         {
           "name": "Gut zu wissen, danke.",
@@ -311,21 +309,12 @@
       }
     },
     {
-      "text": "Ich hoffe deine Einstellung wurde durch dieses Gespräch etwas umgestellt, immerhin sind Transgender Personen doch auch ganz normale Menschen.",
-      "name": "ENDE NEG",
-      "pid": "16",
-      "position": {
-        "x": "325",
-        "y": "1450"
-      }
-    },
-    {
       "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, ich darf auch noch auf weitere Infos auf der nächsten Seite hinweisen.",
       "name": "ENDE NEUT",
-      "pid": "17",
+      "pid": "16",
       "position": {
-        "x": "700",
-        "y": "1475"
+        "x": "714",
+        "y": "1434"
       }
     },
     {
@@ -343,7 +332,7 @@
         }
       ],
       "name": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
-      "pid": "18",
+      "pid": "17",
       "position": {
         "x": "200",
         "y": "525"
@@ -364,7 +353,7 @@
         }
       ],
       "name": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
-      "pid": "19",
+      "pid": "18",
       "position": {
         "x": "475",
         "y": "525"
@@ -385,14 +374,14 @@
         }
       ],
       "name": "Gibt es in Österreich keine Unisex toiletten?",
-      "pid": "20",
+      "pid": "19",
       "position": {
         "x": "750",
         "y": "525"
       }
     },
     {
-      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen Enwickelt sich aus Unverständnis, Abneigung. ",
+      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen Enwickelt sich aus Unverständnis, Abneigung.",
       "links": [
         {
           "name": "Wie kann man gut reagieren?",
@@ -401,7 +390,7 @@
         }
       ],
       "name": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
-      "pid": "21",
+      "pid": "20",
       "position": {
         "x": "525",
         "y": "975"
@@ -413,11 +402,11 @@
         {
           "name": "Gut zu wissen, danke.",
           "link": "ENDE NEUT",
-          "pid": "17"
+          "pid": "16"
         }
       ],
       "name": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
-      "pid": "22",
+      "pid": "21",
       "position": {
         "x": "675",
         "y": "1275"
@@ -431,45 +420,44 @@
       "links": [
         {
           "name": "Irgendwie seltsam, aber ok",
-          "link": "Irgendwie seltsam, aber ok",
+          "link": " END NEG",
           "pid": "24"
         },
         {
           "name": "Interessant, was es da alles gibt",
           "link": "Interessant, was es da alles gibt",
-          "pid": "25"
+          "pid": "23"
         }
       ],
       "name": "Wirklich?, Und die wären?",
-      "pid": "23",
+      "pid": "22",
       "position": {
         "x": "425",
         "y": "1100"
       }
     },
     {
-      "text": "Doppelklick auf diesen Absatz zum Bearbeiten. ",
-      "links": [
-        {
-          "name": "ENDE NEG",
-          "link": "ENDE NEG",
-          "pid": "16"
-        }
-      ],
-      "name": "Irgendwie seltsam, aber ok",
-      "pid": "24",
-      "position": {
-        "x": "325",
-        "y": "1250"
-      }
-    },
-    {
       "text": "Doppelklick auf diesen Absatz zum Bearbeiten.",
       "name": "Interessant, was es da alles gibt",
-      "pid": "25",
+      "pid": "23",
       "position": {
         "x": "500",
         "y": "1250"
       }
+    },
+    {
+      "text": "Ich hoffe deine Einstellung wurde durch dieses Gespräch etwas umgestellt, immerhin sind Transgender Personen doch auch ganz normale Menschen.",
+      "name": " END NEG",
+      "pid": "24",
+      "position": {
+        "x": "225",
+        "y": "1275"
+      }
     }
-  ]}
+  ],
+  "name": "Transgender-Story",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "8EF65264-FD77-4AEE-9FA9-BF74F45C5062"
+}

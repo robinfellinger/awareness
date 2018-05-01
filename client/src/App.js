@@ -33,6 +33,7 @@ class App extends Component {
         this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
 
+
     }
     wakov(){
 
@@ -55,7 +56,9 @@ class App extends Component {
         this.setState({tRot: 0});
         this.setState({rotationSpeed: this.state.rotationSpeed+0.1});
         this.wakov();
-    };
+    }
+
+
     returnClasses(){
         (this.state.startExperience === false) ? this.setState({canvasClasses: "three__canvas three-blur"}) : this.setState({canvasClasses: "three__canvas"});
     }
@@ -142,6 +145,15 @@ class App extends Component {
 
 
 }
+// render((
+//     <Router>
+//         <Route path={"/"} component={App}>
+//         <Route path="statistics" component={Page_statistics}>
+//         </Route>
+//     </Router>
+// ), document.body)
 
+
+// ReactDOM.render(<MyComponent />, document.getElementById('id'));
 
 export default App;
