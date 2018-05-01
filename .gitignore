@@ -19,3 +19,5 @@ client/src/standardSettings.css
 client/debug.log
 client/src/scss/main.css
 client/yarn.lock
+client/src/scss/main.css
+client/yarn.lock

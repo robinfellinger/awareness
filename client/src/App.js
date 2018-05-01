@@ -108,7 +108,7 @@ class App extends Component {
             <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Starte die Experience</button>
             </div>
             {this.state.startExperience &&
-                <div className={"pos-absolute interaction-pos"}>
+                <div className={"pos-absolute interaction_pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
