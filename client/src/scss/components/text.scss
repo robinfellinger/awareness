@@ -99,8 +99,8 @@
     opacity: 1;
   }
   100% {
-    opacity: 0;
-    transform: translateY(0.3rem);
+    //opacity: 0;
+    transform: translateY(-130vh);
   }
 }
 
@@ -110,7 +110,7 @@
     opacity: 1;
   }
   100% {
-    opacity: 0;
-    transform: translateY(-0.1rem);
+    //opacity: 0;
+    transform: translateY(-130vh);
   }
 }
