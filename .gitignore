@@ -18,3 +18,4 @@ client/src/standardSettings.css
 *.map
 client/debug.log
 client/src/scss/main.css
+client/yarn.lock
