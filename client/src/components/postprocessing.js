@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
-import * as THREE from "three";
+import * as THREE from "three.js";
 
-import EffectComposer from './EffectComposer.js';
-import RenderPass from './RenderPass.js';
-import ShaderPass from './ShaderPass.js';
-import SepiaShader from './SepiaShader.js';
+import EffectComposer from './test/EffectComposer.js';
+import RenderPass from './test/RenderPass.js';
+import ShaderPass from './test/ShaderPass.js';
+import FilmShader from './test/FilmShader.js';
 
-//THREE.EffectComposer = require('./lib/EffectComposer');
-//THREE.RenderPass = require('./lib/RenderPass');
-//THREE.ShaderPass = require('./lib/ShaderPass');
-//THREE.ShaderPass = require('./lib/SepiaShader');
+var composer;
+var renderPass;
+var shaderPass;
 
 class Postprocessing extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            renderer: this.renderer,
+            scene:this.scene,
+            camera:this.camera
+        }
+
+    }
 
     //COMPOSER
-    composer = new THREE.EffectComposer(renderer);
+    composer = new EffectComposer(this.renderer);
 
     //PASSES
-    renderPass = new THREE.RenderPass(scene, camera);
+    renderPass = new RenderPass(this.scene, this.camera);
     composer.addPass(renderPass);
 
-    pass1 = new THREE.ShaderPass(THREE.SepiaShader);
-    composer.addPass(pass1);
-    pass1.renderToScreen = true;
+    filmPass = new THREE.ShaderPass(FilmShader);
+    composer.addPass(filmPass);
+    filmPass.renderToScreen = true;
+
+   // render();
 
     render(){
         return{
+            <div>
             this.composer.render();
+            </div>
         }
     }
 }

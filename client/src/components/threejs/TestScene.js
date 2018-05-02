@@ -8,11 +8,14 @@ import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
 
 
-<script src="./EffectComposer.js"></script>;
-<script src="./CopyShader.js"></script>;
-<script src="./RenderPass.js"></script>;
-<script src="./ShaderPass.js"></script>;
+import EffectComposer from './test/EffectComposer.js';
+import RenderPass from './test/RenderPass.js';
+import ShaderPass from './test/ShaderPass.js';
+import FilmShader from './test/FilmShader.js';
 
+var composer;
+var renderPass;
+var filmPass;
 
 class TestScene extends Component {
 
@@ -177,15 +180,29 @@ glow(this.scene);
 
     }
 
+//----------------POSTPRO-------------------------
+    //COMPOSER
+    composer = new THREE.EffectComposer(this.renderer);
+
+    //PASSES
+    renderPass = new THREE.RenderPass(this.scene, this.camera);
+    composer.addPass(renderPass);
+
+    filmPass = new THREE.ShaderPass(FilmShader);
+    composer.addPass(filmPass);
+    //filmPass.renderToScreen = true;
 
 
     render(){
 
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (
+
             <div ref="anchor">
                 {this.props.children}
+                <span>{composer.render()} {requestAnimationFrame(render)}</span>
             </div>
+
 
         );
     }

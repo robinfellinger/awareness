@@ -114,7 +114,7 @@ class App extends Component {
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className={this.state.canvasClasses}>
-                <Postprocessing></Postprocessing>
+
                 {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
                     <PerspectiveCamera fov={60}
