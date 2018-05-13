@@ -10,6 +10,7 @@ class Interaction extends Component {
         super(props);
         this.state = {
             IDTest: "Start",
+            isRightQestion: false
         }
         this.updateID = this.updateID.bind(this);
     }
@@ -18,8 +19,15 @@ class Interaction extends Component {
         this.setState({IDTest: id})
     }
 
-    componentDidUpdate() {
-        let centerText = document.getElementsByClassName("interaction")[0];
+    updateQest(){
+        this.setState({isRightQestion: true});
+    }
+
+
+
+
+    /*componentDidUpdate() {
+        let centerText = document.getElementsByClassName(".interaction")[0];
         let flexdiv = document.getElementsByClassName("interaction-flex");
 
         for (let i = 0; i < centerText.childElementCount; i++) {
@@ -31,7 +39,8 @@ class Interaction extends Component {
                 //flexdiv[i].parentNode.parentNode.removeChild(centerText[i].firstChild);
             }
         }
-    }
+        $(".interacion-question .typed-cursor").parent().parent()
+    }*/
         /*for(var child=centerText.firstChild; child!==null; child=child.nextSibling) {
 
             if(centerText.child().eq(2).innerHTML == ""){
@@ -42,36 +51,40 @@ class Interaction extends Component {
 
 
 
-    render() {
-        //const question = data.passages.map(function(data){data});
-        return (
+    render(){
+
+
+            return (
             <div className={"interaction"}>
-                {data.passages.map((rowdata) =>
 
-                            <div className={"interaction-question t-italic"} key={rowdata.pid}>
+                {data.passages.map((question) =>
 
-                                {rowdata.name === this.state.IDTest && <Type strings={[rowdata.text]}/>}
+                        <span className={"interaction-question t-italic"} key={question.pid}>
+
+                                {question.name === this.state.IDTest && <Type strings={[question.text]}/>}
                                 {
-                                    (typeof(rowdata.links)=='object')?
-                                    rowdata.links.map((subrowdata)=>
+                                    (typeof(question.links)=='object')?
+                                    question.links.map((subrowdata)=>
 
-                                    <div className={"interaction-flex"} key={subrowdata.pid*Math.random()}>
-                                        {rowdata.name === this.state.IDTest &&
+                                    <span className={"interaction-flex"} key={subrowdata.pid*Math.random()}>
+                                        {question.name === this.state.IDTest &&
                                         <button  className={"interaction-button text-sm col-sm-8"}
                                                  onClick={() => this.updateID(subrowdata.link)}>{subrowdata.name}</button>
                                         }
-                                    </div>
+                                    </span>
 
                                     )
                                     :null
                                 }
 
-                            </div>
+                            </span>
                         )
+
             }
             </div>
         )
     };
+
 }
 
 

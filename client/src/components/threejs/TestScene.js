@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
+import EffectComposer from './effects/EffectComposer.js';
+import ShaderPass from './ShaderPass.js';
+import RenderPass from './RenderPass.js';
+import FilmShader from './FilmShader.js';
+
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
@@ -44,6 +49,14 @@ class TestScene extends Component {
         this.refs.anchor.appendChild(this.renderer.domElement);
         this.renderer.render(this.scene, camera);
 
+        //-------------PROSTPRO-----------
+        const composer = new EffectComposer(this.renderer);
+
+        const renderPass = new RenderPass(this.scene, this.camera);
+        composer.addPass(renderPass);
+
+        const filmPass = new ShaderPass(FilmShader);
+        composer.addPass(filmPass);
 
         light(this.scene);
         glow(this.scene);
@@ -146,13 +159,16 @@ class TestScene extends Component {
     }
 
     render(){
+        this.composer.render();
 
+        requestAnimationFrame(this.render);
 
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (
             <div ref="anchor">
                 {this.props.children}
             </div>
+
 
         );
     }
