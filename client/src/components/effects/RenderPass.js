@@ -2,11 +2,13 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
+import * as THREE from 'three';
+
 THREE.RenderPass = function ( scene, camera, overrideMaterial, clearColor, clearAlpha ) {
 
 	THREE.Pass.call( this );
 
-	this.scene = scene;
+	this.context.scene = scene;
 	this.camera = camera;
 
 	this.overrideMaterial = overrideMaterial;
@@ -29,7 +31,7 @@ THREE.RenderPass.prototype = Object.assign( Object.create( THREE.Pass.prototype 
 		var oldAutoClear = renderer.autoClear;
 		renderer.autoClear = false;
 
-		this.scene.overrideMaterial = this.overrideMaterial;
+		this.context.scene.overrideMaterial = this.overrideMaterial;
 
 		var oldClearColor, oldClearAlpha;
 

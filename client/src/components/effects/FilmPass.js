@@ -1,6 +1,8 @@
 /**
  * @author alteredq / http://alteredqualia.com/
  */
+import * as THREE from 'three'
+
 
 THREE.FilmPass = function ( noiseIntensity, scanlinesIntensity, scanlinesCount, grayscale ) {
 

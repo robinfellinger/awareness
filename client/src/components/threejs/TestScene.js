@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
-import EffectComposer from './effects/EffectComposer.js';
-import ShaderPass from './ShaderPass.js';
-import RenderPass from './RenderPass.js';
-import FilmShader from './FilmShader.js';
+import EffectComposer from './../effects/EffectComposer.js';
+import ShaderPass from './../effects/ShaderPass.js';
+import RenderPass from './../effects/RenderPass.js';
+import FilmShader from './../effects/FilmPass.js';
 
 import three from 'three';
 import Model from './Model'
@@ -50,9 +50,24 @@ class TestScene extends Component {
         this.renderer.render(this.scene, camera);
 
         //-------------PROSTPRO-----------
-        const composer = new EffectComposer(this.renderer);
 
-        const renderPass = new RenderPass(this.scene, this.camera);
+        var renderPass = new THREE.RenderPass( this.scene, camera );
+        renderPass.clear = false;
+        // var copyPass = new THREE.ShaderPass( THREE.CopyShader );
+        // copyPass.renderToScreen = true;
+
+        var composer = new THREE.EffectComposer( this.renderer );
+        composer.addPass( renderPass );
+        // composer.addPass( copyPass );
+
+        composer.render( 0.05 );
+
+
+
+
+        // const composer = new EffectComposer(this.renderer);
+        //
+        // const renderPass = new RenderPass(this.scene, this.camera);
         composer.addPass(renderPass);
 
         const filmPass = new ShaderPass(FilmShader);
