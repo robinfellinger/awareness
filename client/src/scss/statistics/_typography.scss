@@ -24,6 +24,11 @@
     display: block;
     background-color: currentColor;
 
+    &-anim {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 5s linear forwards;
+    }
     &--hashtags {
         //align-self: left;
         grid-row: 9;
@@ -32,7 +37,11 @@
         justify-self: center;
     }
 }
-
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
 .header {
 
     color: $color-black;
