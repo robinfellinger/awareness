@@ -10,7 +10,7 @@
     animation:   headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */
 
     &-animBack {
-      animation:   headline-xl-toggleBack 2s forwards; /* IE 10+, Fx 29+ */
+      animation:   headline-xl-toggleBack 2.5s forwards; /* IE 10+, Fx 29+ */
     }
 
   }
@@ -22,7 +22,7 @@
     font-weight: 400;
     animation:   headline-lg-toggle 5s forwards; /* IE 10+, Fx 29+ */
     &-animBack {
-      animation:   headline-lg-toggleBack 2s forwards; /* IE 10+, Fx 29+ */
+      animation:   headline-lg-toggleBack 2.5s forwards; /* IE 10+, Fx 29+ */
     }
   }
 }

@@ -16,6 +16,7 @@ var warpVector2 = null;
 var cRot = 0.3;
 var tRot = 0.8;
 var mouseTimer = 0;
+var next = false;
 var config = {
     frequenz: 1.4, //1.4 for wobble waves 0.2 for sublte rings 0.1 for extreme rings
     speed: 120, // + slower
@@ -56,6 +57,29 @@ class Model extends Component {
 
     }
 
+    bounce(){
+        let position = { x : 0, y: 3 };
+        let tween = new TWEEN.Tween(position)
+            .to({x: 0, y: -0.6, rotation: 0}, 2000)
+            .delay(1500)
+            .easing(TWEEN.Easing.Elastic.Out)
+            .onUpdate(function(){
+                mesh.position.x = position.x;
+                mesh.position.y = position.y;
+            });
+        let tweenBack = new TWEEN.Tween(position)
+            .to({x: 0, y: 0., rotation: 0}, 2000)
+            .delay(1500)
+            .easing(TWEEN.Easing.Elastic.Out)
+            .onUpdate(function(){
+                mesh.position.x = position.x;
+                mesh.position.y = position.y;
+            });
+
+        tween.chain(tween);
+        // tweenBack.chain(tween);
+        tween.start();
+    }
     componentDidMount() {
 
         var rectLight = new THREE.RectAreaLight( 0xffffff, 2000,  9000, 9000 );
@@ -100,32 +124,12 @@ class Model extends Component {
         light.target = mesh;
 
 
-        bounce();
+        this.bounce();
 
-        function bounce(){
-
-            let position = { x : 0, y: 3 };
-            let tween = new TWEEN.Tween(position)
-                .to({x: 0, y: -0.6, rotation: 0}, 2000)
-                .delay(1500)
-                .easing(TWEEN.Easing.Elastic.Out)
-                .onUpdate(function(){
-                    mesh.position.x = position.x;
-                    mesh.position.y = position.y;
-                });
-            let tweenBack = new TWEEN.Tween(position)
-                .to({x: 0, y: 0., rotation: 0}, 2000)
-                .delay(1500)
-                .easing(TWEEN.Easing.Elastic.Out)
-                .onUpdate(function(){
-                    mesh.position.x = position.x;
-                    mesh.position.y = position.y;
-                });
-
-            tween.chain(tween);
-            // tweenBack.chain(tween);
-            tween.start();
+        if(this.props.emotion === "joy"){
+            console.log("JOYYYY");
         }
+
     }
 
 
@@ -233,6 +237,28 @@ function wakov(){
 }
 function handleEmotions(emotion){
     if(emotion === "joy"){
+        if(next === false){
+            next = true;
+            // setTimeout(function () {
+                let position = { x : 0, y: 3 };
+                let tween = new TWEEN.Tween(position)
+                    .to({x: 0, y: -0.6, rotation: 0}, 1000)
+                    // .delay(300)
+                    .easing(TWEEN.Easing.Elastic.In)
+                    .onUpdate(function(){
+                        mesh.position.x = position.x;
+                        mesh.position.y = position.y;
+                    });
+                tween.start();
+            // }, 0.005);
+
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.elementsNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
+        }
+
         if(config.frequenz > 0.7){
             config.frequenz -=0.01;
         }
