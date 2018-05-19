@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
-import EffectComposer from './../effects/EffectComposer.js';
+/*import EffectComposer from './../effects/EffectComposer.js';
 import ShaderPass from './../effects/ShaderPass.js';
 import RenderPass from './../effects/RenderPass.js';
-import FilmShader from './../effects/FilmPass.js';
+import FilmShader from './../effects/FilmPass.js';*/
 
 import three from 'three';
 import Model from './Model'
@@ -51,12 +51,12 @@ class TestScene extends Component {
 
         //-------------PROSTPRO-----------
 
-        var renderPass = new THREE.RenderPass( this.scene, camera );
+       /* var renderPass = new THREE.RenderPass(scene, camera );
         renderPass.clear = false;
         // var copyPass = new THREE.ShaderPass( THREE.CopyShader );
         // copyPass.renderToScreen = true;
 
-        var composer = new THREE.EffectComposer( this.renderer );
+        var composer = new THREE.EffectComposer(renderer );
         composer.addPass( renderPass );
         // composer.addPass( copyPass );
 
@@ -71,7 +71,7 @@ class TestScene extends Component {
         composer.addPass(renderPass);
 
         const filmPass = new ShaderPass(FilmShader);
-        composer.addPass(filmPass);
+        composer.addPass(filmPass);*/
 
         light(this.scene);
         glow(this.scene);
@@ -148,8 +148,6 @@ class TestScene extends Component {
 
     }
 
-
-
      onWindowResize(this.renderer);
      window.addEventListener( 'resize', onWindowResize(this.renderer), false );
 
@@ -174,9 +172,9 @@ class TestScene extends Component {
     }
 
     render(){
-        this.composer.render();
+        //this.composer.render();
 
-        requestAnimationFrame(this.render);
+        //requestAnimationFrame(this.render);
 
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (

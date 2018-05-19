@@ -7,7 +7,7 @@ class Type extends Component {
 
         const options = {
             strings: strings,
-            typeSpeed: 250,
+            typeSpeed: 10,
         };
         this.typed = new Typed(this.el, options);
     }
