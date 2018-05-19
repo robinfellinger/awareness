@@ -19,10 +19,13 @@
       "position": {
         "x": "400",
         "y": "25"
-      }
+      },
+      "tags": [
+        "neutral"
+      ]
     },
     {
-      "text": "Mir geht's gut, hatte nur einen schlechten Tag..",
+      "text": "Mir geht's gut, hatte nur einen schlechten Tag...",
       "links": [
         {
           "name": "Wirklich, warum das?",
@@ -58,11 +61,11 @@
         "y": "275"
       },
       "tags": [
-        "dyk-übergriffe"
+        "angry"
       ]
     },
     {
-      "text": "Ich bin Transgender, mein Aussehen und die damit verbundene Geschlechterrolle entspricht nicht meinem gefühlten Geschlecht.",
+      "text": "Durch die Tatsache das mein Aussehen nicht meinem Geschlecht enstpricht, sind viele verwirrt. Ich bin Transgeder.",
       "links": [
         {
           "name": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
@@ -86,6 +89,10 @@
         "x": "400",
         "y": "400"
       }
+    ,
+      "tags": [
+        "sad"
+      ]
     },
     {
       "text": "Eine Lösung wären Unisextoilette, damit sich Transgender Leute während der Angleichung oder auch davor wohler fühlen. Weiters wäre es aber auch einfach, wenn wir mehr von der Gesellschaft verstanden würden.",
@@ -107,7 +114,7 @@
       ]
     },
     {
-      "text": "Ja, so kann man es auch ausdrücken..",
+      "text": "Ja, so kann man es auch ausdrücken..\n\n[[Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ]] ",
       "links": [
         {
           "name": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
@@ -133,7 +140,7 @@
       }
     },
     {
-      "text": "Das glauben viele, ich kann dir nur versichern, das es sich bei Transgender Leuten nicht um eine \"Phase\" handelt, nein in mir steckt wirklich ein anderes Geschlecht als es scheint...",
+      "text": "Das glauben viele, ich kann dir nur versichern, das es sich bei Transgender Leuten nicht um eine \"Phase\" handelt, nein in mir steckt wirklich ein anderes Geschlecht als es scheint...\n\nViele merken dies sogar schon im Kindesalter, bei mir war es das Gefühl bei meiner zugehörigen \"Geschlechtergruppe\" nicht dazuzugehören, ich fühlte mich immer in der anderen Gruppe wohler.\n\n[[Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ]] \n",
       "links": [
         {
           "name": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
@@ -159,7 +166,7 @@
       }
     },
     {
-      "text": "Du musst das anders sehen, viele von Transgender Leute versuchen lediglich von anderen mit ihrem bevorzugten Geschlecht behandelt zu werden. Auch das viele Crossdressen als sexuellen Fetisch ist nur eine Außnahme. Leider ist es Anfangs noch schwierig als das bevorzugte Geschlecht durchzukommen.",
+      "text": "Du musst das anders sehen, viele von Transgender Leute versuchen lediglich von anderen mit ihrem bevorzugten Geschlecht behandelt zu werden. Auch das viele Crossdressen als sexuellen Fetisch ist nur eine Außnahme. Leider ist es Anfangs noch schwierig als das bevorzugte Geschlecht durchzukommen. \n\n[[Wie ist es dann in der Realität?->Ok, wie kann ich das denn genau verstehen?]] \n[[Da gibt es ja eh Operationen, hast du so eine schon gemacht?]] ",
       "links": [
         {
           "name": "Wie ist es dann in der Realität?",
@@ -184,7 +191,7 @@
       ]
     },
     {
-      "text": "Bei mir ist es so, dass ich von anderen so behandelt werden möchte, wie es mit meiner Geschlechtsidentität übereinstimmt. Daher, versuche ich sowohl Äußerlich, als auch von meinem Verhalten her, diesem Geschlecht zu entsprechen, dies geht aber nicht immer sofort und die Umstellung ist nicht immer sehr einfach.",
+      "text": "Bei mir ist es so, dass ich von anderen so behandelt werden möchte, wie es mit meiner Geschlechtsidentität übereinstimmt. Daher, versuche ich sowohl Äußerlich, als auch von meinem Verhalten her, diesem Geschlecht zu entsprechen, dies geht aber nicht immer sofort und die Umstellung ist nicht immer sehr einfach.\n\n[[OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?]]\n[[Da gibt es ja eh Operationen, hast du so eine schon gemacht?]] \n",
       "links": [
         {
           "name": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
@@ -205,7 +212,7 @@
       }
     },
     {
-      "text": "Man kann sich nicht aussuchen welches Geschlecht man hat, man fühlt dies, und wenn es nicht dem angeborenen entspricht ist man halt Transgender, das macht mich jetzt aber nicht zu einer anderen Spezies von Mensch",
+      "text": "Man kann sich nicht aussuchen welches Geschlecht man hat, man fühlt dies, und wenn es nicht dem angeborenen entspricht ist man halt Transgender, das macht mich jetzt aber nicht zu einer anderen Spezies von Mensch\n\n[[Achso, ok]]",
       "links": [
         {
           "name": "Achso, ok",
@@ -221,7 +228,7 @@
       }
     },
     {
-      "text": "Ich versuche nur zu erreichen, dass mich Andere so behandeln,wie ich mich fühle",
+      "text": "Ich versuche nur zu erreichen, dass mich Andere so behandeln,wie ich mich fühle\n\n[[Da gibt es ja eh Operationen, hast du so eine schon gemacht?]]\n[[Ja, ist verständlich]]\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]",
       "links": [
         {
           "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
@@ -247,7 +254,7 @@
       }
     },
     {
-      "text": "Das ist doch jetzt etwas zu persönlich oder? Klar gibt es Operationen, aber man kann auch vor diesen schon mit verschiedenen Hilfsmittel so auszusehen, wie man will",
+      "text": "Das ist doch jetzt etwas zu persönlich oder? Klar gibt es Operationen, aber man kann auch vor diesen schon mit verschiedenen Hilfsmittel so auszusehen, wie man will\n\n\n[[Wirklich?, Und die wären?]]\n",
       "links": [
         {
           "name": "Wirklich?, Und die wären?",
@@ -279,7 +286,7 @@
       }
     },
     {
-      "text": "Hilfreich wäre erstmal den bevorzugten Namen zu verwenden und das bevorzugte Pronomen.",
+      "text": "Hilfreich wäre erstmal den bevorzugten Namen zu verwenden und das bevorzugte Pronomen.\n\nAuch nicht immer ein großes Drama darum zu machen ist sehr hilfreich, wir versuchen immerhin ja auch nur uns in dieser Welt wohl zu fühlen, da hilft es einem nicht immer als \"speziell\" und \"anders\" angesehen zu werden.\n\n[[Also hattest du vorher einen anderen Namen, wie lautete dieser?]]\n[[Gut zu wissen, danke.->ENDE POS]]\n",
       "links": [
         {
           "name": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
@@ -300,7 +307,7 @@
       }
     },
     {
-      "text": "Hey, mich freut es sehr, dass du dich so für dieses Thema interessierst und auf der nächsten Seite gibt es noch weitere Infos",
+      "text": "Hey, mich freut es sehr, dass du dich so für dieses Thema interessierst und auf der nächsten Seite gibt es noch weitere Infos. :D",
       "name": "ENDE POS",
       "pid": "15",
       "position": {
@@ -309,7 +316,7 @@
       }
     },
     {
-      "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, ich darf auch noch auf weitere Infos auf der nächsten Seite hinweisen.",
+      "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, falls dich das Thema interessiert, findest du zusätzliche Infos auf der nächsten seite, danke für das Gespräch :).",
       "name": "ENDE NEUT",
       "pid": "16",
       "position": {
@@ -318,7 +325,7 @@
       }
     },
     {
-      "text": "Es wäre nicht so \"schwer\" wenn es mehr Menschen geben würde, die mit uns klar kommen...",
+      "text": "Es wäre nicht so \"schwer\" wenn es mehr Menschen geben würde, die mit uns klar kommen...\n\n [[Also hast du ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n [[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]\n\n\n",
       "links": [
         {
           "name": "Also hast du ein anderes Geschlecht als äußerlich erscheinlich?",
@@ -339,7 +346,7 @@
       }
     },
     {
-      "text": "Siehst du, das ist das Problem, ich fühl mich wohler in der Toilette in der ich war, nur es wird oft einfach nicht verstanden.",
+      "text": "Siehst du, das ist das Problem, ich fühl mich wohler in der Toilette in der ich war, nur es wird oft einfach nicht verstanden.\n \n [[Also hast du ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n [[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]",
       "links": [
         {
           "name": "Also hast du ein anderes Geschlecht als äußerlich erscheinlich?",
@@ -360,7 +367,7 @@
       }
     },
     {
-      "text": "Nein, bi jetzt habe ich noch keine gefunden, hoffentlich ändert sich das noch in der nächsten Zeit.",
+      "text": "Nein, bi jetzt habe ich noch keine gefunden, hoffentlich ändert sich das noch in der nächsten Zeit.\n\n[[Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?->wohler in anderer Rolle]]\n [[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein->Phase]]",
       "links": [
         {
           "name": "Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?",
@@ -381,7 +388,7 @@
       }
     },
     {
-      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen Enwickelt sich aus Unverständnis, Abneigung.",
+      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen Enwickelt sich aus Unverständnis, Abneigung. \n\nMeine Freunde reagierten sehr unterschiedlich, manche sehr gut, andere schlechter.\n\n[[Wie kann man gut reagieren?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n",
       "links": [
         {
           "name": "Wie kann man gut reagieren?",
@@ -397,7 +404,7 @@
       }
     },
     {
-      "text": "Ich spreche nicht gerne über mein vergangenes \"Geschlecht\" ich war ja eigentlich schon immer ich, mein \"alter\" Name erinnert mich nur an mein Leiden als Kind",
+      "text": "Ich spreche nicht gerne über mein vergangenes \"Geschlecht\" ich war ja eigentlich schon immer ich, mein \"alter\" Name erinnert mich nur an mein Leiden als Kind\n\n[[Gut zu wissen, danke.->ENDE NEUT]] ",
       "links": [
         {
           "name": "Gut zu wissen, danke.",
@@ -416,7 +423,7 @@
       ]
     },
     {
-      "text": "Für Transmänner gibt es Binder oder auch Prothesen für die Hose, für Transfrauen spezielle BHs und so weiter...",
+      "text": "Für Transmänner gibt es Binder oder auch Prothesen für die Hose, für Transfrauen spezielle BHs und so weiter...\n\n[[Irgendwie seltsam, aber ok-> END NEG]]\n[[Interessant, was es da alles gibt]]",
       "links": [
         {
           "name": "Irgendwie seltsam, aber ok",
@@ -446,7 +453,7 @@
       }
     },
     {
-      "text": "Ich hoffe deine Einstellung wurde durch dieses Gespräch etwas umgestellt, immerhin sind Transgender Personen doch auch ganz normale Menschen.",
+      "text": "Ich hoffe deine Einstellung wurde durch dieses Gespräch etwas umgestellt, vielleicht verstehst du uns jetzt etwas besser und siehst ein, das wir nicht ganz so verschieden sind. ;)",
       "name": " END NEG",
       "pid": "24",
       "position": {

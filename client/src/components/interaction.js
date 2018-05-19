@@ -9,13 +9,20 @@ class Interaction extends Component {
     constructor(props){
         super(props);
         this.state = {
-            IDTest: "Start"
+            IDTest: "Start",
+            emotion: "neutral"
         }
         this.updateID = this.updateID.bind(this);
     }
 
-    updateID(id){
+    updateID(id, em){
         this.setState({IDTest: id})
+        if(em) {
+            this.setState({emotion: em[0]})
+            console.log(this.state.emotion);
+        }else{
+            this.setState({emotion: "neutral"});
+        }
     }
 
     render(){
@@ -26,25 +33,25 @@ class Interaction extends Component {
                     .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
                     .map((question) =>
 
-                        <div className={"interaction-question t-italic"} key={question.pid}>
+                        <p className={"interaction-question t-italic"} key={question.pid}>
 
-                                {question.name === this.state.IDTest && <Type strings={[question.text]}/>}
-                                {
-                                    (typeof(question.links)=='object')?
+                                {question.name === this.state.IDTest && <Type strings={[question.text.split('\n')[0]]}/>}
+                                <div className={"answers interaction-flex"}>{
+                                    (typeof(question.links)==='object')?
                                     question.links.map((subrowdata)=>
 
-                                    <div className={"interaction-flex"} key={subrowdata.pid*Math.random()}>
+                                    <p className={"interaction-answer"} key={subrowdata.pid*Math.random()}>
                                         {question.name === this.state.IDTest &&
                                         <button  className={"interaction-button text-sm col-sm-8"}
-                                                 onClick={() => this.updateID(subrowdata.link)}>{subrowdata.name}</button>
+                                                 onClick={() => this.updateID(subrowdata.link, question.tags)}>{subrowdata.name}</button>
                                         }
-                                    </div>
+                                    </p>
 
                                     )
                                     :null
-                                }
+                                }</div>
 
-                        </div>
+                        </p>
                     )
 
             }
