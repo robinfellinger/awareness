@@ -33,14 +33,14 @@ class Interaction extends Component {
                     .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
                     .map((question) =>
 
-                        <p className={"interaction-question t-italic"} key={question.pid}>
+                        <div className={"interaction-question t-italic"} key={question.pid}>
 
                                 {question.name === this.state.IDTest && <Type strings={[question.text.split('\n')[0]]}/>}
                                 <div className={"answers interaction-flex"}>{
                                     (typeof(question.links)==='object')?
                                     question.links.map((subrowdata)=>
 
-                                    <p className={"interaction-answer"} key={subrowdata.pid*Math.random()}>
+                                    <p className={"interaction-answer"}>
                                         {question.name === this.state.IDTest &&
                                         <button  className={"interaction-button text-sm col-sm-8"}
                                                  onClick={() => this.updateID(subrowdata.link, question.tags)}>{subrowdata.name}</button>
@@ -50,8 +50,7 @@ class Interaction extends Component {
                                     )
                                     :null
                                 }</div>
-
-                        </p>
+                        </div>
                     )
 
             }
