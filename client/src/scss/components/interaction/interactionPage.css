@@ -1,5 +1,6 @@
 .interaction_pos {
-  bottom: 8vh; }
+  bottom: 8vh;
+  width: 100%; }
 .interaction-page {
   width: 50%;
   alignment: center; }
