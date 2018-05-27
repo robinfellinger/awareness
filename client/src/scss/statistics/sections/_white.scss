@@ -5,14 +5,13 @@
     justify-items: center;
     text-align: center;
     grid-template-rows: repeat(10, 10vh);
-    grid-template-columns: 1fr repeat(12, 12rem) 1fr;
-
+    grid-template-columns: 1fr min-content 1fr;
     color: $color-black;
 
 
     &__titel {
         grid-row: 3 / 6;
-        grid-column: 1 / 15;
+        grid-column: 1 / -1;
         align-self: center;
         font-family: $font-secondary;
         font-size: 5.4rem;
@@ -29,7 +28,7 @@
 
     &__content {
         grid-row: 5 / 10;
-        grid-column: 1 / 15;
+        grid-column: 1 / -1;
         align-self: center;
         font-size: 1.8rem;
         font-weight: 600;
@@ -39,6 +38,10 @@
 
         &--large {
             width: 64.8rem;
+
+            @media screen and (max-width: $bp-small) {
+                width: 58rem;
+            }
         }
     }
 }

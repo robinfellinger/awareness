@@ -2,39 +2,49 @@
     background: linear-gradient(128.67deg, rgba(229, 233, 255, 0.8439) 18.34%, rgba(255, 195, 195, 0.7743) 95.15%), #000000;
     display: grid;
     grid-template-rows: repeat(10, 10vh);
-    grid-template-columns: 1fr repeat(12, 12rem) 1fr;
+    grid-template-columns: minmax(3rem, 1fr) repeat(2, 60rem) minmax(3rem, 1fr);
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: minmax(3rem, 1fr) 60rem minmax(3rem, 1fr);
+    }
 
     &__titel {
         
         grid-row: 3 / 4;
-        grid-column: 2 / 10;
+        grid-column: 2;
         text-transform: uppercase;
-        width: 899px;
         font-weight: 600;
         font-size: 4.8rem;
         letter-spacing: 4.8rem * 0.2;
     }
     &__text {
-        margin-left: 7rem;
-        grid-row: 5 / 10;
-        grid-column: 3 / 10;
-        width: 386px;
+        grid-row: 5;
+        grid-column: 2;
+        width: 52.6rem;
         font-weight: 300;
         line-height: 2.8rem;
         font-size: 2rem;
         letter-spacing: 2rem * 0.06;
+
+        @media only screen and (max-width: $bp-largest) {
+            grid-row: 4;
+        }
     }
 
     &__statistic {
         text-align: center;
         padding-top: 5rem;
-        grid-row: 2 / 10;
-        grid-column: 10 / 13;
+        grid-row: 3 / 10;
+        grid-column: 3;
         font-weight: 300;
         line-height: 2.8rem;
         font-size: 1.6rem;
         letter-spacing: 2rem * 0.06;
-        transform: translateX(-6rem);
+
+        @media only screen and (max-width: $bp-large) {
+            grid-column: 2;
+            grid-row: 6;
+        }
 
         p {
             margin-bottom: 5rem;
@@ -44,7 +54,7 @@
         span {
             font-weight: normal;
             line-height: normal;
-            font-size: 36px;
+            font-size: 3.6rem;
             text-align: center;
             letter-spacing: 0.15em;
         }
@@ -53,7 +63,7 @@
             text-transform: uppercase;
 
             span {
-                font-size: 112px;
+                font-size: 11.2rem;
             }
         }
     }

@@ -1,24 +1,24 @@
 .vl {
     grid-row: 10;
-    grid-column: 7; 
+    grid-column: 1 / -1; 
 
     align-self: end;
-    justify-self: end;
+    justify-self: center;
 
     content: "";
-    height: 40px;
-    width: 4px;
+    height: 4rem;
+    width: 0.4rem;
     display: block;
     background-color: currentColor;
 
 
     &--1 {
-        transform: translateX(-14px);
-        height: 60px;
+        transform: translateX(-1.4rem);
+        height: 6rem;
         
     }
 
     &--3 {
-        transform: translateX(14px);
+        transform: translateX(1.4rem);
     }
 }
