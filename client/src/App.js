@@ -119,6 +119,7 @@ class App extends Component {
             }
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
+            <div className="pos-absolute gradient-shadow"></div>
             <div className={this.state.canvasClasses}>
                 {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
