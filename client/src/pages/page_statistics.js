@@ -29,7 +29,7 @@ class Page_statistics extends Component {
             clearInterval(timer);
             current += increment;
             obj.innerHTML = Math.floor(current) + "%"; 
-            if (Math.floor(current) == end) {
+            if (Math.floor(current) === end) {
                 clearInterval(timer);
                 return;
             }
@@ -55,7 +55,6 @@ class Page_statistics extends Component {
     //       percent1: false,
     //     });
     //   }
-
     render(){
         const trans_in_oe = [
             "trans in ", "österreich", 
@@ -150,7 +149,7 @@ const SectionBlack = (props) => {
 
 const SectionGradient = (props) => {
     return (
-        <section class="gradient ops-section" data-index={props.index}>
+        <section id="numbers" class="gradient ops-section" data-index={props.index}>
         <div class="line"></div>
             <p class="navigation">navigation <span>0{props.index}/05</span></p>
 

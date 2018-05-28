@@ -95,7 +95,6 @@ class App extends Component {
     }
 
 
-
     render() {
         const { color } = this.state;
         return (
@@ -145,15 +144,6 @@ class App extends Component {
 
 
 }
-// render((
-//     <Router>
-//         <Route path={"/"} component={App}>
-//         <Route path="statistics" component={Page_statistics}>
-//         </Route>
-//     </Router>
-// ), document.body)
 
-
-// ReactDOM.render(<MyComponent />, document.getElementById('id'));
 
 export default App;
