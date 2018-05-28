@@ -54,6 +54,26 @@ class Page_statistics extends Component {
     //       percent1: false,
     //     });
     //   }
+
+    componentDidMount () {
+        // const script = document.createElement("script");
+
+        // script.src = "extensions/onepagescroll.js";
+        // script.async = true;
+
+        // document.body.appendChild(script);
+
+        const script2 = document.createElement("script");
+
+        script2.innerHTML = 'onePageScroll("#root", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
+        script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}';
+        script2.innerHTML += '}, loop: false, keyboard: true,  responsiveFallback: false      });';
+         
+        script2.async = true;
+
+        document.body.appendChild(script2);
+    }
+
     render(){
         const trans_in_oe = [
             "trans in ", "österreich", 
@@ -85,6 +105,7 @@ class Page_statistics extends Component {
                 <p><span ref="value4" id="percent4">60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p>
             </div>,
         ];
+        
         
         let index = 1;
         
