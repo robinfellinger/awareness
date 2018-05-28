@@ -4,15 +4,12 @@
     align-content: center;
     justify-items: center;
     text-align: center;
-    grid-template-rows: repeat(10, 10vh);
-    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: min-content 1fr min-content min-content 1fr min-content;
     color: $color-black;
 
 
     &__titel {
-        grid-row: 3 / 6;
-        grid-column: 1 / -1;
-        align-self: center;
+        grid-row: 3;
         font-family: $font-secondary;
         font-size: 5.4rem;
         font-style: italic;
@@ -27,12 +24,9 @@
     }
 
     &__content {
-        grid-row: 5 / 10;
-        grid-column: 1 / -1;
-        align-self: center;
+        grid-row: 4;
         font-size: 1.8rem;
         font-weight: 600;
-        width: 46rem;
         line-height: 1.8rem * 1.6;
         letter-spacing: 1.8rem * 0.13;
 
@@ -40,7 +34,7 @@
             width: 64.8rem;
 
             @media screen and (max-width: $bp-small) {
-                width: 58rem;
+                width: 50rem;
             }
         }
     }

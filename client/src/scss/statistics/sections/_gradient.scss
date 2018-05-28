@@ -1,53 +1,88 @@
 .gradient {
     background: linear-gradient(128.67deg, rgba(229, 233, 255, 0.8439) 18.34%, rgba(255, 195, 195, 0.7743) 95.15%), #000000;
     display: grid;
-    grid-template-rows: repeat(10, 10vh);
-    grid-template-columns: minmax(3rem, 1fr) repeat(2, 60rem) minmax(3rem, 1fr);
+    grid-template-rows: min-content 1fr min-content min-content min-content 1.5fr min-content;
+    grid-template-columns: minmax(3rem, 1fr) min-content min-content minmax(3rem, 1fr);
 
-    @media only screen and (max-width: $bp-large) {
-        grid-template-columns: minmax(3rem, 1fr) 60rem minmax(3rem, 1fr);
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: minmax(3rem, 1fr) min-content minmax(3rem, 1fr);
     }
 
     &__titel {
-        
-        grid-row: 3 / 4;
+        grid-row: 3;
         grid-column: 2;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 4.8rem;
         letter-spacing: 4.8rem * 0.2;
+        text-align: center;
+
+        padding: 4rem 0rem;
+
+         @media only screen and (max-height: $bp-ext) {
+             padding: 1.5rem;
+         }
+
+         @media only screen and (max-width: $bp-small) {
+            text-align: center;
+            grid-column: 1 / -1;
+            font-size: 4rem;
+        }
     }
     &__text {
-        grid-row: 5;
+        grid-row: 4;
         grid-column: 2;
-        width: 52.6rem;
+        width: 41rem;
         font-weight: 300;
         line-height: 2.8rem;
         font-size: 2rem;
         letter-spacing: 2rem * 0.06;
+        padding: 4rem 0rem;
+        justify-self: center;
+        text-align: center;
 
-        @media only screen and (max-width: $bp-largest) {
-            grid-row: 4;
+        @media only screen and (max-height: $bp-ext) {
+            padding: 1.5rem 0rem;
         }
     }
 
     &__statistic {
         text-align: center;
         padding-top: 5rem;
-        grid-row: 3 / 10;
+        width: 50rem;
+        grid-row: 1 / -1;
+        align-self: center;
         grid-column: 3;
         font-weight: 300;
         line-height: 2.8rem;
         font-size: 1.6rem;
         letter-spacing: 2rem * 0.06;
+        transform: translateY(5rem);
 
         @media only screen and (max-width: $bp-large) {
+            width: 30rem;
+             font-size: 1.2rem;
+             
+        transform: translateY(1rem);
+        }
+
+        @media only screen and (max-width: $bp-small) {
             grid-column: 2;
-            grid-row: 6;
+            grid-row: 5;
+             width: 50rem;
+             
+             padding-top: 1rem;
         }
 
         p {
             margin-bottom: 5rem;
+            
+        @media only screen and (max-width: $bp-large) {
+            margin-bottom: 3rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            margin-bottom: 1.5rem;
+        }
         }
         
 
@@ -57,6 +92,10 @@
             font-size: 3.6rem;
             text-align: center;
             letter-spacing: 0.15em;
+
+            @media only screen and (max-width: $bp-large) {
+                font-size: 2.5rem;
+            }
         }
 
         :first-child {
@@ -64,6 +103,9 @@
 
             span {
                 font-size: 11.2rem;
+                @media only screen and (max-width: $bp-large) {
+                    font-size: 8rem;
+                }
             }
         }
     }
