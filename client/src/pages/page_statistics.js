@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollTrigger from 'react-scroll-trigger';
+
 
 class Page_statistics extends Component {
 
@@ -8,47 +8,46 @@ class Page_statistics extends Component {
         this.state = {
             percent1: false,
         };
-        this.onEnterViewport = this.onEnterViewport.bind(this);
+        // this.onEnterViewport = this.onEnterViewport.bind(this);
         // this.onExitViewport = this.onExitViewport.bind(this);
     }
 
-    handle = (value, duration) => {
-        this.ref = value;
-        this.animateValue(duration);
-      }
+    // handle = (value, duration) => {
+    //     this.ref = value;
+    //     this.animateValue(duration);
+    //   }
 
-    animateValue(duration) {
-        var current = 0;
-        var end = this.ref.innerHTML.replace('%','');
-        var range = end - current;
-        var increment = 1; //further tweak for duration change
-        var stepTime = Math.abs(Math.floor(duration / range));
-        var obj = this.ref;
-        var timer = setInterval(request, stepTime);
-        function request(){
-            clearInterval(timer);
-            current += increment;
-            obj.innerHTML = Math.floor(current) + "%"; 
-            if (Math.floor(current) === end) {
-                clearInterval(timer);
-                return;
-            }
-            stepTime = stepTime - stepTime/100;
-            timer = setInterval(request, stepTime);
-        }
-    }
+    // animateValue(duration) {
+    //     var current = 0;
+    //     var end = this.ref.innerHTML.replace('%','');
+    //     var range = end - current;
+    //     var increment = 1; //further tweak for duration change
+    //     var stepTime = Math.abs(Math.floor(duration / range));
+    //     var obj = this.ref;
+    //     var timer = setInterval(request, stepTime);
+    //     function request(){
+    //         clearInterval(timer);
+    //         current += increment;
+    //         obj.innerHTML = Math.floor(current) + "%"; 
+    //         if (Math.floor(current) == end) {
+    //             clearInterval(timer);
+    //             return;
+    //         }
+    //         stepTime = stepTime - stepTime/100;
+    //         timer = setInterval(request, stepTime);
+    //     }
+    // }
 
-    
 
-      onEnterViewport() {
-        if(this.state.percent1 === false){
-        this.setState({percent1: true});
-            this.handle(this.refs.value1, 500);
-            this.handle(this.refs.value2, 1000);
-            this.handle(this.refs.value3, 1500);
-            this.handle(this.refs.value4, 2000);
-        }
-      }
+    //   onEnterViewport() {
+    //     if(this.state.percent1 === false){
+    //     this.setState({percent1: true});
+    //         this.handle(this.refs.value1, 500);
+    //         this.handle(this.refs.value2, 1000);
+    //         this.handle(this.refs.value3, 1500);
+    //         this.handle(this.refs.value4, 2000);
+    //     }
+    //   }
 
     //   onExitViewport() {
     //     this.setState({
@@ -79,24 +78,23 @@ class Page_statistics extends Component {
             "Diskriminierung",
             "Transgender Personen sind häufig Verletzungen ihrer Grundrechte wie Diskriminierung, Gewalt und Belästigung ausgesetzt, und zwar in einem weit höheren Maß, als dies von anderen Personen in der LGBT Community angegeben wird. Solche Erfahrungen bewirken ständige Angstgefühle und haben oft starke Depressionen und andere psychische Erkrankungen zur folge.",
             
-            <div class="gradient__statistic">
-                <p><span ref="value1">54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
-                <p><span ref="value2">78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
-                <p><span ref="value3">37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
-                <p><span ref="value4">60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p>
+            <div className="gradient__statistic">
+                <p><span ref="value1" id="percent1">54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
+                <p><span ref="value2" id="percent2">78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
+                <p><span ref="value3" id="percent3">37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
+                <p><span ref="value4" id="percent4">60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p>
             </div>,
         ];
         
         let index = 1;
         
         return(
-            <div class="statistics-container">
+            <div className="statistics-container">
                  <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} index={`${index++}`} />
                  <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} index={`${index++}`} />
            
-                 <ScrollTrigger onEnter={this.onEnterViewport} onExit={this.onExitViewport}>
+                
                  <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} index={`${index++}`} /> 
-                 </ScrollTrigger>
                  
                  <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} index={`${index++}`} />
                  <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} index={`${index++}`} />
@@ -107,58 +105,58 @@ class Page_statistics extends Component {
 
 const SectionHeader = (props) => {
     return (
-        <section class="header ops-section active" data-index={props.index}>
-            <h2 class="header__titel">{props.title}<span class="header__titel--highlight">{props.span}</span></h2>
-            <p class="header__content">{props.text}</p>
-            <a href="http://www.hosilinz.at" class="header__link">hosilinz.at</a>
+        <section className="header ops-section active" data-index={props.index}>
+            <h2 className="header__titel">{props.title}<span className="header__titel--highlight">{props.span}</span></h2>
+            <p className="header__content">{props.text}</p>
+            <a href="http://www.hosilinz.at" className="header__link">hosilinz.at</a>
         </section>
     )
 }
 
 const SectionWhite2 = (props) => {
     return (
-        <section class="white ops-section" data-index={props.index}>
-        <div class="line"></div>
-            <p class="navigation">navigation <span>0{props.index}/05</span></p>
+        <section className="white ops-section" data-index={props.index}>
+        <div className="line"></div>
+            <p className="navigation">navigation <span>0{props.index}/05</span></p>
 
-            <h2 class="white__titel">{props.title}<br /><span class="white__titel--highlight">{props.span}</span></h2>
-            <p class="white__content white__content--large">{props.text}</p>
+            <h2 className="white__titel">{props.title}<br /><span className="white__titel--highlight">{props.span}</span></h2>
+            <p className="white__content white__content--large">{props.text}</p>
 
-            <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
+            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
         </section>
     )
 }
 
 const SectionBlack = (props) => {
     return (
-        <section class="black ops-section" data-index={props.index}>
-            <div class="line"></div>
-            <p class="navigation">navigation <span>0{props.index}/05</span></p>
+        <section className="black ops-section" data-index={props.index}>
+            <div className="line"></div>
+            <p className="navigation">navigation <span>0{props.index}/05</span></p>
 
-            <h2 class="black__titel">{props.title}</h2>
-            <p class="black__text black__text--1">{props.text_1}</p>
-            <p class="black__text black__text--2">{props.text_2}</p>
+            <h2 className="black__titel">{props.title}</h2>
+            <p className="black__text black__text--1">{props.text_1}</p>
+            <p className="black__text black__text--2">{props.text_2}</p>
 
-            <div class="line line--hashtags"></div>
-            <p class="black__text black__text--hashtags">#binder #passing <br />#homelessTransTeens</p>
+            <div className="line line--hashtags"></div>
+            <p className="black__text black__text--hashtags">#binder #passing <br />#homelessTransTeens</p>
 
-            <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
+            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
         </section>
     )
 }
 
 const SectionGradient = (props) => {
     return (
-        <section id="numbers" class="gradient ops-section" data-index={props.index}>
-        <div class="line"></div>
-            <p class="navigation">navigation <span>0{props.index}/05</span></p>
+        <section id="numbers" className="gradient ops-section" data-index={props.index}>
+        <div className="line"></div>
+            <p className="navigation">navigation <span>0{props.index}/05</span></p>
 
 
-            <h2 class="gradient__titel">{props.title}</h2>
-            <p class="gradient__text">{props.text_1}</p>
+            <h2 className="gradient__titel">{props.title}</h2>
+            <p className="gradient__text">{props.text_1}</p>
             {props.extra}
 
-            <div class="vl vl--1"></div><div class="vl vl--2"></div><div class="vl vl--3"></div>
+            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
         </section>
     )
 }
