@@ -99,8 +99,8 @@ class TestScene extends Component {
 
 
         scene.add(lightIn);
-        scene.add(lightOut);
-        scene.add(lightFront);
+        scene.add(lightOut); //ambient light
+        scene.add(lightFront); //hard light from right top
     }
     function buildCamera({ width, height }) {
             const aspectRatio = width / height;
