@@ -12,6 +12,7 @@ $color-black: rgb(0, 0, 0);
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em;   // 1200px
 $bp-large: 62.5em;   // 1000px
+$bp-ext: 53em; // 848px;
 $bp-medium: 50em;    // 800px;
 $bp-small: 37.5em;    // 600px;
 
@@ -28,15 +29,24 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
 
+    @media only screen and (max-height: $bp-medium) {
+        font-size: 56.25%;
+    }
+
     @media only screen and (max-width: $bp-largest) {
         font-size: 50%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 37.5%;
     }
 }
 
 .statistics-container {
     width: 100vw;
     display: grid;
-    grid-template-rows: repeat(5, [page] 100vh);
+    grid-template-rows: repeat(5, [page] minmax(600px, 100vh));
+    grid-template-columns: minmax(320px, 100vw);
     font-family: $font-primary;
     color: $color-white;
 }

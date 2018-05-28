@@ -1,0 +1,28 @@
+.vl {
+    grid-row: 10;
+    grid-column: 1 / -1; 
+
+    align-self: end;
+    justify-self: center;
+
+    content: "";
+    height: 4rem;
+    width: 0.4rem;
+    display: block;
+    background-color: currentColor;
+
+
+    &--1 {
+        transform: translateX(-1.4rem);
+        height: 6rem;
+        
+    }
+
+    &--3 {
+        transform: translateX(1.4rem);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        display: none;
+    }
+}
