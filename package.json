@@ -7,8 +7,6 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
