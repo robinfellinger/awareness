@@ -8,52 +8,9 @@ class Page_statistics extends Component {
         this.state = {
             percent1: false,
         };
-        // this.onEnterViewport = this.onEnterViewport.bind(this);
-        // this.onExitViewport = this.onExitViewport.bind(this);
+  
     }
 
-    // handle = (value, duration) => {
-    //     this.ref = value;
-    //     this.animateValue(duration);
-    //   }
-
-    // animateValue(duration) {
-    //     var current = 0;
-    //     var end = this.ref.innerHTML.replace('%','');
-    //     var range = end - current;
-    //     var increment = 1; //further tweak for duration change
-    //     var stepTime = Math.abs(Math.floor(duration / range));
-    //     var obj = this.ref;
-    //     var timer = setInterval(request, stepTime);
-    //     function request(){
-    //         clearInterval(timer);
-    //         current += increment;
-    //         obj.innerHTML = Math.floor(current) + "%"; 
-    //         if (Math.floor(current) == end) {
-    //             clearInterval(timer);
-    //             return;
-    //         }
-    //         stepTime = stepTime - stepTime/100;
-    //         timer = setInterval(request, stepTime);
-    //     }
-    // }
-
-
-    //   onEnterViewport() {
-    //     if(this.state.percent1 === false){
-    //     this.setState({percent1: true});
-    //         this.handle(this.refs.value1, 500);
-    //         this.handle(this.refs.value2, 1000);
-    //         this.handle(this.refs.value3, 1500);
-    //         this.handle(this.refs.value4, 2000);
-    //     }
-    //   }
-
-    //   onExitViewport() {
-    //     this.setState({
-    //       percent1: false,
-    //     });
-    //   }
     render(){
         const trans_in_oe = [
             "trans in ", "österreich", 
