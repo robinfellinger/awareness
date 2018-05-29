@@ -5,6 +5,7 @@ deploy:
   token: 
     - $FIREBASE_TOKEN"
 install: 
+  - "npm i react-scripts"
   - "npm run build"
 language: node_js
 node_js: 
