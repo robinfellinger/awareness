@@ -6,6 +6,7 @@ deploy:
     - $FIREBASE_TOKEN"
 install: 
   - "npm i react-scripts"
+  - "yarn add react-scripts"
   - "npm run build"
 language: node_js
 node_js: 
