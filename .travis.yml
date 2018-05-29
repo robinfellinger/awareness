@@ -1,9 +1,11 @@
 --- 
-after_success: 
-  - "firebase deploy - project awareness-ca317 - token $FIREBASE_TOKEN"
+deploy: 
+  provider: firebase
+  skip_cleanup: true
+  token: 
+    - $FIREBASE_TOKEN"
 install: 
-  - "npm install -g firebase-tools"
+  - "npm run build"
 language: node_js
 node_js: 
   - "8.11.1"
-yarn: false
