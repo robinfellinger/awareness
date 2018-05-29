@@ -1,25 +1,21 @@
-node_modules
-client/package-lock.json
-node_modules
-npm-debug.log
-.idea/awareness.iml
-*.xml
-client/src/components/message.js
-client/src/scss/standardSettings
-client/src/index.css
-*.lock
-client/yarn.lock
-*.lock
-client/package-lock.json
-package-lock.json
-package-lock.json
-client/src/standardSettings.css
-*.css
-*.map
-client/debug.log
-client/src/scss/main.css
-client/yarn.lock
-client/src/scss/main.css
-client/yarn.lock
-client/src/scss/main.css
-client/src/scss/main.scss
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
