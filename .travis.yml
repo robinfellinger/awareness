@@ -1,13 +1,8 @@
 --- 
-deploy: 
-  provider: firebase
-  skip_cleanup: true
-  token: 
-    - $FIREBASE_TOKEN"
+after_success: 
+  - "firebase deploy - project awareness-ca317 - token $FIREBASE_TOKEN"
 install: 
-  - "npm i react-scripts"
-  - "yarn add react-scripts"
-  - "yarn run build"
+  - "npm i -g firebase-tools"
 language: node_js
 node_js: 
   - "8.11.1"
