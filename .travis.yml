@@ -1,8 +1,11 @@
 --- 
 after_success: 
   - "firebase deploy - project awareness-ca317 - token $FIREBASE_TOKEN"
+before_install: 
+  - "npm install -g yarn --cache-min 999999999"
 install: 
   - "npm install -g firebase-tools"
+  - yarn
 language: node_js
 node_js: 
   - "8.11.1"
