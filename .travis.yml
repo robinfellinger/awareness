@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "8.11.1"
+  script:
+    - echo "Deploying!"
+    - cd client
+    - npm run build
+  install:
+    - npm install -g firebase-tools
+  after_success:
+    - firebase deploy --token $FIREBASE_TOKEN
+  # whitelist
+branches:
+  only:
+    - travis
