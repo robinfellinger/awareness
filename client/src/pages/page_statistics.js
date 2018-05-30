@@ -11,8 +11,7 @@ class Page_statistics extends Component {
   
     }
 
-<<<<<<< HEAD
-=======
+
     // handle = (value, duration) => {
     //     this.ref = value;
     //     this.animateValue(duration);
@@ -75,7 +74,6 @@ class Page_statistics extends Component {
         document.body.appendChild(script2);
     }
 
->>>>>>> cd0e3b91df3fcb914a184526c853b1c68d396eb9
     render(){
         const trans_in_oe = [
             "trans in ", "österreich", 

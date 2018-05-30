@@ -13,7 +13,7 @@ import threeEntryPoint from "./components/threejs/ThreeEntryPoint"
 import Statistics from "./pages/page_statistics"
 import Active from "./pages/page_active"
 import Glossary from "./pages/page_glossary"
-import $ from 'jquery';
+
 //import './index.css'
 import './scss/main.scss'
 import './scss/main.css'
