@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import SceneSubject from './SceneSubject';
 import GeneralLights from './GeneralLights';
 
+
 export default canvas => {
 
     const clock = new THREE.Clock();

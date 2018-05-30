@@ -113,7 +113,7 @@ class App extends Component {
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
                     {this.state.showStatisticPage &&
                         <Page_statistics></Page_statistics>
-                    }
+                   }
                 </div>
             }
 

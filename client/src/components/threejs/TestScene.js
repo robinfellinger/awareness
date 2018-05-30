@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
+/*import EffectComposer from './../effects/EffectComposer.js';
+import ShaderPass from './../effects/ShaderPass.js';
+import RenderPass from './../effects/RenderPass.js';
+import FilmShader from './../effects/FilmPass.js';*/
+
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
@@ -44,6 +49,29 @@ class TestScene extends Component {
         this.refs.anchor.appendChild(this.renderer.domElement);
         this.renderer.render(this.scene, camera);
 
+        //-------------PROSTPRO-----------
+
+       /* var renderPass = new THREE.RenderPass(scene, camera );
+        renderPass.clear = false;
+        // var copyPass = new THREE.ShaderPass( THREE.CopyShader );
+        // copyPass.renderToScreen = true;
+
+        var composer = new THREE.EffectComposer(renderer );
+        composer.addPass( renderPass );
+        // composer.addPass( copyPass );
+
+        composer.render( 0.05 );
+
+
+
+
+        // const composer = new EffectComposer(this.renderer);
+        //
+        // const renderPass = new RenderPass(this.scene, this.camera);
+        composer.addPass(renderPass);
+
+        const filmPass = new ShaderPass(FilmShader);
+        composer.addPass(filmPass);*/
 
         light(this.scene);
         glow(this.scene);
@@ -120,8 +148,6 @@ class TestScene extends Component {
 
     }
 
-
-
      onWindowResize(this.renderer);
      window.addEventListener( 'resize', onWindowResize(this.renderer), false );
 
@@ -146,13 +172,16 @@ class TestScene extends Component {
     }
 
     render(){
+        //this.composer.render();
 
+        //requestAnimationFrame(this.render);
 
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (
             <div ref="anchor">
                 {this.props.children}
             </div>
+
 
         );
     }

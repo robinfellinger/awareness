@@ -7,7 +7,7 @@ class Type extends Component {
 
         const options = {
             strings: strings,
-            typeSpeed: 100
+            typeSpeed: 0.7,
         };
         this.typed = new Typed(this.el, options);
     }
@@ -18,7 +18,7 @@ class Type extends Component {
 
     render() {
         return (
-            <div><span
+            <div className={"question"}><span
                 ref={(el) => { this.el = el; }}
             /></div>
         );
