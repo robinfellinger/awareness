@@ -4,20 +4,15 @@ import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
 
+
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
 
 class TestScene extends Component {
 
-    // startWidth = width.innerHeight;
-    // startHeight = height.innerHeight;;
-
-
-
-
     scene = new THREE.Scene();
-    renderer = new THREE.WebGLRenderer({  alpha: true  });
+    renderer = new THREE.WebGLRenderer({  alpha: true, logarithmicDepthBuffer: true  });
 
     constructor(){
         super();
