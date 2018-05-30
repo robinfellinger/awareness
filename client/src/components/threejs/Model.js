@@ -10,7 +10,9 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import three from 'three';
 import PropTypes from 'prop-types';
+
 var TWEEN = require('@tweenjs/tween.js');
+
 //var TWEEN = require('@tweenjs/tween.js');
 var mesh = null;
 var particleSphere = null;
@@ -18,6 +20,7 @@ var particleVertices = null;
 var particleVertices1 = null;
 var mesh2 = null;
 var mesh3 = null;
+
 
 var testColor = new THREE.Color(0xBDE100);
 var testColor2 = new THREE.Color(new THREE.Color("hsl(10%, 0%, 0%)"));
@@ -110,11 +113,8 @@ class Model extends Component {
 
             var cubeGeometry = new THREE.BoxGeometry(w, h, d);
 
-
-
-
             var cubeMaterial = new THREE.MeshPhongMaterial({
-                vertexColors:THREE.VertexColors
+                vertexColors:THREE.VertexColors, emissive: 0x00ff00, emissiveIntensity: 1
             });
 
             if(opacity < 1.0){
@@ -141,33 +141,33 @@ class Model extends Component {
         }
         function drawShape(mScene){
 
-            const part1 = makeGradientCube(0xadebff, 0xEDB2D9, 0.5,0.1,16, 1);
+            const part1 = makeGradientCube(0x33ccff, 0xcf309a, 0.5,0.1,16, 1);
             part1.position.z = 0;
             part1.position.x = -11;
             part1.position.y = 3;
-            mScene.add( part1 );
+          //  mScene.add( part1 );
 
-            const part2 = makeGradientCube(0xadebff, 0xEDB2D9, 0.5,0.1,16, 1);
+            const part2 = makeGradientCube(0x33ccff, 0xcf309a, 0.5,0.1,16, 1);
             part2.position.z = 0;
             part2.position.x = 4.5;
             part2.position.y = 3;
-            mScene.add( part2 );
+         //   mScene.add( part2 );
 
             const part3G = new THREE.BoxGeometry(16, 0.5, 0.1);
-            const part3M = new THREE.MeshPhongMaterial({ color: "#adebff" });
+            const part3M = new THREE.MeshPhongMaterial({ color: "#33ccff", emissive: 0x33ccff, emissiveIntensity: 1});
             const part3 = new THREE.Mesh(part3G, part3M);
             part3.position.z = 0;
             part3.position.x = -3.19;
             part3.position.y = -4.8;
-            mScene.add( part3 );
+       //     mScene.add( part3 );
 
             const part4G = new THREE.BoxGeometry(16, 0.5, 0.1);
-            const part4M = new THREE.MeshPhongMaterial({ color: "#EDB2D9" });
+            const part4M = new THREE.MeshPhongMaterial({ color: "#cf309a", emissive: 0xcf309a, emissiveIntensity: 1, specular: 0xcf309a, shininess: 100});
             const part4 = new THREE.Mesh(part4G, part4M);
             part4.position.z = 0;
             part4.position.x = -3.19;
             part4.position.y = 10.8;
-            mScene.add( part4 );
+         //   mScene.add( part4 );
         }
 /////////////////////////////////////////////////////////////////////////////
 ////// PARTICLES

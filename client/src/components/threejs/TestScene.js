@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
+
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
@@ -11,8 +12,13 @@ class TestScene extends Component {
 
     // startWidth = width.innerHeight;
     // startHeight = height.innerHeight;;
+
+
+
+
     scene = new THREE.Scene();
     renderer = new THREE.WebGLRenderer({  alpha: true  });
+
     constructor(){
         super();
         this.state = {
@@ -27,12 +33,12 @@ class TestScene extends Component {
             height: window.innerHeight
         };
         this.updateThree(this.props);
-        console.log(this.renderer);
+      //  console.log(this.renderer);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapType = THREE.PCFSoftShadowMap;
         this.renderer.gammaInput = true;
         this.renderer.gammaOutput = true;
-
+        this.renderer.autoClear = false;
         const camera =  buildCamera(screenDimensions);
         this.renderer.setSize(screenDimensions);
 
@@ -47,70 +53,17 @@ class TestScene extends Component {
 
         light(this.scene);
 
-        // var planeShadow = new THREE.DirectionalLight( 0xffffff, 0.2 );
-        // planeShadow.position.set(0,40,40);
-        // let helper = new THREE.DirectionalLightHelper( planeShadow, 5 );
-        // planeShadow.shadowDarkness = 0.7;
-        // planeShadow.castShadow = true;
-        // planeShadow.shadowCameraVisible = true;
-        //
-        // this.scene.add(helper);
-        // this.scene.add(planeShadow);
-
-
-
-
-        // planeShadow.shadow.mapSize.width = 512;  // default
-        // planeShadow.shadow.mapSize.height = 512; // default
-        // planeShadow.shadow.camera.near = 0.5;    // default
-        // planeShadow.shadow.camera.far = 120;     // default
-glow(this.scene);
-
-
-    function glow(scene){
-
-        const shadowLight = new THREE.PointLight( 0x000000, 1, 100, 2);
-        shadowLight.position.set( 0, 80, 60 );
-        shadowLight.castShadow = true;
-        scene.add( shadowLight );
-
-        color: "#6d6d76";
-        var blue = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const blueLight = new THREE.PointLight( 0x33ccff, 1, 100, 2 );
-        const blueMat = new THREE.MeshStandardMaterial( {
-            emissive: 0x33ccff,
-            emissiveIntensity: 10,
-            color: 0x000000
-        });
-        blueLight.add( new THREE.Mesh( blue, blueMat ) );
-        blueLight.position.set( -20, 0, -5 );
-
-        scene.add( blueLight );
-
-
-        var pink = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const pinkLight = new THREE.PointLight( 0xcf309a, 1, 100, 2 );
-        const pinkMat = new THREE.MeshStandardMaterial( {
-            emissive: 0xEDB2D9,
-            emissiveIntensity: 10,
-            color: 0x000000
-        });
-        pinkLight.add( new THREE.Mesh( pink, pinkMat ) );
-        pinkLight.position.set( -10, 30, -5 );
-
-        scene.add( pinkLight );
-    }
-
 
 
     function light(scene){
         const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
-        const lightFront = new THREE.DirectionalLight( 0xffffff, 0.3 );
+        const lightFront = new THREE.DirectionalLight( 0x000000, 0.3 );
         const lightOut = new THREE.AmbientLight( 0x404040, 3 );
 
         lightOut.position.set(40,20,40);
         lightIn.position.set(-110,-100,-190);
         lightFront.position.set(40,40,40);
+
 
 
         scene.add(lightIn);

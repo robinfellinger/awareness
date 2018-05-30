@@ -5,7 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js" charset="utf-8"></script>
 
+    <script src="https://threejs.org/examples/js/shaders/CopyShader.js" charset="utf-8"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/EffectComposer.js" charset="utf-8"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/RenderPass.js" charset="utf-8"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/ShaderPass.js" charset="utf-8"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/MaskPass.js" charset="utf-8"></script>
+   <!-- <script src="glow.js"></script>-->
+    <script src="C:\Users\migar\Documents\GitHub\awareness\client\src\components\tryingOut.js"></script>
+
+    <!-- WebGL fragment shaders -->
+    <script id="simpleVertex" type="x-shader/x-vertex">
+      varying vec2 vUv;
+
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    </script>
+
+    <script id="horizontalBlurFrag" type="x-shader/x-fragment">
+        uniform sampler2D tDiffuse;
+        uniform float h;
+
+        varying vec2 vUv;
+
+        void main() {
+            vec4 sum = vec4( 0.0 );
+
+            vec4 originalSample = texture2D( tDiffuse, vUv );
+
+            sum += texture2D( tDiffuse, vec2( vUv.x - 4.0 * h, vUv.y ) ) * 0.0162;
+            sum += texture2D( tDiffuse, vec2( vUv.x - 3.0 * h, vUv.y ) ) * 0.0540;
+            sum += texture2D( tDiffuse, vec2( vUv.x - 2.0 * h, vUv.y ) ) * 0.1216;
+            sum += texture2D( tDiffuse, vec2( vUv.x - 1.0 * h, vUv.y ) ) * 0.1945;
+            sum += originalSample * 0.2270;
+            sum += texture2D( tDiffuse, vec2( vUv.x + 1.0 * h, vUv.y ) ) * 0.1945;
+            sum += texture2D( tDiffuse, vec2( vUv.x + 2.0 * h, vUv.y ) ) * 0.1216;
+            sum += texture2D( tDiffuse, vec2( vUv.x + 3.0 * h, vUv.y ) ) * 0.0540;
+            sum += texture2D( tDiffuse, vec2( vUv.x + 4.0 * h, vUv.y ) ) * 0.0162;
+
+            gl_FragColor = sum;
+        }
+    </script>
+
+    <script id="verticalBlurFrag" type="x-shader/x-fragment">
+        uniform sampler2D tDiffuse;
+        uniform float v;
+
+        varying vec2 vUv;
+
+        void main() {
+            vec4 sum = vec4( 0.0 );
+
+            vec4 originalSample = texture2D( tDiffuse, vUv );
+
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 4.0 * v ) ) * 0.0162;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 3.0 * v ) ) * 0.0540;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 2.0 * v ) ) * 0.1216;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 1.0 * v ) ) * 0.1945;
+            sum += originalSample * 0.2270;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 1.0 * v ) ) * 0.1945;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 2.0 * v ) ) * 0.1216;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 3.0 * v ) ) * 0.0540;
+            sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 4.0 * v ) ) * 0.0162;
+
+            gl_FragColor = sum;
+        }
+    </script>
+<!-- blurOpacity ist die Intensität vom blur -->
+    <script id="overlayFrag" type="x-shader/x-fragment">
+        uniform sampler2D tDiffuse;
+        uniform sampler2D tOverlay;
+
+        varying vec2 vUv;
+
+        void main() {
+            vec4 regularScene = texture2D( tDiffuse, vUv );
+            vec4 overlay = texture2D( tOverlay, vUv );
+
+            float blurOpacity = 0.45;
+
+            overlay.a *= blurOpacity;
+            gl_FragColor = vec4(regularScene.rgb * (1.0 - overlay.a) +  overlay.rgb * overlay.a, 1.0);
+        }
+    </script>
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/

@@ -7,7 +7,7 @@ import * as THREE from 'three'
 
 export default scene => {
 
-    const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
+    const lightIn = new THREE.PointLight("#ff00ff", 2, 0.0, 0.01);
     const lightFront = new THREE.DirectionalLight( 0xffffff, 0.3 );
     const lightOut = new THREE.AmbientLight( 0x404040, 3 );
 
