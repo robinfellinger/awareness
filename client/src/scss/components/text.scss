@@ -1,9 +1,11 @@
 .headline {
   &-xl {
-    font-family: "Butler Stencil", "Libre Baskerville", serif;
+    //font-family: "Butler Stencil", "Libre Baskerville", serif;
+    //font-weight: 400;
+    font-family: "Raleway", "Libre Baskerville", serif;
     color: $text-main;
     font-size: $f-xl;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 9.2px;
     line-height: 1;
     margin-bottom: 0;
