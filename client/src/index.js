@@ -14,8 +14,9 @@ import Statistics from "./pages/page_statistics"
 import Active from "./pages/page_active"
 import Glossary from "./pages/page_glossary"
 
+
 //import './index.css'
-//import './scss/main.scss'
+import './scss/main.scss'
 import './scss/main.css'
 
 
@@ -37,5 +38,5 @@ render((
         <Main />
     </Router>
   ), document.getElementById('root'));
-  
+
 registerServiceWorker();

@@ -95,7 +95,6 @@ class App extends Component {
     }
 
 
-
     render() {
         const { color } = this.state;
         return (
@@ -119,6 +118,7 @@ class App extends Component {
             }
 
             {/*imports the three.js model (maybe commented out for better performance)*/}
+            <div className="pos-absolute gradient-shadow"></div>
             <div className={this.state.canvasClasses}>
                 {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
@@ -145,15 +145,6 @@ class App extends Component {
 
 
 }
-// render((
-//     <Router>
-//         <Route path={"/"} component={App}>
-//         <Route path="statistics" component={Page_statistics}>
-//         </Route>
-//     </Router>
-// ), document.body)
 
-
-// ReactDOM.render(<MyComponent />, document.getElementById('id'));
 
 export default App;

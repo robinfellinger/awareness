@@ -3,20 +3,17 @@ import React, { Component } from 'react';
 import * as THREE from 'three'
 import PropTypes from 'prop-types';
 
-/*import EffectComposer from './../effects/EffectComposer.js';
-import ShaderPass from './../effects/ShaderPass.js';
-import RenderPass from './../effects/RenderPass.js';
-import FilmShader from './../effects/FilmPass.js';*/
-
 import three from 'three';
 import Model from './Model'
 //var TWEEN = require('@tweenjs/tween.js');
 
-
 class TestScene extends Component {
 
+    // startWidth = width.innerHeight;
+    // startHeight = height.innerHeight;;
     scene = new THREE.Scene();
-    renderer = new THREE.WebGLRenderer({  alpha: true  });
+    renderer = new THREE.WebGLRenderer({  alpha: true, logarithmicDepthBuffer: true  });
+
     constructor(){
         super();
         this.state = {
@@ -36,7 +33,6 @@ class TestScene extends Component {
         this.renderer.shadowMapType = THREE.PCFSoftShadowMap;
         this.renderer.gammaInput = true;
         this.renderer.gammaOutput = true;
-
 
         const camera =  buildCamera(screenDimensions);
         this.renderer.setSize(screenDimensions);
@@ -127,8 +123,8 @@ class TestScene extends Component {
 
 
         scene.add(lightIn);
-        scene.add(lightOut);
-        scene.add(lightFront);
+        scene.add(lightOut); //ambient light
+        scene.add(lightFront); //hard light from right top
     }
     function buildCamera({ width, height }) {
             const aspectRatio = width / height;
@@ -147,6 +143,8 @@ class TestScene extends Component {
             renderer.setSize(window.innerWidth, window.innerHeight);
 
     }
+
+
 
      onWindowResize(this.renderer);
      window.addEventListener( 'resize', onWindowResize(this.renderer), false );
@@ -172,16 +170,13 @@ class TestScene extends Component {
     }
 
     render(){
-        //this.composer.render();
 
-        //requestAnimationFrame(this.render);
 
         window.addEventListener( 'resize', this.onWindowResize(this.renderer), false );
         return (
             <div ref="anchor">
                 {this.props.children}
             </div>
-
 
         );
     }

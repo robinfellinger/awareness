@@ -32,13 +32,13 @@ class StartInfo extends Component {
 
             <div>
 
-                <svg className="margin-line" height="5">
+                <svg className="margin-line line-anim" height="5">
                     <line className={"button--animate__arrowline"} x1="0" y1="0" x2="90" y2="0"
                           strokeWidth="3px" stroke="white"/>
                 </svg>
                 <h2 className={this.state.headlinexlClasses}><span className={"t-transform-uppercase"}>Hi, ich bin </span>Alex</h2>
                 <h3 className={this.state.headlinelgClasses}>wollen wir miteinander chatten?</h3>
-                <svg className="margin-line" width="60" height="5">
+                <svg className="margin-line line-anim" width="60" height="5">
                     <line className={"button--animate__arrowline"} x1="0" y1="0" x2="90" y2="0"
                           strokeWidth="3px" stroke="white"/>
                 </svg>

@@ -10,18 +10,21 @@ import PropTypes from 'prop-types';
 var TWEEN = require('@tweenjs/tween.js');
 
 var time = 0;
+var vStart = new THREE.Vector2(0, 0);
 var mesh = null;
+var wavePlane = null;
 var warpVector = null;
 var warpVector2 = null;
 var cRot = 0.3;
 var tRot = 0.8;
 var mouseTimer = 0;
+var next = false;
 var config = {
     frequenz: 1.4, //1.4 for wobble waves 0.2 for sublte rings 0.1 for extreme rings
     speed: 120, // + slower
     radius: 28,
-    widthSeg: 130, //resolution x
-    heightSeg: 130, // resolution y
+    widthSeg:120, //resolution x
+    heightSeg: 120, // resolution y
     magnitude:8,
     waveDepth: 0.01
 };
@@ -56,24 +59,73 @@ class Model extends Component {
 
     }
 
+    bounce(){
+        let position = { x : 0, y: 3 };
+        let tween = new TWEEN.Tween(position)
+            .to({x: 0, y: -0.6, rotation: 0}, 2000)
+            .delay(1500)
+            .easing(TWEEN.Easing.Elastic.Out)
+            .onUpdate(function(){
+                mesh.position.x = position.x;
+                mesh.position.y = position.y;
+            });
+        let tweenBack = new TWEEN.Tween(position)
+            .to({x: 0, y: 0., rotation: 0}, 2000)
+            .delay(1500)
+            .easing(TWEEN.Easing.Elastic.Out)
+            .onUpdate(function(){
+                mesh.position.x = position.x;
+                mesh.position.y = position.y;
+            });
+
+        tween.chain(tween);
+        // tweenBack.chain(tween);
+        tween.start();
+    }
+
+    createPlane(scene){
+        const geometry = new THREE.PlaneGeometry(40, 60, 120, 120);
+        const material = new THREE.MeshPhongMaterial({
+            color: new THREE.Color(0xded8f1),
+            // specular: 0xFFFFFF,
+            // emissive: 0x000000,
+            shininess: 0.1,
+            shading: THREE.FlatShading,
+            side: THREE.DoubleSide,
+
+        });
+
+        wavePlane = new THREE.Mesh(geometry, material);
+        wavePlane.rotation.x = -1.5 * Math.PI;
+        wavePlane.rotation.z = 20.5;
+        wavePlane.position.set(0, -20.5, -18);
+        vStart = new THREE.Vector2(0, 0);
+
+        // wavePlane.position.set(20, 20, -70);
+
+        scene.add(wavePlane);
+
+
+    }
     componentDidMount() {
 
         var rectLight = new THREE.RectAreaLight( 0xffffff, 2000,  9000, 9000 );
         rectLight.position.set( 5, 100, 0 );
         rectLight.lookAt(0,0,0);
-        this.context.scene.add( rectLight )
+        // this.context.scene.add( rectLight )
 
-
+        this.createPlane(this.context.scene);
         var geometry = new THREE.SphereGeometry(
             config.radius,
             config.widthSeg,
             config.heightSeg);
-
+"#ded8f1"
         var mat = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xE4E3F3),
+            color: new THREE.Color(0xD8E2F1),
             transparent: true,
-            side: THREE.DoubleSide,
-            shininess: 70,
+            // side: THREE.DoubleSide,
+            shininess: 1,
+            shading: THREE.FlatShading,
             alphaTest: 0.5
         });
 
@@ -82,50 +134,30 @@ class Model extends Component {
         mesh.receiveLights = true;
         mesh.geometry.dynamic = true;
         mesh.material.needsUpdate = true;
-        mesh.rotation.y=-200;
+        // mesh.rotation.y=-200;
         mesh.scale.set(0.4, 0.4, 0.4);
-        mesh.rotation.y -= 200;
+        // mesh.rotation.y -= 200;
         this.context.scene.add(mesh);
 
         warpVector = new THREE.Vector3(0, 50, 0); //50
         warpVector2 = new THREE.Vector3(20, 120, 0);
 
         console.log(warpVector);
-
-        var light = new THREE.DirectionalLight( 0xFFC500, 0.2 );
+"#FFC500"
+        var light = new THREE.DirectionalLight( 0xFFFBEA, 0.1 );
         light.position.set( 30, 0, 10 );
         let helper = new THREE.DirectionalLightHelper( light, 5 );
         this.context.scene.add(helper);
-        this.context.scene.add( light );
+        this.context.scene.add( light ); //soft light from the right
         light.target = mesh;
 
 
-        bounce();
+        this.bounce();
 
-        function bounce(){
-
-            let position = { x : 0, y: 3 };
-            let tween = new TWEEN.Tween(position)
-                .to({x: 0, y: -0.6, rotation: 0}, 2000)
-                .delay(1500)
-                .easing(TWEEN.Easing.Elastic.Out)
-                .onUpdate(function(){
-                    mesh.position.x = position.x;
-                    mesh.position.y = position.y;
-                });
-            let tweenBack = new TWEEN.Tween(position)
-                .to({x: 0, y: 0., rotation: 0}, 2000)
-                .delay(1500)
-                .easing(TWEEN.Easing.Elastic.Out)
-                .onUpdate(function(){
-                    mesh.position.x = position.x;
-                    mesh.position.y = position.y;
-                });
-
-            tween.chain(tween);
-            // tweenBack.chain(tween);
-            tween.start();
+        if(this.props.emotion === "joy"){
+            console.log("JOYYYY");
         }
+
     }
 
 
@@ -134,6 +166,18 @@ class Model extends Component {
 
 componentDidUpdate() {
 
+function waveForPlane(){
+    // const { vertices } = wavePlane.geometry;
+    const { magnitude, speed } = config;
+
+    for (let i = 0; i < wavePlane.geometry.vertices.length; i++) {
+        const v = wavePlane.geometry.vertices[i];
+        const dist = new THREE.Vector2(v.x, v.y).sub(vStart);
+        v.z = Math.sin(dist.length() / -1 + (time / speed)) * (cRot/2); //2 equals size
+    }
+
+    wavePlane.geometry.verticesNeedUpdate = true;
+}
 function wave(){
     const { vertices } = mesh.geometry;
     const { frequenz, speed, radius, magnitude, waveDepth } = config;
@@ -150,13 +194,11 @@ function wave(){
     mesh.geometry.verticesNeedUpdate = true;
 
     const warpSine = (Math.sin(time/(speed * 8))) * (radius * 2);
-    warpVector.z = warpSine;
+    // warpVector.z = warpSine; //comment in to move center of waves point
 
     mesh.geometry.computeVertexNormals();
     mesh.geometry.computeFaceNormals();
     mesh.geometry.verticesNeedUpdate = true;
-    mesh.geometry.elementsNeedUpdate = true;
-    mesh.geometry.normalsNeedUpdate = true;
     time++;
     }
 function wobble(){
@@ -197,8 +239,8 @@ function mousemove() {
         let mousePosY = (e.clientY - centerY) / centerY * mouseTolerance;
 
         setTimeout(function () {
-            mesh.rotation.x -= 0.05 * (mousePosX * -1);
-            mesh.rotation.y += 0.05 * (mousePosY * -1);
+            // mesh.rotation.x -= 0.05 * (mousePosX * -1);
+            // mesh.rotation.y += 0.05 * (mousePosY * -1);
         }, 100);
         if(mousePosX < 0 && mousePosY < 0){
 
@@ -233,6 +275,28 @@ function wakov(){
 }
 function handleEmotions(emotion){
     if(emotion === "joy"){
+        if(next === false){
+            next = true;
+            // setTimeout(function () {
+                let position = { x : 0, y: 3 };
+                let tween = new TWEEN.Tween(position)
+                    .to({x: 0, y: -0.6, rotation: 0}, 1000)
+                    // .delay(300)
+                    .easing(TWEEN.Easing.Elastic.In)
+                    .onUpdate(function(){
+                        mesh.position.x = position.x;
+                        mesh.position.y = position.y;
+                    });
+                tween.start();
+            // }, 0.005);
+
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.elementsNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
+        }
+
         if(config.frequenz > 0.7){
             config.frequenz -=0.01;
         }
@@ -242,7 +306,10 @@ function handleEmotions(emotion){
        wakov();//calculates random parameter for animations
        handleEmotions(this.props.emotion);
        wave();
-       //  wobble();
+       if(wavePlane){
+           waveForPlane();
+       }
+
         function gameLoop(){
             TWEEN.update();
         }
