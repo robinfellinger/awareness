@@ -15,5 +15,8 @@
     &:first-child {
       margin-right: 40px;
     }
+    &:nth-child(2) {
+      margin-right: 40px;
+    }
   }
 }

@@ -57,6 +57,8 @@
   &-sm {
     text-decoration: none;
     font-weight: 400;
+    background: none;
+    border: none;
   }
   &-startAnim {
     animation:   headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */
