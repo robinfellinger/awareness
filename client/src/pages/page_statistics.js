@@ -65,7 +65,7 @@ class Page_statistics extends Component {
 
         const script2 = document.createElement("script");
 
-        script2.innerHTML = 'onePageScroll("#root", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
+        script2.innerHTML = 'onePageScroll(".container-statistics", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
         script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}';
         script2.innerHTML += '}, loop: false, keyboard: true,  responsiveFallback: false      });';
          

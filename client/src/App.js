@@ -98,7 +98,16 @@ class App extends Component {
     render() {
         const { color } = this.state;
         return (
-        <div onWheel = {(e) => this.scrollExperience(e)}>
+        <div className={"extra"}> 
+        
+        <div className={"container-statistics"}>
+            {this.state.showStatisticPage &&
+                <Page_statistics></Page_statistics>
+            }
+       </div>
+
+       <div className={"container-ball"}>
+        {/* <div onWheel = {(e) => this.scrollExperience(e)}>*/}
             <AccessLinks></AccessLinks>
             <div className={"pos-absolute startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
@@ -111,9 +120,7 @@ class App extends Component {
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
-                    {this.state.showStatisticPage &&
-                        <Page_statistics></Page_statistics>
-                   }
+
                 </div>
             }
 
@@ -137,9 +144,9 @@ class App extends Component {
                 </TestScene>
             </div>
 
-
+            </div>
         </div>
-
+        /*</div>*/
     );
   }
 

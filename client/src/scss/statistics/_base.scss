@@ -51,3 +51,12 @@ html {
     color: $color-white;
 }
 
+.container {
+    &-statistics {
+        z-index: 30;
+        position: absolute;
+    }
+    &-ball {
+        z-index: 10;
+    }
+}
