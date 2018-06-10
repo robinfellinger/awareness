@@ -1,11 +1,12 @@
 /*///////////////////////////////////////////////////////////////////////
 /////// MAIN SCSS FILE -> IMPORT ALL SUBFILES*/
 
-//@import "statistics/main-statistics";
+//@import "statistics";
 @import 'statistics/base';
 @import 'statistics/components/scroll-signal';
 @import 'statistics/components/navigation';
 @import 'statistics/components/onepage-scroll';
+@import 'statistics/components/button';
 @import 'statistics/sections/header';
 @import 'statistics/sections/black';
 @import 'statistics/sections/white';

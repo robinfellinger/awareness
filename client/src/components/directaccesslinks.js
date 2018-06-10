@@ -53,9 +53,10 @@ class AccessLinks extends Component {
                     </svg>
                     <div className={"accesslinks_pos"}>
                 
-                        <button className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
-                        <button className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
-                        <button className={"accesslinks_link text-sm t-transform-lowercase a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>
+                        <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
+                        <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
+                        <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>
+                        <div class="underbar"></div>
                     </div>
                 </div>
             </div>

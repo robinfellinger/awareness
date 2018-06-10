@@ -58,6 +58,15 @@ body, .onepage-wrapper, html { display: block; position: static; padding: 0; wid
 
 body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { position: inherit; }
 
+.btn-text, .btn-text:link, .btn-text:visited { transition: all .1s; background: none; border: none; position: relative; cursor: pointer; padding-bottom: 6px; }
+.btn-text:not(:last-child), .btn-text:link:not(:last-child), .btn-text:visited:not(:last-child) { margin-right: 40px; }
+.btn-text:hover { color: black; }
+.btn-text:nth-of-type(1):hover ~ .underbar { left: -0.9rem; width: 9rem; }
+.btn-text:nth-of-type(2):hover ~ .underbar { left: 10rem; width: 13rem; }
+.btn-text:nth-of-type(3):hover ~ .underbar { left: 23.5rem; width: 10.5rem; }
+
+.underbar { width: 0rem; height: 1px; left: -5px; background: black; top: 20px; position: absolute; -webkit-transition: 0.5s ease; }
+
 .header { background: radial-gradient(circle, rgba(232, 232, 232, 0.8), rgba(217, 217, 217, 0.8)); display: grid; align-content: center; justify-items: center; text-align: center; color: black; }
 .header__titel { font-family: "Libre Baskerville", serif; font-size: 5.4rem; font-style: italic; font-weight: 300; letter-spacing: 0.702rem; margin-bottom: 5rem; }
 .header__titel--highlight { font-style: normal; font-weight: 800; }
@@ -143,7 +152,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 
 .t-italic { font-style: italic; }
 
-.a-sm { text-decoration: none; font-weight: 400; background: none; border: none; }
+.a-sm { text-decoration: none; font-weight: 400; }
 .a-startAnim { animation: headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */ }
 
 /* TEXT ANIMATIONS */
@@ -191,5 +200,3 @@ body { background-color: #404040; background: radial-gradient(ellipse at center,
 .interaction-pos { z-index: 50; }
 
 .gradient-shadow { width: 100%; height: 25vh; bottom: 0; background: -webkit-radial-gradient(#e6646500, #d3cfec); background: -o-radial-gradient(#e6646500, #d3cfec); background: radial-gradient(#e6646500 0, #d3cfec9e 48%, #d3cfec 63%); z-index: 2; height: 27vh; filter: blur(6px); }
-
-/*# sourceMappingURL=main.css.map */

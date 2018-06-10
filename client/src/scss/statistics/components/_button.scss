@@ -1,0 +1,47 @@
+.btn-text {
+    &,
+    &:link,
+    &:visited {
+        transition: all .1s;
+        background: none;
+        border: none;
+        position: relative;
+        cursor: pointer;
+
+        padding-bottom: 6px;
+
+        &:not(:last-child) {
+
+            margin-right: 40px;
+        }
+    }
+
+    &:hover {
+        color: $color-black;
+    //    border-bottom: solid 1px black;
+    }
+
+    &:nth-of-type(1):hover ~ .underbar{
+        left: -0.9rem;
+        width: 9rem;
+    }
+    &:nth-of-type(2):hover ~ .underbar{
+        left: 10rem;
+        width: 13rem;
+      }
+      &:nth-of-type(3):hover ~ .underbar{
+        left: 23.5rem;
+        width: 10.5rem;
+      }
+
+}
+
+.underbar{
+    width: 0rem;
+    height: 1px;
+    left: -5px;
+    background: black;
+    top: 20px;
+    position: absolute;
+    -webkit-transition: 0.5s ease;
+  }
