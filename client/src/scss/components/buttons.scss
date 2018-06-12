@@ -5,7 +5,18 @@
     border: 1px solid white;
     cursor: pointer;
   }
+  &-gradient {
+    background: none;
+    padding: 12px;
+    border-radius: 20px;
+    background: linear-gradient(220deg, #c8f3ff, #5cceff 90%);
+    color: white;
+    letter-spacing: 3px;
+    font-size: $f-xs;
+    border: inherit;
 
+    cursor: pointer;
+  }
   &-startAnim {
     animation: button-move-start 5s forwards; /* IE 10+, Fx 29+ */
     margin-top: 5rem;

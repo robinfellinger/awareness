@@ -8,7 +8,7 @@ Error: Undefined variable: "$text-main".
 4:     //font-weight: 400;
 5:     font-family: "Raleway", "Libre Baskerville", serif;
 6:     color: $text-main;
-7:     font-size: $f-xl;
+7:     font-size: calc(#{$f-xl} - 0.5rem);
 8:     font-weight: 600;
 9:     letter-spacing: 9.2px;
 10:     line-height: 1;
@@ -73,4 +73,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$text-main\".\A         on line 6 of /Users/marie/Documents/GitHub/awareness/client/src/scss/components/text.scss\A \A 1: .headline {\A 2:   &-xl {\A 3:     //font-family: \"Butler Stencil\", \"Libre Baskerville\", serif;\A 4:     //font-weight: 400;\A 5:     font-family: \"Raleway\", \"Libre Baskerville\", serif;\A 6:     color: $text-main;\A 7:     font-size: $f-xl;\A 8:     font-weight: 600;\A 9:     letter-spacing: 9.2px;\A 10:     line-height: 1;\A 11:     margin-bottom: 0;"; }
+  content: "Error: Undefined variable: \"$text-main\".\A         on line 6 of /Users/marie/Documents/GitHub/awareness/client/src/scss/components/text.scss\A \A 1: .headline {\A 2:   &-xl {\A 3:     //font-family: \"Butler Stencil\", \"Libre Baskerville\", serif;\A 4:     //font-weight: 400;\A 5:     font-family: \"Raleway\", \"Libre Baskerville\", serif;\A 6:     color: $text-main;\A 7:     font-size: calc(#{$f-xl} - 0.5rem);\A 8:     font-weight: 600;\A 9:     letter-spacing: 9.2px;\A 10:     line-height: 1;\A 11:     margin-bottom: 0;"; }

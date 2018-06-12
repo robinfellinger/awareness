@@ -49,13 +49,13 @@ class App extends Component {
         window.addEventListener("resize", this.updateDimensions);
     }
     gameLoop = () => {
-        const { rotationSpeed } = this.state;
+        // const { rotationSpeed } = this.state;
 
         requestAnimationFrame(this.gameLoop);
-        const { color } = this.state;
-        this.setState({tRot: 0});
+        // const { color } = this.state;
+        // this.setState({tRot: 0});
         this.setState({rotationSpeed: this.state.rotationSpeed+0.1});
-        this.wakov();
+        // this.wakov();
     }
 
 
@@ -100,7 +100,7 @@ class App extends Component {
         return (
         <div onWheel = {(e) => this.scrollExperience(e)}>
             <AccessLinks></AccessLinks>
-            <div className={"pos-absolute startInfo_pos"}>
+            <div className={"pos-absolute startInfo-container"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
             </div>
             <div className={"pos-absolute pos-centerText pos-bottom"}>

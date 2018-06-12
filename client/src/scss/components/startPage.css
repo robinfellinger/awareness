@@ -1,6 +1,32 @@
+.startInfo-intro-textindent {
+  margin-top: 9%;
+  margin-left: 34%; }
+.startInfo-intro_pos {
+  right: 4.8%;
+  width: 20%;
+  top: 53vh;
+  position: absolute; }
 .startInfo_pos {
-  bottom: 28vh;
-  left: 16vh;
-  width: 22%; }
+  top: 19vh;
+  position: absolute;
+  margin-left: 13vh;
+  height: 20vh;
+  width: 30%; }
+.startInfo-container {
+  width: 100%;
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 25% 100px auto; }
+.startInfo-gradientbutton {
+  margin-top: 20px; }
+
+.startCircle {
+  height: 170px;
+  width: 170px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  top: 35vh;
+  margin: auto; }
 
 /*# sourceMappingURL=startPage.css.map */

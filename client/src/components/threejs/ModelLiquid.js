@@ -23,8 +23,8 @@ var config = {
     frequenz: 1.4, //1.4 for wobble waves 0.2 for sublte rings 0.1 for extreme rings
     speed: 120, // + slower
     radius: 28,
-    widthSeg:120, //resolution x
-    heightSeg: 120, // resolution y
+    widthSeg:100, //resolution x
+    heightSeg: 100, // resolution y
     magnitude:8,
     waveDepth: 0.01
 };
@@ -124,7 +124,7 @@ class Model extends Component {
             color: new THREE.Color(0xD8E2F1),
             transparent: true,
             // side: THREE.DoubleSide,
-            shininess: 1,
+            shininess: 40,
             shading: THREE.FlatShading,
             alphaTest: 0.5
         });

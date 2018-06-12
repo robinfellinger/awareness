@@ -4,7 +4,7 @@
     //font-weight: 400;
     font-family: "Raleway", "Libre Baskerville", serif;
     color: $text-main;
-    font-size: $f-xl;
+    font-size: calc(#{$f-xl} - 0.5rem);
     font-weight: 600;
     letter-spacing: 9.2px;
     line-height: 1;
@@ -31,11 +31,21 @@
 }
 
 .text {
+  &-md {
+    font-family: "Montserrat", sans-serif;
+    color: $text-main;
+    font-size: calc(#{$f-xs} + 0.7rem);
+    letter-spacing: 5px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
   &-sm {
     font-family: "Montserrat", sans-serif;
     color: $text-main;
     font-size: calc(#{$f-xs} + 0.2rem);
     letter-spacing: 3px;
+    line-height: 1.4;
+    font-weight: 600;
   }
 }
 
