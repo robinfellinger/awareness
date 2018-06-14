@@ -92,27 +92,27 @@ class TestScene extends Component {
 
 
         var bulbGeometry1 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const bulbLight1 = new THREE.PointLight( 0x292929, 1, 100, 2 );
+        const bulbLight1 = new THREE.PointLight( 0x33ccff, 1, 100, 1 );
         const bulbMat1 = new THREE.MeshStandardMaterial( {
-            emissive: 0x6d6d76,
+            emissive: 0x33ccff,
             emissiveIntensity: 10,
             color: 0x000000
         });
         bulbLight1.add( new THREE.Mesh( bulbGeometry1, bulbMat1 ) );
-        bulbLight1.position.set( -20, 0, -5 );
+        bulbLight1.position.set( 15, -13, -10 );
 
-        scene.add( bulbLight1 );
+       scene.add( bulbLight1 );
 
 
         var bulbGeometry2 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const bulbLight2 = new THREE.PointLight( 0xcf309a, 1, 100, 2 );
+        const bulbLight2 = new THREE.PointLight( 0xcf309a, 1, 100, 1 );
         const bulbMat2 = new THREE.MeshStandardMaterial( {
             emissive: 0xEDB2D9,
             emissiveIntensity: 10,
             color: 0x000000
         });
         bulbLight2.add( new THREE.Mesh( bulbGeometry2, bulbMat2 ) );
-        bulbLight2.position.set( -10, 30, -5 );
+        bulbLight2.position.set( 13, 35, -10 );
 
         scene.add( bulbLight2 );
     }

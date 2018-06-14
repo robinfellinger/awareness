@@ -76,7 +76,7 @@ class Page_statistics extends Component {
 
     render(){
         const trans_in_oe = [
-            "trans in ", "österreich", 
+            "trans in ", "österreich",
             "Durch die sich immer weiter verbesserten Rechtslage sowie der zunehmende Präsenz von Transgender-Frauen und -Männern in den Medien, trauen sicher immer mehr Transgender sich zu outen.",
             
         ];

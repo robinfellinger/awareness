@@ -21,10 +21,12 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.4",
+    "react-scroll": "^1.7.9",
     "react-scroll-trigger": "^0.3.1",
     "react-scrollspy": "^3.3.5",
     "react-subpage": "^1.0.0",
     "scss": "^0.2.4",
+    "simple-flexbox": "^1.2.0",
     "three": "^0.92.0",
     "typed.js": "^2.0.6"
   },

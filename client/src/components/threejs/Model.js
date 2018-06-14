@@ -95,19 +95,19 @@ class Model extends Component {
             part2.position.y = 3;
             mScene.add( part2 );
 
-            const part3G = new THREE.BoxGeometry(16, 0.5, 0.1);
+            const part3G = new THREE.BoxGeometry(16, 0.5, 0.01);
             const part3M = new THREE.MeshPhongMaterial({ color: "#adebff" });
             const part3 = new THREE.Mesh(part3G, part3M);
             part3.position.z = 0;
-            part3.position.x = -3.19+xPlus;
+            part3.position.x = -3.25+xPlus;
             part3.position.y = -4.8;
             mScene.add( part3 );
 
-            const part4G = new THREE.BoxGeometry(16, 0.5, 0.1);
+            const part4G = new THREE.BoxGeometry(16, 0.5, 0.01);
             const part4M = new THREE.MeshPhongMaterial({ color: "#EDB2D9" });
             const part4 = new THREE.Mesh(part4G, part4M);
             part4.position.z = 0;
-            part4.position.x = -3.19+xPlus;
+            part4.position.x = -3.25+xPlus;
             part4.position.y = 10.8;
             mScene.add( part4 );
 

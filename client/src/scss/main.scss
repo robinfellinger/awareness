@@ -11,6 +11,8 @@
 @import 'statistics/sections/white';
 @import 'statistics/sections/gradient';
 
+@import 'glossary/glossary';
+
 @import "import_fonts";
 @import "variables";
 @import "standardSettings";
@@ -27,7 +29,7 @@
 @import "./components/interaction/interactionPage.scss";
 
 html {
-  background-color: #c0c4cf;
+  background-color: green;
 }
 body {
   background-color: $bg-color;
