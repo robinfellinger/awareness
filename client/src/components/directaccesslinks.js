@@ -13,16 +13,28 @@ class AccessLinks extends Component {
         }
     }
 
+    showChat(){
+        this.setState({showGlossarPage: false});
+        this.setState({showActivePage: false});
+        this.setState({showStatisticPage: false});
+    }
+
     toggleStatisticPage(){
-        this.state.showStatisticPage == false ? this.setState({showStatisticPage: true}) : this.setState({showStatisticPage: false});
+        this.setState({showGlossarPage: false});
+        this.setState({showActivePage: false});
+        this.setState({showStatisticPage: true});
     }
 
     toggleActivePage(){
-        this.state.showActivePage == false ? this.setState({showActivePage: true}) : this.setState({showActivePage: false});
+        this.setState({showGlossarPage: false});
+        this.setState({showActivePage: true});
+        this.setState({showStatisticPage: false});
     }
 
     toggleGlossarPage(){
-        this.state.showGlossarPage == false ? this.setState({showGlossarPage: true}) : this.setState({showGlossarPage: false});
+        this.setState({showGlossarPage: true});
+        this.setState({showActivePage: false});
+        this.setState({showStatisticPage: false});
     }
 
     render(){
@@ -52,7 +64,7 @@ class AccessLinks extends Component {
                             strokeWidth="3px" stroke="white"/>
                     </svg>
                     <div className={"accesslinks_pos"}>
-                
+                           <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.showChat()}>chat</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>
