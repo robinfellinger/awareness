@@ -8,6 +8,7 @@ $color-white-gradient-2: rgba(217, 217, 217, 0.8);
 $color-grey-bg: rgba(0, 0, 0, 0.8);
 $color-white: rgb(255, 255, 255);
 $color-black: rgb(0, 0, 0);
+$color-grey: rgb(117, 117, 117);
 
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em;   // 1200px
@@ -72,12 +73,9 @@ html {
         display: grid;
         position: absolute;
         z-index: 30;
-        height: 600px;
-        width: 1000px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #f7f7f7;
+        width: 100vw;
+        height: 100vh;
+        background: #f7f7f7b0;
         box-shadow: 0 0 20px 7px #717171;
     }
 }

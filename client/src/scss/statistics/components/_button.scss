@@ -1,4 +1,5 @@
 .btn-text {
+
     &,
     &:link,
     &:visited {
@@ -22,26 +23,30 @@
     }
 
     &:nth-of-type(1):hover ~ .underbar{
-        left: -0.9rem;
-        width: 9rem;
+        left: -1rem;
+        width: 6rem;
     }
     &:nth-of-type(2):hover ~ .underbar{
-        left: 10rem;
-        width: 13rem;
+        left: 6rem;
+        width: 11rem;
       }
       &:nth-of-type(3):hover ~ .underbar{
-        left: 23.5rem;
-        width: 10.5rem;
+        left: 18rem;
+        width: 13rem;
       }
 
+      &:nth-of-type(4):hover ~ .underbar{
+        left: 32rem;
+        width: 9rem;
+      }
 }
 
 .underbar{
-    width: 0rem;
-    height: 1px;
-    left: -5px;
-    background: black;
-    top: 20px;
+    height: 0.5rem;
+    left: -1rem;
+    width: 6rem;
+    background: rgb(255, 255, 255);
+    top: 4.8rem;
     position: absolute;
     -webkit-transition: 0.5s ease;
   }
