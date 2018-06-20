@@ -17,24 +17,56 @@ class AccessLinks extends Component {
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: false});
         this.setState({showStatisticPage: false});
+        this. disablePagination();
+        this.moveRope("6rem", "-1rem");
     }
 
     toggleStatisticPage(){
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: false});
         this.setState({showStatisticPage: true});
+        this.moveRope("11rem", "6rem");
+
+        let firstTime = document.getElementsByClassName("onepage-pagination");
+       // console.log(firstTime);
+
+        if (firstTime[0] && typeof(firstTime) != 'undefined' && firstTime != null) {
+            firstTime[0].style.display = "initial";
+        }
+
     }
 
     toggleActivePage(){
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: true});
         this.setState({showStatisticPage: false});
+        this.disablePagination();
+        this.moveRope("13rem", "18rem");
     }
 
     toggleGlossarPage(){
         this.setState({showGlossarPage: true});
         this.setState({showActivePage: false});
         this.setState({showStatisticPage: false});
+        this.disablePagination();
+        this.moveRope("9rem", "32rem");
+    }
+
+    disablePagination() {
+        let firstTime = document.getElementsByClassName("onepage-pagination");
+        console.log(firstTime);
+
+        if (firstTime.length >= 0) {
+            firstTime[0].style.display = "none";
+        }
+    }
+
+    moveRope(width, left) {
+        let underbar = document.getElementsByClassName("underbar");
+        console.log(underbar);
+        underbar[0].style.width = width;
+        underbar[0].style.left = left;
+        
     }
 
     render(){
