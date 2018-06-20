@@ -101,7 +101,7 @@ class App extends Component {
 
        <div className={"container-ball"}>
         {/* <div onWheel = {(e) => this.scrollExperience(e)}>*/}
-            <AccessLinks></AccessLinks>
+         <AccessLinks></AccessLinks>
             
             <div className={"pos-absolute startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
