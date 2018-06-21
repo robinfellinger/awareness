@@ -36,6 +36,7 @@ body {
   background: radial-gradient(ellipse at center, #eaeaea 0%, #e5e9f2 100%);
   background: linear-gradient(#d3d9f94d 0%, #f6e7eea6 100%);
   background: linear-gradient(#838ec8 0%, #e9e1f5 100%);
+  background: linear-gradient(#93abdb 0%, #e5e1f5 100%);
   background-repeat: no-repeat;
   height:100vh;
   -webkit-font-smoothing: antialiased;
@@ -54,9 +55,21 @@ bottom: 0;
   background: -webkit-radial-gradient(#e6646500, #d3cfec);
   background: -o-radial-gradient(#e6646500, #d3cfec);
   background: radial-gradient(#e6646500 0, #d3cfec9e 48%, #d3cfec 63%);
+  background: radial-gradient(#e6646500 0, #d3cfec9e 48%, #d1d4ef 63%);
   //filter: saturate(120%);
-  z-index: 2;
+  z-index: 13;
   height: 27vh;
   filter: blur(6px);
  //mix-blend-mode: multiply;
+}
+
+.rectangle-gradient {
+  position: absolute;
+  width: 49vh;
+  left: 40%;
+  top: 20%;
+}
+
+img {
+  width: 100%;
 }

@@ -8,6 +8,7 @@ import TestScene from "./components/threejs/TestScene"
 import Model from "./components/threejs/Model"
 import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
+import glow from './img/rahmen_glow.png'
 console.log(Model);
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
             bounceFrequence: 0,
             rotationSpeed: 0,
             emotion: "none",
+            once: false,
         };
 
         this.scrollExperience = this.scrollExperience.bind(this);
@@ -54,7 +56,10 @@ class App extends Component {
         requestAnimationFrame(this.gameLoop);
         // const { color } = this.state;
         // this.setState({tRot: 0});
-        this.setState({rotationSpeed: this.state.rotationSpeed+0.1});
+        if(!this.state.once){
+        this.setState({rotationSpeed: this.state.rotationSpeed});
+        this.setState({once: true});
+        }
         // this.wakov();
     }
 
@@ -136,7 +141,9 @@ class App extends Component {
                     </PerspectiveCamera>
                 </TestScene>
             </div>
-
+            <div className="rectangle-gradient">
+                <img src={glow} alt="glow_rectangle"/>
+            </div>
 
         </div>
 

@@ -85,8 +85,9 @@ class Model extends Component {
 
     createPlane(scene){
         const geometry = new THREE.PlaneGeometry(40, 60, 120, 120);
+        "#eae7f3"
         const material = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xded8f1),
+            color: new THREE.Color(0xC8ABF3),
             // specular: 0xFFFFFF,
             // emissive: 0x000000,
             shininess: 0.1,
@@ -121,11 +122,11 @@ class Model extends Component {
             config.heightSeg);
 "#ded8f1"
         var mat = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xD8E2F1),
+            color: new THREE.Color(0xC8D1F1),
             transparent: true,
             // side: THREE.DoubleSide,
             shininess: 40,
-            shading: THREE.FlatShading,
+            // shading: THREE.FlatShading,
             alphaTest: 0.5
         });
 

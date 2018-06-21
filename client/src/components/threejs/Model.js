@@ -45,7 +45,7 @@ class Model extends Component {
 
 
         drawFloor(this.context.scene);
-        drawShape(this.context.scene);
+        // drawShape(this.context.scene);
 
 
         function makeGradientCube(c1, c2, w, d, h, opacity){
