@@ -8,6 +8,7 @@ import TestScene from "./components/threejs/TestScene"
 import Model from "./components/threejs/Model"
 import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
+import glow from './img/rahmen_glow.png'
 console.log(Model);
 class App extends Component {
 
@@ -15,7 +16,7 @@ class App extends Component {
         super();
         this.state = {
             startExperience: false,
-            
+            showStatisticPage: false,
             canvasClasses: "three__canvas three-blur",
             width: window.innerWidth,
             height: window.innerHeight,
@@ -25,11 +26,13 @@ class App extends Component {
             bounceFrequence: 0,
             rotationSpeed: 0,
             emotion: "none",
+            once: false,
         };
 
         this.scrollExperience = this.scrollExperience.bind(this);
         this.toggleExperience = this.toggleExperience.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
+        this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
 
 
@@ -48,13 +51,16 @@ class App extends Component {
         window.addEventListener("resize", this.updateDimensions);
     }
     gameLoop = () => {
-        const { rotationSpeed } = this.state;
+        // const { rotationSpeed } = this.state;
 
         requestAnimationFrame(this.gameLoop);
-        const { color } = this.state;
-        this.setState({tRot: 0});
-        this.setState({rotationSpeed: this.state.rotationSpeed+0.1});
-        this.wakov();
+        // const { color } = this.state;
+        // this.setState({tRot: 0});
+        if(!this.state.once){
+        this.setState({rotationSpeed: this.state.rotationSpeed});
+        this.setState({once: true});
+        }
+        // this.wakov();
     }
 
 
@@ -72,7 +78,7 @@ class App extends Component {
         this.setState({bounceFrequence: 800});
         this.setState({emotion: "joy"});
     }
-    
+
     scrollExperience(event){
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
     }
@@ -95,25 +101,20 @@ class App extends Component {
     render() {
         const { color } = this.state;
         return (
-        <div> 
-        
-      
-
-       <div className={"container-ball"}>
-        {/* <div onWheel = {(e) => this.scrollExperience(e)}>*/}
-         <AccessLinks></AccessLinks>
-            
+        <div onWheel = {(e) => this.scrollExperience(e)}>
+            <AccessLinks></AccessLinks>
             <div className={"pos-absolute startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
             </div>
-            <div className={"pos-absolute pos-centerText pos-bottom"}>
-            <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Starte die Experience</button>
-            </div>
+
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction_pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                   
+                    <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
+                    {this.state.showStatisticPage &&
+                        <Page_statistics></Page_statistics>
+                   }
                 </div>
             }
 
@@ -124,9 +125,9 @@ class App extends Component {
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
                     <PerspectiveCamera fov={415}
                                        near={4}
-                                       aspect={this.state.width/this.state.height}
+                                       aspect={(this.state.width/this.state.height)}
                                        far={600}
-                                       position={{x: 0, y: 0, z: 40}}>
+                                       position={{x: 0, y: 0, z: 47}}>
                     <Model rotationSpeed={this.state.rotationSpeed}/>
                     <ModelLiquid rgbColors={this.state.rgbColors}
                                  modelColor={this.state.color}
@@ -136,10 +137,12 @@ class App extends Component {
                     </PerspectiveCamera>
                 </TestScene>
             </div>
-
+            <div className="rectangle-gradient">
+                <img src={glow} alt="glow_rectangle"/>
             </div>
+
         </div>
-        /*</div>*/
+
     );
   }
 

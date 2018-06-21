@@ -70,7 +70,7 @@ class TestScene extends Component {
         composer.addPass(filmPass);*/
 
         light(this.scene);
-        glow(this.scene);
+        // glow(this.scene);
 
 
     function glow(scene){

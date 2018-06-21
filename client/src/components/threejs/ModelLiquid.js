@@ -23,8 +23,8 @@ var config = {
     frequenz: 1.4, //1.4 for wobble waves 0.2 for sublte rings 0.1 for extreme rings
     speed: 120, // + slower
     radius: 28,
-    widthSeg:120, //resolution x
-    heightSeg: 120, // resolution y
+    widthSeg:100, //resolution x
+    heightSeg: 100, // resolution y
     magnitude:8,
     waveDepth: 0.01
 };
@@ -84,9 +84,10 @@ class Model extends Component {
     }
 
     createPlane(scene){
-        const geometry = new THREE.PlaneGeometry(40, 60, 120, 120);
+        const geometry = new THREE.PlaneGeometry(38, 60, 120, 120);
+        "#eae7f3"
         const material = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xded8f1),
+            color: new THREE.Color(0xC8ABF3),
             // specular: 0xFFFFFF,
             // emissive: 0x000000,
             shininess: 0.1,
@@ -98,7 +99,7 @@ class Model extends Component {
         wavePlane = new THREE.Mesh(geometry, material);
         wavePlane.rotation.x = -1.5 * Math.PI;
         wavePlane.rotation.z = 20.5;
-        wavePlane.position.set(0, -20.5, -18);
+        wavePlane.position.set(0, -23, -23);
         vStart = new THREE.Vector2(0, 0);
 
         // wavePlane.position.set(20, 20, -70);
@@ -121,11 +122,11 @@ class Model extends Component {
             config.heightSeg);
 "#ded8f1"
         var mat = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xD8E2F1),
+            color: new THREE.Color(0xC8D1F1),
             transparent: true,
             // side: THREE.DoubleSide,
-            shininess: 1,
-            shading: THREE.FlatShading,
+            shininess: 40,
+            // shading: THREE.FlatShading,
             alphaTest: 0.5
         });
 
@@ -147,7 +148,7 @@ class Model extends Component {
         var light = new THREE.DirectionalLight( 0xFFFBEA, 0.1 );
         light.position.set( 30, 0, 10 );
         let helper = new THREE.DirectionalLightHelper( light, 5 );
-        this.context.scene.add(helper);
+        // this.context.scene.add(helper);
         this.context.scene.add( light ); //soft light from the right
         light.target = mesh;
 
