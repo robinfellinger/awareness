@@ -108,9 +108,7 @@ class App extends Component {
             <div className={"pos-absolute startInfo-container"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
             </div>
-            <div className={"pos-absolute pos-centerText pos-bottom"}>
-            <button className={"button-basic text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>Starte die Experience</button>
-            </div>
+
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction_pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
@@ -129,9 +127,9 @@ class App extends Component {
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
                     <PerspectiveCamera fov={415}
                                        near={4}
-                                       aspect={this.state.width/this.state.height}
+                                       aspect={(this.state.width/this.state.height)}
                                        far={600}
-                                       position={{x: 0, y: 0, z: 40}}>
+                                       position={{x: 0, y: 0, z: 47}}>
                     <Model rotationSpeed={this.state.rotationSpeed}/>
                     <ModelLiquid rgbColors={this.state.rgbColors}
                                  modelColor={this.state.color}

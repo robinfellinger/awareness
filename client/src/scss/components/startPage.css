@@ -1,5 +1,5 @@
 .startInfo-intro-textindent {
-  margin-top: -6%;
+  margin-top: 1%;
   margin-left: 34%; }
 .startInfo-intro_pos {
   right: 4.8%;
@@ -15,18 +15,20 @@
 .startInfo-container {
   width: 100%;
   grid-template-columns: 40px 50px auto 50px 40px;
-  grid-template-rows: 25% 100px auto; }
+  grid-template-rows: 25% 100px auto;
+  z-index: 20; }
 .startInfo-gradientbutton {
   margin-top: 20px; }
 
 .startCircle {
-  height: 170px;
-  width: 170px;
-  border: 1.5px solid white;
+  height: 90px;
+  width: 90px;
+  /* border: 1.5px solid white; */
   border-radius: 50%;
+  background-color: #fff;
   left: 0;
   right: 0;
-  top: 35vh;
+  top: 42vh;
   margin: auto; }
 
 /*# sourceMappingURL=startPage.css.map */

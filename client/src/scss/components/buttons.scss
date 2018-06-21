@@ -10,12 +10,19 @@
     padding: 12px;
     border-radius: 20px;
     background: linear-gradient(220deg, #c8f3ff, #5cceff 90%);
+
     color: white;
     letter-spacing: 3px;
     font-size: $f-xs;
     border: inherit;
 
     cursor: pointer;
+
+
+    background: linear-gradient(18.83deg, #4F4F4F 13.67%, #333333 262.91%), #333333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+
   }
   &-startAnim {
     animation: button-move-start 5s forwards; /* IE 10+, Fx 29+ */

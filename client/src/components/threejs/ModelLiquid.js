@@ -84,7 +84,7 @@ class Model extends Component {
     }
 
     createPlane(scene){
-        const geometry = new THREE.PlaneGeometry(40, 60, 120, 120);
+        const geometry = new THREE.PlaneGeometry(38, 60, 120, 120);
         "#eae7f3"
         const material = new THREE.MeshPhongMaterial({
             color: new THREE.Color(0xC8ABF3),
@@ -99,7 +99,7 @@ class Model extends Component {
         wavePlane = new THREE.Mesh(geometry, material);
         wavePlane.rotation.x = -1.5 * Math.PI;
         wavePlane.rotation.z = 20.5;
-        wavePlane.position.set(0, -20.5, -18);
+        wavePlane.position.set(0, -23, -23);
         vStart = new THREE.Vector2(0, 0);
 
         // wavePlane.position.set(20, 20, -70);
@@ -148,7 +148,7 @@ class Model extends Component {
         var light = new THREE.DirectionalLight( 0xFFFBEA, 0.1 );
         light.position.set( 30, 0, 10 );
         let helper = new THREE.DirectionalLightHelper( light, 5 );
-        this.context.scene.add(helper);
+        // this.context.scene.add(helper);
         this.context.scene.add( light ); //soft light from the right
         light.target = mesh;
 

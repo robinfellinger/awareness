@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$f-xs".
-        on line 15 of /Users/marie/Documents/GitHub/awareness/client/src/scss/components/buttons.scss
+        on line 16 of /Users/marie/Documents/GitHub/awareness/client/src/scss/components/buttons.scss
 
-10:     padding: 12px;
 11:     border-radius: 20px;
 12:     background: linear-gradient(220deg, #c8f3ff, #5cceff 90%);
-13:     color: white;
-14:     letter-spacing: 3px;
-15:     font-size: $f-xs;
-16:     border: inherit;
-17: 
-18:     cursor: pointer;
-19:   }
-20:   &-startAnim {
+13: 
+14:     color: white;
+15:     letter-spacing: 3px;
+16:     font-size: $f-xs;
+17:     border: inherit;
+18: 
+19:     cursor: pointer;
+20: 
+21: 
 
 Backtrace:
-/Users/marie/Documents/GitHub/awareness/client/src/scss/components/buttons.scss:15
+/Users/marie/Documents/GitHub/awareness/client/src/scss/components/buttons.scss:16
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -73,4 +73,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$f-xs\".\A         on line 15 of /Users/marie/Documents/GitHub/awareness/client/src/scss/components/buttons.scss\A \A 10:     padding: 12px;\A 11:     border-radius: 20px;\A 12:     background: linear-gradient(220deg, #c8f3ff, #5cceff 90%);\A 13:     color: white;\A 14:     letter-spacing: 3px;\A 15:     font-size: $f-xs;\A 16:     border: inherit;\A 17: \A 18:     cursor: pointer;\A 19:   }\A 20:   &-startAnim {"; }
+  content: "Error: Undefined variable: \"$f-xs\".\A         on line 16 of /Users/marie/Documents/GitHub/awareness/client/src/scss/components/buttons.scss\A \A 11:     border-radius: 20px;\A 12:     background: linear-gradient(220deg, #c8f3ff, #5cceff 90%);\A 13: \A 14:     color: white;\A 15:     letter-spacing: 3px;\A 16:     font-size: $f-xs;\A 17:     border: inherit;\A 18: \A 19:     cursor: pointer;\A 20: \A 21: "; }
