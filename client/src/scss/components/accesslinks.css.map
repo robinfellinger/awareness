@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AACE,gBAAM;EACJ,KAAK,EAAE,IAAI;EACX,GAAG,EAAE,IAAI;EACT,QAAQ,EAAE,QAAQ;AAEpB,kBAAQ;EACN,OAAO,EAAE,GAAG;EACZ,sBAAM;IACJ,KAAK,EAAE,IAAI;IACX,GAAG,EAAE,GAAG;AAIV,6BAAc;EACZ,YAAY,EAAE,IAAI",
-"sources": ["accesslinks.scss"],
+"mappings": "",
+"sources": [],
 "names": [],
 "file": "accesslinks.css"
 }

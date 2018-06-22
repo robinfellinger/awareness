@@ -25,11 +25,7 @@
     margin-top: 5px;
     margin-left: 97px;
     margin-right: 3px;
-    border-radius: 15px 0px 15px 15px;
-    text-align: right;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    text-overflow: ellipsis; }
+    border-radius: 15px 0px 15px 15px; }
   .chat-a {
     color: #404040;
     background-color: #FFFFFF;
