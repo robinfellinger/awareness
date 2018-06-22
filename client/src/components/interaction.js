@@ -23,7 +23,6 @@ class Interaction extends Component {
     }
 
     update(id, em,  answer, question){
-
         this.setState({IDTest: id});
         if(em) {
             this.setState({emotion: em[0]});
