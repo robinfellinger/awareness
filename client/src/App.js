@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Page_statistics from "./pages/page_statistics"
+
 import Interaction from "./components/interaction";
 import AccessLinks from "./components/directaccesslinks";
 import StartInfo from "./StartInfo";
@@ -15,7 +15,7 @@ class App extends Component {
         super();
         this.state = {
             startExperience: false,
-            showStatisticPage: false,
+            
             canvasClasses: "three__canvas three-blur",
             width: window.innerWidth,
             height: window.innerHeight,
@@ -30,7 +30,6 @@ class App extends Component {
         this.scrollExperience = this.scrollExperience.bind(this);
         this.toggleExperience = this.toggleExperience.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
-        this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
 
 
@@ -73,9 +72,7 @@ class App extends Component {
         this.setState({bounceFrequence: 800});
         this.setState({emotion: "joy"});
     }
-    toggleStatisticPage(){
-        this.setState({showStatisticPage: true});
-    }
+    
     scrollExperience(event){
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
     }
@@ -98,8 +95,14 @@ class App extends Component {
     render() {
         const { color } = this.state;
         return (
-        <div onWheel = {(e) => this.scrollExperience(e)}>
-            <AccessLinks></AccessLinks>
+        <div> 
+        
+      
+
+       <div className={"container-ball"}>
+        {/* <div onWheel = {(e) => this.scrollExperience(e)}>*/}
+         <AccessLinks></AccessLinks>
+            
             <div className={"pos-absolute startInfo_pos"}>
             <StartInfo start={this.state.startExperience}></StartInfo>
             </div>
@@ -110,10 +113,7 @@ class App extends Component {
                 <div className={"pos-absolute interaction_pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
-                    {this.state.showStatisticPage &&
-                        <Page_statistics></Page_statistics>
-                   }
+                   
                 </div>
             }
 
@@ -137,9 +137,9 @@ class App extends Component {
                 </TestScene>
             </div>
 
-
+            </div>
         </div>
-
+        /*</div>*/
     );
   }
 

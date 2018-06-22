@@ -51,7 +51,7 @@ function onePageScroll(element, options) {
   	for( var i = 0; i < sections.length; i++){
   	  _addClass(sections[i], "ops-section")
   	  sections[i].dataset.index = i + 1;
-  	  topPos = topPos + 100;
+  	  topPos = topPos + 20;
     
   	  if(settings.pagination == true) {
   			paginationList += "<li><a data-index='" + (i + 1) + "' href='#" + (i + 1) + "'></a></li>";
@@ -100,7 +100,7 @@ function onePageScroll(element, options) {
   				history.pushState( {}, document.title, href );
   			}
   		}
-  		var pos = ((init_index - 1) * 100) * -1;
+  		var pos = ((init_index - 1) * 20) * -1;
   		_transformPage(el, settings, pos, init_index);
     
   	}else{
@@ -394,7 +394,7 @@ function onePageScroll(element, options) {
 			}
 
 		}else {
-			pos = (index * 100) * -1;
+			pos = (index * 20) * -1;
 		}
 		var next_index = next.dataset.index;
 		_removeClass(current, "active");
@@ -429,13 +429,13 @@ function onePageScroll(element, options) {
 
 		if(!next) {
 			if (settings.loop == true) {
-				pos = ((total - 1) * 100) * -1;
+				pos = ((total - 1) * 20) * -1;
 				next = document.querySelector(settings.sectionContainer + "[data-index='" + total + "']");
 			} else {
 				return
 			}
 		}else {
-			pos = ((next.dataset.index - 1) * 100) * -1;
+			pos = ((next.dataset.index - 1) * 20) * -1;
 		}
 		var next_index = next.dataset.index;
 		_removeClass(current, "active")
@@ -476,7 +476,7 @@ function onePageScroll(element, options) {
 			body.className = body.className.replace(/\bviewing-page-\d.*?\b/g, '');
 			_addClass(body, "viewing-page-"+ next_index);
 
-			pos = ((page_index - 1) * 100) * -1;
+			pos = ((page_index - 1) * 20) * -1;
 
 			if (history.replaceState && settings.updateURL == true) {
 				var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (parseInt(page_index) - 1);

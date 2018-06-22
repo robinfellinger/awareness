@@ -1,0 +1,66 @@
+.accesslinks {
+    &_pos {
+      right: 7vw;
+      top: -3vh;
+      position: absolute;
+    }
+    &__line {
+      opacity: 0.4;
+      &-pos {
+        width: 100%;
+        top: 7vh;
+      }
+    }
+  }
+
+.btn-text {
+
+    &,
+    &:link,
+    &:visited {
+        transition: all .1s;
+        background: none;
+        border: none;
+        position: relative;
+        cursor: pointer;
+
+        padding-bottom: 6px;
+
+        &:not(:last-child) {
+
+            margin-right: 4rem;
+        }
+    }
+
+    &:hover {
+        color: $color-black;
+    }
+
+    &:nth-of-type(1):hover ~ .underbar{
+        left: -1rem;
+        width: 6rem;
+    }
+    &:nth-of-type(2):hover ~ .underbar{
+        left: 6rem;
+        width: 11rem;
+      }
+      &:nth-of-type(3):hover ~ .underbar{
+        left: 18rem;
+        width: 13rem;
+      }
+
+      &:nth-of-type(4):hover ~ .underbar{
+        left: 32rem;
+        width: 9rem;
+      }
+}
+
+.underbar{
+    height: 0.5rem;
+    left: -1rem;
+    width: 6rem;
+    background: rgb(255, 255, 255);
+    top: 4.85vh;
+    position: absolute;
+    -webkit-transition: 0.5s ease;
+  }
