@@ -62,7 +62,7 @@ class Interaction extends Component {
 
                                 }
 
-                                <div className={"grid-item2 interaction-flex "}>
+                                <div className={"grid-item2"}>
                                     {(typeof(question.links)==='object')?
                                     question.links.map((subrowdata)=>
 

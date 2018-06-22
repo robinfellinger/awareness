@@ -9,26 +9,23 @@
 }
 
 .chatrunning{
-  height: 600px;
+  align-self: center;
+  //height: 600px;
   border-style: solid;
   border-width: thin;
   border-color: #FFFFFF;
 }
 
 .chat{
-  white-space: nowrap;
-  overflow: hidden;
-  align-self: right;
-  width: 300px;
+  width: 100%;
 
   &-q{
 
   color: #FFFFFF;
   background-color: #404040;
-  border: 1px #404040;
-  padding: 5px;
+  padding: 15px;
   margin-top: 5px;
-  margin-left: 97px;
+  margin-left: 90px;
   margin-right: 3px;
   border-radius: 15px 0px 15px 15px;
   }
@@ -36,41 +33,44 @@
   &-a{
   color: #404040;
   background-color: #FFFFFF;
-  border: 1px #404040;
-  padding: 5px;
+  padding: 15px;
   margin-top: 5px;
   margin-left: 3px;
+  margin-right: 90px;
   border-radius: 0px 15px 15px 15px;
-
-
-
   }
 }
 
+
 .grid-container {
   display: grid;
-  grid-gap: 50px;
-  justify-content: space-between;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
 }
 
 .grid-item1 {
   grid-column: 1;
   grid-row: 1 / span 2;
   width: 400px;
+  height: 100%;;
+  position: absolute;
 }
 
 .grid-item2 {
   grid-column: 1;
   grid-row: 3;
   width: 400px;
+  bottom: 0;
+  position: absolute;
+  
+
 }
 
 .grid-item3 {
   grid-column: 2;
   grid-row: 2;
   width: 400px;
+  justify-self: right;
 }
 
 
@@ -80,52 +80,27 @@
   }
 
   &_pos {
-    display: flex;
+    display: grid;
     top: 20%;
     left: 10%;
     width: 80%;
+    height: 60%;
   }
-
-  &-flex {
-    padding: 5px;
-
-    text-align: center;
-    display: flex;
-    order: 2;
-    flex-grow: 2;
-    flex-flow: row wrap;
-
-    > p:nth-child(1) button{
-      border-radius: 15px 15px 0px 15px;
-    }
-
-    > p:nth-child(2) button{
-      border-radius: 15px 15px 15px 0px;
-    }
-
-    > p:nth-child(3) button{
-      border-radius: 15px 0px 15px 15px;
-    }
-
-    > p:nth-child(4) button{
-      border-radius: 0px 15px 15px 15px;
-    }
-  }
-
 
   &-button {
     color: #404040;
     text-align: center;
     background-color: #FFFFFF;
+    border: none;
     width: 100%;
-    border: 1px solid white;
-    height: 100px;
+    padding: 15px;
+    
+  border-radius: 15px;
   }
 
   &-answer {
     padding: 2px;
-    width: 50%;
-    align-self: end;
+    width: 100%;
   }
 
   @media only screen and (orientation : portrait){
