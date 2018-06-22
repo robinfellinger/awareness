@@ -32,7 +32,7 @@ class Interaction extends Component {
             this.setState({emotion: "neutral"});
         }
 
-        if(this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
+        if(this.state.chat.length !== 0 && this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
             this.state.chat[this.state.chat.length-1].answer = answer;
         }else{
             this.state.chat.push({'answer': answer, 'question':question});
