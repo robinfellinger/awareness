@@ -1,50 +1,131 @@
+.text{
+  text-align: left;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+
+  align-self: center;
+}
+
+.chatrunning{
+  height: 600px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #FFFFFF;
+}
+
+.chat{
+  white-space: nowrap;
+  overflow: hidden;
+  align-self: right;
+  width: 300px;
+
+  &-q{
+
+  color: #FFFFFF;
+  background-color: #404040;
+  border: 1px #404040;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 97px;
+  margin-right: 3px;
+  border-radius: 15px 0px 15px 15px;
+  }
+
+  &-a{
+  color: #404040;
+  background-color: #FFFFFF;
+  border: 1px #404040;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 3px;
+  border-radius: 0px 15px 15px 15px;
+
+
+
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 50px;
+  justify-content: space-between;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+}
+
+.grid-item1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 400px;
+}
+
+.grid-item2 {
+  grid-column: 1;
+  grid-row: 3;
+  width: 400px;
+}
+
+.grid-item3 {
+  grid-column: 2;
+  grid-row: 2;
+  width: 400px;
+}
+
+
 .interaction {
-  &_pos {
-    bottom: 8vh;
+  &-container{
     width: 100%;
-    //bottom: 13vh;
+  }
+
+  &_pos {
+    display: flex;
+    top: 20%;
+    left: 10%;
+    width: 80%;
   }
 
   &-flex {
+    padding: 5px;
+
     text-align: center;
-    width: 50%;
-    margin: auto;
     display: flex;
     order: 2;
     flex-grow: 2;
-    max-height: 100px;
-    align-items: center;
-    //justify-content: center;
     flex-flow: row wrap;
+
+    > p:nth-child(1) button{
+      border-radius: 15px 15px 0px 15px;
+    }
+
+    > p:nth-child(2) button{
+      border-radius: 15px 15px 15px 0px;
+    }
+
+    > p:nth-child(3) button{
+      border-radius: 15px 0px 15px 15px;
+    }
+
+    > p:nth-child(4) button{
+      border-radius: 0px 15px 15px 15px;
+    }
   }
+
 
   &-button {
     color: #404040;
     text-align: center;
-    background: none;
     background-color: #FFFFFF;
     width: 100%;
-    padding: 10px;
-    margin: 5px;
     border: 1px solid white;
-    cursor: pointer;
-    border-radius: 15px 15px 15px 0px;
-  }
-
-  //CHANGE!!!
-  &-question {
-    text-align: center;
-    font-size: 40px;
-    font-family: "Montserrat", sans-serif;
-    letter-spacing: 3px;
-    font-weight: 400;
-    color: #FFFFFF;
+    height: 100px;
   }
 
   &-answer {
-    width: 45%;
-    margin: 2px;
-    min-width: 200px;
+    padding: 2px;
+    width: 50%;
+    align-self: end;
   }
 
   @media only screen and (orientation : portrait){
@@ -53,8 +134,6 @@
     }
   }
 }
-
-
 
 .typed-cursor{
   opacity: 1;

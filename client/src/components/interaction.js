@@ -6,50 +6,79 @@ import Type from "./type.js"
 
 class Interaction extends Component {
 
+
     constructor(props){
         super(props);
         this.state = {
-            IDTest: "Start",
-            emotion: "neutral"
-        }
-        this.updateID = this.updateID.bind(this);
+            IDTest: "Hallo, ich bin Alex",
+            emotion: "neutral",
+            chat: [],
+            finished: "false"
+        };
+        this.update = this.update.bind(this);
     }
 
-    updateID(id, em){
-        this.setState({IDTest: id})
+    myCallback = (dataFromChild) => {
+            this.state.chat.push({'answer': null, 'question':dataFromChild});
+    }
+
+    update(id, em,  answer, question){
+
+        this.setState({IDTest: id});
         if(em) {
-            this.setState({emotion: em[0]})
+            this.setState({emotion: em[0]});
             console.log(this.state.emotion);
         }else{
             this.setState({emotion: "neutral"});
         }
+
+        if(this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
+            this.state.chat[this.state.chat.length-1].answer = answer;
+        }else{
+            this.state.chat.push({'answer': answer, 'question':question});
+        }
     }
+
 
     render(){
             return (
-            <div className={"interaction"}>
+            <div className={"interaction-container"} >
 
                 {data.passages
                     .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
                     .map((question) =>
 
-                        <div className={"interaction-question t-italic"} key={question.pid}>
+                        <div className={"grid-container"} key={question.pid}>
 
-                                {question.name === this.state.IDTest && <Type strings={[question.text.split('\n')[0]]}/>}
-                                <div className={"answers interaction-flex"}>{
-                                    (typeof(question.links)==='object')?
+                              {question.name === this.state.IDTest && <Type strings={[question.text.split('\n')[0]]} callbackFromParent={this.myCallback}/>}
+
+
+                            <div className={"grid-item1 chatrunning"}>
+
+                                {this.state.chat.map((said) =>
+                                    <div className={"chat"}>
+                                        {said.question !== null && <p className={"chat-q text-sm"}>{said.question}</p>}
+                                        {said.answer !== null &&<p className={"chat-a text-sm"}>{said.answer}</p>}
+                                    </div>)
+
+                                }
+
+                                <div className={"grid-item2 interaction-flex "}>
+                                    {(typeof(question.links)==='object')?
                                     question.links.map((subrowdata)=>
 
                                     <p className={"interaction-answer"}>
                                         {question.name === this.state.IDTest &&
-                                        <button  className={"interaction-button text-sm col-sm-8"}
-                                                 onClick={() => this.updateID(subrowdata.link, question.tags)}>{subrowdata.name}</button>
+                                        <button  className={"interaction-button text-sm"}
+                                                 onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text)}>{subrowdata.name}</button>
                                         }
                                     </p>
 
                                     )
                                     :null
                                 }</div>
+                            </div>
+
                         </div>
                     )
 

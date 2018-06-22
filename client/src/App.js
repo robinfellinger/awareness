@@ -110,10 +110,6 @@ class App extends Component {
                 <div className={"pos-absolute interaction_pos"}>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
                     <Interaction></Interaction>
-                    <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
-                    {this.state.showStatisticPage &&
-                        <Page_statistics></Page_statistics>
-                   }
                 </div>
             }
 

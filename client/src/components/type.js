@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import Typed from 'typed.js';
 
 class Type extends Component {
+
+
     componentDidMount() {
         const { strings } = this.props;
 
+        const a = this.props.callbackFromParent;
         const options = {
             strings: strings,
-            typeSpeed: 0.7,
+            typeSpeed: 0.9,
+            onComplete: function (self) {
+                a(strings);
+            }
         };
         this.typed = new Typed(this.el, options);
     }
@@ -18,9 +24,10 @@ class Type extends Component {
 
     render() {
         return (
-            <div className={"question"}><span
-                ref={(el) => { this.el = el; }}
+            <div className={"grid-item3 text"}><span
+                ref={(el) => {this.el = el;}}
             /></div>
+
         );
     }
 }
