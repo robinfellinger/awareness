@@ -62,22 +62,22 @@ class Interaction extends Component {
 
                                 }
 
-                                <div className={"grid-item2"}>
-                                    {(typeof(question.links)==='object')?
-                                    question.links.map((subrowdata)=>
-
-                                    <p className={"interaction-answer"}>
-                                        {question.name === this.state.IDTest &&
-                                        <button  className={"interaction-button text-sm"}
-                                                 onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text)}>{subrowdata.name}</button>
-                                        }
-                                    </p>
-
-                                    )
-                                    :null
-                                }</div>
                             </div>
 
+                            <div className={"grid-item2"}>
+                            {(typeof(question.links)==='object')?
+                            question.links.map((subrowdata)=>
+
+                            <p className={"interaction-answer"}>
+                                {question.name === this.state.IDTest &&
+                                <button  className={"interaction-button text-sm"}
+                                         onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text)}>{subrowdata.name}</button>
+                                }
+                            </p>
+
+                            )
+                            :null
+                        }</div>
                         </div>
                     )
 

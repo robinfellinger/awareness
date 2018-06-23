@@ -179,21 +179,21 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 /*interaction*/
 .text { text-align: left; font-size: 30px; font-family: "Montserrat", sans-serif; font-weight: 400; color: #FFFFFF; align-self: center; }
 
-.chatrunning { align-self: center; border-style: solid; border-width: thin; border-color: #FFFFFF; }
+.chatrunning { align-self: center; border-style: solid; border-width: thin; border-color: #FFFFFF; overflow: hidden; }
 
 .chat { width: 100%; }
 .chat-q { color: #FFFFFF; background-color: #404040; padding: 15px; margin-top: 5px; margin-left: 90px; margin-right: 3px; border-radius: 15px 0px 15px 15px; }
 .chat-a { color: #404040; background-color: #FFFFFF; padding: 15px; margin-top: 5px; margin-left: 3px; margin-right: 90px; border-radius: 0px 15px 15px 15px; }
 
-.grid-container { display: grid; grid-template-rows: 1fr 1fr; height: 100%; }
+.grid-container { display: grid; grid-template-rows: min-content 1fr; grid-template-columns: min-content 1fr; height: 100%; }
 
-.grid-item1 { grid-column: 1; grid-row: 1 / span 2; width: 400px; height: 100%; position: absolute; }
+.grid-item1 { grid-column: 1; grid-row: 1; width: 400px; height: 70%; position: absolute; align-self: auto; align-content: end; display: grid; padding-bottom: 4px; }
 
-.grid-item2 { grid-column: 1; grid-row: 3; width: 400px; bottom: 0; position: absolute; }
+.grid-item2 { grid-column: 1; grid-row: 3; width: 400px; bottom: -30px; position: absolute; }
 
 .grid-item3 { grid-column: 2; grid-row: 2; width: 400px; justify-self: right; }
 
-.interaction-container { width: 100%; }
+.interaction-container { width: 100%; overflow: hidden; }
 .interaction_pos { display: grid; top: 20%; left: 10%; width: 80%; height: 60%; }
 .interaction-button { color: #404040; text-align: center; background-color: #FFFFFF; border: none; width: 100%; padding: 15px; border-radius: 15px; }
 .interaction-answer { padding: 2px; width: 100%; }

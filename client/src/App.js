@@ -71,6 +71,14 @@ class App extends Component {
         }});
         this.setState({bounceFrequence: 800});
         this.setState({emotion: "joy"});
+
+        let welcome = document.getElementsByClassName("welcomescreen");
+        if(welcome[0] && welcome[1] && welcome[2] && welcome[3]) {
+            welcome[0].style.display = "none";
+            welcome[1].style.display = "none";
+            welcome[2].style.display = "none";
+            welcome[3].style.display = "none";
+        }
     }
     
     scrollExperience(event){
