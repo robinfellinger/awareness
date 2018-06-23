@@ -275,7 +275,11 @@ function wakov(){
                 cRot+=(tRot-cRot)/100;
 }
 function handleEmotions(emotion){
+    if(emotion === "anger"){
+        console.log("anger")
+    }
     if(emotion === "joy"){
+        console.log("joy")
         if(next === false){
             next = true;
             // setTimeout(function () {

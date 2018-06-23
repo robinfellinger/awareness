@@ -53,13 +53,20 @@ class App extends Component {
     gameLoop = () => {
         // const { rotationSpeed } = this.state;
 
-        requestAnimationFrame(this.gameLoop);
+
         // const { color } = this.state;
         // this.setState({tRot: 0});
-        if(!this.state.once){
-        this.setState({rotationSpeed: this.state.rotationSpeed});
-        this.setState({once: true});
-        }
+
+
+        setTimeout(() => {
+            // if(!this.state.once){
+            requestAnimationFrame(this.gameLoop);
+            this.setState({rotationSpeed: this.state.rotationSpeed});
+            this.setState({once: true});
+            // }
+        }, 1000 / 30 )
+
+
         // this.wakov();
     }
 
@@ -70,13 +77,14 @@ class App extends Component {
     toggleExperience(){
         this.setState({startExperience: true}, this.returnClasses);
         this.setState({color: "E1DB00"});
-        this.setState({rgbColors: {
-            r: 0,
-            g: 90,
-            b: 90,
-        }});
+        // this.setState({rgbColors: {
+        //     r: 0,
+        //     g: 90,
+        //     b: 90,
+        // }});
         this.setState({bounceFrequence: 800});
         this.setState({emotion: "joy"});
+
     }
 
     scrollExperience(event){
@@ -101,7 +109,9 @@ class App extends Component {
     render() {
         const { color } = this.state;
         return (
-        <div onWheel = {(e) => this.scrollExperience(e)}>
+        <div
+            // onWheel = {(e) => this.scrollExperience(e)}
+        >
             <AccessLinks></AccessLinks>
             <div className={"pos-absolute startInfo_pos"}>
 
