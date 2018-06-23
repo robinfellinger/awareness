@@ -6,7 +6,7 @@
 @import 'statistics/components/scroll-signal';
 @import 'statistics/components/navigation';
 @import 'statistics/components/onepage-scroll';
-@import 'statistics/components/button';
+@import 'statistics/components/navmenue';
 @import 'statistics/sections/header';
 @import 'statistics/sections/black';
 @import 'statistics/sections/white';
@@ -22,7 +22,6 @@
 @import "./components/text.scss";
 @import "./components/startPage.scss";
 @import "./components/buttons.scss";
-@import "./components/accesslinks.scss";
 
 /*interaction*/
 @import "./components/interaction/interactionPage.scss";

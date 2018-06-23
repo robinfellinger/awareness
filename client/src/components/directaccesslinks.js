@@ -56,7 +56,7 @@ class AccessLinks extends Component {
         let firstTime = document.getElementsByClassName("onepage-pagination");
         console.log(firstTime);
 
-        if (firstTime.length >= 0) {
+        if (firstTime.length >= 0 && firstTime[0]) {
             firstTime[0].style.display = "none";
         }
     }

@@ -25,7 +25,16 @@ client/src/scss/main.css
 client/src/scss/main.scss
 client/src/scss/components/buttons.css.map
 client/src/scss/components/text.css
+<<<<<<< HEAD
+client/src/scss/components/text.css
+*.css
+client/src/scss/main.css.map
+=======
 client/src/scss/main.css
 client/src/scss/main.css
+<<<<<<< HEAD
 client/src/scss/components/accesslinks.css
 client/src/scss/components/accesslinks.css.map
+=======
+>>>>>>> 4860469d862f9bc9e0d3ac1a9a3ef0e1245bbefa
+>>>>>>> 650517fea2914b9a24e693867ef4efd9ef3bc054
