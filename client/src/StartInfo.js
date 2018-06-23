@@ -54,9 +54,7 @@ class StartInfo extends Component {
                 {/*</svg>*/}
             </div>
                 <div className=" pos-absolute">
-                    <div className={"pos-absolute pos-centerText"}>
-                        <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>start</button>
-                    </div>
+
                 {/*<canvas className={""}></canvas>*/}
                 {/*<div>x</div>*/}
                 </div>

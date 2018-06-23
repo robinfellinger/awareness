@@ -32,7 +32,7 @@ class App extends Component {
         this.scrollExperience = this.scrollExperience.bind(this);
         this.toggleExperience = this.toggleExperience.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
-        this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
+        // this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
 
 
@@ -104,6 +104,7 @@ class App extends Component {
         <div onWheel = {(e) => this.scrollExperience(e)}>
             <AccessLinks></AccessLinks>
             <div className={"pos-absolute startInfo_pos"}>
+
             <StartInfo start={this.state.startExperience}></StartInfo>
             </div>
 
@@ -113,11 +114,13 @@ class App extends Component {
                     <Interaction></Interaction>
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
                     {this.state.showStatisticPage &&
-                        <Page_statistics></Page_statistics>
+                        {/*<Page_statistics></Page_statistics>*/}
                    }
                 </div>
             }
-
+            <div className={"pos-absolute pos-centerText"}>
+                <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>start</button>
+            </div>
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className="pos-absolute gradient-shadow"></div>
             <div className={this.state.canvasClasses}>

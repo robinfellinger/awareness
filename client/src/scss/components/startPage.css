@@ -7,11 +7,11 @@
   top: 53vh;
   position: absolute; }
 .startInfo_pos {
-  top: 33vh;
+  top: 16vh;
   position: absolute;
-  margin-left: 18vh;
+  margin-left: 9vh;
   height: 20vh;
-  width: 30%; }
+  width: 55%; }
 .startInfo-container {
   width: 100%;
   grid-template-columns: 40px 50px auto 50px 40px;
