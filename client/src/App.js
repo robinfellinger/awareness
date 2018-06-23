@@ -125,10 +125,10 @@ class App extends Component {
                 </div>
             }
 
-            {/*imports the three.js model (maybe commented out for better performance)
+            {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className="pos-absolute gradient-shadow"></div>
             <div className={this.state.canvasClasses}>
-                {/*<div ref={element => this.threeRootElement = element} />
+                {/*<div ref={element => this.threeRootElement = element} />*/}
                 <TestScene rgbColors={this.state.rgbColors} width={this.state.width} height={this.state.height}>
                     <PerspectiveCamera fov={415}
                                        near={4}
@@ -143,7 +143,7 @@ class App extends Component {
                                  emotion={this.state.emotion}/>
                     </PerspectiveCamera>
                 </TestScene>
-            </div>*/}
+            </div>
 
             </div>
         </div>
