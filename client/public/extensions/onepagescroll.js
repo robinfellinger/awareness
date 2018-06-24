@@ -51,7 +51,7 @@ function onePageScroll(element, options) {
   	for( var i = 0; i < sections.length; i++){
   	  _addClass(sections[i], "ops-section")
   	  sections[i].dataset.index = i + 1;
-  	  topPos = topPos + 20;
+  	  topPos = topPos + 12.5;
     
   	  if(settings.pagination == true) {
   			paginationList += "<li><a data-index='" + (i + 1) + "' href='#" + (i + 1) + "'></a></li>";
@@ -80,34 +80,34 @@ function onePageScroll(element, options) {
   		document.querySelector(".onepage-pagination").style.marginTop = posTop;
   	}
     
-  	if(window.location.hash != "" && window.location.hash != "#1") {
-  		var init_index =  window.location.hash.replace("#", ""),
-  		    next = document.querySelector(settings.sectionContainer + "[data-index='" + (init_index) + "']"),
-  		    next_index = next.dataset.index;
+  	// if(window.location.hash != "" && window.location.hash != "#1") {
+  	// 	var init_index =  window.location.hash.replace("#", ""),
+  	// 	    next = document.querySelector(settings.sectionContainer + "[data-index='" + (init_index) + "']"),
+  	// 	    next_index = next.dataset.index;
     
-  		_addClass( document.querySelector(settings.sectionContainer + "[data-index='" + init_index + "']") ,"active")
-  		_addClass(body, "viewing-page-"+ init_index)
-  		if(settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
+  	// 	_addClass( document.querySelector(settings.sectionContainer + "[data-index='" + init_index + "']") ,"active")
+  	// 	_addClass(body, "viewing-page-"+ init_index)
+  	// 	if(settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
     
-  		if(next) {
-  			_addClass(next, "active")
-  			if(settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
+  	// 	if(next) {
+  	// 		_addClass(next, "active")
+  	// 		if(settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
     
-  			body.className = body.className.replace(/\bviewing-page-\d.*?\b/g, '');
-  			_addClass(body, "viewing-page-" + next_index)
-  			if (history.replaceState && settings.updateURL == true) {
-  				var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
-  				history.pushState( {}, document.title, href );
-  			}
-  		}
-  		var pos = ((init_index - 1) * 12.5) * -1;
-  		_transformPage(el, settings, pos, init_index);
+  	// 		body.className = body.className.replace(/\bviewing-page-\d.*?\b/g, '');
+  	// 		_addClass(body, "viewing-page-" + next_index)
+  	// 		if (history.replaceState && settings.updateURL == true) {
+  	// 			var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
+  	// 			history.pushState( {}, document.title, href );
+  	// 		}
+  	// 	}
+  	// 	var pos = ((init_index - 1) * 12.5) * -1;
+  	// 	_transformPage(el, settings, pos, init_index);
     
-  	}else{
+  	// }else{
   	  _addClass(document.querySelector(settings.sectionContainer + "[data-index='1']"), "active");
   	  _addClass(body, "viewing-page-1");
   		if(settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a[data-index='1']"), "active");
-  	}
+  	// }
     
   	_paginationHandler = function() {
       var page_index = this.dataset.index;
@@ -124,7 +124,7 @@ function onePageScroll(element, options) {
   	}
     
   	_mouseWheelHandler = function(event) {
-  		event.preventDefault();
+  		//event.preventDefault();
   		var delta = event.wheelDelta || -event.detail;
   		if (!_hasClass(body, "disabled-onepage-scroll")) _init_scroll(event, delta);
   	}

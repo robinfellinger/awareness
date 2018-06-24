@@ -16,24 +16,30 @@ class AccessLinks extends Component {
     showChat(){
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: false});
-        this.setState({showStatisticPage: false});
         this. disablePagination();
+        
+        this.setState({showStatisticPage: false});
         this.moveRope("6rem", "-1rem");
         this.colorNav("white");
     }
 
     toggleStatisticPage(){
+        let body = document.getElementsByTagName("body");
+        if (body.length >= 0 && body[0]) {
+            // firstTime[0].style.display = "none";
+            body[0].className = '';
+         }
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: false});
         this.setState({showStatisticPage: true});
         this.moveRope("11rem", "6rem");
 
-        let firstTime = document.getElementsByClassName("onepage-pagination");
-       // console.log(firstTime);
+    //     let firstTime = document.getElementsByClassName("onepage-pagination");
+    //    // console.log(firstTime);
 
-        if (firstTime[0] && typeof(firstTime) != 'undefined' && firstTime != null) {
-            firstTime[0].style.display = "initial";
-        }
+    //     if (firstTime[0] && typeof(firstTime) != 'undefined' && firstTime != null) {
+    //         firstTime[0].style.display = "initial";
+    //     }
 
         this.colorNav("#4F4F4F");
     }
@@ -41,8 +47,9 @@ class AccessLinks extends Component {
     toggleActivePage(){
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: true});
-        this.setState({showStatisticPage: false});
         this.disablePagination();
+        this.setState({showStatisticPage: false});
+        
         this.moveRope("13rem", "18rem");
         this.colorNav("#4F4F4F");
     }
@@ -50,19 +57,47 @@ class AccessLinks extends Component {
     toggleGlossarPage(){
         this.setState({showGlossarPage: true});
         this.setState({showActivePage: false});
-        this.setState({showStatisticPage: false});
         this.disablePagination();
+        this.setState({showStatisticPage: false});
+        
         this.moveRope("9rem", "32rem");
         this.colorNav("#4F4F4F");
     }
 
     disablePagination() {
         let firstTime = document.getElementsByClassName("onepage-pagination");
+        let firstTime2 = document.getElementsByClassName("onePageScript");
+        let body = document.getElementsByTagName("body");
+        let active = document.getElementsByTagName("active");
+        let stats = document.getElementsByClassName("container-statistics");
         console.log(firstTime);
 
         if (firstTime.length >= 0 && firstTime[0]) {
-            firstTime[0].style.display = "none";
+           // firstTime[0].style.display = "none";
+           firstTime[0].remove();
         }
+
+        if (firstTime2.length >= 0 && firstTime2[0]) {
+            // firstTime[0].style.display = "none";
+            firstTime2[0].remove();
+         }
+
+         
+        if (body.length >= 0 && body[0]) {
+            // firstTime[0].style.display = "none";
+            body[0].className = '';
+         }
+
+         if (active.length >= 0 && active[0]) {
+            // firstTime[0].style.display = "none";
+            active[0].classList.remove("active");
+         }
+
+         if (stats.length >= 0 && stats[0]) {
+            // firstTime[0].style.display = "none";
+            stats[0].className = 'container-statistics';
+            stats[0].style = '';
+         }
     }
 
     moveRope(width, left) {
