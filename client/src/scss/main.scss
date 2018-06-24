@@ -2,15 +2,13 @@
 /////// MAIN SCSS FILE -> IMPORT ALL SUBFILES*/
 
 //@import "statistics";
+
 @import 'statistics/base';
-@import 'statistics/components/onepage-scroll';
-@import 'statistics/components/navmenue';
-@import 'statistics/sections/black';
-@import 'statistics/sections/white';
-@import 'statistics/sections/gradient';
+@import 'components/onepage-scroll';
+@import 'components/navmenue';
 
-@import "infopage";
 
+@import 'infopage';
 @import "import_fonts";
 @import "variables";
 @import "standardSettings";

@@ -39,14 +39,23 @@ class Page_statistics extends Component {
         ];
         const bedeutung = [
             "Was bedeutet es Transgender zu sein?",
-            "Du bist als Mädchen geboren, aber fühlst dich wie ein Junge? Oder anders rum? Wer transsexuell ist, hat das Gefühl, im falschen Körper zu leben. Das biologische Geschlecht ist also ein anderes, als das empfundene oder gewünschte Geschlecht. Mit Schwul sein hat das aber nur selten was zu tun. Ein Junge, der sich dem weiblichen Geschlecht zugehörig fühlt, geht eine Beziehung mit einem anderen Jungen nicht als Schwuler ein, sondern als Frau. ",
-            "Doch es gibt auch unter Transgendern Homosexualität, das heißt Jungen, die sich dem weiblichen Geschlecht zugehörig fühlen und sich sexuell dennoch zu Frauen hingezogen fühlen."
+            "Der Begriff „TRANSGENDER“ bezeichnet Menschen, deren äußerliche Geschlechtsmerkmale (und damit das bei der Geburt zugewiesene Geschlecht) nicht mit ihrem gefühlten Geschlecht, dem sogenannten Identitätsgeschlecht, übereinstimmen. Oft wird auch gesagt: „Transgender Personen fühlen sich im falschen Körper“.",
+            "Allerdings lassen sich die Lebensumstände von Transgender-Personen nicht auf diese einfache Formel reduzieren. Denn das Thema erstreckt sich auf sehr viele weitere Teile des Lebens als lediglich das Körperliche. ",
+            "Außerdem lehnen viele Transgender diese Formulierung für sich persönlich ab,  z.B. weil sie ihren Körper nicht als „falsch“ bezeichnen wollen, nur weil sie Trans*-Personen sind. Die Erfahrungen sind eben vielfältig und lassen sich nur schwer vereinheitlichen.",
         ];
+        const rechte= [
+            "Rechte in Österreich",
+            "Die rechtlich gültige Anerkennung des Identitäts-Geschlechts gilt für viele Transgender-Personen als wesentlicher Schritt, ihr empfundenes Geschlecht ständig und vollends leben zu können. Um dies zu erreichen sind in Österreich zwei Schritte von nöten:",
+            "Personenstandsänderung", "Dies ist erforderlich, um auch offiziell im gelebten Geschlecht anerkannt zu werden, sowie um die passende Dokumente zu erhalten.",
+            "Vornamensänderung", "Es ist fast unmöglich, im eigenen Geschlecht anerkannt zu werden, wenn der Vorname diesem Geschlecht widerspricht.",
+        ];
+
         const medizin= [
             "Medizinische Unterstützung",
             "Zur aktuellen Zeit werden in Österreich die meisten nötigen Behandlungen zur Umwandlung durch die gesetzlichen Krankenversicherung bezahlt. Motiv dafür ist, dass in der Medizin der Transsexualität Krankheitswert zukommt, wenn die innere Spannung zwischen dem biologischen Geschlecht und dem identifizierten Geschlecht so stark ausgeprägt ist, dass nur durch die Beseitigung dieser Spannung schwere Symptome psychischer Krankheiten behoben oder gelindert werden können.",
             "Wichtig ist hier zu erwähnen, dass nicht alle Transgender-Personen jeden dieser Schritte gehen wollen oder müssen. Mit Unterstützung von medizinischen Personal ist zu klären, welche Behandlungen konkret gewünscht und sinnvoll sind."
         ];
+
         const diskriminierung = [
             "Diskriminierung in Österreich",
             "Transgender-Personen sind oft einem höheren Maß an Diskriminierung, Gewalt und Belästigung ausgesetzt, als dies von anderen Personen innerhalb und außerhalb der LGBT-Community angegeben wird. Die konstante Aussetzung zu solchen Umständen bewirken ständige Angstgefühle, Depressionen und andere psychische Erkrankungen.",
@@ -78,20 +87,20 @@ class Page_statistics extends Component {
             "Mehr Information zu dem Thema kann unter dem Link gefunden werden.",
         ];
         
-        
-        let index = 1;
-        
         return(
             <div className="statistics-container">
-            
+                 <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
+                 <SectionBedeutung title={bedeutung[0]} text={bedeutung[1]} text_2={bedeutung[2]} text_3={bedeutung[3]} />
             
                  <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
 
                  <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
-                 {/*<SectionStats text={stats[0]}/>*/}
+                 {/*<SectionStats text={stats[0]}/>
                  <SectionGewalt text={gewalt[0]}/>
-                 <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
-
+                 <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />*/}
+                 
+                 
+                 
 
 
                  <SectionHelfen title={helfen[0]} subtext={helfen[1]} />
@@ -120,6 +129,18 @@ const SectionDiskriminierung = (props) => {
             <p className="diskriminierung__content info-content">{props.text}</p>
             <button className="diskriminierung__button info-button">Jetzt helfen</button>
             <div className="diskriminierung__box info-box"></div>
+        </section>
+    )
+}
+
+const SectionBedeutung = (props) => {
+    return (
+        <section className="bedeutung ops-section">
+            <h2 className="bedeutung__titel info-titel">{props.title}</h2>
+            <p className="bedeutung__content info-content">{props.text}</p>
+            <p className="bedeutung__content_2 info-content">{props.text_2}</p>
+            <p className="bedeutung__content_3 info-content">{props.text_3}</p>
+            <div className="bedeutung__box info-box"></div>
         </section>
     )
 }
