@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import data from "./text.json";
 import Type from "./type.js"
 
-
-
 class Interaction extends Component {
-
 
     constructor(props){
         super(props);
@@ -49,7 +46,7 @@ class Interaction extends Component {
 
                         <div className={"grid-container"} key={question.pid}>
 
-                              {question.name === this.state.IDTest && <Type strings={[question.text.split('\n')[0]]} callbackFromParent={this.myCallback}/>}
+                              {question.name === this.state.IDTest && <Type strings={[question.text.split('\n\n')[0]]} callbackFromParent={this.myCallback}/>}
 
 
                             <div className={"grid-item1 chatrunning"}>
