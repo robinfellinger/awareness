@@ -84,10 +84,10 @@ class Model extends Component {
     }
 
     createPlane(scene){
-        const geometry = new THREE.PlaneGeometry(38, 60, 120, 120);
-        "#eae7f3"
+        const geometry = new THREE.PlaneGeometry(70, 140, 170, 170); //width height seg seg
+        "#C8ABF3"
         const material = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xC8ABF3),
+            color: new THREE.Color(0xA58EF3),
             // specular: 0xFFFFFF,
             // emissive: 0x000000,
             shininess: 0.1,
@@ -97,9 +97,9 @@ class Model extends Component {
         });
 
         wavePlane = new THREE.Mesh(geometry, material);
-        wavePlane.rotation.x = -1.5 * Math.PI;
+        wavePlane.rotation.x = -1.52 * Math.PI;
         wavePlane.rotation.z = 20.5;
-        wavePlane.position.set(0, -23, -23);
+        wavePlane.position.set(0, -26, -23);
         vStart = new THREE.Vector2(0, 0);
 
         // wavePlane.position.set(20, 20, -70);
@@ -120,14 +120,15 @@ class Model extends Component {
             config.radius,
             config.widthSeg,
             config.heightSeg);
-"#ded8f1"
+"#C8D1F1"
         var mat = new THREE.MeshPhongMaterial({
-            color: new THREE.Color(0xC8D1F1),
+            color: new THREE.Color(0xBAE3F1),
             transparent: true,
             // side: THREE.DoubleSide,
-            shininess: 40,
+            shininess: 2,
             // shading: THREE.FlatShading,
-            alphaTest: 0.5
+            alphaTest: 0.5,
+            // opacity: 0.97,
         });
 
         mesh = new THREE.Mesh(geometry, mat);
