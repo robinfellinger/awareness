@@ -115,7 +115,7 @@ class AccessLinks extends Component {
                     <div className={"accesslinks_pos"}>
                            <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.showChat()}>chat</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
-                        <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
+                        <button className={"btn-text text-sm a-sm a-startAnim"} id={"getActive"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>
                         <div class="underbar"></div>
                     </div>

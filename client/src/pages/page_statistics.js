@@ -26,6 +26,11 @@ class Page_statistics extends Component {
         }
     }
 
+    clickFunction() {
+        console.log("Hi34");
+        document.getElementById("getActive").click();
+    }
+
     render(){
         const trans_in_oe = [
             "trans", " in österreich", 
@@ -114,13 +119,15 @@ class Page_statistics extends Component {
     }
 }
 
+
+
 const SectionTransInOe = (props) => {
     return (
         <section className="transInOe ops-section active">
             <h2 className="transInOe__titel info-titel"><span className="italic">{props.span}</span>{props.title}</h2>
             <p className="transInOe__content info-content">{props.text}</p>
             <p className="transInOe__subcontent info-subcontent">{props.subtext}</p>
-            <button className="transInOe__button info-button">Werde aktiv</button>
+            <button className="transInOe__button info-button" onClick={this.clickFunction}>Werde aktiv</button>
         </section>
     )
 }
