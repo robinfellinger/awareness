@@ -15,7 +15,6 @@ html { box-sizing: border-box; font-size: 62.5%; }
 .container-statistics { z-index: 30; position: absolute; }
 .container-ball { z-index: 10; }
 .container-glossar { z-index: 30; }
-.container-glossar2 { display: grid; align-content: center; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f7f7f7; box-shadow: 0 0 20px 7px #717171; }
 
 .z50 { z-index: 50; }
 
@@ -69,7 +68,7 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { 
 
 .header { background: radial-gradient(circle, rgba(232, 232, 232, 0.8), rgba(217, 217, 217, 0.8)); display: grid; align-content: center; justify-items: center; text-align: center; color: black; }
 .header__titel { font-family: "Libre Baskerville", serif; font-size: 5.4rem; font-style: italic; font-weight: 300; letter-spacing: 0.702rem; margin-bottom: 5rem; }
-.header__titel--highlight { font-style: normal; font-weight: 800; }
+.header__titel--highlight { font-style: normal; font-weight: 800;}
 .header__content { font-size: 1.8rem; font-weight: 600; width: 46rem; line-height: 2.88rem; letter-spacing: 0.234rem; }
 .header__link { margin-top: 10rem; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; display: inline-block; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.375rem; border: solid 2px; }
 
@@ -200,3 +199,53 @@ body { background-color: #404040; background: radial-gradient(ellipse at center,
 .interaction-pos { z-index: 50; }
 
 .gradient-shadow { width: 100%; height: 25vh; bottom: 0; background: -webkit-radial-gradient(#e6646500, #d3cfec); background: -o-radial-gradient(#e6646500, #d3cfec); background: radial-gradient(#e6646500 0, #d3cfec9e 48%, #d3cfec 63%); z-index: 2; height: 27vh; filter: blur(6px); }
+
+.container-glossar2 { display: grid; align-content: center; overflow-y: scroll; margin-top: 10vh; padding-bottom: 31vh; padding-top: 245px; opacity:0.97; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F9F9F9; box-shadow: 0 0 20px 7px #717171; }
+.container-aktiv2 { display: grid; align-content: center; overflow-y: scroll; margin-top: 10vh; padding-bottom: 31vh; padding-top: 245px; opacity:0.97; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F9F9F9; box-shadow: 0 0 20px 7px #717171; }
+
+
+.glossary{ display:grid; grid-template-rows:repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 320px 60px 20px 360px 100px 60px 20px 360px 100px; font-family:"Montserrat",sans-serif;}
+.glossary__glossarWord{color: #777676; font-size: 15.5px; padding-top: 50px; padding-bottom: 15px; text-align: left; display: grid; grid-row: 1; grid-column: 2/5}
+.glossary__glossarWord1{color: #777676; font-size: 15.5px; padding-top: 50px; padding-bottom: 15px; text-align: left; display: grid; grid-row: 1; grid-column: 6/9}
+.glossary__glossarDescription{color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 2; grid-column: 4; margin-top:10px; padding-top: 25px; padding-bottom: 15px}
+.glossary__glossarDescription1{color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 2; grid-column: 8; margin-top:10px; padding-top: 25px; padding-bottom: 15px}
+.glossary__button{background-color: #F9F9F9; opacity: 0.75; display: grid; width: 13px; height: 13px; padding: 2px; margin: 2px; grid-column: 2 / 11; border: none;}
+.glossary__button1{background-color: #F9F9F9; opacity: 0.75; display: grid; width: 13px; height: 13px; padding: 2px; margin: 2px; grid-column: 2 / 11; border: none; }
+.glossary__image{transform: rotate(90deg);}
+.glossary__image1{transform: rotate(90deg);}
+.glossarHeader{background-color: #F9F9F9;}
+#einzug{ padding-bottom: 50px; padding-top: 80px}
+
+
+.glossary2{ width:100vw;display:grid;grid-template-rows:repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 1.2fr 0.22fr 2.3fr 0.6fr 0.22fr 2.3fr 0.6fr; font-family:"Montserrat",sans-serif;}
+.glossary__glossarWord2{color: #777676; font-size: 15.5px; padding-top: 50px; padding-bottom: 15px; text-align: left; display: grid; grid-row: 1; grid-column: 2/4}
+.glossary__glossarDescription2{color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 2; grid-column: 3; margin-top:10px; padding-top: 25px; padding-bottom: 15px}
+.glossary__button2{background-color: #F9F9F9; opacity: 0.75; display: grid; width: 13px; height: 13px; padding: 2px; margin: 2px; grid-column: 2 / 12; border: none;}
+.glossary__image2{transform: rotate(90deg);}
+.glossarHeader2{background-color: #F9F9F9;}
+#einzug2{ padding-bottom: 50px; padding-top: 80px}
+.glossary__glossarWord3{color: #777676; font-size: 15.5px; padding-top: 50px; padding-bottom: 15px; text-align: left; display: grid; grid-row: 1; grid-column: 5/7}
+.glossary__glossarDescription3{ -ms-hyphens: auto; -webkit-hyphens: auto; color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 2; grid-column: 6; margin-top:10px; padding-top: 25px; padding-bottom: 15px}
+.glossary__button3{background-color: #F9F9F9; opacity: 0.75; display: grid; width: 13px; height: 13px; padding: 2px; margin: 2px; grid-column: 2 / 12; border: none; }
+.glossary__image3{transform: rotate(90deg);}
+
+.glossary5{ width:100vw;display:grid;grid-template-rows:repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 0.5fr 0.4fr 0.3fr 3.3fr 0.7fr; font-family:"Montserrat",sans-serif;}
+.glossary__glossarWord5{color: #777676; font-size: 15.5px; padding-top: 50px; padding-bottom: 15px; text-align: left; display: grid; grid-row: 1; grid-column: 2/4}
+.glossary__glossarDescription5{color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 2; grid-column: 3; margin-top:10px; padding-top: 25px; padding-bottom: 15px}
+
+.header__glossar{color: black; text-align: left; padding-left: 15rem; padding-top: 20rem; font-family: "Libre Baskerville", serif; font-size: 6.4rem; font-weight: 300; letter-spacing: 0.702rem; margin-bottom: 3rem; }
+.glossary4{ width:100vw;display:grid;grid-template-rows:repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 0.5fr 0.4fr 0.3fr 3.3fr 0.7fr; font-family:"Montserrat",sans-serif;}
+.glossar_ue{color: #777676; font-size: 20.5px; padding-top: 1rem;  padding-bottom: 1rem; text-align: left; display: grid; grid-row: 1; grid-column: 3/5}
+.glossar_ueDes{ width: 40%; color: #777676; font-size: 11.5px; padding-top: 2rem;  padding-bottom: 1rem; text-align: left; display: grid; grid-row: 2; grid-column: 4}
+.glossary__glossarWord4{ color: #777676; font-size: 15.5px; padding-top: 1rem;  padding-bottom: 1rem; text-align: left}
+.glossary__glossarDescription4{color:#636363; font-size: 11.5px; text-align: left; margin-top:1rem; padding-bottom: 1rem;}
+.glossar_box{width: 40%; padding: 1rem}
+.glossar_test{border-style: solid; background-color: #dfe1dc; margin: 3rem; padding: 5.5rem; width: 97%;  grid-row: 3; grid-column:4; display: flex; flex-flow: row wrap; justify-content: space-between; align-items: flex-start; align-content: flex-start}
+
+
+.header__aktiv{color: black; text-align: left; padding-left: 15rem; padding-top: 20rem; font-family: "Libre Baskerville", serif; font-size: 6.4rem; font-weight: 300; letter-spacing: 0.702rem; margin-bottom: 3rem; }
+.aktiv{ width:100vw;display:grid;grid-template-rows:repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 0.5fr 0.4fr 0.3fr 2.1fr 1.9fr; font-family:"Montserrat",sans-serif;}
+.aktiv_name{color: #777676; font-size: 15.5px; padding-top: 3rem; padding-bottom: 5rem; text-align: left; display: grid; grid-row: 1; grid-column: 3/5}
+.aktiv_ort{color: #2F80ED; font-size: 10.5px; text-align: left; display: grid; grid-column: 3 / 20; padding-top: 0.5rem}
+.aktiv_description{color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 2; grid-column: 4; margin-top:1rem;}
+.aktiv_link{color:#636363; font-size: 11.5px; text-align: left; display: grid; grid-row: 3; grid-column: 4; padding-top: 3rem; padding-bottom: 7rem}
