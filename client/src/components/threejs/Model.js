@@ -55,9 +55,6 @@ class Model extends Component {
 
             var cubeGeometry = new THREE.BoxGeometry(w, h, d);
 
-
-
-
             var cubeMaterial = new THREE.MeshPhongMaterial({
                 vertexColors:THREE.VertexColors
             });

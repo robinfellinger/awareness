@@ -25,6 +25,7 @@
     "react-scrollspy": "^3.3.5",
     "react-subpage": "^1.0.0",
     "scss": "^0.2.4",
+    "simple-flexbox": "^1.2.0",
     "three": "^0.92.0",
     "typed.js": "^2.0.6"
   },

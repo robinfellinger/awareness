@@ -88,9 +88,9 @@ class TestScene extends Component {
 
 
         var bulbGeometry1 = new THREE.SphereBufferGeometry( 0.02, 16, 8 );
-        const bulbLight1 = new THREE.PointLight( 0x292929, 1, 100, 2 );
+        const bulbLight1 = new THREE.PointLight( 0x33ccff, 1, 100, 2 );
         const bulbMat1 = new THREE.MeshStandardMaterial( {
-            emissive: 0x6d6d76,
+            emissive: 0x33ccff,
             emissiveIntensity: 10,
             color: 0x000000
         });

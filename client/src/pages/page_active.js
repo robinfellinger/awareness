@@ -1,16 +1,62 @@
 import React, { Component } from 'react';
-
+import data from "./organisationen.json";
 
 
 
 class Page_active extends Component {
 
+    constructor(props){
+        super()
+        this.state = { widthS: 200, heightS: 200};
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener("resize", this.updateWindowDimensions.bind(this));
+    }
+
+    componentWillMount() {
+        window.removeEventListener("resize", this.updateWindowDimensions.bind(this));
+    }
+
+    updateWindowDimensions() {
+        this.setState({ widthS: window.innerWidth, heightS: window.innerHeight+5 });
+    }
+
 
     render(){
         return(
             /* <SectionBlack title={"Title der section"} content={}>*/
-            <div class="container-glossar2">
-            <h2 class="header__titel">werde <span class="header__titel--highlight">Aktiv</span></h2>
+            <div className="container-aktiv2" style={{width: this.state.widthS, height: this.state.heightS}}>
+                <section className="aktivPage" style={{width: this.state.widthS, height: this.state.heightS}}>
+                    <h2 className="header__aktiv"> Weiterführende Links </h2>
+
+                        <div className={"pos-absolute accesslinks__line-pos"}>
+
+                        </div>
+
+                        <div id="einzug2">
+
+                            {
+                                data.glossar.map((dynamicT, i) =>
+                                    <section className="aktiv">
+                                        <b className="aktiv_name" >{dynamicT.organisation} <hr className="aktiv_line" style={{backgroundColor: "#2F80ED", border: "none", width: "20px", height: "1px", marginTop: "10px"}}></hr> <div className="aktiv_ort"> {dynamicT.ort}</div></b>
+                                        <div className="aktiv_description" > {dynamicT.beschreibung}</div>
+
+                                        <a className="aktiv_link" target="_blank" href={dynamicT.link}> Hier </a>
+                                    </section>
+                                )
+
+
+                            }
+                        </div>
+
+
+
+
+
+                   </section>
             </div>
         );
     }
