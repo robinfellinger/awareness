@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
-@import url("https://fonts.googleapis.com/css?family=Avenir:400,700");
+@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow");
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: inherit; }
 
 html { box-sizing: border-box; font-size: 62.5%; }
@@ -11,7 +11,7 @@ html { box-sizing: border-box; font-size: 62.5%; }
 @media only screen and (max-width: 75em) { html { font-size: 50%; } }
 @media only screen and (max-width: 50em) { html { font-size: 37.5%; } }
 
-.statistics-container { width: 100vw; display: grid; grid-template-rows: repeat(5, [page] minmax(600px, 100vh)); grid-template-columns: minmax(320px, 100vw); background-color: rgba(249, 249, 249, 0.93); }
+.statistics-container { width: 100vw; display: grid; grid-template-rows: repeat(5, [page] minmax(600px, 100vh)); grid-template-columns: minmax(320px, 100vw); background-color: rgba(249, 249, 249, 0.95); }
 
 .container-statistics { z-index: 30; position: absolute; }
 .container-ball { z-index: 10; }
@@ -60,7 +60,7 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { 
 .btn-text:nth-of-type(3):hover ~ .underbar { left: 18rem; width: 13rem; }
 .btn-text:nth-of-type(4):hover ~ .underbar { left: 32rem; width: 9rem; }
 
-.underbar { height: 0.5rem; left: -1rem; width: 6rem; background: #4F4F4F; top: 4.85vh; position: absolute; -webkit-transition: 0.5s ease; }
+.underbar { height: 0.5rem; left: -1rem; width: 6rem; background: white; top: 4.85vh; position: absolute; -webkit-transition: 0.5s ease; }
 
 .black { background: rgba(0, 0, 0, 0.8); display: grid; grid-template-rows: min-content 1fr min-content min-content min-content min-content 1.5fr min-content; grid-template-columns: minmax(3rem, 1fr) min-content min-content minmax(3rem, 1fr); }
 @media only screen and (max-width: 37.5em) { .black { grid-template-columns: minmax(3rem, 1fr) min-content minmax(3rem, 1fr); } }
@@ -106,17 +106,41 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { 
 .gradient__statistic :first-child span { font-size: 11.2rem; }
 @media only screen and (max-width: 62.5em) { .gradient__statistic :first-child span { font-size: 8rem; } }
 
+.info-titel { font-family: "Arial", sans-serif; font-size: 5.4rem; letter-spacing: 1.08rem; text-transform: uppercase; color: #4F4F4F; font-weight: 700; }
+.info-content { font-family: "Montserrat", sans-serif, Italic; font-weight: 600; font-size: 1.4rem; line-height: 2.9rem; letter-spacing: 0.28rem; width: 65rem; color: #4F4F4F; font-style: italic; }
+.info-button { font-family: "Montserrat", sans-serif, Italic; font-style: normal; font-size: 1.4rem; background: none; padding: 1.2rem 4rem; background-color: #2F80ED; color: white; letter-spacing: 0.08rem; border: none; cursor: pointer; width: fit-content; }
+.info-subcontent { font-family: "Montserrat", sans-serif, Italic; font-style: normal; font-size: 1rem; letter-spacing: 0.2rem; width: 65rem; line-height: 2.4rem; color: #4F4F4F; }
+.info-box { background-color: #2F80ED; }
+
 .transInOe { display: grid; align-content: center; justify-items: center; }
-.transInOe__titel { font-family: "Arial", serif; font-size: 5.4rem; letter-spacing: 1.08rem; text-transform: uppercase; color: #4F4F4F; margin-bottom: 6rem; font-weight: 700; }
-.transInOe__content { font-family: "Montserrat", sans-serif, Italic; font-weight: 600; font-size: 1.4rem; line-height: 2.9rem; letter-spacing: 0.28rem; width: 65rem; color: #4F4F4F; font-style: italic; margin-bottom: 3rem; }
-.transInOe__subcontent { font-family: "Montserrat", sans-serif, Italic; font-style: normal; font-size: 1rem; letter-spacing: 0.2rem; width: 65rem; line-height: 2.4rem; color: #4F4F4F; margin-bottom: 3rem; }
-.transInOe__button { font-family: "Montserrat", sans-serif, Italic; font-style: normal; font-size: 1.4rem; background: none; padding: 1.2rem 4rem; background-color: #2F80ED; color: white; letter-spacing: 0.08rem; border: none; cursor: pointer; transform: translateX(-24rem); align-self: right; }
+.transInOe__titel { margin-bottom: 6rem; }
+.transInOe__content { margin-bottom: 3rem; }
+.transInOe__subcontent { margin-bottom: 3rem; }
+.transInOe__button { transform: translateX(-24rem); align-self: right; }
+
+.diskriminierung { display: grid; align-content: center; grid-template-columns: 15vw; }
+.diskriminierung__titel { width: 65rem; margin-bottom: 6rem; letter-spacing: 1.3rem; grid-column: 2; }
+.diskriminierung__content { font-size: 1.1rem; margin-bottom: 4rem; grid-column: 2; }
+.diskriminierung__button { grid-column: 2; }
+.diskriminierung__box { width: 10vw; height: 50rem; position: absolute; grid-column: 1; align-self: center; }
+
+.medizin { display: grid; align-content: center; }
+.medizin__titel { width: 65rem; margin-bottom: 6rem; letter-spacing: 1.3rem; line-height: 6.3rem; grid-column: 2; font-size: 3.6rem; transform: translateX(-10vw); }
+.medizin__content { margin-bottom: 4rem; grid-column: 2; width: 80rem; }
+.medizin__subcontent { grid-column: 2; width: 80rem; }
+.medizin__box { width: 15vw; height: 35rem; position: absolute; grid-column: 3; align-self: center; justify-self: right; transform: translateY(9rem); }
+
+.helfen { display: grid; align-content: center; justify-items: center; transform: translateX(-10vw); }
+.helfen__titel { margin-bottom: 6rem; }
+.helfen__content { margin-bottom: 3rem; }
+.helfen__subcontent { font-size: 1.3rem; margin-bottom: 3rem; }
+.helfen__button { transform: translateX(-24rem); align-self: right; }
 
 .italic { font-style: italic; }
 
 /*LIBRE BASKERVILLE*/
 /*MONTSERRAT*/
-/*AVENIR*/
+/*ARCHIVO NARROW*/
 /*///////////////////////////////////////////////////////////////////////
 /////// DEFINE VARIABLES HERE */
 /*MAIN-COLORS*/

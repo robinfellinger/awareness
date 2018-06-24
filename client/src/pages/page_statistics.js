@@ -96,21 +96,28 @@ class Page_statistics extends Component {
             "Du bist als Mädchen geboren, aber fühlst dich wie ein Junge? Oder anders rum? Wer transsexuell ist, hat das Gefühl, im falschen Körper zu leben. Das biologische Geschlecht ist also ein anderes, als das empfundene oder gewünschte Geschlecht. Mit Schwul sein hat das aber nur selten was zu tun. Ein Junge, der sich dem weiblichen Geschlecht zugehörig fühlt, geht eine Beziehung mit einem anderen Jungen nicht als Schwuler ein, sondern als Frau. ",
             "Doch es gibt auch unter Transgendern Homosexualität, das heißt Jungen, die sich dem weiblichen Geschlecht zugehörig fühlen und sich sexuell dennoch zu Frauen hingezogen fühlen."
         ];
-        const medizinische_u = [
+        const medizin= [
             "Medizinische Unterstützung",
-            "In Österreich werden aktuell die meisten notwendigen Behandlungen zur Umwandlung durch die gesetzlichen Krankenversicherungen bezahlt, weil der Transsexualität dann Krankheitswert zukommt, wenn die innere Spannung zwischen dem körperlichen Geschlecht und der seelischen Identifizierung mit dem anderen Geschlecht so ausgeprägt ist, dass nur durch die Beseitigung dieser Spannung schwere Symptome psychischer Krankheiten behoben oder gelindert werden.",
-            "Wichtig ist jedoch zu betonen, dass nicht alle Transgender-Personen jeden dieser Schritte gehen wollen oder müssen. Mit Unterstützung der behandelnden Ärztinnen und Ärzte sowie Therapeutinnen und Therapeuten gilt es herauszufinden, welche Behandlungen konkret in einer bestimmten Lebensphase individuell gewünscht und sinnvoll sind."
+            "Zur aktuellen Zeit werden in Österreich die meisten nötigen Behandlungen zur Umwandlung durch die gesetzlichen Krankenversicherung bezahlt. Motiv dafür ist, dass in der Medizin der Transsexualität Krankheitswert zukommt, wenn die innere Spannung zwischen dem biologischen Geschlecht und dem identifizierten Geschlecht so stark ausgeprägt ist, dass nur durch die Beseitigung dieser Spannung schwere Symptome psychischer Krankheiten behoben oder gelindert werden können.",
+            "Wichtig ist hier zu erwähnen, dass nicht alle Transgender-Personen jeden dieser Schritte gehen wollen oder müssen. Mit Unterstützung von medizinischen Personal ist zu klären, welche Behandlungen konkret gewünscht und sinnvoll sind."
         ];
         const diskriminierung = [
-            "Diskriminierung",
-            "Transgender Personen sind häufig Verletzungen ihrer Grundrechte wie Diskriminierung, Gewalt und Belästigung ausgesetzt, und zwar in einem weit höheren Maß, als dies von anderen Personen in der LGBT Community angegeben wird. Solche Erfahrungen bewirken ständige Angstgefühle und haben oft starke Depressionen und andere psychische Erkrankungen zur folge.",
-            
+            "Diskriminierung in Österreich",
+            "Transgender-Personen sind oft einem höheren Maß an Diskriminierung, Gewalt und Belästigung ausgesetzt, als dies von anderen Personen innerhalb und außerhalb der LGBT-Community angegeben wird. Die konstante Aussetzung zu solchen Umständen bewirken ständige Angstgefühle, Depressionen und andere psychische Erkrankungen.",
+        ];
+        const diskriminierung_stats = [
             <div className="gradient__statistic">
-                <p><span ref="value1" id="percent1">54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
-                <p><span ref="value2" id="percent2">78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
-                <p><span ref="value3" id="percent3">37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
-                <p><span ref="value4" id="percent4">60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p>
+                <p><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
+                <p><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
+                <p><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
+                <p><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden nicht gemeldet</p>
+                <p className="footnote">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
             </div>,
+        ];
+
+        const helfen = [
+            "Wie kann ich helfen?",
+            "Mehr Information zu dem Thema kann unter dem Link gefunden werden.",
         ];
         
         
@@ -120,13 +127,17 @@ class Page_statistics extends Component {
             <div className="statistics-container">
                  <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
 
-                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} />
+                 <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
+
+                 <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
+
+
+
+                 <SectionHelfen title={helfen[0]} subtext={helfen[1]} />
            
                 
-                 <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} /> 
                  
                  <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
-                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} />
             </div>
         );
     }
@@ -135,10 +146,42 @@ class Page_statistics extends Component {
 const SectionTransInOe = (props) => {
     return (
         <section className="transInOe ops-section active">
-            <h2 className="transInOe__titel"><span className="italic">{props.span}</span>{props.title}</h2>
-            <p className="transInOe__content">{props.text}</p>
-            <p className="transInOe__subcontent">{props.subtext}</p>
-            <button className="transInOe__button">Werde aktiv</button>
+            <h2 className="transInOe__titel info-titel"><span className="italic">{props.span}</span>{props.title}</h2>
+            <p className="transInOe__content info-content">{props.text}</p>
+            <p className="transInOe__subcontent info-subcontent">{props.subtext}</p>
+            <button className="transInOe__button info-button">Werde aktiv</button>
+        </section>
+    )
+}
+
+const SectionDiskriminierung = (props) => {
+    return (
+        <section className="diskriminierung ops-section">
+            <h2 className="diskriminierung__titel info-titel">{props.title}</h2>
+            <p className="diskriminierung__content info-content">{props.text}</p>
+            <button className="diskriminierung__button info-button">Jetzt helfen</button>
+            <div className="diskriminierung__box info-box"></div>
+        </section>
+    )
+}
+
+const SectionMedizin = (props) => {
+    return (
+        <section className="medizin ops-section">
+            <h2 className="medizin__titel info-titel">{props.title}</h2>
+            <p className="medizin__content info-content">{props.text}</p>
+            <p className="medizin__subcontent info-subcontent">{props.subtext}</p>
+            <div className="medizin__box info-box"></div>
+        </section>
+    )
+}
+
+const SectionHelfen = (props) => {
+    return (
+        <section className="helfen ops-section">
+            <h2 className="helfen__titel info-titel">{props.title}</h2>
+            <p className="helfen__subcontent info-subcontent">{props.subtext}</p>
+            <button className="helfen__button info-button">Werde aktiv</button>
         </section>
     )
 }
