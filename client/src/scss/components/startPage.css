@@ -1,6 +1,5 @@
 .startInfo-intro-textindent {
-  margin-top: 1%;
-  margin-left: 34%; }
+  margin-top: 1%; }
 .startInfo-intro_pos {
   right: 4.8%;
   width: 20%;
@@ -11,24 +10,31 @@
   position: absolute;
   margin-left: 9vh;
   height: 20vh;
-  width: 55%; }
+  width: 55%;
+  z-index: 20; }
 .startInfo-container {
   width: 100%;
   grid-template-columns: 40px 50px auto 50px 40px;
   grid-template-rows: 25% 100px auto;
   z-index: 20; }
 .startInfo-gradientbutton {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-left: 5px; }
 
 .startCircle {
-  height: 90px;
-  width: 90px;
+  height: 75px;
+  width: 75px;
   /* border: 1.5px solid white; */
   border-radius: 50%;
   background-color: #fff;
   left: 0;
   right: 0;
-  top: 42vh;
-  margin: auto; }
+  top: 38vh;
+  position: absolute;
+  margin: auto;
+  transition: 0.3s ease-out; }
+  .startCircle:hover {
+    height: 70px;
+    width: 70px; }
 
 /*# sourceMappingURL=startPage.css.map */

@@ -33,7 +33,9 @@
     }
 
     &:hover {
-        color: $color-black;
+        //color: $color-black;
+        font-weight: 700;
+        letter-spacing: 2.8px;
     }
 
     &:nth-of-type(1):hover ~ .underbar{
@@ -61,6 +63,7 @@
     width: 6rem;
     background: rgb(255, 255, 255);
     top: 4.85vh;
+    top: 5.5vh;
     position: absolute;
     -webkit-transition: 0.5s ease;
   }

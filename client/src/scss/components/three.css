@@ -5,8 +5,7 @@
   z-index: 11;
   transition: filter 2s cubic-bezier(0.1, 0.7, 1, 0.1);
   -webkit-transition: -webkit-filter 500ms linear;
-  filter: blur(1px);
-  filter: brightness(0.8) contrast(1.8) opacity(1) saturate(1.6);
-  filter: brightness(0.95) contrast(1.3) opacity(1) saturate(1) blur(0.1px); }
+  filter: blur(0.3px);
+  left: 1.6%; }
 
 /*# sourceMappingURL=three.css.map */

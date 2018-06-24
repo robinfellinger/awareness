@@ -114,17 +114,35 @@ class TestScene extends Component {
     }
     function light(scene){
         const lightIn = new THREE.PointLight("#b7bcc9", 2, 0.0, 0.01);
-        const lightFront = new THREE.DirectionalLight( 0xffffff, 0.3 );
-        const lightOut = new THREE.AmbientLight( 0x404040, 3 );
+            lightIn.position.set(-110,-100,-190);
+        const lightFront = new THREE.DirectionalLight( 0xffffff, 0.8 );
+            lightFront.position.set(3,13,50);
+        const lightOut = new THREE.AmbientLight( 0x404040, 1.2 );
+            lightOut.position.set(40,20,40);
+        const rimLightLu = new THREE.DirectionalLight( 0xB7BCE2, 1 );
+            rimLightLu.position.set(-3, -2, -5);
+            rimLightLu.rotation.x = 89.5;
+            rimLightLu.rotation.z -= 3;
+        const rimLightMo = new THREE.DirectionalLight( 0xC93692, 5 );
+        rimLightMo.position.set(2, 10, -12);
+        rimLightMo.rotation.x = 89.5;
+        // rimLightMo.rotation.z -= 3;
+        const extraFromAbove = new THREE.DirectionalLight( 0xC90068, 0.6 );
+            extraFromAbove.position.set(5,14,16);
+        extraFromAbove.rotation.x -= 20;
+        extraFromAbove.rotation.z -= 20;
 
-        lightOut.position.set(40,20,40);
-        lightIn.position.set(-110,-100,-190);
-        lightFront.position.set(40,40,40);
+        let helper = new THREE.DirectionalLightHelper( lightFront, 15 );
+        scene.add(helper);
 
 
-        scene.add(lightIn);
+
+        // scene.add(lightIn);
         scene.add(lightOut); //ambient light
         scene.add(lightFront); //hard light from right top
+        scene.add(rimLightLu);
+        scene.add(rimLightMo);
+        scene.add(extraFromAbove);
     }
     function buildCamera({ width, height }) {
             const aspectRatio = width / height;

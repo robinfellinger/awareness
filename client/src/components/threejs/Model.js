@@ -426,7 +426,7 @@ class Model extends Component {
 
             TWEEN.update();
             if (particleSphere) {
-                particlemove();
+                // particlemove();
             }
         }
 
