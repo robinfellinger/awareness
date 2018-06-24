@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import data from "./glossar.json";
 import final from "./glossar3.json";
-import { Column, Row } from 'simple-flexbox';
+// import { Column, Row } from 'simple-flexbox';
 import { Link } from 'react-router-dom';
 
 import ue1 from "./glossarUE1.json";
