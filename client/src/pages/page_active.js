@@ -40,7 +40,8 @@ class Page_active extends Component {
 
                             {
                                 data.glossar.map((dynamicT, i) =>
-                                    <section className="aktiv">
+                                <section className="aktiv">
+                                <div className="aktiv__circle"></div>
                                         <b className="aktiv_name" >{dynamicT.organisation} <hr className="aktiv_line" style={{backgroundColor: "#2F80ED", border: "none", width: "20px", height: "1px", marginTop: "10px"}}></hr> <div className="aktiv_ort"> {dynamicT.ort}</div></b>
                                         <div className="aktiv_description" > {dynamicT.beschreibung}</div>
 
