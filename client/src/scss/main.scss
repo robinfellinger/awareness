@@ -22,11 +22,13 @@
 @import "./components/text.scss";
 @import "./components/startPage.scss";
 @import "./components/buttons.scss";
+@import "./components/accesslinks.scss";
 
 /*interaction*/
 @import "./components/interaction/interactionPage.scss";
 
-/*landing page*/
+/*werdeaktiv*/
+@import "./components/werdeaktiv/werdeaktiv.scss";
 
 html {
   background-color: #c0c4cf;
