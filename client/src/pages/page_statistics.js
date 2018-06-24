@@ -89,7 +89,7 @@ class Page_statistics extends Component {
         
         return(
             <div className="statistics-container">
-                 <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
+                 <SectionRechte title={rechte[0]} text={rechte[1]} bold_1={rechte[2]} subtext_1={rechte[3]} bold_2={rechte[4]} subtext_2={rechte[5]} />
                  <SectionBedeutung title={bedeutung[0]} text={bedeutung[1]} text_2={bedeutung[2]} text_3={bedeutung[3]} />
             
                  <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
@@ -141,6 +141,22 @@ const SectionBedeutung = (props) => {
             <p className="bedeutung__content_2 info-content">{props.text_2}</p>
             <p className="bedeutung__content_3 info-content">{props.text_3}</p>
             <div className="bedeutung__box info-box"></div>
+        </section>
+    )
+}
+
+const SectionRechte = (props) => {
+    return (
+        <section className="rechte ops-section">
+            <h2 className="rechte__titel info-titel">{props.title}</h2>
+            <p className="rechte__content info-content">{props.text}</p>
+            
+            <p className="rechte__subcontentB1 info-subcontent">{props.bold_1}</p>
+            <p className="rechte__subcontent_1 info-subcontent">{props.subtext_1}</p>
+            
+            <p className="rechte__subcontentB2 info-subcontent">{props.bold_2}</p>
+
+            <p className="rechte__subcontent_2 info-subcontent">{props.subtext_2}</p>
         </section>
     )
 }
