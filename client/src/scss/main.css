@@ -136,6 +136,24 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { 
 .helfen__subcontent { font-size: 1.3rem; margin-bottom: 3rem; }
 .helfen__button { transform: translateX(-24rem); align-self: right; }
 
+.stats { display: grid; align-content: center; justify-content: center; width: 100vw; height: 100vh; grid-template-columns: 1fr 30vw 1fr min-content min-content min-content 1fr; grid-template-rows: 1fr 40vh 1fr; line-height: 1.6rem; text-align: center; font-style: normal; font-weight: 400; }
+.stats span { font-size: 3.6rem; line-height: 1.5; }
+.stats__one { color: #2F80ED; font-size: 2rem; line-height: 4rem; grid-column: 2; grid-row: 2; text-align: left; }
+.stats__one span { font-size: 30rem; padding-bottom: 3rem; font-weight: 600; line-height: 1.0; }
+.stats__two { color: #2F80ED; grid-row: 2; grid-column: 4; font-size: 1rem; padding: 2rem; margin: 2rem; width: 15rem; transform: translatey(10vh); }
+.stats__three { background: #2F80ED; color: rgba(249, 249, 249, 0.95); font-size: 1rem; grid-row: 2; grid-column: 5; transform: translatey(10vh); padding: 2rem; margin: 2rem; height: fit-content; width: 15rem; }
+.stats__four { color: #2F80ED; grid-row: 2; font-size: 1rem; grid-column: 6; transform: translatey(10vh); padding: 2rem; margin: 2rem; width: 15rem; }
+.stats__footnote { grid-row: 3; grid-column: 2 / 4; align-self: end; text-align: end; margin-bottom: 4rem; }
+
+.gewalt { display: grid; align-content: center; justify-content: center; width: 100vw; height: 100vh; grid-template-columns: 1fr 30vw 1fr min-content min-content min-content 1fr; grid-template-rows: 1fr 40vh 1fr; line-height: 1.6rem; text-align: center; font-style: normal; font-weight: 400; }
+.gewalt span { font-size: 3.6rem; line-height: 1.5; }
+.gewalt__titel { width: 65rem; margin-bottom: 6rem; letter-spacing: 1.3rem; grid-column: 2; grid-row: 2; margin-top: 10rem; font-size: 10rem; color: #2F80ED; text-align: left; }
+.gewalt__text { font-size: 1.1rem; margin-bottom: 4rem; grid-column: 2; grid-row: 2; width: 50rem; margin-top: 20rem; margin-left: 5rem; text-align: left; }
+.gewalt__two { color: #2F80ED; grid-row: 2; grid-column: 4; font-size: 1rem; padding: 2rem; margin: 2rem; width: 15rem; transform: translatey(7vh); }
+.gewalt__three { background: #2F80ED; color: rgba(249, 249, 249, 0.95); font-size: 1rem; grid-row: 2; grid-column: 5; transform: translatey(7vh); padding: 2rem; margin: 2rem; height: fit-content; width: 15rem; }
+.gewalt__four { color: #2F80ED; grid-row: 2; font-size: 1rem; grid-column: 6; transform: translatey(7vh); padding: 2rem; margin: 2rem; width: 15rem; }
+.gewalt__footnote { grid-row: 3; grid-column: 2 / 4; align-self: end; text-align: end; margin-bottom: 4rem; }
+
 .italic { font-style: italic; }
 
 /*LIBRE BASKERVILLE*/

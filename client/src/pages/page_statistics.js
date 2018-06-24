@@ -4,64 +4,10 @@ import React, { Component } from 'react';
 class Page_statistics extends Component {
 
     constructor(props){
-        super(props);
-        this.state = {
-            percent1: false,
-        };
-  
+        super(props);  
     }
 
-
-    // handle = (value, duration) => {
-    //     this.ref = value;
-    //     this.animateValue(duration);
-    //   }
-
-    // animateValue(duration) {
-    //     var current = 0;
-    //     var end = this.ref.innerHTML.replace('%','');
-    //     var range = end - current;
-    //     var increment = 1; //further tweak for duration change
-    //     var stepTime = Math.abs(Math.floor(duration / range));
-    //     var obj = this.ref;
-    //     var timer = setInterval(request, stepTime);
-    //     function request(){
-    //         clearInterval(timer);
-    //         current += increment;
-    //         obj.innerHTML = Math.floor(current) + "%"; 
-    //         if (Math.floor(current) == end) {
-    //             clearInterval(timer);
-    //             return;
-    //         }
-    //         stepTime = stepTime - stepTime/100;
-    //         timer = setInterval(request, stepTime);
-    //     }
-    // }
-
-
-    //   onEnterViewport() {
-    //     if(this.state.percent1 === false){
-    //     this.setState({percent1: true});
-    //         this.handle(this.refs.value1, 500);
-    //         this.handle(this.refs.value2, 1000);
-    //         this.handle(this.refs.value3, 1500);
-    //         this.handle(this.refs.value4, 2000);
-    //     }
-    //   }
-
-    //   onExitViewport() {
-    //     this.setState({
-    //       percent1: false,
-    //     });
-    //   }
-
     componentDidMount () {
-        // const script = document.createElement("script");
-
-        // script.src = "extensions/onepagescroll.js";
-        // script.async = true;
-
-        // document.body.appendChild(script);
 
         let firstTime = document.getElementsByClassName("onepage-pagination");
         console.log(firstTime);
@@ -105,13 +51,25 @@ class Page_statistics extends Component {
             "Diskriminierung in Österreich",
             "Transgender-Personen sind oft einem höheren Maß an Diskriminierung, Gewalt und Belästigung ausgesetzt, als dies von anderen Personen innerhalb und außerhalb der LGBT-Community angegeben wird. Die konstante Aussetzung zu solchen Umständen bewirken ständige Angstgefühle, Depressionen und andere psychische Erkrankungen.",
         ];
-        const diskriminierung_stats = [
-            <div className="gradient__statistic">
-                <p><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
-                <p><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
-                <p><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
-                <p><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden nicht gemeldet</p>
-                <p className="footnote">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
+        const stats = [
+            <div className="stats">
+                <p className="stats__one"><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
+                <p className="stats__three"><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
+                <p className="stats__two"><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
+                <p className="stats__four"><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden nicht gemeldet</p>
+                <p className="stats__footnote info-subcontent">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
+            </div>,
+        ];
+
+        const gewalt = [
+            <div className="gewalt">
+                <h2 className="gewalt__titel info-titel">Gewalt</h2>
+                <p className="gewalt__text info-content">Neben Diskriminierung sind wiederholte Gewaltakte und die darauf folgende “Angst, man selbst zu sein“ weitere große Hürden im Leben vieler Transgender-Personen.</p>
+                <p className="gewalt__three"><span ref="value2" id="percent2">50%</span><br />der Trans-Personen  berichten von etwa einem Vorfall von Gewalt oder Belästigung pro Jahr</p>
+                <p className="gewalt__two"><span ref="value3" id="percent3">34%</span><br />geben an,  sie sind in den letzten 5 jahren angegriffen oder mit Gewalt bedroht worden.</p>
+                <p className="gewalt__four"><span ref="value4" id="percent4">8%</span><br />wurden angegriffen, hauptsächlich / nur weil sie als trans wahrgenommen wurden.</p>
+                <p className="gewalt__footnote info-subcontent">* folgende Daten sind von der FRA’s LGBT survey von 2014
+                </p>
             </div>,
         ];
 
@@ -125,19 +83,20 @@ class Page_statistics extends Component {
         
         return(
             <div className="statistics-container">
+            
+            
                  <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
 
                  <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
-
+                 {/*<SectionStats text={stats[0]}/>*/}
+                 <SectionGewalt text={gewalt[0]}/>
                  <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
 
 
 
                  <SectionHelfen title={helfen[0]} subtext={helfen[1]} />
            
-                
                  
-                 <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
             </div>
         );
     }
@@ -186,50 +145,18 @@ const SectionHelfen = (props) => {
     )
 }
 
-const SectionWhite2 = (props) => {
+const SectionStats = (props) => {
     return (
-        <section className="white ops-section">
-        <div className="line"></div>
-            <p className="navigation">navigation <span>0{props.index}/05</span></p>
-
-            <h2 className="white__titel">{props.title}<br /><span className="white__titel--highlight">{props.span}</span></h2>
-            <p className="white__content white__content--large">{props.text}</p>
-
-            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
+        <section className="ops-section">
+        <p className="stats__content info-content">{props.text}</p>
         </section>
     )
 }
 
-const SectionBlack = (props) => {
+const SectionGewalt = (props) => {
     return (
-        <section className="black ops-section">
-            <div className="line"></div>
-            <p className="navigation">navigation <span>0{props.index}/05</span></p>
-
-            <h2 className="black__titel">{props.title}</h2>
-            <p className="black__text black__text--1">{props.text_1}</p>
-            <p className="black__text black__text--2">{props.text_2}</p>
-
-            <div className="line line--hashtags"></div>
-            <p className="black__text black__text--hashtags">#binder #passing <br />#homelessTransTeens</p>
-
-            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
-        </section>
-    )
-}
-
-const SectionGradient = (props) => {
-    return (
-        <section id="numbers" className="gradient ops-section">
-        <div className="line"></div>
-            <p className="navigation">navigation <span>0{props.index}/05</span></p>
-
-
-            <h2 className="gradient__titel">{props.title}</h2>
-            <p className="gradient__text">{props.text_1}</p>
-            {props.extra}
-
-            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
+        <section className="ops-section">
+        <p className="gewalt__content info-content">{props.text}</p>
         </section>
     )
 }
