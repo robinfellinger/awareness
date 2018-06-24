@@ -89,15 +89,18 @@ class Page_statistics extends Component {
         
         return(
             <div className="statistics-container">
-                 <SectionRechte title={rechte[0]} text={rechte[1]} bold_1={rechte[2]} subtext_1={rechte[3]} bold_2={rechte[4]} subtext_2={rechte[5]} />
-                 <SectionBedeutung title={bedeutung[0]} text={bedeutung[1]} text_2={bedeutung[2]} text_3={bedeutung[3]} />
-            
-                 <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
 
-                 <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
-                 {/*<SectionStats text={stats[0]}/>
+
+            <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
+            <SectionBedeutung title={bedeutung[0]} text={bedeutung[1]} text_2={bedeutung[2]} text_3={bedeutung[3]} />
+            <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
+            <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
+            <SectionStats text={stats[0]}/>
+                 <SectionRechte title={rechte[0]} text={rechte[1]} bold_1={rechte[2]} subtext_1={rechte[3]} bold_2={rechte[4]} subtext_2={rechte[5]} />
+            
+
+                
                  <SectionGewalt text={gewalt[0]}/>
-                 <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />*/}
                  
                  
                  

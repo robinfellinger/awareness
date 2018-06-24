@@ -11,7 +11,7 @@ html { box-sizing: border-box; font-size: 62.5%; }
 @media only screen and (max-width: 75em) { html { font-size: 50%; } }
 @media only screen and (max-width: 50em) { html { font-size: 37.5%; } }
 
-.statistics-container { width: 100vw; display: grid; grid-template-rows: repeat(5, [page] minmax(600px, 100vh)); grid-template-columns: minmax(320px, 100vw); background-color: rgba(249, 249, 249, 0.95); }
+.statistics-container { width: 100vw; display: grid; grid-template-rows: repeat(8, [page] minmax(600px, 100vh)); grid-template-columns: minmax(320px, 100vw); background-color: rgba(249, 249, 249, 0.95); }
 
 .container-statistics { z-index: 30; position: absolute; }
 .container-ball { z-index: 10; }
