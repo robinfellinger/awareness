@@ -9,5 +9,7 @@
     top: 7vh; }
 .accesslinks_link:first-child {
   margin-right: 40px; }
+.accesslinks_link:nth-child(2) {
+  margin-right: 40px; }
 
 /*# sourceMappingURL=accesslinks.css.map */
