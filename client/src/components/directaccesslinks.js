@@ -19,6 +19,7 @@ class AccessLinks extends Component {
         this.setState({showStatisticPage: false});
         this. disablePagination();
         this.moveRope("6rem", "-1rem");
+        this.colorNav("white");
     }
 
     toggleStatisticPage(){
@@ -34,6 +35,7 @@ class AccessLinks extends Component {
             firstTime[0].style.display = "initial";
         }
 
+        this.colorNav("#4F4F4F");
     }
 
     toggleActivePage(){
@@ -42,6 +44,7 @@ class AccessLinks extends Component {
         this.setState({showStatisticPage: false});
         this.disablePagination();
         this.moveRope("13rem", "18rem");
+        this.colorNav("#4F4F4F");
     }
 
     toggleGlossarPage(){
@@ -50,6 +53,7 @@ class AccessLinks extends Component {
         this.setState({showStatisticPage: false});
         this.disablePagination();
         this.moveRope("9rem", "32rem");
+        this.colorNav("#4F4F4F");
     }
 
     disablePagination() {
@@ -67,6 +71,19 @@ class AccessLinks extends Component {
         underbar[0].style.width = width;
         underbar[0].style.left = left;
         
+    }
+
+    colorNav(farbe) {
+        let nav = document.getElementsByClassName("a-startAnim");
+        let underbar = document.getElementsByClassName("underbar");
+
+        if (nav[0] && nav[1] && nav[2] && nav[3] && underbar[0] ) {
+            for(let i = 0; i < 4; i++) {
+                nav[i].style.color = farbe;
+            }
+            underbar[0].style.background = farbe;
+        
+        }
     }
 
     render(){

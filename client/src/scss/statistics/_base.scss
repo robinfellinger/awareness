@@ -60,6 +60,7 @@ html {
     grid-template-columns: minmax(320px, 100vw);
 
     background-color: $color-bg;
+    z-index: 30;
 }
 
 .container {
