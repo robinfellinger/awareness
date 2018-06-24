@@ -55,12 +55,8 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { 
 .btn-text, .btn-text:link, .btn-text:visited { transition: all .1s; background: none; border: none; position: relative; cursor: pointer; padding-bottom: 6px; }
 .btn-text:not(:last-child), .btn-text:link:not(:last-child), .btn-text:visited:not(:last-child) { margin-right: 4rem; }
 .btn-text:hover { font-weight: 700; letter-spacing: 2.8px; }
-.btn-text:nth-of-type(1):hover ~ .underbar { left: -1rem; width: 6rem; }
-.btn-text:nth-of-type(2):hover ~ .underbar { left: 6rem; width: 11rem; }
-.btn-text:nth-of-type(3):hover ~ .underbar { left: 18rem; width: 13rem; }
-.btn-text:nth-of-type(4):hover ~ .underbar { left: 32rem; width: 9rem; }
 
-.underbar { height: 0.5rem; left: -1rem; width: 6rem; background: white; top: 4.85vh; top: 5.5vh; position: absolute; -webkit-transition: 0.5s ease; }
+.underbar { height: 0.5rem; left: -1rem; width: 6rem; background: white; top: 4.85vh; position: absolute; -webkit-transition: 0.5s ease; }
 
 .info-titel { font-family: "Arial", sans-serif; font-size: 5.4rem; letter-spacing: 1.08rem; text-transform: uppercase; color: #4F4F4F; font-weight: 700; }
 .info-content { font-family: "Montserrat", sans-serif, Italic; font-weight: 600; font-size: 1.4rem; line-height: 2.9rem; letter-spacing: 0.28rem; width: 65rem; color: #4F4F4F; font-style: italic; }
