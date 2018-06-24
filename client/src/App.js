@@ -120,12 +120,13 @@ class App extends Component {
 
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction_pos"}>
-                    {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION*/}
-                    <Interaction></Interaction>
+                <Interaction></Interaction>
+                    {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION
+                   
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
                     {this.state.showStatisticPage &&
-                        {/*<Page_statistics></Page_statistics>*/}
-                   }
+                        {/*<Page_statistics></Page_statistics>
+                   }*/}
                 </div>
             }
             <div className={"pos-absolute pos-centerText"}>
