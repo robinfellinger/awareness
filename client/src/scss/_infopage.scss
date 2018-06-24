@@ -1,0 +1,59 @@
+.transInOe {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+
+    &__titel {
+        font-family: $font-titel;
+        font-size: 5.4rem;
+        letter-spacing: 1.08rem;
+        text-transform: uppercase;
+        color: $color-text;
+        margin-bottom: 6rem;
+        font-weight: 700;
+    }
+
+    &__content {
+        font-family: $font-text;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 2.9rem;
+        letter-spacing: 0.28rem;
+        width: 65rem;
+        color: $color-text;
+        font-style: italic;
+        
+        margin-bottom: 3rem;
+    }
+
+    &__subcontent {
+        font-family: $font-text;
+        font-style: normal;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+        width: 65rem;
+        line-height: 2.4rem;
+        color: $color-text;
+        
+        margin-bottom: 3rem;
+    }
+
+    &__button {
+        font-family: $font-text;
+        font-style: normal;
+        font-size: 1.4rem;
+        background: none;
+        padding: 1.2rem 4rem;
+        background-color: $color-accent;
+        color: white;
+        letter-spacing: 0.08rem;
+        border: none;
+        cursor: pointer;
+        transform: translateX(-24rem);
+        align-self: right;
+    }
+}
+
+.italic {
+    font-style: italic;
+}

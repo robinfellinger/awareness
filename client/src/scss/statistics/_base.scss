@@ -1,6 +1,4 @@
-// FONT VARIABLES
-$font-primary:  "Montserrat", sans-serif;
-$font-secondary: "Libre Baskerville", serif;
+
 
 // COLOR VARIABLES
 $color-white-gradient-1: rgba(232, 232, 232, 0.8);
@@ -9,6 +7,18 @@ $color-grey-bg: rgba(0, 0, 0, 0.8);
 $color-white: rgb(255, 255, 255);
 $color-black: rgb(0, 0, 0);
 $color-grey: rgb(117, 117, 117);
+
+$color-bg: rgba(249, 249, 249, 0.93);
+$color-text: #4F4F4F;
+$color-title: #333333;
+$color-accent: #2F80ED;
+
+// FONT VARIABLES
+$font-primary:  "Montserrat", sans-serif, Italic;
+$font-secondary: "LIBRE BASKERVILLE", serif;
+
+$font-text:  "Montserrat", sans-serif, Italic;
+$font-titel: "Arial", serif;
 
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em;   // 1200px
@@ -48,8 +58,8 @@ html {
     display: grid;
     grid-template-rows: repeat(5, [page] minmax(600px, 100vh));
     grid-template-columns: minmax(320px, 100vw);
-    font-family: $font-primary;
-    color: $color-white;
+
+    background-color: $color-bg;
 }
 
 .container {

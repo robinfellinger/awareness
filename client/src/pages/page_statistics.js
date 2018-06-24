@@ -82,8 +82,9 @@ class Page_statistics extends Component {
 
     render(){
         const trans_in_oe = [
-            "trans in ", "österreich", 
-            "Durch die sich immer weiter verbesserten Rechtslage sowie der zunehmende Präsenz von Transgender-Frauen und -Männern in den Medien, trauen sicher immer mehr Transgender sich zu outen.",
+            "trans", " in österreich", 
+            "In den Medien ist die Thematik Transgender und Transidentität in den letzten Jahren immer präsenter geworden. Doch existieren weiterhin Informationsdefizite, sowie allgemeine Vorurteile, um die es sich zu kümmern gilt.",
+            "Aus interpretationen von mehreren Statistiken, wird das Verhältnis der Transfrauen mit einer von 1.000 geschätzt. Das Verhältnis der Transmänner wird auf einen von 2.000 geschätzt. Viele Trans*-Menschen leben allerdings in der Anonymität und können deshalb von Statistiken nicht erfasst werden.",
             
         ];
         const psychische_krankheit = [
@@ -117,32 +118,34 @@ class Page_statistics extends Component {
         
         return(
             <div className="statistics-container">
-                 <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} index={`${index++}`} />
-                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} index={`${index++}`} />
+                 <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
+
+                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} />
            
                 
-                 <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} index={`${index++}`} /> 
+                 <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} /> 
                  
-                 <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} index={`${index++}`} />
-                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} index={`${index++}`} />
+                 <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} />
+                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} />
             </div>
         );
     }
 }
 
-const SectionHeader = (props) => {
+const SectionTransInOe = (props) => {
     return (
-        <section className="header ops-section active" data-index={props.index}>
-            <h2 className="header__titel">{props.title}<span className="header__titel--highlight">{props.span}</span></h2>
-            <p className="header__content">{props.text}</p>
-            <a href="http://www.hosilinz.at" className="header__link">hosilinz.at</a>
+        <section className="transInOe ops-section active">
+            <h2 className="transInOe__titel"><span className="italic">{props.span}</span>{props.title}</h2>
+            <p className="transInOe__content">{props.text}</p>
+            <p className="transInOe__subcontent">{props.subtext}</p>
+            <button className="transInOe__button">Werde aktiv</button>
         </section>
     )
 }
 
 const SectionWhite2 = (props) => {
     return (
-        <section className="white ops-section" data-index={props.index}>
+        <section className="white ops-section">
         <div className="line"></div>
             <p className="navigation">navigation <span>0{props.index}/05</span></p>
 
@@ -156,7 +159,7 @@ const SectionWhite2 = (props) => {
 
 const SectionBlack = (props) => {
     return (
-        <section className="black ops-section" data-index={props.index}>
+        <section className="black ops-section">
             <div className="line"></div>
             <p className="navigation">navigation <span>0{props.index}/05</span></p>
 
@@ -174,7 +177,7 @@ const SectionBlack = (props) => {
 
 const SectionGradient = (props) => {
     return (
-        <section id="numbers" className="gradient ops-section" data-index={props.index}>
+        <section id="numbers" className="gradient ops-section">
         <div className="line"></div>
             <p className="navigation">navigation <span>0{props.index}/05</span></p>
 
