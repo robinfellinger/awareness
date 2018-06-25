@@ -2,11 +2,11 @@
   &-xl {
     //font-family: "Butler Stencil", "Libre Baskerville", serif;
     //font-weight: 400;
-    font-family: "Avenir", "Archivo Narrow", serif;
-    color: $text-main;
-    font-size: calc(#{$f-xl} - 0.5rem);
+    font-family: "Archivo Narrow", serif;
+    color: $headline-main;
+    font-size: calc(#{$f-xl} - 1.5rem);
     font-weight: 900;
-    letter-spacing: 9.2px;
+    letter-spacing: 5.2px;
     line-height: 1;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -39,7 +39,7 @@
     letter-spacing: 3px;
     line-height: 1.7;
     font-weight: 600;
-    text-transform: uppercase;
+    //text-transform: uppercase;
   }
   &-sm {
     font-family: "Montserrat", sans-serif;

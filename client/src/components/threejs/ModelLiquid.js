@@ -267,7 +267,7 @@ mousemove();
 function wakov(){
       if(Math.floor(Math.random()< 0.01)){
                 if(tRot > 1.5){
-                    tRot = 0;
+                    tRot = 0.3;
                 }else{
                     tRot += Math.floor(Math.random() * .1) + 0.25;
 

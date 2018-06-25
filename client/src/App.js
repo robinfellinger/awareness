@@ -151,6 +151,8 @@ class App extends Component {
                     </PerspectiveCamera>
                 </TestScene>
             </div>
+           <div id="noise"></div>
+           <div className="contrast-gradient"></div>
             <div className="rectangle-gradient">
                 <img src={glow} alt="glow_rectangle"/>
             </div>

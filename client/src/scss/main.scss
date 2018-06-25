@@ -42,6 +42,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
+
+  filter: brightness(0.95) contrast(1.2) opacity(1) saturate(1) blur(0.1px);
 }
 .interaction {
   &-pos {
@@ -71,6 +73,31 @@ bottom: 0;
   top: 25%;
 }
 
+.contrast-gradient{
+  position: absolute;
+  width:45%;
+  height:500px;
+  top: 16vh;
+  left:30%;
+  background-color: #596989;
+  background: radial-gradient(#596989 0, rgba(89, 105, 137, 0.67) 48%, #d1d4ef 63%);
+  opacity: 0.4;
+  filter: blur(70px);
+  border-radius: 45%;
+  //z-index: 1;
+}
+#noise {
+  position: absolute;
+  width: 100%;
+  height:100vh;
+  background-image: url('../img/noise.png');
+  background-size: 59%;
+  top: 0;
+  mix-blend-mode: hue;
+  z-index: 40;
+  opacity: 0.2;
+
+}
 img {
   width: 100%;
 }
