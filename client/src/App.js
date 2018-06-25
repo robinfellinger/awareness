@@ -8,14 +8,66 @@ import TestScene from "./components/threejs/TestScene"
 import Model from "./components/threejs/Model"
 import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
+import firebase from 'firebase';
+import {DB_CONFIG} from './Config';
+//import data from "./key.json";
+// const admin = require('firebase-admin');
+// const functions = require('firebase-functions');
+
 console.log(Model);
+
+
+
+// var config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
+//   apiKey: "VSwvkZw6n4PO4hyvfxaX49ecVgcbD3ABHBSIT6Zo",
+//   authDomain: "awareness-ca317.firebaseapp.com",
+//   databaseURL: "https://awareness-ca317.firebaseio.com/",
+//   storageBucket: "gs://awareness-ca317.appspot.com"
+// };
+// var admin = require("firebase-admin");
+
+var key = {
+    "type": "service_account",
+    "project_id": "awareness-ca317",
+    "private_key_id": "e8bf142951eedcc062a74273f0ea770848540ad7",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtvNQikdYeOmIC\nDd94bVcu4gIlQVFIe6avw1CbcPbcWut9GD2PTWZM2UhgsfevuFateESgtY6jEz8m\nuXp18oTrjYzonQrsn+vbq4sdsj4rUa8WhdnQj9HaD5B9OJcy3Eu9q45+6Hbr2tj4\ndS41NxKi74xlFETwpMp020kouZU6PKKgUD0fhfVVQ2q4VVJATEdWLhCqzVle0F37\n2A37mXjAjkENzf8XNec1CfqBgudHu41TmiNotmYXl7O30AvWWs7bifd8ITZlZ6fQ\nZ8o71uBj+0kAZ2EiHSKq0GoTw3Mn7PUvQ/gQtlqLUmOYKM0vifjLmEWTbu6ewIaA\nJxQIhbKtAgMBAAECggEAOvWQZhTovYRhm0Ha+xLcGdhwEvWKIJd51z7onX+l/tzJ\n+r9dsMJ6+4xnUA1FOXhMzfy5CXLjr3rKHRmnsdw1+HwmfBBDU07oKzmZcd/50hib\n2wBcjTcpZ5+NkLlCMmvpNjpAltfL97lilVqq7js801eI5QqOZL3/yM1cE/p65nJ7\nF1Zs1o3skNlyJb4n8hd2PE7ITwh0ROXB5/vWUjzYpBMVJec6fHbznWpTWmdUNMKp\n4CcoTAfvj/GX5OYhYx2Sn2YIATJuNDz1SEgqNwh2FjhJQY7yLCKWn3qFYlRX4bfy\naIfDccwqhX3NLbUG4ULKhWSxbXGZFsMTm4P3rp/TzwKBgQDcAUN70cQktC0PC3Tq\nBfz7fpGcTu/qrBaqRbfGgaapbWb3Ku4GA2VUOHIjYALJFxp8HQidO+FsxNkcc/fx\nSNJTcuUsm0+xAahfcwTblS/PR3pmGFzhk5JUIRYVtYLl4GoFh2+KIGpy1fi737Zf\n+4GekVgsQwo2ACaoBV789FZ9LwKBgQDKKbGqGsA7GrIro8G6ugajVKfWTF/gt6nB\npGQtI6/GH4DNsBAlU9HcyEFjLUeGbx8Q0uvgamBF961YHkpvPpmhSNUkwuXGZLfM\n86yg4jBVld3A7GDOreTW1hk8SLsIc+1E3NEKNfCQu6YFE5ou1fvdtFiMn/6GR6MX\nKv1ewP3u4wKBgQCXAK8G72VHI/vBVcW7UrzfCXJ77JozYkZ0PEH1F8wCgjqn72lL\n60zDT7LXoPCIgTkGcw8UjKMe+sViCB7oF2l1KWkvArLh9RdR3Co7ZNxZ0t+p75Lg\nqV9IKyVzZRAhI7ThcqIWFkW56C8/FD+jBYdkBLKWPrVldxkRPg6CZFpwtQKBgDIl\n75Vzt1WyBJqAr7DjLnxbppqpLWtwA+MuJU9xN8wcynW7g/XOehObdWTluYVmkT06\nJRrxKFqS2uQt92brD28LwxuwYRE6sMFdfOgX08eXOn/94vHB/y8vwujKXeL15tib\nMhunT7qHYeKGf0u49xaDAyg3FAs5QAKiPmG/2/3jAoGAGOGq+7qmQbOdevovwn3c\nOcM17AXr+rKXjHGSnUz6E2w2zCYMqNLxDaVsan+3WzLsVBGNPJ6haiZKkNlJgWWU\nXZEFlfMEircI+ogaegur7tz8cR7k/aqgheuJyxig39DWVSpncb18+3SeDtr0JnnV\nlp1N2aMwR2YulkMCT9mBugE=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-mnwih@awareness-ca317.iam.gserviceaccount.com",
+    "client_id": "117749948924755300177",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-mnwih%40awareness-ca317.iam.gserviceaccount.com"
+  };
+
+
+  
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(key),
+//   //databaseURL: "https://awareness-ca317.firebaseio.com"
+// });
+// //var database = admin.database();
+// var db = admin.firestore();
+
+// db.collection('stats').get()
+//     .then((snapshot) => {
+//       snapshot.forEach((doc) => {
+//         console.log(doc.id, '=>', doc.data());
+//       });
+//     })
+//     .catch((err) => {
+//       console.log('Error getting documents', err);
+//     });
+
+
+
+//var fire = firebase.initializeApp(config);
 class App extends Component {
 
     constructor() {
         super();
         this.state = {
             startExperience: false,
-            
             canvasClasses: "three__canvas three-blur",
             width: window.innerWidth,
             height: window.innerHeight,
@@ -31,7 +83,7 @@ class App extends Component {
         this.toggleExperience = this.toggleExperience.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
         this.wakov = this.wakov.bind(this);
-
+        
 
     }
     wakov(){
