@@ -56,15 +56,16 @@ html {
 .statistics-container {
     width: 100vw;
     display: grid;
-    grid-template-rows: repeat(5, [page] minmax(600px, 100vh));
+    grid-template-rows: repeat(8, [page] minmax(600px, 100vh));
     grid-template-columns: minmax(320px, 100vw);
 
     background-color: $color-bg;
+    z-index: 30;
 }
 
 .container {
     &-statistics {
-        z-index: 30;
+        z-index: 45;
         position: absolute;
     }
     &-ball {
