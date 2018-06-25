@@ -4,64 +4,10 @@ import React, { Component } from 'react';
 class Page_statistics extends Component {
 
     constructor(props){
-        super(props);
-        this.state = {
-            percent1: false,
-        };
-  
+        super(props);  
     }
 
-
-    // handle = (value, duration) => {
-    //     this.ref = value;
-    //     this.animateValue(duration);
-    //   }
-
-    // animateValue(duration) {
-    //     var current = 0;
-    //     var end = this.ref.innerHTML.replace('%','');
-    //     var range = end - current;
-    //     var increment = 1; //further tweak for duration change
-    //     var stepTime = Math.abs(Math.floor(duration / range));
-    //     var obj = this.ref;
-    //     var timer = setInterval(request, stepTime);
-    //     function request(){
-    //         clearInterval(timer);
-    //         current += increment;
-    //         obj.innerHTML = Math.floor(current) + "%"; 
-    //         if (Math.floor(current) == end) {
-    //             clearInterval(timer);
-    //             return;
-    //         }
-    //         stepTime = stepTime - stepTime/100;
-    //         timer = setInterval(request, stepTime);
-    //     }
-    // }
-
-
-    //   onEnterViewport() {
-    //     if(this.state.percent1 === false){
-    //     this.setState({percent1: true});
-    //         this.handle(this.refs.value1, 500);
-    //         this.handle(this.refs.value2, 1000);
-    //         this.handle(this.refs.value3, 1500);
-    //         this.handle(this.refs.value4, 2000);
-    //     }
-    //   }
-
-    //   onExitViewport() {
-    //     this.setState({
-    //       percent1: false,
-    //     });
-    //   }
-
     componentDidMount () {
-        // const script = document.createElement("script");
-
-        // script.src = "extensions/onepagescroll.js";
-        // script.async = true;
-
-        // document.body.appendChild(script);
 
         let firstTime = document.getElementsByClassName("onepage-pagination");
         console.log(firstTime);
@@ -69,6 +15,7 @@ class Page_statistics extends Component {
         if (firstTime.length <= 0) {
 
             const script2 = document.createElement("script");
+            script2.classList.add("onePageScript");
 
             script2.innerHTML = 'onePageScroll(".container-statistics", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
             script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}';
@@ -80,10 +27,16 @@ class Page_statistics extends Component {
         }
     }
 
+    clickFunction() {
+        console.log("Hi34");
+        document.getElementById("getActive").click();
+    }
+
     render(){
         const trans_in_oe = [
-            "trans in ", "österreich", 
-            "Durch die sich immer weiter verbesserten Rechtslage sowie der zunehmende Präsenz von Transgender-Frauen und -Männern in den Medien, trauen sicher immer mehr Transgender sich zu outen.",
+            "trans", " in österreich", 
+            "In den Medien ist die Thematik Transgender und Transidentität in den letzten Jahren immer präsenter geworden. Doch existieren weiterhin Informationsdefizite, sowie allgemeine Vorurteile, um die es sich zu kümmern gilt.",
+            "Aus interpretationen von mehreren Statistiken, wird das Verhältnis der Transfrauen mit einer von 1.000 geschätzt. Das Verhältnis der Transmänner wird auf einen von 2.000 geschätzt. Viele Trans*-Menschen leben allerdings in der Anonymität und können deshalb von Statistiken nicht erfasst werden.",
             
         ];
         const psychische_krankheit = [
@@ -92,98 +45,166 @@ class Page_statistics extends Component {
         ];
         const bedeutung = [
             "Was bedeutet es Transgender zu sein?",
-            "Du bist als Mädchen geboren, aber fühlst dich wie ein Junge? Oder anders rum? Wer transsexuell ist, hat das Gefühl, im falschen Körper zu leben. Das biologische Geschlecht ist also ein anderes, als das empfundene oder gewünschte Geschlecht. Mit Schwul sein hat das aber nur selten was zu tun. Ein Junge, der sich dem weiblichen Geschlecht zugehörig fühlt, geht eine Beziehung mit einem anderen Jungen nicht als Schwuler ein, sondern als Frau. ",
-            "Doch es gibt auch unter Transgendern Homosexualität, das heißt Jungen, die sich dem weiblichen Geschlecht zugehörig fühlen und sich sexuell dennoch zu Frauen hingezogen fühlen."
+            "Der Begriff „TRANSGENDER“ bezeichnet Menschen, deren äußerliche Geschlechtsmerkmale (und damit das bei der Geburt zugewiesene Geschlecht) nicht mit ihrem gefühlten Geschlecht, dem sogenannten Identitätsgeschlecht, übereinstimmen. Oft wird auch gesagt: „Transgender Personen fühlen sich im falschen Körper“.",
+            "Allerdings lassen sich die Lebensumstände von Transgender-Personen nicht auf diese einfache Formel reduzieren. Denn das Thema erstreckt sich auf sehr viele weitere Teile des Lebens als lediglich das Körperliche. ",
+            "Außerdem lehnen viele Transgender diese Formulierung für sich persönlich ab,  z.B. weil sie ihren Körper nicht als „falsch“ bezeichnen wollen, nur weil sie Trans*-Personen sind. Die Erfahrungen sind eben vielfältig und lassen sich nur schwer vereinheitlichen.",
         ];
-        const medizinische_u = [
+        const rechte= [
+            "Rechte in Österreich",
+            "Die rechtlich gültige Anerkennung des Identitäts-Geschlechts gilt für viele Transgender-Personen als wesentlicher Schritt, ihr empfundenes Geschlecht ständig und vollends leben zu können. Um dies zu erreichen sind in Österreich zwei Schritte von nöten:",
+            "Personenstandsänderung", "Dies ist erforderlich, um auch offiziell im gelebten Geschlecht anerkannt zu werden, sowie um die passende Dokumente zu erhalten.",
+            "Vornamensänderung", "Es ist fast unmöglich, im eigenen Geschlecht anerkannt zu werden, wenn der Vorname diesem Geschlecht widerspricht.",
+        ];
+
+        const medizin= [
             "Medizinische Unterstützung",
-            "In Österreich werden aktuell die meisten notwendigen Behandlungen zur Umwandlung durch die gesetzlichen Krankenversicherungen bezahlt, weil der Transsexualität dann Krankheitswert zukommt, wenn die innere Spannung zwischen dem körperlichen Geschlecht und der seelischen Identifizierung mit dem anderen Geschlecht so ausgeprägt ist, dass nur durch die Beseitigung dieser Spannung schwere Symptome psychischer Krankheiten behoben oder gelindert werden.",
-            "Wichtig ist jedoch zu betonen, dass nicht alle Transgender-Personen jeden dieser Schritte gehen wollen oder müssen. Mit Unterstützung der behandelnden Ärztinnen und Ärzte sowie Therapeutinnen und Therapeuten gilt es herauszufinden, welche Behandlungen konkret in einer bestimmten Lebensphase individuell gewünscht und sinnvoll sind."
+            "Zur aktuellen Zeit werden in Österreich die meisten nötigen Behandlungen zur Umwandlung durch die gesetzlichen Krankenversicherung bezahlt. Motiv dafür ist, dass in der Medizin der Transsexualität Krankheitswert zukommt, wenn die innere Spannung zwischen dem biologischen Geschlecht und dem identifizierten Geschlecht so stark ausgeprägt ist, dass nur durch die Beseitigung dieser Spannung schwere Symptome psychischer Krankheiten behoben oder gelindert werden können.",
+            "Wichtig ist hier zu erwähnen, dass nicht alle Transgender-Personen jeden dieser Schritte gehen wollen oder müssen. Mit Unterstützung von medizinischen Personal ist zu klären, welche Behandlungen konkret gewünscht und sinnvoll sind."
         ];
+
         const diskriminierung = [
-            "Diskriminierung",
-            "Transgender Personen sind häufig Verletzungen ihrer Grundrechte wie Diskriminierung, Gewalt und Belästigung ausgesetzt, und zwar in einem weit höheren Maß, als dies von anderen Personen in der LGBT Community angegeben wird. Solche Erfahrungen bewirken ständige Angstgefühle und haben oft starke Depressionen und andere psychische Erkrankungen zur folge.",
-            
-            <div className="gradient__statistic">
-                <p><span ref="value1" id="percent1">54%</span><br />werden diskriminiert weil sie als "Trans" wahrgenommen werden</p>
-                <p><span ref="value2" id="percent2">78%</span><br />trauen sich nicht, sich während der Schulzeit zu outen</p>
-                <p><span ref="value3" id="percent3">37%</span><br />fühlten sich bei der Arbeitssuche diskriminiert</p>
-                <p><span ref="value4" id="percent4">60%</span><br />der Personen melden Vorfälle von diskriminierung nicht</p>
+            "Diskriminierung in Österreich",
+            "Transgender-Personen sind oft einem höheren Maß an Diskriminierung, Gewalt und Belästigung ausgesetzt, als dies von anderen Personen innerhalb und außerhalb der LGBT-Community angegeben wird. Die konstante Aussetzung zu solchen Umständen bewirken ständige Angstgefühle, Depressionen und andere psychische Erkrankungen.",
+        ];
+        const stats = [
+            <div className="stats">
+                <p className="stats__one"><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
+                <p className="stats__three"><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
+                <p className="stats__two"><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
+                <p className="stats__four"><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden nicht gemeldet</p>
+                <p className="stats__footnote info-subcontent">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
             </div>,
         ];
-        
-        
-        let index = 1;
+
+        const gewalt = [
+            <div className="gewalt">
+                <h2 className="gewalt__titel info-titel">Gewalt</h2>
+                <p className="gewalt__text info-content">Neben Diskriminierung sind wiederholte Gewaltakte und die darauf folgende “Angst, man selbst zu sein“ weitere große Hürden im Leben vieler Transgender-Personen.</p>
+                <p className="gewalt__three"><span ref="value2" id="percent2">50%</span><br />der Trans-Personen  berichten von etwa einem Vorfall von Gewalt oder Belästigung pro Jahr</p>
+                <p className="gewalt__two"><span ref="value3" id="percent3">34%</span><br />geben an,  sie sind in den letzten 5 jahren angegriffen oder mit Gewalt bedroht worden.</p>
+                <p className="gewalt__four"><span ref="value4" id="percent4">8%</span><br />wurden angegriffen, hauptsächlich / nur weil sie als trans wahrgenommen wurden.</p>
+                <p className="gewalt__footnote info-subcontent">* folgende Daten sind von der FRA’s LGBT survey von 2014
+                </p>
+            </div>,
+        ];
+
+        const helfen = [
+            "Wie kann ich helfen?",
+            "Mehr Information zu dem Thema kann unter dem Link gefunden werden.",
+        ];
         
         return(
             <div className="statistics-container">
-                 <SectionHeader title={trans_in_oe[0]} span={trans_in_oe[1]} text={trans_in_oe[2]} index={`${index++}`} />
-                 <SectionBlack title={bedeutung[0]} text_1={bedeutung[1]} text_2={bedeutung[2]} index={`${index++}`} />
-           
+
+
+            <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
+            <SectionBedeutung title={bedeutung[0]} text={bedeutung[1]} text_2={bedeutung[2]} text_3={bedeutung[3]} />
+            <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
+            <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
+            <SectionStats text={stats[0]}/>
+                 <SectionRechte title={rechte[0]} text={rechte[1]} bold_1={rechte[2]} subtext_1={rechte[3]} bold_2={rechte[4]} subtext_2={rechte[5]} />
+            
+
                 
-                 <SectionGradient title={diskriminierung[0]} text_1={diskriminierung[1]} extra={diskriminierung[2]} index={`${index++}`} /> 
+                 <SectionGewalt text={gewalt[0]}/>
                  
-                 <SectionWhite2 title={psychische_krankheit[0]} span={psychische_krankheit[1]} text={psychische_krankheit[2]} index={`${index++}`} />
-                 <SectionBlack title={medizinische_u[0]} text_1={medizinische_u[1]} text_2={medizinische_u[2]} index={`${index++}`} />
+                 
+                 
+
+
+                 <SectionHelfen title={helfen[0]} subtext={helfen[1]} />
+           
+                 
             </div>
         );
     }
 }
 
-const SectionHeader = (props) => {
+
+
+const SectionTransInOe = (props) => {
     return (
-        <section className="header ops-section active" data-index={props.index}>
-            <h2 className="header__titel">{props.title}<span className="header__titel--highlight">{props.span}</span></h2>
-            <p className="header__content">{props.text}</p>
-            <a href="http://www.hosilinz.at" className="header__link">hosilinz.at</a>
+        <section className="transInOe ops-section active">
+            <h2 className="transInOe__titel info-titel"><span className="italic">{props.span}</span>{props.title}</h2>
+            <p className="transInOe__content info-content">{props.text}</p>
+            <p className="transInOe__subcontent info-subcontent">{props.subtext}</p>
+            <button className="transInOe__button info-button" onClick={this.clickFunction}>Werde aktiv</button>
         </section>
     )
 }
 
-const SectionWhite2 = (props) => {
+const SectionDiskriminierung = (props) => {
     return (
-        <section className="white ops-section" data-index={props.index}>
-        <div className="line"></div>
-            <p className="navigation">navigation <span>0{props.index}/05</span></p>
-
-            <h2 className="white__titel">{props.title}<br /><span className="white__titel--highlight">{props.span}</span></h2>
-            <p className="white__content white__content--large">{props.text}</p>
-
-            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
+        <section className="diskriminierung ops-section">
+            <h2 className="diskriminierung__titel info-titel">{props.title}</h2>
+            <p className="diskriminierung__content info-content">{props.text}</p>
+            <button className="diskriminierung__button info-button">Jetzt helfen</button>
+            <div className="diskriminierung__box info-box"></div>
         </section>
     )
 }
 
-const SectionBlack = (props) => {
+const SectionBedeutung = (props) => {
     return (
-        <section className="black ops-section" data-index={props.index}>
-            <div className="line"></div>
-            <p className="navigation">navigation <span>0{props.index}/05</span></p>
-
-            <h2 className="black__titel">{props.title}</h2>
-            <p className="black__text black__text--1">{props.text_1}</p>
-            <p className="black__text black__text--2">{props.text_2}</p>
-
-            <div className="line line--hashtags"></div>
-            <p className="black__text black__text--hashtags">#binder #passing <br />#homelessTransTeens</p>
-
-            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
+        <section className="bedeutung ops-section">
+            <h2 className="bedeutung__titel info-titel">{props.title}</h2>
+            <p className="bedeutung__content info-content">{props.text}</p>
+            <p className="bedeutung__content_2 info-content">{props.text_2}</p>
+            <p className="bedeutung__content_3 info-content">{props.text_3}</p>
+            <div className="bedeutung__box info-box"></div>
         </section>
     )
 }
 
-const SectionGradient = (props) => {
+const SectionRechte = (props) => {
     return (
-        <section id="numbers" className="gradient ops-section" data-index={props.index}>
-        <div className="line"></div>
-            <p className="navigation">navigation <span>0{props.index}/05</span></p>
+        <section className="rechte ops-section">
+            <h2 className="rechte__titel info-titel">{props.title}</h2>
+            <p className="rechte__content info-content">{props.text}</p>
+            
+            <p className="rechte__subcontentB1 info-subcontent">{props.bold_1}</p>
+            <p className="rechte__subcontent_1 info-subcontent">{props.subtext_1}</p>
+            
+            <p className="rechte__subcontentB2 info-subcontent">{props.bold_2}</p>
 
+            <p className="rechte__subcontent_2 info-subcontent">{props.subtext_2}</p>
+        </section>
+    )
+}
 
-            <h2 className="gradient__titel">{props.title}</h2>
-            <p className="gradient__text">{props.text_1}</p>
-            {props.extra}
+const SectionMedizin = (props) => {
+    return (
+        <section className="medizin ops-section">
+            <h2 className="medizin__titel info-titel">{props.title}</h2>
+            <p className="medizin__content info-content">{props.text}</p>
+            <p className="medizin__subcontent info-subcontent">{props.subtext}</p>
+            <div className="medizin__box info-box"></div>
+        </section>
+    )
+}
 
-            <div className="vl vl--1"></div><div className="vl vl--2"></div><div className="vl vl--3"></div>
+const SectionHelfen = (props) => {
+    return (
+        <section className="helfen ops-section">
+            <h2 className="helfen__titel info-titel">{props.title}</h2>
+            <p className="helfen__subcontent info-subcontent">{props.subtext}</p>
+            <button className="helfen__button info-button">Werde aktiv</button>
+        </section>
+    )
+}
+
+const SectionStats = (props) => {
+    return (
+        <section className="ops-section">
+        <p className="stats__content info-content">{props.text}</p>
+        </section>
+    )
+}
+
+const SectionGewalt = (props) => {
+    return (
+        <section className="ops-section">
+        <p className="gewalt__content info-content">{props.text}</p>
         </section>
     )
 }
