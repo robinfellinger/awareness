@@ -1,29 +1,132 @@
 {
-  "UE1": [
+  "Transgender": [
+
     {
-      "word": "Binder",
+      "word": "TRANSFRAU, MZF (MANN ZU FRAU)",
       "id": "1",
-      "description": "Der Penis steht als Symbol für Männlichkeit und die Brust ist das Symbol für Weiblichkeit. Eine Möglichkeit das äussere Erscheinungsbild zeitweise anzugleichen, ohne operative Eingriffe, ist das Abbinden der Brüste. Dazu gibt es verschiedene Möglichkeiten, wie zum Beispiel eine einfache elastische Binde oder ein einfaches Kompressions-Shirts."
+      "description": "Ist ein Oberbegriff für Transgender-frauen, Transsexuelle Frauen und Transvestistischen Frauen. Sie wurden bei der Geburt als Männer eingestuft haben aber später einen Geschlechtswechsel in Richtung Frau vollzogen."
     },
     {
-      "word": "CIS Cisgender",
+      "word": "TRANSIDENTITÄT",
       "id": "2",
-      "description": "Die Personen  identifizierten sich mit dem Geschlecht, welches bei der Geburt zugewiesen wurde. Cis ist somit das gegenteil von Trans."
+      "description": "Der Begriff Transidentität dient als synonym zu Transsexualität, gelegentlich auch für Transgender verwendet. Das heißt dass die Geschlechtsidentität vom eigentlichen biologischen Geburtsgeschlecht abweicht. Vorteil von diesen Begriff ist, dass das Wort ‘sex’ nicht vorkommt."
     },
     {
-      "word": "Deadnaming",
+      "word": "TRANSMANN, FZM (FRAU ZU MANN)",
       "id": "3",
-      "description": "Wenn jemand trotz des Wissens eine Person mit ihrem Geburtsnamen anspricht, mit welchem sie sich nicht identifiziert."
+      "description": "Ist ein Oberbegriff für Transgender-Männer, Transsexuelle Männer und Transvestistischen Männer. Sie wurden bei der Geburt als Frauen eingestuft haben aber später einen Geschlechtswechsel in Richtung Mann vollzogen."
     },
     {
-      "word": "Dragqueen/Dragking",
+      "word": "TRANS* PERSONEN",
+      "id": "4",
+      "description": "Trans* ist ein Überbegriff für Menschen, brechen aus der Norm weil sie sich nicht mit dem eigentlichen Geschlecht identifizieren. Der Begriff wird vor allem in der emanzipatorischen, queeren Community gerne verwendet. Das Sternchen steht für alle Formen und Möglichkeiten des Trans-Seins."
+    },
+    {
+      "word": "TRANSSEXUALITÄT",
+      "id": "4",
+      "description": "Transsexualismus kommt aus der Medizin und ist gleichzeitig der im ICD-10 (Internationale statistische Klassifikation der Krankheiten und verwandter Gesundheitsprobleme) verwendete Begriff für die zuerkannte Persönlichkeitsstörung. Transsexuelle Menschen, sind körperlich männlich oder weiblich, streben jedoch danach als Angehöriger des jeweils anderen Geschlechtes anerkannt zu werden. Der Körper kann durch hormonelle, sowie operative Behandlungen angeglichen werden."
+    }
+
+
+  ],
+
+  "Geschlecht": [
+
+    {
+      "word": "UNISEX",
+      "id": "2",
+      "description": "Der Begriff setzt sich aus den Worten Unus (Latein für einer) und Sexus (Latein für Geschlecht) zusammen. Das heißt Unisex bedeutet wörtlich übersetzt ‘ein Geschlecht’, also für Frauen aber auch für Männer."
+    },
+    {
+      "word": "IN-BETWEEN",
+      "id": "3",
+      "description": "Menschen, welche sich zwischen den beiden Geschlechtern identifizieren und die Zuweisung zu einem Geschlecht ablehnen."
+    },
+    {
+      "word": "GESCHLECHTSIDENTITÄT",
+      "id": "4",
+      "description": "Geschlechtsidentität beschreibt das innere, persönliche Gefühl der Zugehörigkeit zu einem Geschlecht. Dies muss nicht das bei der Geburt zugewiesene Geschlecht sein. Geschlechtsidentität zeigt sich in der Wahrnehmung des eigenen Körpers und der Repräsentanz nach außen."
+    },
+    {
+      "word": "DRITTES GESCHLECHT",
+      "id": "2",
+      "description": "In einigen Staaten ist bereits ein drittes Geschlecht eingeführt und somit ist ein juristisches drittes Geschlecht legitimiert. Also kann neben „weiblich“ und „männlich“ auch ein „X“ für ein unbestimmtes oder drittes Geschlecht eingetragen werden."
+    },
+    {
+      "word": "GENDER",
+      "id": "3",
+      "description": "Bezeichnet das soziale Geschlecht. Es zeigt was die Gesellschaft unter typisch männlich und weiblich versteht und was nicht. Beispiele dafür sind Kleidung, Aussehen und Verhalten. Soziale Geschlechterrollen und Geschlechtsmerkmale verändern sich jedoch im Laufe der Zeit und können sich kulturell stark unterscheiden. Wichtig zu wissen ist, dass die meisten Menschen nicht eindeutig einer Geschlechternorm entsprechen."
+    },
+    {
+      "word": "CIS CISGENDER",
+      "id": "4",
+      "description": "Die Personen  identifizierten sich mit dem Geschlecht, welches bei der Geburt zugewiesen wurde. Cis ist somit das gegenteil von Trans."
+    }
+
+
+
+
+  ],
+
+  "Erscheinungsbild": [
+
+    {
+      "word": "TRAVESTIE",
+      "id": "2",
+      "description": "Bezeichnet die künstlerischer oder humoristischer Darstellung einer Person durch eine Person des anderen Geschlechtes."
+    },
+    {
+      "word": "PASSING",
+      "id": "3",
+      "description": "Beschreibt Personen welche als Mitglied des Geschlechts, mit den sie sich identifizieren aber nicht geboren wurden, akzeptiert werden. Das heißt ein Trans* Mann wird als Mann wahrgenommen."
+    },
+    {
+      "word": "DRAGQUEEN / DRAGKING",
       "id": "4",
       "description": "Eine Drag Queen ist ein Mann, der durch Travestie das Aussehen und Verhalten einer Frau darstellt. Wenn eine Frau das Verhalten eines Mannes in die Kleidungsnorm überschreitet, ist sie ein Drag King."
     }
 
 
 
-  ]
 
+  ],
+
+  "LSBTQI": [
+
+    {
+      "word": "INTERSEXUELLE",
+      "id": "2",
+      "description": "Der Begriff der Intersexualität wird auch Geschlechtsentwicklungsstörung genannt und kommt aus der Medizin. Intersexuelle Menschen können genetisch, anatomisch, und/oder hormonell nicht eindeutig einem Geschlecht zugeordnet werden. Dabei können sekundäre Geschlechtsmerkmale wie Muskelmasse, Haarverteilung, Brüsten und Statur, primäre Geschlechtsorgane wie Fortpflanzungsorgane und Genitalien, aber auch chromosomale Strukturen und Hormone betroffen sein. Sie wurden früher als Hermaphroditen oder als Zwitter bezeichnet."
+    },
+    {
+      "word": "INTER*",
+      "id": "3",
+      "description": "Inter* ist ein Oberbegriff für Intersexuelle, Hermaphroditen, Zwitter, Intergender sowie inter- oder zwischengeschlechtliche Menschen. Das Sternchen steht für weitere mögliche Selbstbezeichnungen. Hier entspricht der Körper nicht den typischen geschlechtlichen Standards und Normen von Mann und Frau."
+    },
+    {
+      "word": "QUEER",
+      "id": "4",
+      "description": "Bedeutet wörtlich übersetzt seltsam, eigenartig. Der Begriff beinhaltet alle sexuellen Orientierungen, sowie die Geschlechtsidentität also Lesben, Schwule, Bisexuelle, Intersexuelle und Transgender Personen, daher wurde er auch in den USA als Schimpfwort verwendet. Auch Heterosexuelle, ansexuelle und Asexuelle können sich als queer identifizieren. Basis ist die Ablehnung der Heteronormativität und überkommener Rollenklischees, aber auch das Leben in einer schillernden Vielfalt geschlechtlicher Identitäten und sexueller Praxen gehört dazu."    }
+
+
+
+
+
+  ],
+
+  "Einfluesse": [
+
+    {
+      "word": "DEADNAMING",
+      "id": "3",
+      "description": "Wenn jemand trotz des Wissens eine Person mit ihrem Geburtsnamen anspricht, mit welchem sie sich nicht identifiziert."
+    },
+    {
+      "word": "GENDER DYSOHORIE",
+      "id": "4",
+      "description": "Die Person leidet unter psychischen Stress (keine psychische Erkrankung) und Unwohlsein, weil sie sich mit ihrem eigenen Körper nicht identifizieren können."
+    }
+
+  ]
 
 }
