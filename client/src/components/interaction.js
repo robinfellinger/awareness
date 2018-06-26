@@ -62,7 +62,7 @@ class Interaction extends Component {
         updates[answers[i]] = val;
         }
         console.log(updates);
-        updates['count/'] = this.stats['count'] + 1;
+        updates['count'] = this.stats['count'] + 1;
         this.database.update(updates); 
         this.percentage();
      }
@@ -84,11 +84,23 @@ class Interaction extends Component {
      }
 
      percentage(){
-         if (18 in this.stats){
-             console.log((this.stats[18] + 1) / this.stats['count'])
-             console.log();
-             console.log(`Warum nicht andere toilette ${Math.round(((this.stats[18] + 1) / (this.stats['count'] + 1)) * 100)} Prozent`);
-         }
+         console.log(this.stats);
+         this.statLookup(18, 'andere toilette');
+         this.statLookup(17, 'verständnisvoll');
+         this.statLookup(5, 'verärgert');
+     }
+
+     statLookup(id, text){
+         console.log(this.answers[3])
+        console.log(id);
+        let match = false;
+        for (let val of this.answers){
+            console.log(val)
+            if (id == val) match = true;
+        }
+        if (match){
+            console.log(`Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`);
+        }
      }
 
     render(){
