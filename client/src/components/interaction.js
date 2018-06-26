@@ -21,28 +21,12 @@ class Interaction extends Component {
         this.database = this.app.database().ref('/question/');
         this.answers = [];
         this.index = 0;
-        this.obj = {};
+        this.stats = {};
     }
 
     componentDidMount(){
 
-        this.database.once('value', s => {
-            if(s.val()){
-              console.log(s.val());
-              //this.snap.push(s.val());
-              this.obj = s.val();
-              while(s.val() == null){
-                this.obj = s.val();
-              }
-
-
-            } else {
-              console.log('/whatever/whateverProperty node does not exist!');
-            }
-          }, function(error) {
-            // The Promise was rejected.
-            console.log(error);
-          });
+        this.readData();
 
     }
 
@@ -59,10 +43,6 @@ class Interaction extends Component {
         if(this.index === 9) this.writeData(this.answers);
     }
 
-    dataAccess(answers){
-        //this.readData(answers);
-        this.writeData(answers);
-    }
      writeData(answers){
          console.log('write data');
          let updates = {};
@@ -71,20 +51,45 @@ class Interaction extends Component {
  //        var users = [];
         for (let i = 0; i < answers.length; i++){
             console.log('i  ' + i + ' y    ' + answers[i])
-            console.log(this.obj);
-            if (i in this.obj[i] == null){
+            console.log(this.stats);
+            if (i in this.stats == null){
                 val = 1;
+                console.log('nan');
             }else{
-                val = this.obj[i][answers[i]] +1;
+                val = this.stats[answers[i]] +1;
             }
 
-        updates[i + '/' + answers[i]] = val;
+        updates[answers[i]] = val;
         }
         console.log(updates);
-        updates['count/'] = this.obj['count'] + 1;
+        updates['count/'] = this.stats['count'] + 1;
         this.database.update(updates); 
+        this.percentage();
      }
 
+     readData(){
+        this.database.once('value', s => {
+            if(s.val()){
+              console.log(s.val());
+              this.stats = s.val();
+              while(s.val() == null){
+                this.stats = s.val();
+              }
+            } else {
+              console.log('/whatever/whateverProperty node does not exist!');
+            }
+          }, function(error) {
+            console.log(error);
+          });
+     }
+
+     percentage(){
+         if (18 in this.stats){
+             console.log((this.stats[18] + 1) / this.stats['count'])
+             console.log();
+             console.log(`Warum nicht andere toilette ${Math.round(((this.stats[18] + 1) / (this.stats['count'] + 1)) * 100)} Prozent`);
+         }
+     }
 
     render(){
             return (
