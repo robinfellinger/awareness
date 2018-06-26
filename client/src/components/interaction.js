@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import data from "./text.json";
 import Type from "./type.js";
-import stats from "./stats.json";
 import firebase from 'firebase';
 import {DB_CONFIG} from '../Config';
-// const Firestore = require('@google-cloud/firestore');
-// const firestore = new Firestore({
-//     projectId: 'awareness-ca317',
-//     keyFilename: './awareness-e8bf142951ee.json',
-//   });
-//   const document = firestore.doc('stats/question');
-
-
+import admin from 'firebase-admin';
+import { isNull } from 'util';
 
 class Interaction extends Component {
 
@@ -19,46 +12,79 @@ class Interaction extends Component {
         super(props);
         this.state = {
             IDTest: "Start",
-            emotion: "neutral",
-            index: 0,
-            answers: []
+            emotion: "neutral"
         }
         this.updateID = this.updateID.bind(this);
+        this.writeData = this.writeData.bind(this);
+
         this.app = firebase.initializeApp(DB_CONFIG);
-        this.database = this.app.database().ref();
+        this.database = this.app.database().ref('/question/');
+        this.answers = [];
+        this.index = 0;
+        this.obj = {};
+    }
+
+    componentDidMount(){
+
+        this.database.once('value', s => {
+            if(s.val()){
+              console.log(s.val());
+              //this.snap.push(s.val());
+              this.obj = s.val();
+              while(s.val() == null){
+                this.obj = s.val();
+              }
+
+
+            } else {
+              console.log('/whatever/whateverProperty node does not exist!');
+            }
+          }, function(error) {
+            // The Promise was rejected.
+            console.log(error);
+          });
+
     }
 
     updateID(id, em, pid){
         this.setState({IDTest: id})
-        this.setState({index: this.state.index + 1})
         if(em) {
             this.setState({emotion: em[0]})
-            console.log(this.state.emotion);
+            //console.log(this.state.emotion);
         }else{
             this.setState({emotion: "neutral"});
         }
-        this.setState({index: this.state.answers.push(pid)});
-        console.log(this);
-        console.log(pid);
-
-        this.writeData(pid);
-
-        let obj = stats;
-        obj.question['count'] = 1;
-        console.log(obj);
-
-
-        stats.question[pid]++;
-        console.log(stats.question[pid]);
+        console.log(this.index++);
+        this.answers.push(pid);
+        if(this.index === 9) this.writeData(this.answers);
     }
 
-     writeData(pid){
-        console.log(this.database.child(pid));
+    dataAccess(answers){
+        //this.readData(answers);
+        this.writeData(answers);
+    }
+     writeData(answers){
+         console.log('write data');
+         let updates = {};
+         let val;
+         let k;
+ //        var users = [];
+        for (let i = 0; i < answers.length; i++){
+            console.log('i  ' + i + ' y    ' + answers[i])
+            console.log(this.obj);
+            if (i in this.obj[i] == null){
+                val = 1;
+            }else{
+                val = this.obj[i][answers[i]] +1;
+            }
 
-        var updates = {};
-        updates['/question/' + pid] = 1;
-        this.database.update(updates);
+        updates[i + '/' + answers[i]] = val;
+        }
+        console.log(updates);
+        updates['count/'] = this.obj['count'] + 1;
+        this.database.update(updates); 
      }
+
 
     render(){
             return (
