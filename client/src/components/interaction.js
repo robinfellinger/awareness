@@ -7,16 +7,17 @@ class Interaction extends Component {
     constructor(props){
         super(props);
         this.state = {
-            IDTest: "Hallo, ich bin Alex",
+            IDTest: "Hallo, ich bin Leo",
             emotion: "neutral",
             chat: [],
-            finished: "false"
+            finished: false
         };
         this.update = this.update.bind(this);
     }
 
     myCallback = (dataFromChild) => {
             this.state.chat.push({'answer': null, 'question':dataFromChild});
+            this.state.finished = true;
     }
 
     update(id, em,  answer, question){
@@ -30,8 +31,20 @@ class Interaction extends Component {
 
         if(this.state.chat.length !== 0 && this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
             this.state.chat[this.state.chat.length-1].answer = answer;
+            this.state.finished = true;
         }else{
             this.state.chat.push({'answer': answer, 'question':question});
+            this.state.finished = true;
+        }
+
+
+    }
+
+    componentDidUpdate(){
+        if(this.state.finished) {
+            let elem = document.getElementById("chatrunning");
+            elem.scrollTop = elem.scrollHeight;
+            this.state.finished = false;
         }
     }
 
@@ -46,10 +59,10 @@ class Interaction extends Component {
 
                         <div className={"grid-container"} key={question.pid}>
 
-                              {question.name === this.state.IDTest && <Type strings={[question.text.split('\n\n')[0]]} callbackFromParent={this.myCallback}/>}
+                              {question.name === this.state.IDTest && <Type strings={[question.text.split("\n\n")[0]]} callbackFromParent={this.myCallback}/>}
 
 
-                            <div className={"grid-item1 chatrunning"}>
+                            <div id={"chatrunning"} className={"grid-item1 chatrunning"}>
 
                                 {this.state.chat.map((said) =>
                                     <div className={"chat"}>
@@ -58,7 +71,6 @@ class Interaction extends Component {
                                     </div>)
 
                                 }
-
                             </div>
 
                             <div className={"grid-item2"}>
@@ -68,7 +80,7 @@ class Interaction extends Component {
                             <p className={"interaction-answer"}>
                                 {question.name === this.state.IDTest &&
                                 <button  className={"interaction-button text-sm"}
-                                         onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text)}>{subrowdata.name}</button>
+                                         onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text.split("\n\n")[0])}>{subrowdata.name}</button>
                                 }
                             </p>
 
@@ -77,7 +89,6 @@ class Interaction extends Component {
                         }</div>
                         </div>
                     )
-
             }
             </div>
         )

@@ -14,14 +14,12 @@
   border-style: solid;
   border-width: thin;
   border-color: #FFFFFF;
-  overflow: hidden;
 }
 
 .chat{
   width: 100%;
 
   &-q{
-
   color: #FFFFFF;
   background-color: #404040;
   padding: 15px;
@@ -42,7 +40,6 @@
   }
 }
 
-
 .grid-container {
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -56,11 +53,13 @@
   width: 400px;
   
   height: 70%;
-  position: absolute;    
+  position: absolute;
   align-self: auto;
-  align-content: end;
   display: grid;
   padding-bottom: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-content: start;
 }
 
 .grid-item2 {
@@ -69,8 +68,6 @@
   width: 400px;
   bottom: -30px;
   position: absolute;
-  
-
 }
 
 .grid-item3 {
@@ -84,7 +81,6 @@
 .interaction {
   &-container{
     width: 100%;
-    
     overflow: hidden;
   }
 
@@ -103,8 +99,12 @@
     border: none;
     width: 100%;
     padding: 15px;
-    
-  border-radius: 15px;
+    border-radius: 15px;
+
+
+  }
+  &-button:hover{
+    background-color: #BDBDBD;
   }
 
   &-answer {
@@ -138,4 +138,20 @@
   transition: opacity .25s;
   -webkit-animation: 0;
   animation: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 10px;
 }

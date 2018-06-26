@@ -157,7 +157,6 @@ class Model extends Component {
         if(this.props.emotion === "joy"){
             console.log("JOYYYY");
         }
-
     }
 
 
@@ -188,7 +187,6 @@ function wave(){
         let waveToUse = (0.8 + (waveDepth*cRot) * Math.sin(dist / -frequenz + (time/speed*magnitude))) * radius;
 
         v.normalize().multiplyScalar(waveToUse);
-
     }
 
     mesh.geometry.verticesNeedUpdate = true;

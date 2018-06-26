@@ -1,20 +1,20 @@
 {
   "passages": [
     {
-      "text": "Hallo, ich bin Alex\n\n[[Hallo Alex, was geht?-->schlechterTag]]\n[[Hi, wie gehts?-->schlechterTag]]\n",
+      "text": "Hallo, ich bin Leo\n\n[[Hallo Leo, was geht?->schlechterTag]]\n[[Hi, wie gehts?->schlechterTag]]\n",
       "links": [
         {
-          "name": "Hallo Alex, was geht?-",
+          "name": "Hallo Leo, was geht?",
           "link": "schlechterTag",
           "pid": "2"
         },
         {
-          "name": "Hi, wie gehts?-",
+          "name": "Hi, wie gehts?",
           "link": "schlechterTag",
           "pid": "2"
         }
       ],
-      "name": "Start",
+      "name": "Hallo, ich bin Leo",
       "pid": "1",
       "position": {
         "x": "25",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "text": "Siehst du, das ist das Problem, ich fühl mich wohler in der Toilette in der ich war, nur es wird oft einfach nicht verstanden. Unisextoiletten, würden dies alles sehr viel einfacher machen.\n\n[[Du fühlst dich also wohler in der Rolle eines anderen Geschleches->wohler in anderer Rolle]]\n[[Gibt es in Österreich keine Unisex Toiletten?]]\n      ",
+      "text": "Siehst du, dass ist das Problem, ich fühl mich wohler in der Toilette in der ich war, nur es wird oft einfach nicht verstanden. Unisextoiletten, würden dies alles sehr viel einfacher machen.\n\n[[Du fühlst dich also wohler in der Rolle eines anderen Geschleches->wohler in anderer Rolle]]\n[[Gibt es in Österreich keine Unisex Toiletten?]]\n      ",
       "links": [
         {
           "name": "Du fühlst dich also wohler in der Rolle eines anderen Geschleches",
@@ -109,7 +109,7 @@
       }
     },
     {
-      "text": "Es wäre wirklich nicht so \\\"schwer\\\" wenn es mehr Menschen geben würde, die einfach mit der Tatsache klarkommen, dass nicht jeder sich wohl mit seinem angeborenen Geschlecht fühlt.\n\n[[Also hast du in Wirklichkeit ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n[[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]\n\n     ",
+      "text": "Es wäre wirklich nicht so schwer wenn es mehr Menschen geben würde, die einfach mit der Tatsache klarkommen, dass nicht jeder sich wohl mit seinem angeborenen Geschlecht fühlt.\n\n[[Also hast du in Wirklichkeit ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n[[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]\n\n     ",
       "links": [
         {
           "name": "Also hast du in Wirklichkeit ein anderes Geschlecht als äußerlich erscheinlich?",
@@ -154,11 +154,11 @@
       }
     },
     {
-      "text": "Nein, bis jetzt habe ich noch keine gefunden, hoffentlich ändert sich das noch in der nächsten Zeit.\n\n[[Das stimmt, so etwas wäre einmal ein Schritt in die Richtige Richtung]]\n[[Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?->wohler in anderer Rolle]]\n[[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein->Phase]]\n      ",
+      "text": "Nein, bis jetzt habe ich noch keine gefunden, hoffentlich ändert sich das noch in der nächsten Zeit.\n\n[[Das stimmt, so etwas wäre sicher nicht schlecht.]]\n[[Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?->wohler in anderer Rolle]]\n[[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein->Phase]]\n      ",
       "links": [
         {
-          "name": "Das stimmt, so etwas wäre einmal ein Schritt in die Richtige Richtung",
-          "link": "Das stimmt, so etwas wäre einmal ein Schritt in die Richtige Richtung",
+          "name": "Das stimmt, so etwas wäre sicher nicht schlecht.",
+          "link": "Das stimmt, so etwas wäre sicher nicht schlecht.",
           "pid": "12"
         },
         {
@@ -180,7 +180,7 @@
       }
     },
     {
-      "text": "Angleichung sind die Hormontherapien, aber auch Operationen um zum gewünschten Geschlecht zu kommen.\n\n[[Ist das überhaupt notwendig, so in die Natur einzugreifen?]]\n[[Hilft in dieser Hinsicht Österreich etwas mit?]]\n      ",
+      "text": "Als Angleichung sieht man die Zeit in der Hormontherapien, aber auch Operationen von statten gehen, um zum gewünschten Geschlecht zu kommen.\n\n[[Ist das überhaupt notwendig, so in die Natur einzugreifen?]]\n[[Hilft in dieser Hinsicht Österreich etwas mit?]]\n      ",
       "links": [
         {
           "name": "Ist das überhaupt notwendig, so in die Natur einzugreifen?",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "text": "Ja, so kann man es auch ausdrücken. Natürlich ist es bei anderen Transgender Personen sehr unterschiedlich. Viele aber fühlen sich eben wohler, wenn sie als anders Geschlechtlich angesehn werden.\n\n[[Ab wann ist man sich eigentlich klar, dass man Transgender ist?]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ]]\n      ",
+      "text": "Ja, so kann man es auch ausdrücken. Natürlich ist es bei anderen Transgender Personen sehr unterschiedlich. Viele aber fühlen sich eben wohler, wenn sie als anders geschlechtlich angesehn werden.\n\n[[Ab wann ist man sich eigentlich klar, dass man Transgender ist?]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ]]\n      ",
       "links": [
         {
           "name": "Ab wann ist man sich eigentlich klar, dass man Transgender ist?",
@@ -227,7 +227,7 @@
       }
     },
     {
-      "text": "Das glauben viele, ich kann dir nur versichern, das es sich bei Leuten, die Transgender sind, nicht um eine \\\"Phase\\\" handelt, nein in mir steckt wirklich ein anderes Geschlecht als es scheint...\nViele merken dies sogar schon im Kindesalter, bei mir war es das Gefühl bei meiner zugehörigen \\\"Geschlechtergruppe\\\" nicht dazuzugehören, ich fühlte mich immer in der anderen Gruppe wohler.\n\n\n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ]]\n      ",
+      "text": "Das glauben viele, ich kann dir nur versichern, dass es sich bei Leuten, die Transgender sind, nicht um eine \"Phase\" handelt. In mir steckt wirklich ein anderes Geschlecht als es scheint...\nViele merken das sogar schon im Kindesalter, bei mir war es das Gefühl bei meiner zugehörigen \"Geschlechtergruppe\" nicht dazuzugehören, ich fühlte mich immer in der anderen Gruppe wohler.\n\n\n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ]]\n      ",
       "links": [
         {
           "name": "Ok, wie kann ich das denn genau verstehen?",
@@ -251,11 +251,11 @@
       ]
     },
     {
-      "text": "Das stimmt, aber ich muss sagen, dass in Österreich die Regierung Transpersonen aber auch Andere aus der LGBT Community, schon gut unterstützt. Oft würde es der Gesellschaft nicht schaden, sich mit dem Thema auseinander zu setzen.\n\n[[Wirklich?, hast du da Beispiele?]]\n[[Ja, aber ist das überhaupt nötig?]]\n      ",
+      "text": "Das stimmt, aber ich muss sagen, dass in Österreich die Regierung Transpersonen aber auch die LGBT Community allgemein, schon gut unterstützt. Oft würde es den ÖstereicherInnen nicht schaden, sich mit dem Thema auseinander zu setzen.\n\n[[Echt? Hast du da Beispiele?]]\n[[Ja, aber ist das überhaupt nötig?]]\n      ",
       "links": [
         {
-          "name": "Wirklich?, hast du da Beispiele?",
-          "link": "Wirklich?, hast du da Beispiele?",
+          "name": "Echt? Hast du da Beispiele?",
+          "link": "Echt? Hast du da Beispiele?",
           "pid": "16"
         },
         {
@@ -264,7 +264,7 @@
           "pid": "17"
         }
       ],
-      "name": "Das stimmt, so etwas wäre einmal ein Schritt in die Richtige Richtung",
+      "name": "Das stimmt, so etwas wäre sicher nicht schlecht.",
       "pid": "12",
       "position": {
         "x": "700",
@@ -293,11 +293,11 @@
       }
     },
     {
-      "text": "Ja, in der Hinsicht auf psychische Unterstützung Hormontherapien und geschlechtsangleichende Operationen, ist Österreich schon sehr gut dabei. \n\n[[Wirklich?, hast du da Beispiele?]]\",\n      ",
+      "text": "Ja, in der Hinsicht auf psychische Unterstützung, Hormontherapien und geschlechtsangleichende Operationen, ist Österreich schon sehr gut dabei. \n\n[[Echt? Hast du da Beispiele?]]\n      ",
       "links": [
         {
-          "name": "Wirklich?, hast du da Beispiele?",
-          "link": "Wirklich?, hast du da Beispiele?",
+          "name": "Echt? Hast du da Beispiele?",
+          "link": "Echt? Hast du da Beispiele?",
           "pid": "16"
         }
       ],
@@ -309,7 +309,7 @@
       }
     },
     {
-      "text": "Ich versuche nur zu erreichen, dass mich Andere so behandeln, damit ich mich wohl fühlen kann.\n\n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]]\n[[Ja, ist verständlich]]\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\",\n      ",
+      "text": "Ich versuche eben nur zu erreichen, dass mich Andere so behandeln, damit ich mich wohl fühlen kann.\n\n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]]\n[[Ja, ist verständlich]]\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\",\n      ",
       "links": [
         {
           "name": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
@@ -335,10 +335,10 @@
       }
     },
     {
-      "text": "Ja, zum Beispiel bekommt man psychologische Unterstützung, wenn man Transgender ist, und wenn bestätigt wurde, dass das eigentliche Geschlecht ein anderes ist, kann man seinen Namen ändern und Operationen machen. Dies ist natürlich ein sehr langer und mühsamer Prozess, aber es hilft uns sehr.\n\n[[Finde ich gut, dass Österreich in diesen Punkten schon einiges vorlegen kann, was kann ich denn so beisteuern-->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n[[Also zahlen wir mit unseren Steuergeldern eure Operationen?]]\n      ",
+      "text": "Ja, zum Beispiel bekommt man psychologische Unterstützung, wenn man Transgender ist, und wenn bestätigt wurde, dass das eigentliche Geschlecht ein anderes ist, kann man seinen Namen ändern und Operationen machen. Dies ist natürlich ein sehr langer und mühsamer Prozess, aber es hilft uns sehr.\n\n[[Finde ich gut, dass Österreich in diesen Punkten schon einiges vorlegen kann. Was kann man als Einzelperson tun?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n[[Also zahlen wir mit unseren Steuergeldern eure Operationen?]]\n      ",
       "links": [
         {
-          "name": "Finde ich gut, dass Österreich in diesen Punkten schon einiges vorlegen kann, was kann ich denn so beisteuern-",
+          "name": "Finde ich gut, dass Österreich in diesen Punkten schon einiges vorlegen kann. Was kann man als Einzelperson tun?",
           "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
           "pid": "18"
         },
@@ -348,7 +348,7 @@
           "pid": "19"
         }
       ],
-      "name": "Wirklich?, hast du da Beispiele?",
+      "name": "Echt? Hast du da Beispiele?",
       "pid": "16",
       "position": {
         "x": "900",
@@ -372,7 +372,7 @@
       }
     },
     {
-      "text": "Hilfreich wäre erstmal den bevorzugten Namen zu verwenden und das bevorzugte Pronomen.\\nAuch nicht immer ein großes Drama darum zu machen ist sehr hilfreich, wir versuchen immerhin ja auch nur uns in dieser Welt wohl zu fühlen, da hilft es einem nicht immer als \\\"speziell\\\" und \\\"anders\\\" angesehen zu werden.\n\n[[Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?]]\n[[Gut zu wissen, danke.->ENDE POS]]\n     ",
+      "text": "Hilfreich wäre erstmal, den bevorzugten Namen zu verwenden und das bevorzugte Pronomen.\nAuch nicht immer ein großes Drama darum zu machen ist sehr hilfreich, wir versuchen immerhin ja auch nur uns in dieser Welt wohl zu fühlen, da hilft es einem nicht immer als \"speziell\" und \"anders\" angesehen zu werden.\n\n[[Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?]]\n[[Gut zu wissen, danke.->ENDE POS]]\n     ",
       "links": [
         {
           "name": "Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?",
@@ -396,7 +396,7 @@
       ]
     },
     {
-      "text": "Im Grunde genommen ja, jedoch kann man ja nichts dafür wenn man Transgender ist, Personen mit Krankheiten können ja meist auch nichts für ihr Leiden, da finde ich es nur gerecht, jeder soll die Hilfe erhalten, die er braucht.\n\n[[So gesehen hast du ja recht.->Verständlich]]\n      ",
+      "text": "Im Grunde genommen ja, aber viele die in Österreich eine Krankheit haben, die viel Geld kostet werden auch von der Krankenkasse bezahlt, schließlich soll jeder das gleiche Recht haben und die selbe Hilfe für bestimmte Lebenssituationen bekommen.\n\n[[So gesehen hast du ja recht.->Verständlich]]\n      ",
       "links": [
         {
           "name": "So gesehen hast du ja recht.",
@@ -415,7 +415,7 @@
       ]
     },
     {
-      "text": "Ich weiß es ist schwer verständlich, ist ja auch klar, wenn man es selbst nicht fühlt, ich bin jedoch froh das sich immer mehr Personen mit dem Thema beschäftigen.\n\n[[Ja, ist ja auch irgendwie ein wichtiges Thema->ENDE POS]]\n[[Ich hab ja nicht viel mit dem Thema zu tun]]\n[[Irgendwie seltsam, aber ok-> END NEG]]\",\n      ",
+      "text": "Ich weiß es ist schwer verständlich, ist ja auch klar, wenn man es selbst nicht fühlt. Ich bin jedoch froh, dass sich immer mehr Personen mit diesem Thema beschäftigen.\n\n[[Ja, ist ja auch irgendwie ein wichtiges Thema->ENDE POS]]\n[[Ich hab ja nicht viel mit dem Thema zu tun]]\n[[Irgendwie seltsam, aber ok-> END NEG]]\",\n      ",
       "links": [
         {
           "name": "Ja, ist ja auch irgendwie ein wichtiges Thema",
@@ -441,7 +441,7 @@
       }
     },
     {
-      "text": "Bei mir war es eigentlich schon seit meiner Kindheit klar, ich fühlte mich in meiner Geschlechtsgruppe eigentlich immer sehr unwohl und kam mit den anderen besser zurecht. Als ich dann in die Pubertät kam, fand ich heraus, dass es sich dabei nicht nur um eine Phase handelt, sondern ich mich körperlich in die falsche Richtung entwickle.\n\n[[Ja, das ist einleuchtend->Verständlich]] \n      ",
+      "text": "Bei mir war es eigentlich schon seit meiner Kindheit klar. Ich fühlte mich in meiner Geschlechtergruppe eigentlich immer sehr unwohl und kam mit dem anderen Geschlecht besser zurecht. Als ich dann in die Pubertät kam, fand ich heraus, dass es sich dabei nicht nur um eine Phase handelte, sondern ich mich körperlich einfach in die falsche Richtung entwickelte.\n\n[[Ja, das ist einleuchtend->Verständlich]] \n      ",
       "links": [
         {
           "name": "Ja, das ist einleuchtend",
@@ -457,11 +457,11 @@
       }
     },
     {
-      "text": "Bei mir ist es so, dass ich von anderen so behandelt werden möchte, wie es mit meiner Geschlechtsidentität übereinstimmt. Daher, versuche ich sowohl Äußerlich, als auch von meinem Verhalten her, diesem Geschlecht zu entsprechen, dies geht aber nicht immer sofort und die Umstellung ist nicht immer sehr einfach.\n\n[[Und wie reagierten eigentlich deine Freunde und Familie als du ihnen dies erzählt hast?]]\n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]]\n      ",
+      "text": "Bei mir ist es so, dass ich von Personen so behandelt werden möchte, wie es mit meiner Geschlechtsidentität übereinstimmt. Daher versuche ich sowohl äußerlich, als auch von meinem Verhalten her, diesem Geschlecht zu entsprechen. Das geht aber nicht immer sofort und die Umstellung ist nicht immer einfach.\n\n[[Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist]]\n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]]\n      ",
       "links": [
         {
-          "name": "Und wie reagierten eigentlich deine Freunde und Familie als du ihnen dies erzählt hast?",
-          "link": "Und wie reagierten eigentlich deine Freunde und Familie als du ihnen dies erzählt hast?",
+          "name": "Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist",
+          "link": "Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist",
           "pid": "24"
         },
         {
@@ -478,7 +478,7 @@
       }
     },
     {
-      "text": "Man kann sich nicht aussuchen welches Geschlecht man hat, man fühlt dies, und wenn es nicht dem angeborenen entspricht ist man halt Transgender, das macht mich jetzt aber nicht zu einer anderen Spezies von Mensch.\n\n[[Achso, ok]]\n[[Wahrscheinlich kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?]]\n      ",
+      "text": "Man kann sich nicht aussuchen welches Geschlecht man hat, man fühlt es einfach und wenn es nicht dem Angeborenen entspricht ist man halt Transgender, das macht mich jetzt aber nicht zu einer anderen Spezies von Mensch.\n\n[[Achso, ok]]\n[[Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?]]\n      ",
       "links": [
         {
           "name": "Achso, ok",
@@ -486,8 +486,8 @@
           "pid": "15"
         },
         {
-          "name": "Wahrscheinlich kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
-          "link": "Wahrscheinlich kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
+          "name": "Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
+          "link": "Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
           "pid": "33"
         }
       ],
@@ -502,7 +502,7 @@
       ]
     },
     {
-      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen Enwickelt sich aus Unverständnis, Abneigung. \\nMeine Freunde reagierten sehr unterschiedlich, manche sehr gut, andere schlechter.\n\n[[Wie kann man gut reagieren?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n      ",
+      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen enwickelt sich aus Unverständnis, Abneigung. \nMeine Freunde reagierten sehr unterschiedlich, manche sehr gut, andere schlechter.\n\n[[Wie kann man gut reagieren?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n      ",
       "links": [
         {
           "name": "Wie kann man gut reagieren?",
@@ -510,7 +510,7 @@
           "pid": "18"
         }
       ],
-      "name": "Und wie reagierten eigentlich deine Freunde und Familie als du ihnen dies erzählt hast?",
+      "name": "Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist",
       "pid": "24",
       "position": {
         "x": "150",
@@ -518,11 +518,11 @@
       }
     },
     {
-      "text": "Klar gibt es Operationen, nicht jeder will oder kann aber gleich mit diesen beginnen, andere lassen nie eine Operation machen, da diese ja auch gewisse Risiken mit sich bringt. Man kann auch ohne Operationen schon mit verschiedenen Hilfsmittel sein gewünschtes Geschlecht zum Vorschein bringen.\n\n[[Wirklich?, Und die wären?]]\n      ",
+      "text": "Klar gibt es Operationen, nicht jeder will oder kann aber gleich mit diesen beginnen, andere lassen nie eine Operation machen. Sie bringen ja auch gewisse Risiken mit sich. Man kann auch ohne Operationen schon mit verschiedenen Hilfsmittel sein gewünschtes Geschlecht zum Vorschein bringen.\n\n[[Wirklich? Und die wären?]]\n      ",
       "links": [
         {
-          "name": "Wirklich?, Und die wären?",
-          "link": "Wirklich?, Und die wären?",
+          "name": "Wirklich? Und die wären?",
+          "link": "Wirklich? Und die wären?",
           "pid": "27"
         }
       ],
@@ -534,10 +534,10 @@
       }
     },
     {
-      "text": "Ja ist oft nicht so einfach, vor der Angleichung andere davon zu überzeugen, dass man ein anderes Geschlecht hat als es scheint.\n\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\",\n      ",
+      "text": "Ja, ist oft nicht so einfach, vor der Angleichung Andere davon zu überzeugen, dass man eigentlich ein anderes Geschlecht hat als es scheint.\n\n[[Wie kann ich euch in dieser Zeit unterstützen->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n      ",
       "links": [
         {
-          "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
+          "name": "Wie kann ich euch in dieser Zeit unterstützen",
           "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
           "pid": "18"
         }
@@ -550,7 +550,7 @@
       }
     },
     {
-      "text": "Für Transmänner gibt es Binder oder auch Prothesen für die Hose, für Transfrauen spezielle BHs und so weiter...\n\n[[Irgendwie seltsam, aber ok-> END NEG]]\n[[Interessant, was es da alles gibt->ENDE NEUT]]\",\n      ",
+      "text": "Für Transmänner gibt es Binder oder auch Prothesen für die Hose, für Transfrauen spezielle BHs. Man glaubt gar nicht wie groß das Angebot für Crossdresser ist.\n\n[[Irgendwie seltsam, aber ok-> END NEG]]\n[[Interessant, was es da alles gibt->ENDE NEUT]]\",\n      ",
       "links": [
         {
           "name": "Irgendwie seltsam, aber ok",
@@ -563,7 +563,7 @@
           "pid": "31"
         }
       ],
-      "name": "Wirklich?, Und die wären?",
+      "name": "Wirklich? Und die wären?",
       "pid": "27",
       "position": {
         "x": "325",
@@ -571,7 +571,7 @@
       }
     },
     {
-      "text": "Sicher, für die Familie und die langjährigen Freunde ist das natürlich besonders schwer, jedoch hilft es mir sehr wenn sie meinen gewählten Namen berücksichtigen. Andere die ich vor kurzem erst kennen gelernt habe kennen mich ja nur unter diesem Namen.\n\n[[Versteh ich, gut zu wissen->ENDE POS]]\n[[Noch ganz so gut zu verstehen ist das Thema noch nicht, aber es wird->ENDE NEUT]] \n      ",
+      "text": "Sicher, für die Familie und die langjährigen Freunde ist das natürlich besonders schwer, es hilft mir aber sehr, wenn sie meinen gewählten Namen berücksichtigen. Andere die ich vor Kurzem erst kennen gelernt habe, kennen mich ja nur unter diesem Namen.\n\n[[Versteh ich, gut zu wissen->ENDE POS]]\n[[Noch ganz so verständlich ist das Thema noch nicht, aber es wird->ENDE NEUT]] \n      ",
       "links": [
         {
           "name": "Versteh ich, gut zu wissen",
@@ -579,7 +579,7 @@
           "pid": "29"
         },
         {
-          "name": "Noch ganz so gut zu verstehen ist das Thema noch nicht, aber es wird",
+          "name": "Noch ganz so verständlich ist das Thema noch nicht, aber es wird",
           "link": "ENDE NEUT",
           "pid": "31"
         }
@@ -592,7 +592,7 @@
       }
     },
     {
-      "text": "Hey, mich freut es sehr, dass du dich so für dieses Thema interessierst und auf der nächsten Seite gibt es noch weitere Infos. :D\n      ",
+      "text": "Hey, mich freut es sehr, dass du dich so für dieses Thema interessierst. Danke für das Gespräch und auf der nächsten Seite gibt es noch weitere Infos. :D\n      ",
       "name": "ENDE POS",
       "pid": "29",
       "position": {
@@ -616,7 +616,7 @@
       ]
     },
     {
-      "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, falls dich das Thema interessiert, findest du zusätzliche Infos auf der nächsten seite, danke für das Gespräch :).\n      ",
+      "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, falls dich das Thema interessiert, findest du zusätzliche Infos auf der nächsten Seite, danke für das Gespräch :).\n      ",
       "name": "ENDE NEUT",
       "pid": "31",
       "position": {
@@ -646,7 +646,7 @@
       }
     },
     {
-      "text": "Du musst das anders sehen, viele Transgenders versuchen lediglich von anderen mit ihrem bevorzugten Geschlecht behandelt zu werden. Auch das viele Crossdressen als sexuellen Fetisch ist nur eine Außnahme. Leider ist es Anfangs noch schwierig als das bevorzugte Geschlecht durchzukommen. \n\n[[Wie ist es dann in der Realität?->Ok, wie kann ich das denn genau verstehen?]] \n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]] \n      ",
+      "text": "Du musst das anders sehen, viele Transgender Personen versuchen lediglich von Anderen wie ihr bevorzugtes Geschlecht behandelt zu werden. Auch das viele Crossdressen als sexuellen Fetisch ist nur eine Außnahme. Leider ist es Anfangs noch schwierig als das bevorzugte Geschlecht durchzukommen. \n\n[[Wie ist es dann in der Realität?->Ok, wie kann ich das denn genau verstehen?]] \n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]] \n      ",
       "links": [
         {
           "name": "Wie ist es dann in der Realität?",
@@ -659,7 +659,7 @@
           "pid": "25"
         }
       ],
-      "name": "Wahrscheinlich kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
+      "name": "Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
       "pid": "33",
       "position": {
         "x": "475",

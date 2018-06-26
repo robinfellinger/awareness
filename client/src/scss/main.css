@@ -602,8 +602,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
   align-self: center;
   border-style: solid;
   border-width: thin;
-  border-color: #FFFFFF;
-  overflow: hidden; }
+  border-color: #FFFFFF; }
 
 .chat {
   width: 100%; }
@@ -637,9 +636,11 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
   height: 70%;
   position: absolute;
   align-self: auto;
-  align-content: end;
   display: grid;
-  padding-bottom: 4px; }
+  padding-bottom: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-content: start; }
 
 .grid-item2 {
   grid-column: 1;
@@ -671,6 +672,8 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
   width: 100%;
   padding: 15px;
   border-radius: 15px; }
+.interaction-button:hover {
+  background-color: #BDBDBD; }
 .interaction-answer {
   padding: 2px;
   width: 100%; }
@@ -699,6 +702,19 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
   transition: opacity .25s;
   -webkit-animation: 0;
   animation: 0; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 10px; }
 
 html {
   background-color: #c0c4cf; }
