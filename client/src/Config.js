@@ -6,4 +6,5 @@ export const DB_CONFIG = {
     projectId: "awareness-ca317",
     storageBucket: "awareness-ca317.appspot.com",
     messagingSenderId: "1073866179892"
+    
   };
