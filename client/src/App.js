@@ -130,7 +130,9 @@ class App extends Component {
                 </div>
             }
             <div className={"pos-absolute pos-centerText"}>
-                <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim"} onClick={() => this.toggleExperience()}>start</button>
+                <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim text-button"} onClick={() => this.toggleExperience()}>
+                    <div className={"startCircle-small"}></div>
+                    <p>start</p></button>
             </div>
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className="pos-absolute gradient-shadow"></div>
