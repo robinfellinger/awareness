@@ -123,11 +123,8 @@ class App extends Component {
     toggleExperience(){
         this.setState({startExperience: true}, this.returnClasses);
         this.setState({color: "E1DB00"});
-        // this.setState({rgbColors: {
-        //     r: 0,
-        //     g: 90,
-        //     b: 90,
-        // }});
+        var button = document.getElementsByClassName("pos-centerText")[0];
+        button.style.display = "none";
         this.setState({bounceFrequence: 800});
         this.setState({emotion: "joy"});
 
