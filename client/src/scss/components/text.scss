@@ -51,9 +51,9 @@
     font-family: "Montserrat", sans-serif;
     color: $text-main;
     font-size: calc(#{$f-xs} + 0.2rem);
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     line-height: 1.4;
-    font-weight: 600;
+    font-weight: 400;
   }
   &-button {
     font-family: "Roboto Mono", sans-serif;

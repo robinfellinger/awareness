@@ -137,7 +137,7 @@ class AccessLinks extends Component {
                     }
                  </div>
 
-                <div className={" pos-absolute accesslinks__line-pos"} style={{"z-index": "50"}}>
+                <div className={" pos-absolute accesslinks__line-pos"} style={{"z-index": "150"}}>
                     <svg className="margin-line" width="100%" height="5">
                         <line className={"accesslinks__line"} x1="0" y1="0" x2="100%" y2="0"
                             strokeWidth="3px" stroke="white"/>
