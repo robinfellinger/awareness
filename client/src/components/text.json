@@ -1,10 +1,10 @@
 {
   "passages": [
     {
-      "text": "Hallo, ich bin Alex",
+      "text": "Hallo, ich bin Leo\n\n[[Hallo Leo, was geht?->schlechterTag]]\n[[Hi, wie gehts?->schlechterTag]]\n",
       "links": [
         {
-          "name": "Hallo Alex, was geht?",
+          "name": "Hallo Leo, was geht?",
           "link": "schlechterTag",
           "pid": "2"
         },
@@ -14,18 +14,15 @@
           "pid": "2"
         }
       ],
-      "name": "Start",
+      "name": "Hallo, ich bin Leo",
       "pid": "1",
       "position": {
-        "x": "400",
-        "y": "25"
-      },
-      "tags": [
-        "neutral"
-      ]
+        "x": "25",
+        "y": "50"
+      }
     },
     {
-      "text": "Mir geht's gut, hatte nur einen schlechten Tag...",
+      "text": "Mir geht's gut, hatte nur einen schlechten Tag...\n\n[[Wirklich, warum das?->Warum?]] \n[[Was war denn?->Warum?]]",
       "links": [
         {
           "name": "Wirklich, warum das?",
@@ -41,430 +38,641 @@
       "name": "schlechterTag",
       "pid": "2",
       "position": {
-        "x": "400",
-        "y": "150"
+        "x": "275",
+        "y": "50"
       }
     },
     {
-      "text": "Ich wurde aus der Toilette geworfen, weil so jemand dachte, ich würde nicht hier rein passen…",
+      "text": "Jemand warf mich aus der Toilette, leider ist mir das schon zu oft passiert.\n\n[[Du wurdest schon öfter aus der Toilette geworfen?->Wieso nicht]]\n      ",
       "links": [
         {
-          "name": "Wieso solltest du nicht in diese Toilette rein dürfen?",
-          "link": "Wiso nicht",
+          "name": "Du wurdest schon öfter aus der Toilette geworfen?",
+          "link": "Wieso nicht",
           "pid": "4"
         }
       ],
       "name": "Warum?",
       "pid": "3",
       "position": {
-        "x": "400",
-        "y": "275"
+        "x": "500",
+        "y": "50"
+      },
+      "tags": [
+        "sad"
+      ]
+    },
+    {
+      "text": "Ja, viele kommen damit nicht klar, dass ich anders aussehe als sie in dieser Toilette erwarten würden. Mein Aussehen entspricht noch nicht meinem eigentlichen Geschlecht. \n\n[[Ok, aber warum bist du dann nicht einfach in die andere Toilette gegangen?]] \n[[Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein]]\n[[Wirklich?, nicht zu fassen, das so etwas heutzutage immer noch passiert.]] \n\n     ",
+      "links": [
+        {
+          "name": "Ok, aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
+          "link": "Ok, aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
+          "pid": "5"
+        },
+        {
+          "name": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
+          "link": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
+          "pid": "6"
+        },
+        {
+          "name": "Wirklich?, nicht zu fassen, das so etwas heutzutage immer noch passiert.",
+          "link": "Wirklich?, nicht zu fassen, das so etwas heutzutage immer noch passiert.",
+          "pid": "7"
+        }
+      ],
+      "name": "Wieso nicht",
+      "pid": "4",
+      "position": {
+        "x": "775",
+        "y": "50"
+      }
+    },
+    {
+      "text": "Siehst du, dass ist das Problem, ich fühl mich wohler in der Toilette in der ich war, nur es wird oft einfach nicht verstanden. Unisextoiletten, würden dies alles sehr viel einfacher machen.\n\n[[Du fühlst dich also wohler in der Rolle eines anderen Geschleches->wohler in anderer Rolle]]\n[[Gibt es in Österreich keine Unisex Toiletten?]]\n      ",
+      "links": [
+        {
+          "name": "Du fühlst dich also wohler in der Rolle eines anderen Geschleches",
+          "link": "wohler in anderer Rolle",
+          "pid": "10"
+        },
+        {
+          "name": "Gibt es in Österreich keine Unisex Toiletten?",
+          "link": "Gibt es in Österreich keine Unisex Toiletten?",
+          "pid": "8"
+        }
+      ],
+      "name": "Ok, aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
+      "pid": "5",
+      "position": {
+        "x": "550",
+        "y": "200"
+      }
+    },
+    {
+      "text": "Es wäre wirklich nicht so schwer wenn es mehr Menschen geben würde, die einfach mit der Tatsache klarkommen, dass nicht jeder sich wohl mit seinem angeborenen Geschlecht fühlt.\n\n[[Also hast du in Wirklichkeit ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n[[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]\n\n     ",
+      "links": [
+        {
+          "name": "Also hast du in Wirklichkeit ein anderes Geschlecht als äußerlich erscheinlich?",
+          "link": "wohler in anderer Rolle",
+          "pid": "10"
+        },
+        {
+          "name": "Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.",
+          "link": "Phase",
+          "pid": "11"
+        }
+      ],
+      "name": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
+      "pid": "6",
+      "position": {
+        "x": "850",
+        "y": "200"
       },
       "tags": [
         "angry"
       ]
     },
     {
-      "text": "Durch die Tatsache das mein Aussehen nicht meinem Geschlecht enstpricht, sind viele verwirrt. Ich bin Transgeder.",
+      "text": "Ich weiß auch nicht, es wäre schon einmal gut, wenn es in Österreich Unisextoiletten im öffentlichen Raum geben würde. Besonders in der Zeit der Angleichung ist das sehr hilfreich.\n\n[[Gibt es in Österreich keine Unisex Toiletten?]]\n[[Angleichung?]]\n      ",
       "links": [
         {
-          "name": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
-          "link": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
+          "name": "Gibt es in Österreich keine Unisex Toiletten?",
+          "link": "Gibt es in Österreich keine Unisex Toiletten?",
+          "pid": "8"
+        },
+        {
+          "name": "Angleichung?",
+          "link": "Angleichung?",
+          "pid": "9"
+        }
+      ],
+      "name": "Wirklich?, nicht zu fassen, das so etwas heutzutage immer noch passiert.",
+      "pid": "7",
+      "position": {
+        "x": "1150",
+        "y": "200"
+      }
+    },
+    {
+      "text": "Nein, bis jetzt habe ich noch keine gefunden, hoffentlich ändert sich das noch in der nächsten Zeit.\n\n[[Das stimmt, so etwas wäre sicher nicht schlecht.]]\n[[Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?->wohler in anderer Rolle]]\n[[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein->Phase]]\n      ",
+      "links": [
+        {
+          "name": "Das stimmt, so etwas wäre sicher nicht schlecht.",
+          "link": "Das stimmt, so etwas wäre sicher nicht schlecht.",
+          "pid": "12"
+        },
+        {
+          "name": "Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?",
+          "link": "wohler in anderer Rolle",
+          "pid": "10"
+        },
+        {
+          "name": "Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein",
+          "link": "Phase",
+          "pid": "11"
+        }
+      ],
+      "name": "Gibt es in Österreich keine Unisex Toiletten?",
+      "pid": "8",
+      "position": {
+        "x": "950",
+        "y": "350"
+      }
+    },
+    {
+      "text": "Als Angleichung sieht man die Zeit in der Hormontherapien, aber auch Operationen von statten gehen, um zum gewünschten Geschlecht zu kommen.\n\n[[Ist das überhaupt notwendig, so in die Natur einzugreifen?]]\n[[Hilft in dieser Hinsicht Österreich etwas mit?]]\n      ",
+      "links": [
+        {
+          "name": "Ist das überhaupt notwendig, so in die Natur einzugreifen?",
+          "link": "Ist das überhaupt notwendig, so in die Natur einzugreifen?",
+          "pid": "13"
+        },
+        {
+          "name": "Hilft in dieser Hinsicht Österreich etwas mit?",
+          "link": "Hilft in dieser Hinsicht Österreich etwas mit?",
+          "pid": "14"
+        }
+      ],
+      "name": "Angleichung?",
+      "pid": "9",
+      "position": {
+        "x": "1275",
+        "y": "350"
+      }
+    },
+    {
+      "text": "Ja, so kann man es auch ausdrücken. Natürlich ist es bei anderen Transgender Personen sehr unterschiedlich. Viele aber fühlen sich eben wohler, wenn sie als anders geschlechtlich angesehn werden.\n\n[[Ab wann ist man sich eigentlich klar, dass man Transgender ist?]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ]]\n      ",
+      "links": [
+        {
+          "name": "Ab wann ist man sich eigentlich klar, dass man Transgender ist?",
+          "link": "Ab wann ist man sich eigentlich klar, dass man Transgender ist?",
+          "pid": "21"
+        },
+        {
+          "name": "Ok, wie kann ich das denn genau verstehen?",
+          "link": "Ok, wie kann ich das denn genau verstehen?",
+          "pid": "22"
+        },
+        {
+          "name": "Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ",
+          "link": "Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ",
+          "pid": "23"
+        }
+      ],
+      "name": "wohler in anderer Rolle",
+      "pid": "10",
+      "position": {
+        "x": "400",
+        "y": "375"
+      }
+    },
+    {
+      "text": "Das glauben viele, ich kann dir nur versichern, dass es sich bei Leuten, die Transgender sind, nicht um eine \"Phase\" handelt. In mir steckt wirklich ein anderes Geschlecht als es scheint...\nViele merken das sogar schon im Kindesalter, bei mir war es das Gefühl bei meiner zugehörigen \"Geschlechtergruppe\" nicht dazuzugehören, ich fühlte mich immer in der anderen Gruppe wohler.\n\n\n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ]]\n      ",
+      "links": [
+        {
+          "name": "Ok, wie kann ich das denn genau verstehen?",
+          "link": "Ok, wie kann ich das denn genau verstehen?",
+          "pid": "22"
+        },
+        {
+          "name": "Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ",
+          "link": "Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ",
+          "pid": "23"
+        }
+      ],
+      "name": "Phase",
+      "pid": "11",
+      "position": {
+        "x": "650",
+        "y": "375"
+      },
+      "tags": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Das stimmt, aber ich muss sagen, dass in Österreich die Regierung Transpersonen aber auch die LGBT Community allgemein, schon gut unterstützt. Oft würde es den ÖstereicherInnen nicht schaden, sich mit dem Thema auseinander zu setzen.\n\n[[Echt? Hast du da Beispiele?]]\n[[Ja, aber ist das überhaupt nötig?]]\n      ",
+      "links": [
+        {
+          "name": "Echt? Hast du da Beispiele?",
+          "link": "Echt? Hast du da Beispiele?",
+          "pid": "16"
+        },
+        {
+          "name": "Ja, aber ist das überhaupt nötig?",
+          "link": "Ja, aber ist das überhaupt nötig?",
+          "pid": "17"
+        }
+      ],
+      "name": "Das stimmt, so etwas wäre sicher nicht schlecht.",
+      "pid": "12",
+      "position": {
+        "x": "700",
+        "y": "775"
+      }
+    },
+    {
+      "text": "Wenn man sich so unwohl mit dem eigenen Körper fühlt, ist es oft besser dies zu ändern, viele Transgender Personen leiden unter Depressionen und auch sehr viele sind suizidgefährdet. Man kann ja auch nichts dafür, dass man einfach in den falschen Körper geboren wurde.\n\n[[Ok, dem war ich mir nicht bewusst.-->Achso, ok]]\n[[Ist das nicht oft nur eine Phase, dann entspricht dein Verhalten du halt nicht ganz deinem Geschlecht, na und?-->Phase]]\n      ",
+      "links": [
+        {
+          "name": "Ok, dem war ich mir nicht bewusst.-",
+          "link": "Achso, ok",
+          "pid": "15"
+        },
+        {
+          "name": "Ist das nicht oft nur eine Phase, dann entspricht dein Verhalten du halt nicht ganz deinem Geschlecht, na und?-",
+          "link": "Phase",
+          "pid": "11"
+        }
+      ],
+      "name": "Ist das überhaupt notwendig, so in die Natur einzugreifen?",
+      "pid": "13",
+      "position": {
+        "x": "1050",
+        "y": "525"
+      }
+    },
+    {
+      "text": "Ja, in der Hinsicht auf psychische Unterstützung, Hormontherapien und geschlechtsangleichende Operationen, ist Österreich schon sehr gut dabei. \n\n[[Echt? Hast du da Beispiele?]]\n      ",
+      "links": [
+        {
+          "name": "Echt? Hast du da Beispiele?",
+          "link": "Echt? Hast du da Beispiele?",
+          "pid": "16"
+        }
+      ],
+      "name": "Hilft in dieser Hinsicht Österreich etwas mit?",
+      "pid": "14",
+      "position": {
+        "x": "1275",
+        "y": "500"
+      }
+    },
+    {
+      "text": "Ich versuche eben nur zu erreichen, dass mich Andere so behandeln, damit ich mich wohl fühlen kann.\n\n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]]\n[[Ja, ist verständlich]]\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\",\n      ",
+      "links": [
+        {
+          "name": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+          "link": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+          "pid": "25"
+        },
+        {
+          "name": "Ja, ist verständlich",
+          "link": "Ja, ist verständlich",
+          "pid": "26"
+        },
+        {
+          "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
+          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
+          "pid": "18"
+        }
+      ],
+      "name": "Achso, ok",
+      "pid": "15",
+      "position": {
+        "x": "950",
+        "y": "650"
+      }
+    },
+    {
+      "text": "Ja, zum Beispiel bekommt man psychologische Unterstützung, wenn man Transgender ist, und wenn bestätigt wurde, dass das eigentliche Geschlecht ein anderes ist, kann man seinen Namen ändern und Operationen machen. Dies ist natürlich ein sehr langer und mühsamer Prozess, aber es hilft uns sehr.\n\n[[Finde ich gut, dass Österreich in diesen Punkten schon einiges vorlegen kann. Was kann man als Einzelperson tun?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n[[Also zahlen wir mit unseren Steuergeldern eure Operationen?]]\n      ",
+      "links": [
+        {
+          "name": "Finde ich gut, dass Österreich in diesen Punkten schon einiges vorlegen kann. Was kann man als Einzelperson tun?",
+          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
           "pid": "18"
         },
         {
-          "name": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
-          "link": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
-          "pid": "17"
-        },
-        {
-          "name": "Wirklich?, was für ein Arsch was gäbe es da für eine Lösung?",
-          "link": "Wirklich?, was für ein Arsch was gäbe es da für eine Lösung?",
-          "pid": "5"
+          "name": "Also zahlen wir mit unseren Steuergeldern eure Operationen?",
+          "link": "Also zahlen wir mit unseren Steuergeldern eure Operationen?",
+          "pid": "19"
         }
       ],
-      "name": "Wiso nicht",
-      "pid": "4",
+      "name": "Echt? Hast du da Beispiele?",
+      "pid": "16",
       "position": {
-        "x": "400",
-        "y": "400"
+        "x": "900",
+        "y": "900"
       }
-    ,
+    },
+    {
+      "text": "Ich finde es sehr wichtig, dass sich die Regierung und auch die Gesellschaft auch für Leute wie uns einsetzen soll, schließlich sind wir ja auch normale Bürger und Bürgerinnen, da ist auch unsere Gesundheit und unser Wohl nicht zu vergessen.\n\n[[Verständlich]]\n      ",
+      "links": [
+        {
+          "name": "Verständlich",
+          "link": "Verständlich",
+          "pid": "20"
+        }
+      ],
+      "name": "Ja, aber ist das überhaupt nötig?",
+      "pid": "17",
+      "position": {
+        "x": "1175",
+        "y": "900"
+      }
+    },
+    {
+      "text": "Hilfreich wäre erstmal, den bevorzugten Namen zu verwenden und das bevorzugte Pronomen.\nAuch nicht immer ein großes Drama darum zu machen ist sehr hilfreich, wir versuchen immerhin ja auch nur uns in dieser Welt wohl zu fühlen, da hilft es einem nicht immer als \"speziell\" und \"anders\" angesehen zu werden.\n\n[[Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?]]\n[[Gut zu wissen, danke.->ENDE POS]]\n     ",
+      "links": [
+        {
+          "name": "Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?",
+          "link": "Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?",
+          "pid": "28"
+        },
+        {
+          "name": "Gut zu wissen, danke.",
+          "link": "ENDE POS",
+          "pid": "29"
+        }
+      ],
+      "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
+      "pid": "18",
+      "position": {
+        "x": "525",
+        "y": "925"
+      },
+      "tags": [
+        "joy"
+      ]
+    },
+    {
+      "text": "Im Grunde genommen ja, aber viele die in Österreich eine Krankheit haben, die viel Geld kostet werden auch von der Krankenkasse bezahlt, schließlich soll jeder das gleiche Recht haben und die selbe Hilfe für bestimmte Lebenssituationen bekommen.\n\n[[So gesehen hast du ja recht.->Verständlich]]\n      ",
+      "links": [
+        {
+          "name": "So gesehen hast du ja recht.",
+          "link": "Verständlich",
+          "pid": "20"
+        }
+      ],
+      "name": "Also zahlen wir mit unseren Steuergeldern eure Operationen?",
+      "pid": "19",
+      "position": {
+        "x": "850",
+        "y": "1050"
+      },
+      "tags": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Ich weiß es ist schwer verständlich, ist ja auch klar, wenn man es selbst nicht fühlt. Ich bin jedoch froh, dass sich immer mehr Personen mit diesem Thema beschäftigen.\n\n[[Ja, ist ja auch irgendwie ein wichtiges Thema->ENDE POS]]\n[[Ich hab ja nicht viel mit dem Thema zu tun]]\n[[Irgendwie seltsam, aber ok-> END NEG]]\",\n      ",
+      "links": [
+        {
+          "name": "Ja, ist ja auch irgendwie ein wichtiges Thema",
+          "link": "ENDE POS",
+          "pid": "29"
+        },
+        {
+          "name": "Ich hab ja nicht viel mit dem Thema zu tun",
+          "link": "Ich hab ja nicht viel mit dem Thema zu tun",
+          "pid": "32"
+        },
+        {
+          "name": "Irgendwie seltsam, aber ok",
+          "link": " END NEG",
+          "pid": "30"
+        }
+      ],
+      "name": "Verständlich",
+      "pid": "20",
+      "position": {
+        "x": "1150",
+        "y": "1050"
+      }
+    },
+    {
+      "text": "Bei mir war es eigentlich schon seit meiner Kindheit klar. Ich fühlte mich in meiner Geschlechtergruppe eigentlich immer sehr unwohl und kam mit dem anderen Geschlecht besser zurecht. Als ich dann in die Pubertät kam, fand ich heraus, dass es sich dabei nicht nur um eine Phase handelte, sondern ich mich körperlich einfach in die falsche Richtung entwickelte.\n\n[[Ja, das ist einleuchtend->Verständlich]] \n      ",
+      "links": [
+        {
+          "name": "Ja, das ist einleuchtend",
+          "link": "Verständlich",
+          "pid": "20"
+        }
+      ],
+      "name": "Ab wann ist man sich eigentlich klar, dass man Transgender ist?",
+      "pid": "21",
+      "position": {
+        "x": "325",
+        "y": "525"
+      }
+    },
+    {
+      "text": "Bei mir ist es so, dass ich von Personen so behandelt werden möchte, wie es mit meiner Geschlechtsidentität übereinstimmt. Daher versuche ich sowohl äußerlich, als auch von meinem Verhalten her, diesem Geschlecht zu entsprechen. Das geht aber nicht immer sofort und die Umstellung ist nicht immer einfach.\n\n[[Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist]]\n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]]\n      ",
+      "links": [
+        {
+          "name": "Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist",
+          "link": "Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist",
+          "pid": "24"
+        },
+        {
+          "name": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+          "link": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+          "pid": "25"
+        }
+      ],
+      "name": "Ok, wie kann ich das denn genau verstehen?",
+      "pid": "22",
+      "position": {
+        "x": "150",
+        "y": "650"
+      }
+    },
+    {
+      "text": "Man kann sich nicht aussuchen welches Geschlecht man hat, man fühlt es einfach und wenn es nicht dem Angeborenen entspricht ist man halt Transgender, das macht mich jetzt aber nicht zu einer anderen Spezies von Mensch.\n\n[[Achso, ok]]\n[[Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?]]\n      ",
+      "links": [
+        {
+          "name": "Achso, ok",
+          "link": "Achso, ok",
+          "pid": "15"
+        },
+        {
+          "name": "Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
+          "link": "Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
+          "pid": "33"
+        }
+      ],
+      "name": "Also kannst du dich nicht entscheiden, ob du Mann oder Frau bist? ",
+      "pid": "23",
+      "position": {
+        "x": "575",
+        "y": "575"
+      },
+      "tags": [
+        "angry"
+      ]
+    },
+    {
+      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen enwickelt sich aus Unverständnis, Abneigung. \nMeine Freunde reagierten sehr unterschiedlich, manche sehr gut, andere schlechter.\n\n[[Wie kann man gut reagieren?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n      ",
+      "links": [
+        {
+          "name": "Wie kann man gut reagieren?",
+          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
+          "pid": "18"
+        }
+      ],
+      "name": "Wie reagierten eigentlich deine Freunde und Familie als du ihnen erzählt hast, dass du Transgender bist",
+      "pid": "24",
+      "position": {
+        "x": "150",
+        "y": "975"
+      }
+    },
+    {
+      "text": "Klar gibt es Operationen, nicht jeder will oder kann aber gleich mit diesen beginnen, andere lassen nie eine Operation machen. Sie bringen ja auch gewisse Risiken mit sich. Man kann auch ohne Operationen schon mit verschiedenen Hilfsmittel sein gewünschtes Geschlecht zum Vorschein bringen.\n\n[[Wirklich? Und die wären?]]\n      ",
+      "links": [
+        {
+          "name": "Wirklich? Und die wären?",
+          "link": "Wirklich? Und die wären?",
+          "pid": "27"
+        }
+      ],
+      "name": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+      "pid": "25",
+      "position": {
+        "x": "300",
+        "y": "825"
+      }
+    },
+    {
+      "text": "Ja, ist oft nicht so einfach, vor der Angleichung Andere davon zu überzeugen, dass man eigentlich ein anderes Geschlecht hat als es scheint.\n\n[[Wie kann ich euch in dieser Zeit unterstützen->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n      ",
+      "links": [
+        {
+          "name": "Wie kann ich euch in dieser Zeit unterstützen",
+          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
+          "pid": "18"
+        }
+      ],
+      "name": "Ja, ist verständlich",
+      "pid": "26",
+      "position": {
+        "x": "1250",
+        "y": "700"
+      }
+    },
+    {
+      "text": "Für Transmänner gibt es Binder oder auch Prothesen für die Hose, für Transfrauen spezielle BHs. Man glaubt gar nicht wie groß das Angebot für Crossdresser ist.\n\n[[Irgendwie seltsam, aber ok-> END NEG]]\n[[Interessant, was es da alles gibt->ENDE NEUT]]\",\n      ",
+      "links": [
+        {
+          "name": "Irgendwie seltsam, aber ok",
+          "link": " END NEG",
+          "pid": "30"
+        },
+        {
+          "name": "Interessant, was es da alles gibt",
+          "link": "ENDE NEUT",
+          "pid": "31"
+        }
+      ],
+      "name": "Wirklich? Und die wären?",
+      "pid": "27",
+      "position": {
+        "x": "325",
+        "y": "1100"
+      }
+    },
+    {
+      "text": "Sicher, für die Familie und die langjährigen Freunde ist das natürlich besonders schwer, es hilft mir aber sehr, wenn sie meinen gewählten Namen berücksichtigen. Andere die ich vor Kurzem erst kennen gelernt habe, kennen mich ja nur unter diesem Namen.\n\n[[Versteh ich, gut zu wissen->ENDE POS]]\n[[Noch ganz so verständlich ist das Thema noch nicht, aber es wird->ENDE NEUT]] \n      ",
+      "links": [
+        {
+          "name": "Versteh ich, gut zu wissen",
+          "link": "ENDE POS",
+          "pid": "29"
+        },
+        {
+          "name": "Noch ganz so verständlich ist das Thema noch nicht, aber es wird",
+          "link": "ENDE NEUT",
+          "pid": "31"
+        }
+      ],
+      "name": "Also hast du dir einen neuen Namen gesucht, ist das nicht schwer für andere, dich bei diesem zu nennen?",
+      "pid": "28",
+      "position": {
+        "x": "625",
+        "y": "1150"
+      }
+    },
+    {
+      "text": "Hey, mich freut es sehr, dass du dich so für dieses Thema interessierst. Danke für das Gespräch und auf der nächsten Seite gibt es noch weitere Infos. :D\n      ",
+      "name": "ENDE POS",
+      "pid": "29",
+      "position": {
+        "x": "925",
+        "y": "1425"
+      },
+      "tags": [
+        "joy"
+      ]
+    },
+    {
+      "text": "Ich hoffe deine Einstellung wurde durch dieses Gespräch etwas umgestellt, vielleicht verstehst du uns jetzt etwas besser und siehst ein, das wir nicht ganz so verschieden sind. ;)\n      ",
+      "name": " END NEG",
+      "pid": "30",
+      "position": {
+        "x": "425",
+        "y": "1450"
+      },
       "tags": [
         "sad"
       ]
     },
     {
-      "text": "Eine Lösung wären Unisextoilette, damit sich Transgender Leute während der Angleichung oder auch davor wohler fühlen. Weiters wäre es aber auch einfach, wenn wir mehr von der Gesellschaft verstanden würden.",
-      "links": [
-        {
-          "name": "Gibt es in Österreich keine Unisex toiletten?",
-          "link": "Gibt es in Österreich keine Unisex toiletten?",
-          "pid": "19"
-        }
-      ],
-      "name": "Wirklich?, was für ein Arsch was gäbe es da für eine Lösung?",
-      "pid": "5",
+      "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, falls dich das Thema interessiert, findest du zusätzliche Infos auf der nächsten Seite, danke für das Gespräch :).\n      ",
+      "name": "ENDE NEUT",
+      "pid": "31",
       "position": {
         "x": "675",
-        "y": "400"
-      },
-      "tags": [
-        "dyk-angleichung"
-      ]
-    },
-    {
-      "text": "Ja, so kann man es auch ausdrücken..\n\n[[Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ]] ",
-      "links": [
-        {
-          "name": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
-          "link": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
-          "pid": "8"
-        },
-        {
-          "name": "Ok, wie kann ich das denn genau verstehen?",
-          "link": "Ok, wie kann ich das denn genau verstehen?",
-          "pid": "9"
-        },
-        {
-          "name": "Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ",
-          "link": "Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ",
-          "pid": "10"
-        }
-      ],
-      "name": "wohler in anderer Rolle",
-      "pid": "6",
-      "position": {
-        "x": "350",
-        "y": "675"
-      }
-    },
-    {
-      "text": "Das glauben viele, ich kann dir nur versichern, das es sich bei Transgender Leuten nicht um eine \"Phase\" handelt, nein in mir steckt wirklich ein anderes Geschlecht als es scheint...\n\nViele merken dies sogar schon im Kindesalter, bei mir war es das Gefühl bei meiner zugehörigen \"Geschlechtergruppe\" nicht dazuzugehören, ich fühlte mich immer in der anderen Gruppe wohler.\n\n[[Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings]] \n[[Ok, wie kann ich das denn genau verstehen?]] \n[[Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ]] \n",
-      "links": [
-        {
-          "name": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
-          "link": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
-          "pid": "8"
-        },
-        {
-          "name": "Ok, wie kann ich das denn genau verstehen?",
-          "link": "Ok, wie kann ich das denn genau verstehen?",
-          "pid": "9"
-        },
-        {
-          "name": "Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ",
-          "link": "Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ",
-          "pid": "10"
-        }
-      ],
-      "name": "Phase",
-      "pid": "7",
-      "position": {
-        "x": "625",
-        "y": "675"
-      }
-    },
-    {
-      "text": "Du musst das anders sehen, viele von Transgender Leute versuchen lediglich von anderen mit ihrem bevorzugten Geschlecht behandelt zu werden. Auch das viele Crossdressen als sexuellen Fetisch ist nur eine Außnahme. Leider ist es Anfangs noch schwierig als das bevorzugte Geschlecht durchzukommen. \n\n[[Wie ist es dann in der Realität?->Ok, wie kann ich das denn genau verstehen?]] \n[[Da gibt es ja eh Operationen, hast du so eine schon gemacht?]] ",
-      "links": [
-        {
-          "name": "Wie ist es dann in der Realität?",
-          "link": "Ok, wie kann ich das denn genau verstehen?",
-          "pid": "9"
-        },
-        {
-          "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-          "link": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-          "pid": "12"
-        }
-      ],
-      "name": "Ziehst du auch gerne Klammotten des anderen Geschlechtes an, wie Drag-Queens oder Drag-Kings",
-      "pid": "8",
-      "position": {
-        "x": "225",
-        "y": "825"
-      },
-      "tags": [
-        "dyk-passing",
-        "dyk-crossdressing"
-      ]
-    },
-    {
-      "text": "Bei mir ist es so, dass ich von anderen so behandelt werden möchte, wie es mit meiner Geschlechtsidentität übereinstimmt. Daher, versuche ich sowohl Äußerlich, als auch von meinem Verhalten her, diesem Geschlecht zu entsprechen, dies geht aber nicht immer sofort und die Umstellung ist nicht immer sehr einfach.\n\n[[OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?]]\n[[Da gibt es ja eh Operationen, hast du so eine schon gemacht?]] \n",
-      "links": [
-        {
-          "name": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
-          "link": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
-          "pid": "20"
-        },
-        {
-          "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-          "link": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-          "pid": "12"
-        }
-      ],
-      "name": "Ok, wie kann ich das denn genau verstehen?",
-      "pid": "9",
-      "position": {
-        "x": "475",
-        "y": "825"
-      }
-    },
-    {
-      "text": "Man kann sich nicht aussuchen welches Geschlecht man hat, man fühlt dies, und wenn es nicht dem angeborenen entspricht ist man halt Transgender, das macht mich jetzt aber nicht zu einer anderen Spezies von Mensch\n\n[[Achso, ok]]",
-      "links": [
-        {
-          "name": "Achso, ok",
-          "link": "Achso, ok",
-          "pid": "11"
-        }
-      ],
-      "name": "Also kannst du dich nicht entscheiden ob du Mann oder Frau bist? ",
-      "pid": "10",
-      "position": {
-        "x": "725",
-        "y": "825"
-      }
-    },
-    {
-      "text": "Ich versuche nur zu erreichen, dass mich Andere so behandeln,wie ich mich fühle\n\n[[Da gibt es ja eh Operationen, hast du so eine schon gemacht?]]\n[[Ja, ist verständlich]]\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]",
-      "links": [
-        {
-          "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-          "link": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-          "pid": "12"
-        },
-        {
-          "name": "Ja, ist verständlich",
-          "link": "Ja, ist verständlich",
-          "pid": "13"
-        },
-        {
-          "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
-          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
-          "pid": "14"
-        }
-      ],
-      "name": "Achso, ok",
-      "pid": "11",
-      "position": {
-        "x": "825",
-        "y": "950"
-      }
-    },
-    {
-      "text": "Das ist doch jetzt etwas zu persönlich oder? Klar gibt es Operationen, aber man kann auch vor diesen schon mit verschiedenen Hilfsmittel so auszusehen, wie man will\n\n\n[[Wirklich?, Und die wären?]]\n",
-      "links": [
-        {
-          "name": "Wirklich?, Und die wären?",
-          "link": "Wirklich?, Und die wären?",
-          "pid": "22"
-        }
-      ],
-      "name": "Da gibt es ja eh Operationen, hast du so eine schon gemacht?",
-      "pid": "12",
-      "position": {
-        "x": "250",
-        "y": "975"
-      }
-    },
-    {
-      "text": "Ja ist oft nicht so einfach, vor der Angleichung andere davon zu überzeugen, dass man ein anderes Geschlecht hat als es scheint.\n\n[[Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]",
-      "links": [
-        {
-          "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
-          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
-          "pid": "14"
-        }
-      ],
-      "name": "Ja, ist verständlich",
-      "pid": "13",
-      "position": {
-        "x": "575",
-        "y": "1125"
-      }
-    },
-    {
-      "text": "Hilfreich wäre erstmal den bevorzugten Namen zu verwenden und das bevorzugte Pronomen.\n\nAuch nicht immer ein großes Drama darum zu machen ist sehr hilfreich, wir versuchen immerhin ja auch nur uns in dieser Welt wohl zu fühlen, da hilft es einem nicht immer als \"speziell\" und \"anders\" angesehen zu werden.\n\n[[Also hattest du vorher einen anderen Namen, wie lautete dieser?]]\n[[Gut zu wissen, danke.->ENDE POS]]\n",
-      "links": [
-        {
-          "name": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
-          "link": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
-          "pid": "21"
-        },
-        {
-          "name": "Gut zu wissen, danke.",
-          "link": "ENDE POS",
-          "pid": "15"
-        }
-      ],
-      "name": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
-      "pid": "14",
-      "position": {
-        "x": "825",
-        "y": "1150"
-      }
-    },
-    {
-      "text": "Hey, mich freut es sehr, dass du dich so für dieses Thema interessierst und auf der nächsten Seite gibt es noch weitere Infos. :D",
-      "name": "ENDE POS",
-      "pid": "15",
-      "position": {
-        "x": "950",
         "y": "1425"
       }
     },
     {
-      "text": "Ich finde es gut, dass du dich mit dem Thema Transgender auseinandergesetzt hast, falls dich das Thema interessiert, findest du zusätzliche Infos auf der nächsten seite, danke für das Gespräch :).",
-      "name": "ENDE NEUT",
-      "pid": "16",
+      "text": "Das stimmt allerdings, aber es kann auch immer sein, dass du einmal eine Transgender Person im Arbeitsumfeld oder Freundekreis hast.\n\n[[Stimmt, aber für die werde ich mich eh nicht so interessieren-> END NEG]]\n[[Da hast, du Recht vielleicht ist das Gespräch ja doch ganz nützlich->ENDE NEUT]]\",\n      ",
+      "links": [
+        {
+          "name": "Stimmt, aber für die werde ich mich eh nicht so interessieren",
+          "link": " END NEG",
+          "pid": "30"
+        },
+        {
+          "name": "Da hast, du Recht vielleicht ist das Gespräch ja doch ganz nützlich",
+          "link": "ENDE NEUT",
+          "pid": "31"
+        }
+      ],
+      "name": "Ich hab ja nicht viel mit dem Thema zu tun",
+      "pid": "32",
       "position": {
-        "x": "714",
-        "y": "1434"
+        "x": "925",
+        "y": "1225"
       }
     },
     {
-      "text": "Es wäre nicht so \"schwer\" wenn es mehr Menschen geben würde, die mit uns klar kommen...\n\n [[Also hast du ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n [[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]\n\n\n",
+      "text": "Du musst das anders sehen, viele Transgender Personen versuchen lediglich von Anderen wie ihr bevorzugtes Geschlecht behandelt zu werden. Auch das viele Crossdressen als sexuellen Fetisch ist nur eine Außnahme. Leider ist es Anfangs noch schwierig als das bevorzugte Geschlecht durchzukommen. \n\n[[Wie ist es dann in der Realität?->Ok, wie kann ich das denn genau verstehen?]] \n[[Da gibt es ja eh Operationen, wäre das nichts für dich?]] \n      ",
       "links": [
         {
-          "name": "Also hast du ein anderes Geschlecht als äußerlich erscheinlich?",
-          "link": "wohler in anderer Rolle",
-          "pid": "6"
+          "name": "Wie ist es dann in der Realität?",
+          "link": "Ok, wie kann ich das denn genau verstehen?",
+          "pid": "22"
         },
         {
-          "name": "Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.",
-          "link": "Phase",
-          "pid": "7"
+          "name": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+          "link": "Da gibt es ja eh Operationen, wäre das nichts für dich?",
+          "pid": "25"
         }
       ],
-      "name": "Ich versteh, als Transgender Person hat man es ja besonders schwer, das mus hart sein",
-      "pid": "17",
-      "position": {
-        "x": "200",
-        "y": "525"
-      }
-    },
-    {
-      "text": "Siehst du, das ist das Problem, ich fühl mich wohler in der Toilette in der ich war, nur es wird oft einfach nicht verstanden.\n \n [[Also hast du ein anderes Geschlecht als äußerlich erscheinlich?->wohler in anderer Rolle]]\n [[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.->Phase]]",
-      "links": [
-        {
-          "name": "Also hast du ein anderes Geschlecht als äußerlich erscheinlich?",
-          "link": "wohler in anderer Rolle",
-          "pid": "6"
-        },
-        {
-          "name": "Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir doch sicher nur ein.",
-          "link": "Phase",
-          "pid": "7"
-        }
-      ],
-      "name": "Achso ok,aber warum bist du dann nicht einfach in die andere Toilette gegangen?",
-      "pid": "18",
+      "name": "Kleidest du dich dann auch deinem gewünschten Geschlecht entsprechend,so wie Drag-Queens oder Drag-Kings?",
+      "pid": "33",
       "position": {
         "x": "475",
-        "y": "525"
-      }
-    },
-    {
-      "text": "Nein, bi jetzt habe ich noch keine gefunden, hoffentlich ändert sich das noch in der nächsten Zeit.\n\n[[Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?->wohler in anderer Rolle]]\n [[Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein->Phase]]",
-      "links": [
-        {
-          "name": "Also fühlst du dich wohler in einer Geschlechterrolle anders als dein angeborenes Geschlecht?",
-          "link": "wohler in anderer Rolle",
-          "pid": "6"
-        },
-        {
-          "name": "Ist das mit dem Transgender sein nicht oft nur eine Phase, das bildest du dir sicher nur ein",
-          "link": "Phase",
-          "pid": "7"
-        }
-      ],
-      "name": "Gibt es in Österreich keine Unisex toiletten?",
-      "pid": "19",
-      "position": {
-        "x": "750",
-        "y": "525"
-      }
-    },
-    {
-      "text": "Manche aus meiner Familie wissen es noch gar nicht. Für meine Eltern war es eine große Umstellung, mich anders zu behandeln als die Jahre davor und einen anderen Namen zu verwenden. Ich kenne auch viele aus unserer Community die deswegen Zuhause rausgeschmissen wurden, bei vielen Enwickelt sich aus Unverständnis, Abneigung. \n\nMeine Freunde reagierten sehr unterschiedlich, manche sehr gut, andere schlechter.\n\n[[Wie kann man gut reagieren?->Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?]]\n",
-      "links": [
-        {
-          "name": "Wie kann man gut reagieren?",
-          "link": "Und was kann man machen um Transgender Leuten ein besseres Gefühl zu geben?",
-          "pid": "14"
-        }
-      ],
-      "name": "OK, wie reagierten deine Freunde und Familie als du ihnen dies erzählt hast?",
-      "pid": "20",
-      "position": {
-        "x": "525",
-        "y": "975"
-      }
-    },
-    {
-      "text": "Ich spreche nicht gerne über mein vergangenes \"Geschlecht\" ich war ja eigentlich schon immer ich, mein \"alter\" Name erinnert mich nur an mein Leiden als Kind\n\n[[Gut zu wissen, danke.->ENDE NEUT]] ",
-      "links": [
-        {
-          "name": "Gut zu wissen, danke.",
-          "link": "ENDE NEUT",
-          "pid": "16"
-        }
-      ],
-      "name": "Also hattest du vorher einen anderen Namen, wie lautete dieser?",
-      "pid": "21",
-      "position": {
-        "x": "675",
-        "y": "1275"
+        "y": "700"
       },
       "tags": [
-        "dyk-deadnaming"
+        "angry"
       ]
-    },
-    {
-      "text": "Für Transmänner gibt es Binder oder auch Prothesen für die Hose, für Transfrauen spezielle BHs und so weiter...\n\n[[Irgendwie seltsam, aber ok-> END NEG]]\n[[Interessant, was es da alles gibt]]",
-      "links": [
-        {
-          "name": "Irgendwie seltsam, aber ok",
-          "link": " END NEG",
-          "pid": "24"
-        },
-        {
-          "name": "Interessant, was es da alles gibt",
-          "link": "Interessant, was es da alles gibt",
-          "pid": "23"
-        }
-      ],
-      "name": "Wirklich?, Und die wären?",
-      "pid": "22",
-      "position": {
-        "x": "425",
-        "y": "1100"
-      }
-    },
-    {
-      "text": "Doppelklick auf diesen Absatz zum Bearbeiten.",
-      "name": "Interessant, was es da alles gibt",
-      "pid": "23",
-      "position": {
-        "x": "500",
-        "y": "1250"
-      }
-    },
-    {
-      "text": "Ich hoffe deine Einstellung wurde durch dieses Gespräch etwas umgestellt, vielleicht verstehst du uns jetzt etwas besser und siehst ein, das wir nicht ganz so verschieden sind. ;)",
-      "name": " END NEG",
-      "pid": "24",
-      "position": {
-        "x": "225",
-        "y": "1275"
-      }
     }
   ],
-  "name": "Transgender-Story",
+  "name": "Transgender",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.2.1",
-  "ifid": "8EF65264-FD77-4AEE-9FA9-BF74F45C5062"
+  "ifid": "12BFFCF6-3D5E-4237-9362-0764CAC854E7"
 }

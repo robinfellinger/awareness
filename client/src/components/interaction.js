@@ -13,9 +13,11 @@ class Interaction extends Component {
         this.state = {
             IDTest: "Start",
             emotion: "neutral",
-            mode: "standard"
+            mode: "standard",
+            chat: [],
+            finished: false
         }
-        this.updateID = this.updateID.bind(this);
+        this.update = this.update.bind(this);
         this.writeData = this.writeData.bind(this);
 
         this.app = firebase.initializeApp(DB_CONFIG);
@@ -25,23 +27,46 @@ class Interaction extends Component {
         this.stats = {};
         this.statText;
     }
+    myCallback = (dataFromChild) => {
+        this.state.chat.push({'answer': null, 'question':dataFromChild});
+        this.state.finished = true;
+};
 
     componentDidMount(){
         this.readData();
     }
 
-    updateID(id, em, pid){
-        this.setState({IDTest: id})
+    componentDidUpdate(){
+        if(this.state.finished) {
+            let elem = document.getElementById("chatrunning");
+            elem.scrollTop = elem.scrollHeight;
+            this.state.finished = false;
+        }
+    }
+
+    update(id, em, answer, question, pid){
+        this.setState({IDTest: id});
         if(em) {
-            this.setState({emotion: em[0]})
-            //console.log(this.state.emotion);
+            this.setState({emotion: em[0]});
+            console.log(this.state.emotion);
         }else{
             this.setState({emotion: "neutral"});
         }
-        console.log(this.index++);
+
+        if(this.state.chat.length !== 0 && this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
+            this.state.chat[this.state.chat.length-1].answer = answer;
+            this.state.finished = true;
+        }else{
+            this.state.chat.push({'answer': answer, 'question':question});
+            this.state.finished = true;
+        }
+        console.log(pid);
         this.answers.push(pid);
         if(this.index === 9) this.writeData(this.answers);
+
+
     }
+
 
      writeData(answers){
          console.log('write data');
@@ -102,57 +127,50 @@ class Interaction extends Component {
         }
      }
 
-    render(){
+     render(){
+        return (
+        <div className={"interaction-container"} >
 
-        if(this.state.mode === 'standard') {
-            return (
-            <div className={"interaction"}>
+            {data.passages
+                .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
+                .map((question) =>
 
-                {data.passages
-                    .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
-                    .map((question) =>
+                    <div className={"grid-container"} key={question.pid}>
 
-                        <div className={"interaction-question t-italic"} key={question.pid}>
+                          {question.name === this.state.IDTest && <Type strings={[question.text.split("\n\n")[0]]} callbackFromParent={this.myCallback}/>}
 
-                                {question.name === this.state.IDTest && <Type strings={[question.text.split('\n')[0]]}/>}
-                                <div className={"answers interaction-flex"}>{
-                                    (typeof(question.links)==='object')?
-                                    question.links.map((subrowdata)=>
-                                    <p className={"interaction-answer"}>
-                                        {question.name === this.state.IDTest &&
-                                        <button  className={"interaction-button text-sm col-sm-8"}
-                                                 onClick={() => {
-                                                     this.updateID(subrowdata.link, question.tags, subrowdata.pid);
-                                                    }}>{subrowdata.name}</button>
-                                        }
-                                    </p>
-                                    )
-                                    :null
-                                }</div>
+
+                        <div id={"chatrunning"} className={"grid-item1 chatrunning"}>
+
+                            {this.state.chat.map((said) =>
+                                <div className={"chat"}>
+                                    {said.question !== null && <p className={"chat-q text-sm"}>{said.question}</p>}
+                                    {said.answer !== null &&<p className={"chat-a text-sm"}>{said.answer}</p>}
+                                </div>)
+
+                            }
                         </div>
-                    )
-            }
-            </div>
-        )
-        }else if(this.state.mode === 'end'){
-            return (
-                <div className={"interaction"}>
-    
-                    {data.passages
-                        .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
-                        .map((question) =>
-    
-                            <div className={"interaction-question t-italic"} key={question.pid}>
-                                    {<Type strings={[this.statText ]}/>}
-                                    
-                            </div>
-                        )
-                }
-                </div>
-            )
 
+                        <div className={"grid-item2"}>
+                        {(typeof(question.links)==='object')?
+                        question.links.map((subrowdata)=>
+
+                        <p className={"interaction-answer"}>
+                            {question.name === this.state.IDTest &&
+                            <button  className={"interaction-button text-sm"}
+                                     onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text.split("\n\n")[0])}>{subrowdata.name}</button>
+                            }
+                        </p>
+
+                        )
+                        :null
+                    }</div>
+                    </div>
+                )
         }
-    };
+        </div>
+    )
+};
 
 }
 
