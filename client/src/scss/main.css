@@ -308,7 +308,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 .aktiv { width: 100vw; display: grid; grid-template-rows: repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 0.5fr 0.4fr 0.3fr 2.1fr 1.9fr; font-family: "Montserrat",sans-serif; }
 .aktiv:hover > .aktiv__circle { width: 25px; height: 25px; }
 
-.vl {
+.lineV {
   grid-column: 2;
   border-left: 1.5px solid #828282;
   height: 150px;
