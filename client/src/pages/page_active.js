@@ -52,10 +52,6 @@ class Page_active extends Component {
                             }
                         </div>
 
-
-
-
-
                    </section>
             </div>
         );
