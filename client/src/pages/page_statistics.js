@@ -38,7 +38,7 @@ class Page_statistics extends Component {
 
     render(){
         const trans_in_oe = [
-            "trans", " in österreich", 
+            "trans", "trans in österreich",
             "In den Medien ist die Thematik Transgender und Transidentität in den letzten Jahren immer präsenter geworden. Doch existieren weiterhin Informationsdefizite, sowie allgemeine Vorurteile, um die es sich zu kümmern gilt.",
             "Aus interpretationen von mehreren Statistiken, wird das Verhältnis der Transfrauen mit einer von 1.000 geschätzt. Das Verhältnis der Transmänner wird auf einen von 2.000 geschätzt. Viele Trans*-Menschen leben allerdings in der Anonymität und können deshalb von Statistiken nicht erfasst werden.",
             
@@ -101,7 +101,9 @@ class Page_statistics extends Component {
             <div className="statistics-container">
 
 
-            <SectionTransInOe title={trans_in_oe[1]} span={trans_in_oe[0]} text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
+            <SectionTransInOe title={trans_in_oe[1]}
+                              // span={trans_in_oe[0]}
+                              text={trans_in_oe[2]} subtext={trans_in_oe[3]} />
             <SectionBedeutung title={bedeutung[0]} text={bedeutung[1]} text_2={bedeutung[2]} text_3={bedeutung[3]} />
             <SectionMedizin title={medizin[0]} text={medizin[1]} subtext={medizin[2]} />
             <SectionDiskriminierung title={diskriminierung[0]} text={diskriminierung[1]}/> 
