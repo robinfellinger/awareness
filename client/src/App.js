@@ -32,6 +32,8 @@ class App extends Component {
         this.scrollExperience = this.scrollExperience.bind(this);
         this.toggleExperience = this.toggleExperience.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
+        this.startStartButtonAnimation = this.startStartButtonAnimation.bind(this);
+        this.startLeaveStartButtonAnimation = this.startLeaveStartButtonAnimation.bind(this)
         // this.toggleStatisticPage = this.toggleStatisticPage.bind(this);
         this.wakov = this.wakov.bind(this);
 
@@ -59,15 +61,29 @@ class App extends Component {
 
 
         setTimeout(() => {
-            // if(!this.state.once){
+            if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
-            // }
+            }
         }, 1000 / 30 )
 
 
         // this.wakov();
+    }
+
+
+    startStartButtonAnimation(){
+        var startButton = document.getElementsByClassName("button-startAnim")[0];
+        console.log(startButton);
+        startButton.classList.add("startButtonHoverAnimation");
+        startButton.classList.remove("startButtonHoverAnimationLeave");
+    }
+    startLeaveStartButtonAnimation(){
+        var startButton = document.getElementsByClassName("button-startAnim")[0];
+        console.log(startButton);
+        startButton.classList.add("startButtonHoverAnimationLeave");
+        startButton.classList.remove("startButtonHoverAnimation");
     }
 
 
@@ -86,6 +102,7 @@ class App extends Component {
         this.setState({emotion: "joy"});
 
     }
+
 
     scrollExperience(event){
         if (event.deltaY > 30) {this.setState({startExperience: true});this.returnClasses();}
@@ -130,7 +147,12 @@ class App extends Component {
                 </div>
             }
             <div className={"pos-absolute pos-centerText"}>
-                <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim text-button"} onClick={() => this.toggleExperience()}>
+                <div className="startButtonListener"
+                onMouseEnter={() => this.startStartButtonAnimation()}
+                onMouseLeave={() => this.startLeaveStartButtonAnimation()}
+                onClick={() => this.toggleExperience()}
+                ></div>
+                <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim text-button"}>
                     <div className={"startCircle-small"}></div>
                     <p>start</p></button>
             </div>

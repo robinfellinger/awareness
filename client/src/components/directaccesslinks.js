@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import PageStatistics from "../pages/page_statistics"
-import PageActive from "../pages/page_active"
-import PageGlossar from "../pages/page_glossary"
+import { Link } from 'react-router-dom';
+import Page_statistics from "../pages/page_statistics"
+import Page_active from "../pages/page_active"
+import Page_glossar from "../pages/page_glossary"
 class AccessLinks extends Component {
     constructor(){
         super();
@@ -15,7 +16,8 @@ class AccessLinks extends Component {
     showChat(){
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: false});
-        this.disablePagination();
+        this. disablePagination();
+        
         this.setState({showStatisticPage: false});
         this.moveRope("6rem", "-1rem");
         this.colorNav("white");
@@ -68,30 +70,26 @@ class AccessLinks extends Component {
         let body = document.getElementsByTagName("body");
         let active = document.getElementsByTagName("active");
         let stats = document.getElementsByClassName("container-statistics");
+        console.log(firstTime);
 
         if (firstTime.length >= 0 && firstTime[0]) {
-           // firstTime[0].style.display = "none";
            firstTime[0].remove();
         }
 
         if (firstTime2.length >= 0 && firstTime2[0]) {
-            // firstTime[0].style.display = "none";
             firstTime2[0].remove();
          }
 
          
         if (body.length >= 0 && body[0]) {
-            // firstTime[0].style.display = "none";
             body[0].className = '';
          }
 
          if (active.length >= 0 && active[0]) {
-            // firstTime[0].style.display = "none";
             active[0].classList.remove("active");
          }
 
          if (stats.length >= 0 && stats[0]) {
-            // firstTime[0].style.display = "none";
             stats[0].className = 'container-statistics';
             stats[0].style = '';
          }
@@ -99,6 +97,7 @@ class AccessLinks extends Component {
 
     moveRope(width, left) {
         let underbar = document.getElementsByClassName("underbar");
+        console.log(underbar);
         underbar[0].style.width = width;
         underbar[0].style.left = left;
         
@@ -122,33 +121,33 @@ class AccessLinks extends Component {
             <div>
               <div className={"container-statistics"}>
                     {this.state.showStatisticPage &&
-                        <PageStatistics></PageStatistics>
+                        <Page_statistics></Page_statistics>
                     }
                </div>
 
                  <div className={"container-active"}>
                     {this.state.showActivePage &&
-                        <PageActive></PageActive>
+                        <Page_active></Page_active>
                     }
                  </div>
 
                 <div className={"container-glossar"}>
                     {this.state.showGlossarPage &&
-                        <PageGlossar></PageGlossar>
+                        <Page_glossar></Page_glossar>
                     }
                  </div>
 
-                <div className={" pos-absolute accesslinks__line-pos"} style={{"zIndex": "50"}}>
+                <div className={" pos-absolute accesslinks__line-pos"} style={{"z-index": "50"}}>
                     <svg className="margin-line" width="100%" height="5">
                         <line className={"accesslinks__line"} x1="0" y1="0" x2="100%" y2="0"
                             strokeWidth="3px" stroke="white"/>
                     </svg>
                     <div className={"accesslinks_pos"}>
-                           <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.showChat()}>chat</button>
+                        <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.showChat()}>chat</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} id={"getActive"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>
-                        <div className={"underbar"}></div>
+                        <div class="underbar"></div>
                     </div>
                 </div>
             </div>

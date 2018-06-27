@@ -32,7 +32,6 @@
   }
 }
 
-
 .startCircle {
 
   height: 25px;
@@ -45,6 +44,8 @@
   position: absolute;
   margin: auto;
   transition:  0.3s ease-out;
+  border: 3px solid $button-start;
+
   & p {
     left: 37px;
     top: 7px;
@@ -55,7 +56,7 @@
     width: 9px;
     left: 7px;
     top: 7px;
-    background-color: #007cff;
+    background-color: $button-start;
     border-radius: 50%;
     position: absolute;
     /* border: 1px solid white; */
@@ -64,5 +65,52 @@
   &:hover {
     height: 70px;
     width: 70px;
+  }
+}
+.startButtonListener {
+  position: absolute;
+  //background-color: rgba(255, 99, 71, 0.31);
+  width: 103px;
+  height: 40px;
+  margin-top: 51.5vh;
+  left: 52.1%;
+  z-index: 90;
+  cursor: pointer;
+
+}
+
+.startButtonHoverAnimation{
+  -webkit-animation: hoverTransformation 0.5s forwards;
+  -o-animation: hoverTransformation 0.5s forwards;
+  animation: hoverTransformation 0.5s forwards;
+  border: #8de6ff solid !important;
+}
+.startButtonHoverAnimationLeave{
+  -webkit-animation: hoverTransformationLeave 0.5s forwards;
+  -o-animation: hoverTransformationLeave 0.5s forwards;
+  animation: hoverTransformationLeave 0.5s forwards;
+}
+
+/* START ANIMATIONS */
+@keyframes hoverTransformation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+
+  }
+}
+
+@keyframes hoverTransformationLeave {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

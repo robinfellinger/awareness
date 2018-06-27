@@ -8,10 +8,8 @@
 
     /* Ellipse 3.1 */
 
-    border:none;
 
     box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.22);
-    border: 3px solid #007cff;
     background: transparent !important;
 
   }
@@ -35,7 +33,7 @@
 
   }
   &-startAnim {
-    animation: button-move-start 5s forwards; /* IE 10+, Fx 29+ */
+    //animation: button-move-start 5s forwards; /* IE 10+, Fx 29+ */
     margin-top: 12rem;
     left: 8.9%;
   }
