@@ -69,22 +69,22 @@ class Page_statistics extends Component {
         ];
         const stats = [
             <div className="stats">
-                <p className="stats__one"><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
-                <p className="stats__three"><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
-                <p className="stats__two"><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
-                <p className="stats__four"><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden nicht gemeldet</p>
-                <p className="stats__footnote info-subcontent">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
+                <p className="stats__one fade1 info_page_5 fadeLeft"><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
+                <p className="stats__three fade2 info_page_5 fadeRight"><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
+                <p className="stats__two fade3 info_page_5 fadeRight"><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
+                <p className="stats__four fade4 info_page_5 fadeRight"><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden von den Leidenden nicht gemeldet</p>
+                <p className="stats__footnote info-subcontent fade4 info_page_5 fadeBottom">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
             </div>,
         ];
 
         const gewalt = [
             <div className="gewalt">
-                <h2 className="gewalt__titel info-titel">Gewalt</h2>
-                <p className="gewalt__text info-content">Neben Diskriminierung sind wiederholte Gewaltakte und die darauf folgende “Angst, man selbst zu sein“ weitere große Hürden im Leben vieler Transgender-Personen.</p>
-                <p className="gewalt__three"><span ref="value2" id="percent2">50%</span><br />der Trans-Personen  berichten von etwa einem Vorfall von Gewalt oder Belästigung pro Jahr</p>
-                <p className="gewalt__two"><span ref="value3" id="percent3">34%</span><br />geben an,  sie sind in den letzten 5 jahren angegriffen oder mit Gewalt bedroht worden.</p>
-                <p className="gewalt__four"><span ref="value4" id="percent4">8%</span><br />wurden angegriffen, hauptsächlich / nur weil sie als trans wahrgenommen wurden.</p>
-                <p className="gewalt__footnote info-subcontent">* folgende Daten sind von der FRA’s LGBT survey von 2014
+                <h2 className="gewalt__titel info-titel fade1 info_page_7 fadeLeft">Gewalt</h2>
+                <p className="gewalt__text info-content fade2 info_page_7 fadeLeft">Neben Diskriminierung sind wiederholte Gewaltakte und die darauf folgende “Angst, man selbst zu sein“ weitere große Hürden im Leben vieler Transgender-Personen.</p>
+                <p className="gewalt__three fade2 info_page_7 fadeRight"><span ref="value2" id="percent2">50%</span><br />der Trans-Personen  berichten von etwa einem Vorfall von Gewalt oder Belästigung pro Jahr</p>
+                <p className="gewalt__two fade3 info_page_7 fadeRight"><span ref="value3" id="percent3">34%</span><br />geben an,  sie sind in den letzten 5 jahren angegriffen oder mit Gewalt bedroht worden.</p>
+                <p className="gewalt__four fade4 info_page_7 fadeRight"><span ref="value4" id="percent4">8%</span><br />wurden angegriffen, hauptsächlich / nur weil sie als trans wahrgenommen wurden.</p>
+                <p className="gewalt__footnote info-subcontent fade4 info_page_7 fadeBottom">* folgende Daten sind von der FRA’s LGBT survey von 2014
                 </p>
             </div>,
         ];
@@ -126,10 +126,10 @@ class Page_statistics extends Component {
 const SectionTransInOe = (props) => {
     return (
         <section className="transInOe ops-section active">
-            <h2 className="transInOe__titel info-titel"><span className="italic">{props.span}</span>{props.title}</h2>
-            <p className="transInOe__content info-content">{props.text}</p>
-            <p className="transInOe__subcontent info-subcontent">{props.subtext}</p>
-            <button className="transInOe__button info-button" onClick={this.clickFunction}>Werde aktiv</button>
+            <h2 className="transInOe__titel info-titel fade1 info_page_1 fadeBottom"><span className="italic">{props.span}</span>{props.title}</h2>
+            <p className="transInOe__content info-content fade2 info_page_1 fadeBottom">{props.text}</p>
+            <p className="transInOe__subcontent info-subcontent fade3 info_page_1 fadeBottom">{props.subtext}</p>
+            <button className="transInOe__button info-button fade5 info_page_1" onClick={this.clickFunction}>Werde aktiv</button>
         </section>
     )
 }
@@ -137,10 +137,10 @@ const SectionTransInOe = (props) => {
 const SectionDiskriminierung = (props) => {
     return (
         <section className="diskriminierung ops-section">
-            <h2 className="diskriminierung__titel info-titel">{props.title}</h2>
-            <p className="diskriminierung__content info-content">{props.text}</p>
-            <button className="diskriminierung__button info-button">Jetzt helfen</button>
-            <div className="diskriminierung__box info-box"></div>
+            <h2 className="diskriminierung__titel info-titel fade1 info_page_4 fadeLeft">{props.title}</h2>
+            <p className="diskriminierung__content info-content fade2 info_page_4 fadeLeft">{props.text}</p>
+            <button className="diskriminierung__button info-button fade3 info_page_4 fadeLeft">Jetzt helfen</button>
+            <div className="diskriminierung__box info-box fade4 info_page_4 fadeLeft"></div>
         </section>
     )
 }
@@ -148,11 +148,11 @@ const SectionDiskriminierung = (props) => {
 const SectionBedeutung = (props) => {
     return (
         <section className="bedeutung ops-section">
-            <h2 className="bedeutung__titel info-titel">{props.title}</h2>
-            <p className="bedeutung__content info-content">{props.text}</p>
-            <p className="bedeutung__content_2 info-content">{props.text_2}</p>
-            <p className="bedeutung__content_3 info-content">{props.text_3}</p>
-            <div className="bedeutung__box info-box"></div>
+            <h2 className="bedeutung__titel info-titel fade2 info_page_2 fadeBottom">{props.title}</h2>
+            <p className="bedeutung__content info-content fade3 info_page_2 fadeBottom">{props.text}</p>
+            <p className="bedeutung__content_2 info-content fade4 info_page_2 fadeBottom">{props.text_2}</p>
+            <p className="bedeutung__content_3 info-content fade4 info_page_2 fadeRight">{props.text_3}</p>
+            <div className="bedeutung__box info-box fade5 info_page_2 fadeRight"></div>
         </section>
     )
 }
@@ -160,15 +160,15 @@ const SectionBedeutung = (props) => {
 const SectionRechte = (props) => {
     return (
         <section className="rechte ops-section">
-            <h2 className="rechte__titel info-titel">{props.title}</h2>
-            <p className="rechte__content info-content">{props.text}</p>
+            <h2 className="rechte__titel info-titel fade2 info_page_6">{props.title}</h2>
+            <p className="rechte__content info-content fade2 info_page_6">{props.text}</p>
             
-            <p className="rechte__subcontentB1 info-subcontent">{props.bold_1}</p>
-            <p className="rechte__subcontent_1 info-subcontent">{props.subtext_1}</p>
+            <p className="rechte__subcontentB1 info-subcontent fade4 info_page_6">{props.bold_1}</p>
+            <p className="rechte__subcontent_1 info-subcontent fade4 info_page_6">{props.subtext_1}</p>
             
-            <p className="rechte__subcontentB2 info-subcontent">{props.bold_2}</p>
+            <p className="rechte__subcontentB2 info-subcontent fade5 info_page_6">{props.bold_2}</p>
 
-            <p className="rechte__subcontent_2 info-subcontent">{props.subtext_2}</p>
+            <p className="rechte__subcontent_2 info-subcontent fade5 info_page_6">{props.subtext_2}</p>
         </section>
     )
 }
@@ -176,10 +176,10 @@ const SectionRechte = (props) => {
 const SectionMedizin = (props) => {
     return (
         <section className="medizin ops-section">
-            <h2 className="medizin__titel info-titel">{props.title}</h2>
-            <p className="medizin__content info-content">{props.text}</p>
-            <p className="medizin__subcontent info-subcontent">{props.subtext}</p>
-            <div className="medizin__box info-box"></div>
+            <h2 className="medizin__titel info-titel fade2 info_page_3">{props.title}</h2>
+            <p className="medizin__content info-content fade3 info_page_3 fadeBottom">{props.text}</p>
+            <p className="medizin__subcontent info-subcontent fade3 info_page_3 fadeBottom">{props.subtext}</p>
+            <div className="medizin__box info-box fade4 info_page_3 fadeRight"></div>
         </section>
     )
 }
@@ -187,9 +187,9 @@ const SectionMedizin = (props) => {
 const SectionHelfen = (props) => {
     return (
         <section className="helfen ops-section">
-            <h2 className="helfen__titel info-titel">{props.title}</h2>
-            <p className="helfen__subcontent info-subcontent">{props.subtext}</p>
-            <button className="helfen__button info-button">Werde aktiv</button>
+            <h2 className="helfen__titel info-titel fade2 info_page_8 fadeBottom">{props.title}</h2>
+            <p className="helfen__subcontent info-subcontent fade3 info_page_8 fadeBottom">{props.subtext}</p>
+            <button className="helfen__button info-button fade5 info_page_8 fadeBottom">Werde aktiv</button>
         </section>
     )
 }
