@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 import ue1 from "./glossarUE1.json";
 import ue2 from "./glossarUE2.json";
-
-
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 class Page_glossary extends Component {
@@ -69,8 +68,6 @@ class Page_glossary extends Component {
 
                            <div id="einzug2">
                                <div  className="glossary4">
-
-
                                    <div className="glossar_ueT"> TRANSGENDER </div>
                                    <div className="glossar_ueDesT">Transgender Menschen, überschreiten die sozialen Geschlechtsgrenzen (Gender). Ein  Geschlechtswechsel innerhalb des binären Geschlchtsmodells (Mann oder Frau) kann temporär aber auch permanent sein. Es kann aber auch bedeuten, dass eine Person sich in beiden Geschlechtern oder mit keinem der beiden Geschlechter identifiziert. </div>
 
@@ -79,7 +76,7 @@ class Page_glossary extends Component {
                                                {
                                                    ue1.Transgender.map((dynamicT, i) =>
 
-                                                   <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}> {dynamicT.word} </b>
+                                                   <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
                                                    <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
 
 
@@ -100,7 +97,7 @@ class Page_glossary extends Component {
                                        {
                                            ue1.Geschlecht.map((dynamicT, i) =>
 
-                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}> {dynamicT.word} </b>
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a>  {dynamicT.word} </b>
                                                    <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
 
 
@@ -120,7 +117,7 @@ class Page_glossary extends Component {
                                        {
                                            ue1.Erscheinungsbild.map((dynamicT, i) =>
 
-                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}> {dynamicT.word} </b>
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
                                                    <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
 
 
@@ -141,7 +138,7 @@ class Page_glossary extends Component {
                                        {
                                            ue1.LSBTQI.map((dynamicT, i) =>
 
-                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}> {dynamicT.word} </b>
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
                                                    <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
 
 
@@ -163,7 +160,7 @@ class Page_glossary extends Component {
                                        {
                                            ue1.Einfluesse.map((dynamicT, i) =>
 
-                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}> {dynamicT.word} </b>
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
                                                    <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
 
 
