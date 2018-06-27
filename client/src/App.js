@@ -65,11 +65,11 @@ class App extends Component {
 
 
         setTimeout(() => {
-           // if(!this.state.once){
+            if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
-           // }
+            }
         }, 1000 / 30 )
 
 
@@ -209,7 +209,7 @@ class App extends Component {
                     </PerspectiveCamera>
                 </TestScene>
             </div>
-           {/*<div id="noise"></div>*/}
+           <div id="noise"></div>
            <div className="contrast-gradient"></div>
             <div className="rectangle-gradient">
                 <img src={glow} alt="glow_rectangle"/>

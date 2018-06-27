@@ -63,7 +63,7 @@
     box-shadow: 0px 1px 5px #8b8b8b;
     &-anim {
       transition: 0.3s ease-out;
-      animation: animLilCircle 2s forwards;
+      animation: animLilCircle 0.2s linear;
     }
   }
 }

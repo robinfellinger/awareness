@@ -19,12 +19,9 @@ class Page_statistics extends Component {
 
             script2.innerHTML = 'onePageScroll(".container-statistics", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
             script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, ';
-            script2.innerHTML += 'afterMove: function(index) {'
-            script2.innerHTML += 'if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500, 56); animateValue("#percent2", 1000, 78);animateValue("#percent3", 1500, 37); animateValue("#percent4", 2000, 60);}';
-            script2.innerHTML += 'if (document.getElementById("gewaltNumbers").classList.contains("active")) {animateValue("#percent2", 1000, 50);animateValue("#percent3", 1500, 34); animateValue("#percent4", 2000, 8);}';
-            script2.innerHTML += '}, loop: false, keyboard: true,  responsiveFallback: false      });';
+            script2.innerHTML += 'loop: false, keyboard: true,  responsiveFallback: false      });';
             
-            //
+            //afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}},
             script2.async = true;
 
             document.body.appendChild(script2);
@@ -72,10 +69,10 @@ class Page_statistics extends Component {
         ];
         const stats = [
             <div className="stats">
-                <p className="stats__one fade1 info_page_5 fadeLeft"><span ref="value1" id="percent1">0%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
-                <p className="stats__three fade2 info_page_5 fadeRight"><span ref="value2" id="percent2">0%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
-                <p className="stats__two fade3 info_page_5 fadeRight"><span ref="value3" id="percent3">0%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
-                <p className="stats__four fade4 info_page_5 fadeRight"><span ref="value4" id="percent4">0%</span><br />der Vorfälle werden von den Leidenden nicht gemeldet</p>
+                <p className="stats__one fade1 info_page_5 fadeLeft"><span ref="value1" id="percent1">54%</span><br />TRANSPERSONEN WURDEN ÖFFENTLICH IN ÖSTERREICH DISKRIMINIERT *</p>
+                <p className="stats__three fade2 info_page_5 fadeRight"><span ref="value2" id="percent2">78%</span><br />… trauen sich nicht sich während der Schulzeit zu outen</p>
+                <p className="stats__two fade3 info_page_5 fadeRight"><span ref="value3" id="percent3">37%</span><br />der Befragten fühlten sich bei der Arbeitssuche disrikiminiert</p>
+                <p className="stats__four fade4 info_page_5 fadeRight"><span ref="value4" id="percent4">60%</span><br />der Vorfälle werden von den Leidenden nicht gemeldet</p>
                 <p className="stats__footnote info-subcontent fade4 info_page_5 fadeBottom">* folgende Daten sind von der FRA’s LGBT survey von 2014 und beschränken sich auf Erfahrungen innerhalb der letzten 3 Monaten vom Tag der Befragung</p>
             </div>,
         ];
@@ -84,9 +81,9 @@ class Page_statistics extends Component {
             <div className="gewalt">
                 <h2 className="gewalt__titel info-titel fade1 info_page_7 fadeLeft">Gewalt</h2>
                 <p className="gewalt__text info-content fade2 info_page_7 fadeLeft">Neben Diskriminierung sind wiederholte Gewaltakte und die darauf folgende “Angst, man selbst zu sein“ weitere große Hürden im Leben vieler Transgender-Personen.</p>
-                <p className="gewalt__three fade2 info_page_7 fadeRight"><span ref="value2" id="percent2">0%</span><br />der Trans-Personen  berichten von etwa einem Vorfall von Gewalt oder Belästigung pro Jahr</p>
-                <p className="gewalt__two fade3 info_page_7 fadeRight"><span ref="value3" id="percent3">0%</span><br />geben an,  sie sind in den letzten 5 jahren angegriffen oder mit Gewalt bedroht worden.</p>
-                <p className="gewalt__four fade4 info_page_7 fadeRight"><span ref="value4" id="percent4">0%</span><br />wurden angegriffen, hauptsächlich / nur weil sie als trans wahrgenommen wurden.</p>
+                <p className="gewalt__three fade2 info_page_7 fadeRight"><span ref="value2" id="percent2">50%</span><br />der Trans-Personen  berichten von etwa einem Vorfall von Gewalt oder Belästigung pro Jahr</p>
+                <p className="gewalt__two fade3 info_page_7 fadeRight"><span ref="value3" id="percent3">34%</span><br />geben an,  sie sind in den letzten 5 jahren angegriffen oder mit Gewalt bedroht worden.</p>
+                <p className="gewalt__four fade4 info_page_7 fadeRight"><span ref="value4" id="percent4">8%</span><br />wurden angegriffen, hauptsächlich / nur weil sie als trans wahrgenommen wurden.</p>
                 <p className="gewalt__footnote info-subcontent fade4 info_page_7 fadeBottom">* folgende Daten sind von der FRA’s LGBT survey von 2014
                 </p>
             </div>,
@@ -199,7 +196,7 @@ const SectionHelfen = (props) => {
 
 const SectionStats = (props) => {
     return (
-        <section className="ops-section" id="numbers">
+        <section className="ops-section">
         <div className="stats__content info-content">{props.text}</div>
         </section>
     )
@@ -207,7 +204,7 @@ const SectionStats = (props) => {
 
 const SectionGewalt = (props) => {
     return (
-        <section className="ops-section" id="gewaltNumbers">
+        <section className="ops-section">
         <div className="gewalt__content info-content">{props.text}</div>
         </section>
     )
