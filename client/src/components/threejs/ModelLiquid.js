@@ -286,25 +286,72 @@ function wakov(){
                 cRot+=(tRot-cRot)/100;
 }
 function handleEmotions(emotion){
-    if(emotion === "anger"){
-        //console.log("anger")
-    }
-    if(emotion === "joy"){
-        //console.log("joy")
+    if(emotion === "neutral"){
         if(next === false){
             next = true;
-            // setTimeout(function () {
-                let position = { x : 0, y: 3 };
-                let tween = new TWEEN.Tween(position)
-                    .to({x: 0, y: -0.6, rotation: 0}, 1000)
-                    // .delay(300)
-                    .easing(TWEEN.Easing.Elastic.In)
-                    .onUpdate(function(){
-                        mesh.position.x = position.x;
-                        mesh.position.y = position.y;
-                    });
-                tween.start();
-            // }, 0.005);
+            console.log("neutral");
+
+            config.frequenz = 1.4;
+            config.speed = 120;
+            config.radius = 28;
+            config.magnitude = 8;
+            config.waveDepth = 0.01;
+
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.elementsNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
+        }
+    }
+
+    else if(emotion === "joy"){
+        if(next === false){
+            next = true;
+
+            config.frequenz = 0.5;
+            config.speed = 100;
+            config.magnitude = 8;
+            config.waveDepth = 0.01;
+
+            let radius = config.radius;
+            let tweenRad = new TWEEN.Tween(radius)
+                .to(30)
+                .delay(300)
+                .onUpdate(function(){
+                    config.radius = radius;
+                });
+            tweenRad.start();
+
+            let frequenz = config.frequenz;
+            let tweenFreq = new TWEEN.Tween(frequenz)
+                .to(0.3)
+                .delay(300)
+                .onUpdate(function(){
+                    config.frequenz = frequenz;
+                });
+            tweenFreq.start();
+
+            let waveDepth = config.waveDepth;
+            let tweenWave = new TWEEN.Tween(waveDepth)
+                .to(0.015)
+                .delay(300)
+                .onUpdate(function(){
+                    config.waveDepth = waveDepth;
+                });
+            tweenWave.start();
+
+            let position = { x : 0, y: 3 };
+            let tween = new TWEEN.Tween(position)
+                .to({x: 0, y: -0.6, rotation: 0}, 1000)
+                // .delay(300)
+                .easing(TWEEN.Easing.Elastic.In)
+                .onUpdate(function(){
+                    mesh.position.x = position.x;
+                    mesh.position.y = position.y;
+                });
+            tween.start();
+
 
             mesh.geometry.computeVertexNormals();
             mesh.geometry.computeFaceNormals();
@@ -315,6 +362,79 @@ function handleEmotions(emotion){
 
         if(config.frequenz > 0.7){
             config.frequenz -=0.01;
+        }
+    }
+
+    if(emotion === "angry"){
+        if(next === false){
+            next = true;
+            console.log("angry");
+
+            let radius = config.radius;
+            let tweenRad = new TWEEN.Tween(radius)
+                .to(24)
+                .delay(300)
+                .onUpdate(function(){
+                    config.radius = radius;
+                });
+            tweenRad.start();
+
+            let frequenz = config.frequenz;
+            let tweenFreq = new TWEEN.Tween(frequenz)
+                .to(0.3)
+                .delay(300)
+                .onUpdate(function(){
+                    config.frequenz = frequenz;
+                });
+            tweenFreq.start();
+
+            let waveDepth = config.waveDepth;
+            let tweenWave = new TWEEN.Tween(waveDepth)
+                .to(0.015)
+                .delay(300)
+                .onUpdate(function(){
+                    config.waveDepth = waveDepth;
+                });
+            tweenWave.start();
+
+            let position = { x : 0, y: 3 };
+            let tween = new TWEEN.Tween(position)
+                .to({x: -1, y: -1, rotation: 0}, 1000)
+                // .delay(300)
+                .easing(TWEEN.Easing.Elastic.In)
+                .onUpdate(function(){
+                    mesh.position.x = position.x;
+                    mesh.position.y = position.y;
+                });
+            tween.start();
+
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.elementsNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
+        }
+    }
+
+    if(emotion === "sad"){
+        if(next === false){
+            next = true;
+            config.frequenz = 1;
+
+            let waveDepth = config.waveDepth;
+            let tweenWave = new TWEEN.Tween(waveDepth)
+                .to(0.08)
+                .delay(300)
+                .onUpdate(function(){
+                    config.waveDepth = waveDepth;
+                });
+            tweenWave.start();
+
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.elementsNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
         }
     }
 }
