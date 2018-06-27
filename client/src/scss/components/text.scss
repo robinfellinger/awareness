@@ -36,11 +36,15 @@
   &-md {
     font-family: "Roboto Mono", sans-serif;
     color: $text-main;
-    font-size: calc(#{$f-xs} + 0.6rem);
-    letter-spacing: 3px;
+    font-size: calc(#{$f-xs} + 0.9rem);
+    letter-spacing: 4px;
     line-height: 1.7;
     font-weight: 600;
     //text-transform: uppercase;
+    @media screen and (max-width: 1440px) {
+      font-size: calc(#{$f-xs} + 0.6rem);
+      letter-spacing: 3px;
+    }
   }
   &-sm {
     font-family: "Montserrat", sans-serif;
@@ -53,11 +57,14 @@
   &-button {
     font-family: "Roboto Mono", sans-serif;
     color: $button-start;
-    font-size: calc(#{$f-xs} + 0.6rem);
+    font-size: calc(#{$f-xs} + 0.9rem);
     letter-spacing: 3px;
     line-height: 1.4;
     font-weight: 600;
     text-transform: uppercase !important;
+    @media screen and (max-width: 1440px) {
+      font-size: calc(#{$f-xs} + 0.6rem);
+    }
   }
 }
 

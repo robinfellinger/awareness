@@ -10,7 +10,7 @@ class StartInfo extends Component {
             headlinexlClasses: "",
             headlinelgClasses: "",
             name: "Leo",
-            names: ["Chrisi", "Michi", "Alex", "Leo", "Max"],
+            names: ["Chrisi", "Michi", "Alex", "Max", "Andi", "Leo"],
             i: 0,
         }
 

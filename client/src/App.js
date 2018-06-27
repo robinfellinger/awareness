@@ -65,11 +65,11 @@ class App extends Component {
 
 
         setTimeout(() => {
-           // if(!this.state.once){
+           if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
-           // }
+           }
         }, 1000 / 30 )
 
 
@@ -85,14 +85,15 @@ class App extends Component {
         var small = document.getElementsByClassName("startCircle-small")[0];
 
         if(svg && startAnimSvg && small){
-        // if(!svg.classList.contains("startCircleSvg")){
+
             svg.classList.add("startCircleSvg-hover");
             startAnimSvg.classList.add("startAnimSvg-small");
             small.classList.add("startCircle-small-anim");
             setTimeout(() => {
                 svg.classList.remove("startCircleSvg-hover");
+                small.classList.remove("startCircle-small-anim");
             }, 2500 )
-        // }else {
+
         //     svg.classList.remove("startCircleSvg");
         //     // svg.classList.add("circleSvg");console.log("STARTCIRCLE")
         //
@@ -180,11 +181,11 @@ class App extends Component {
                 onClick={() => this.toggleExperience()}
                 ></div>
                 <div className="animWholeButton">
-                <svg height="50" width="50" className={"startAnimSvg"}>
-                    <circle id="" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill="transparent" />
+                <svg height="70" width="70" className={"startAnimSvg"}>
+                    <circle id="" cx="19" cy="19" r="16" stroke="black" stroke-width="2" fill="transparent" />
                 </svg>
-                <svg height="50" width="50" className={"startAnimSvg"}>
-                    <circle className="startCircleSvg circleSvg" cx="16" cy="16" r="14" stroke="red" stroke-width="2" fill="transparent" />
+                <svg height="70" width="70" className={"startAnimSvg"}>
+                    <circle className="startCircleSvg circleSvg" cx="19" cy="19" r="16" stroke="red" stroke-width="2" fill="transparent" />
                 </svg>
                 <button className={"button-basic startCircle text-sm t-transform-lowercase text-button"}>
                     <div className={"startCircle-small"}></div>

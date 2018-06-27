@@ -17,7 +17,8 @@
     margin-left: -3%;
     color: white;
     letter-spacing: 3px;
-    font-size: $f-xs;
+
+    font-size: 1.2rem;
     border: inherit;
 
     cursor: pointer;
@@ -26,6 +27,12 @@
     background: linear-gradient(18.83deg, #4F4F4F 13.67%, #333333 262.91%), #333333;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.11);
     border-radius: 1px;
+
+    @media screen and (max-width: 1440px) {
+      font-size: $f-xs;
+    }
+
+
 
   }
   &-startAnim {
