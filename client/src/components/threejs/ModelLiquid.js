@@ -244,23 +244,13 @@ function mousemove() {
             // mesh.rotation.x -= 0.05 * (mousePosX * -1);
             // mesh.rotation.y += 0.05 * (mousePosY * -1);
         }, 100);
-        if(mousePosX < 0 && mousePosY < 0){
 
-
-
-        }
         if(mousePosX < 0 && mousePosY > 0){
           //  console.log("links unten");
             mouseTimer++;
         }
-        if(mousePosX > 0 && mousePosY > 0){
-         //   console.log("rechts unten");
-            mouseTimer++;
-        }
         if(mousePosX > 0 && mousePosY < 0){
          //   console.log("rechts oben");
-
-            //console.log("links unten");
             mouseTimer++;
         }
         if(mousePosX > 0 && mousePosY > 0){
@@ -287,80 +277,73 @@ function wakov(){
 }
 function handleEmotions(emotion){
 
-    // console.log(emotion);
     if(emotion === "neutral"){
-        if(next === false){
-            next = true;
 
-            config.frequenz = 1.4;
-            config.speed = 120;
-            config.radius = 28;
-            config.magnitude = 8;
-            config.waveDepth = 0.01;
-
-            mesh.geometry.computeVertexNormals();
-            mesh.geometry.computeFaceNormals();
-            mesh.geometry.verticesNeedUpdate = true;
-            mesh.geometry.elementsNeedUpdate = true;
-            mesh.geometry.normalsNeedUpdate = true;
+        config.frequenz = 1.4;
+        if(config.frequenz > 1.4){
+            config.frequenz -= 0.01;
+        }else if(config.frequenz < 1.4){
+            config.frequenz += 0.01;
         }
+
+        if(config.waveDepth > 0.01){
+            config.waveDepth -= 0.001;
+        }else if(config.waveDepth < 0.01){
+            config.waveDepth += 0.001;
+        }
+        config.speed = 120;
+        config.radius = 28;
+        config.magnitude = 8;
+
+        mesh.rotation.y=0;
+        mesh.rotation.x=0;
+
     }
 
     else if(emotion === "joy"){
 
+        config.frequenz = 0.5;
+        config.speed = 100;
+        config.magnitude = 8;
+        config.waveDepth = 0.01;
 
-            next = true;
+        let radius = config.radius;
+        let tweenRad = new TWEEN.Tween(radius)
+            .to(30)
+            .delay(300)
+            .onUpdate(function(){
+                config.radius = radius;
+            });
+        tweenRad.start();
 
-            config.frequenz = 0.5;
-            config.speed = 100;
-            config.magnitude = 8;
-            config.waveDepth = 0.01;
+        let frequenz = config.frequenz;
+        let tweenFreq = new TWEEN.Tween(frequenz)
+            .to(0.3)
+            .delay(300)
+            .onUpdate(function(){
+                config.frequenz = frequenz;
+            });
+        tweenFreq.start();
 
-            let radius = config.radius;
-            let tweenRad = new TWEEN.Tween(radius)
-                .to(30)
-                .delay(300)
-                .onUpdate(function(){
-                    config.radius = radius;
-                });
-            tweenRad.start();
+        let waveDepth = config.waveDepth;
+        let tweenWave = new TWEEN.Tween(waveDepth)
+            .to(0.015)
+            .delay(300)
+            .onUpdate(function(){
+                config.waveDepth = waveDepth;
+            });
+        tweenWave.start();
 
-            let frequenz = config.frequenz;
-            let tweenFreq = new TWEEN.Tween(frequenz)
-                .to(0.3)
-                .delay(300)
-                .onUpdate(function(){
-                    config.frequenz = frequenz;
-                });
-            tweenFreq.start();
-
-            let waveDepth = config.waveDepth;
-            let tweenWave = new TWEEN.Tween(waveDepth)
-                .to(0.015)
-                .delay(300)
-                .onUpdate(function(){
-                    config.waveDepth = waveDepth;
-                });
-            tweenWave.start();
-
-            let position = { x : 0, y: 3 };
-            let tween = new TWEEN.Tween(position)
-                .to({x: 0, y: -0.6, rotation: 0}, 1000)
-                // .delay(300)
-                .easing(TWEEN.Easing.Elastic.In)
-                .onUpdate(function(){
-                    mesh.position.x = position.x;
-                    mesh.position.y = position.y;
-                });
-            tween.start();
-
-
-            mesh.geometry.computeVertexNormals();
-            mesh.geometry.computeFaceNormals();
-            mesh.geometry.verticesNeedUpdate = true;
-            mesh.geometry.elementsNeedUpdate = true;
-            mesh.geometry.normalsNeedUpdate = true;
-
+        let position = { x : 0, y: 3 };
+        let tween = new TWEEN.Tween(position)
+            .to({x: 0, y: -0.6, rotation: 0}, 1000)
+            // .delay(300)
+            .easing(TWEEN.Easing.Elastic.In)
+            .onUpdate(function(){
+                mesh.position.x = position.x;
+                mesh.position.y = position.y;
+            });
+        tween.start();
 
         if(config.frequenz > 0.7){
             config.frequenz -=0.01;
@@ -368,77 +351,39 @@ function handleEmotions(emotion){
     }
 
     if(emotion === "angry"){
+        config.waveDepth = 0.015;
+        config.speed = 100;
 
-        if(next === false){
-            next = true;
-            console.log("angry");
+        let radius = config.radius;
+        let tweenRad = new TWEEN.Tween(radius)
+            .to(24)
+            .delay(300)
+            .onUpdate(function(){
+                config.radius = radius;
+            });
+        tweenRad.start();
 
-            let radius = config.radius;
-            let tweenRad = new TWEEN.Tween(radius)
-                .to(24)
-                .delay(300)
-                .onUpdate(function(){
-                    config.radius = radius;
-                });
-            tweenRad.start();
+        if(config.frequenz > 0.7){
+            config.frequenz -=0.01;
+        }
 
-            let frequenz = config.frequenz;
-            let tweenFreq = new TWEEN.Tween(frequenz)
-                .to(0.3)
-                .delay(300)
-                .onUpdate(function(){
-                    config.frequenz = frequenz;
-                });
-            tweenFreq.start();
-
-            let waveDepth = config.waveDepth;
-            let tweenWave = new TWEEN.Tween(waveDepth)
-                .to(0.015)
-                .delay(300)
-                .onUpdate(function(){
-                    config.waveDepth = waveDepth;
-                });
-            tweenWave.start();
-
-            let position = { x : 0, y: 3 };
-            let tween = new TWEEN.Tween(position)
-                .to({x: -1, y: -1, rotation: 0}, 1000)
-                // .delay(300)
-                .easing(TWEEN.Easing.Elastic.In)
-                .onUpdate(function(){
-                    mesh.position.x = position.x;
-                    mesh.position.y = position.y;
-                });
-            tween.start();
-
-            mesh.geometry.computeVertexNormals();
-            mesh.geometry.computeFaceNormals();
-            mesh.geometry.verticesNeedUpdate = true;
-            mesh.geometry.elementsNeedUpdate = true;
-            mesh.geometry.normalsNeedUpdate = true;
+        if( mesh.rotation.x < 0.8){
+            mesh.rotation.x +=0.01;
         }
     }
 
     if(emotion === "sad"){
+        config.frequenz = 1.7;
+        config.waveDepth = 0.025;
 
+        if(config.frequenz < 1.7){
+            config.frequenz +=0.01;
+        }
 
-            next = true;
-            config.frequenz = 1;
+        if( mesh.rotation.y < 0.5){
+            mesh.rotation.y +=0.01;
+        }
 
-            let waveDepth = config.waveDepth;
-            let tweenWave = new TWEEN.Tween(waveDepth)
-                .to(0.08)
-                .delay(300)
-                .onUpdate(function(){
-                    config.waveDepth = waveDepth;
-                });
-            tweenWave.start();
-
-            mesh.geometry.computeVertexNormals();
-            mesh.geometry.computeFaceNormals();
-            mesh.geometry.verticesNeedUpdate = true;
-            mesh.geometry.elementsNeedUpdate = true;
-            mesh.geometry.normalsNeedUpdate = true;
 
     }
 }
