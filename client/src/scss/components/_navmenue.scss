@@ -21,6 +21,7 @@
         transition: all .1s;
         background: none;
         border: none;
+        outline: none;
         position: relative;
         cursor: pointer;
 
@@ -33,28 +34,28 @@
     }
 
     &:hover {
-        //color: $color-black;
+        color: $color-black;
         font-weight: 700;
         letter-spacing: 2.8px;
     }
 
-    // &:nth-of-type(1):hover ~ .underbar{
-    //     left: -1rem;
-    //     width: 6rem;
-    // }
-    // &:nth-of-type(2):hover ~ .underbar{
-    //     left: 6rem;
-    //     width: 11rem;
-    //   }
-    //   &:nth-of-type(3):hover ~ .underbar{
-    //     left: 18rem;
-    //     width: 13rem;
-    //   }
+    &:nth-of-type(1):hover ~ .underbar{
+        left: -1rem !important;
+        width: 6rem !important;
+    }
+    &:nth-of-type(2):hover ~ .underbar{
+        left: 6rem !important;
+        width: 11rem !important;
+      }
+      &:nth-of-type(3):hover ~ .underbar{
+        left: 18rem !important;
+        width: 13rem !important;
+      }
 
-    //   &:nth-of-type(4):hover ~ .underbar{
-    //     left: 32rem;
-    //     width: 9rem;
-    //   }
+      &:nth-of-type(4):hover ~ .underbar{
+        left: 32rem !important;
+        width: 9rem !important;
+      }
 }
 
 .underbar{
