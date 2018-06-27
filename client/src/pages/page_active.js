@@ -27,10 +27,11 @@ class Page_active extends Component {
 
     render(){
         return(
+
             /* <SectionBlack title={"Title der section"} content={}>*/
             <div className="container-aktiv2" style={{width: this.state.widthS, height: this.state.heightS}}>
                 <section className="aktivPage" style={{width: this.state.widthS, height: this.state.heightS}}>
-                    <h2 className="header__aktiv"> Weiterführende Links </h2>
+                    <h2 className="header__aktiv"> WEITERFÜHRENDE LINKS </h2>
 
                         <div className={"pos-absolute accesslinks__line-pos"}>
 
@@ -40,15 +41,14 @@ class Page_active extends Component {
 
                             {
                                 data.glossar.map((dynamicT, i) =>
-                                    <section className="aktiv">
+                                <section className="aktiv">
+                                <div className="aktiv__circle"></div> <div class="lineV"></div>
                                         <b className="aktiv_name" >{dynamicT.organisation} <hr className="aktiv_line" style={{backgroundColor: "#2F80ED", border: "none", width: "20px", height: "1px", marginTop: "10px"}}></hr> <div className="aktiv_ort"> {dynamicT.ort}</div></b>
                                         <div className="aktiv_description" > {dynamicT.beschreibung}</div>
+                                        <a className="aktiv_link" target="_blank" href={dynamicT.link}> {dynamicT.link} </a>
 
-                                        <a className="aktiv_link" target="_blank" href={dynamicT.link}> Hier </a>
-                                    </section>
+                                </section>
                                 )
-
-
                             }
                         </div>
 
