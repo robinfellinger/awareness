@@ -10,14 +10,15 @@ import ScrollAnimation from 'react-animate-on-scroll';
 class Page_glossary extends Component {
 
     constructor(props){
-        super()
+        super();
         this.state = { widthS: 200, heightS: 200};
-        this.toggleDes = this.toggleDes.bind(this)
+        this.toggleDes = this.toggleDes.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
     }
 
     toggleDes (id) {
-        this.setState({ show: !this.state.show})
+        this.setState({ show: !this.state.show});
         const tryIt = document.getElementById(id);
 
         console.log(tryIt);
@@ -29,8 +30,6 @@ class Page_glossary extends Component {
             tryIt.parentNode.nextElementSibling.style.display = "none";
             tryIt.style.transform = "rotate(0deg)";
         }
-
-
     }
 
 

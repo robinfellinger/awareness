@@ -205,7 +205,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 .typed-fade-out { opacity: 0; transition: opacity .25s; -webkit-animation: 0; animation: 0; }
 
 /*werdeaktiv*/
-.container-glossar2 { display: grid; align-content: center; overflow-y: scroll; padding-bottom: 31vh; padding-top: 245px; opacity: 0.97; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F9F9F9; box-shadow: 0 0 20px 7px #717171; }
+.container-glossar2 { overflow-x: hidden !important; display: grid; align-content: center; overflow-y: scroll; padding-bottom: 31vh; padding-top: 245px; opacity: 0.97; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F9F9F9; box-shadow: 0 0 20px 7px #717171; }
 
 #einzug2 { padding-bottom: 50px; padding-top: 80px; }
 
@@ -243,7 +243,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 
 
 
-.container-aktiv2 { display: grid; align-content: center; overflow-y: scroll; padding-bottom: 31vh; padding-top: 245px; opacity: 0.97; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F9F9F9; box-shadow: 0 0 20px 7px #717171; }
+.container-aktiv2 { overflow-x: hidden !important; display: grid; align-content: center; overflow-y: scroll; padding-bottom: 31vh; padding-top: 245px; opacity: 0.97; justify-items: center; text-align: center; color: black; display: grid; position: absolute; z-index: 30; height: 600px; width: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F9F9F9; box-shadow: 0 0 20px 7px #717171; }
 
 .header__aktiv { letter-spacing: 9px; text-align: left; padding-left: 11rem; padding-top: 30rem; color: #4f4f4f; font-family: "Arial", sans-serif; font-size: 5.7rem; font-weight: 700; margin-bottom: 3rem; }
 
