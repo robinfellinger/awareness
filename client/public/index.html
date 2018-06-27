@@ -67,17 +67,10 @@
 
     <script>
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
-
       function animateValue(name, duration, end) {
         var current = 0;
+        var end = $(name).html().replace('%', '');
+        console.log(end);
         var range = end - current;
         var increment = 1; //further tweak for duration change
         var stepTime = Math.abs(Math.floor(duration / range));

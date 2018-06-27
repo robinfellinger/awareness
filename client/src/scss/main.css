@@ -4,7 +4,6 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Archivo+Narrow");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i");
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: inherit; }
 
 html { box-sizing: border-box; font-size: 62.5%; }
@@ -132,7 +131,6 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html { 
 /*LIBRE BASKERVILLE*/
 /*MONTSERRAT*/
 /*ARCHIVO NARROW*/
-/*ROBOTO MONO*/
 /*///////////////////////////////////////////////////////////////////////
 /////// DEFINE VARIABLES HERE */
 /*MAIN-COLORS*/
@@ -215,7 +213,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 .startCircle { height: 25px; width: 25px; /* border: 1.5px solid white; */ border-radius: 50%; left: 0; right: 0; top: 38vh; position: absolute; margin: auto; transition: 0.3s ease-out; }
 .startCircle p { left: 41px; top: 3px; position: absolute; }
 .startCircle-small { height: 9px; width: 9px; left: 7px; top: 7px; background-color: #363638; border-radius: 50%; position: absolute; /* border: 1px solid white; */ box-shadow: 0px 1px 5px #8b8b8b; }
-.startCircle-small-anim { transition: 0.3s ease-out; animation: animLilCircle 2s forwards; }
+.startCircle-small-anim { transition: 0.3s ease-out; animation: animLilCircle 0.2s linear; }
 
 .startButtonListener { position: absolute; width: 103px; height: 40px; margin-top: 37vh; left: 48.5%; z-index: 130; cursor: pointer; }
 
