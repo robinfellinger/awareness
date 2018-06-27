@@ -27,19 +27,17 @@ class Interaction extends Component {
     }
 
     myCallback = (dataFromChild) => {
-        this.state.chat.push({'answer': null, 'question':dataFromChild});
-        this.state.finished = true;
+            this.state.chat.push({'answer': null, 'question':dataFromChild});
+            this.state.finished = true;
     };
 
     update(pid, id, em,  answer, question){
         this.setState({IDTest: id});
-
         if(em) {
             this.setState({emotion: em[0]});
-            this.props.callbackFromParent(em[0]);
+            console.log(this.state.emotion);
         }else{
             this.setState({emotion: "neutral"});
-            this.props.callbackFromParent("neutral");
         }
 
         if(this.state.chat.length !== 0 && this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
@@ -50,10 +48,19 @@ class Interaction extends Component {
             this.state.finished = true;
         }
 
+
         console.log(pid)
         console.log(pid == 30 || pid == 29 || pid === 31);
         this.answers.push(pid);
         if(pid == 30 || pid == 29 || pid == 31) this.writeData(this.answers);
+    }
+
+    
+    updateStat(answer, question){
+
+            this.state.chat.push({'answer': answer, 'question':question});
+            this.state.finished = true;
+        
     }
 
     componentDidUpdate(){
@@ -86,6 +93,7 @@ class Interaction extends Component {
     }
 
     readData(){
+        this.setState({model: 'end'});
        this.database.once('value', s => {
            if(s.val()){
              console.log(s.val());
@@ -103,7 +111,15 @@ class Interaction extends Component {
 
     percentage(){
         console.log('percentage');
-        this.statLookup(18, 'andere toilette');
+        this.statLookup(18, 'haben gefragt, warum ich nicht einfach eine andere Toilette nehme');
+        this.statLookup(17, 'verständnisvoll');
+        this.statLookup(5, 'verärgert');
+
+        this.statLookup(18, 'haben gesagt, warum ich nicht einfach eine andere Toilette nehme');
+        this.statLookup(17, 'wollten wissen, ');
+        this.statLookup(5, 'verärgert');
+
+        this.statLookup(18, 'haben gefragt, warum ich nicht einfach eine andere Toilette nehme');
         this.statLookup(17, 'verständnisvoll');
         this.statLookup(5, 'verärgert');
         this.setState({mode: "end"})
@@ -119,12 +135,11 @@ class Interaction extends Component {
            if (id == val) match = true;
        }
        if (match){
-          this.statText = `Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`;
+          this.statText.push(`Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen ${text}`);
        }
     }
     componentDidMount(){
         this.readData();
-
     }
 
     render(){
@@ -161,7 +176,11 @@ class Interaction extends Component {
                             </p>
                             )
                             :null
-                        }</div>
+                        }
+                        {this.state.mode == 'end'  && <button  className={"interaction-button text-sm"}
+                                         onClick={() => this.updateStat(null,this.statText[this.statIndex])}>Weiter</button>}
+                        </div>
+
                         </div>
                     )
             }
