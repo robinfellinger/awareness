@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import ue1 from "./glossarUE1.json";
 import ue2 from "./glossarUE2.json";
-import ScrollAnimation from 'react-animate-on-scroll';
+
 
 
 class Page_glossary extends Component {
