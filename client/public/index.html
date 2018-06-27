@@ -69,8 +69,6 @@
 
       function animateValue(name, duration, end) {
         var current = 0;
-        var end = $(name).html().replace('%', '');
-        console.log(end);
         var range = end - current;
         var increment = 1; //further tweak for duration change
         var stepTime = Math.abs(Math.floor(duration / range));
