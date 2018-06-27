@@ -80,13 +80,18 @@ class App extends Component {
     startStartButtonAnimation(){
 
         var startButton = document.getElementsByClassName("button-startAnim")[0];
-        var svg = document.getElementsByClassName("circleSvg")[0];console.log(svg);
-        if(svg){
+        var svg = document.getElementsByClassName("circleSvg")[0];
+        var startAnimSvg = document.getElementsByClassName("startAnimSvg")[1];
+        var small = document.getElementsByClassName("startCircle-small")[0];
+
+        if(svg && startAnimSvg && small){
         // if(!svg.classList.contains("startCircleSvg")){
-            svg.classList.add("startCircleSvg");
+            svg.classList.add("startCircleSvg-hover");
+            startAnimSvg.classList.add("startAnimSvg-small");
+            small.classList.add("startCircle-small-anim");
             setTimeout(() => {
-                svg.classList.remove("startCircleSvg");
-            }, 3000 )
+                svg.classList.remove("startCircleSvg-hover");
+            }, 2500 )
         // }else {
         //     svg.classList.remove("startCircleSvg");
         //     // svg.classList.add("circleSvg");console.log("STARTCIRCLE")
@@ -177,16 +182,16 @@ class App extends Component {
                 onMouseLeave={() => this.startLeaveStartButtonAnimation()}
                 onClick={() => this.toggleExperience()}
                 ></div>
-
+                <div className="animWholeButton">
                 <svg height="40" width="40" className={"startAnimSvg"}>
-                    <circle id="" cx="16" cy="16" r="14" stroke="black" stroke-width="3" fill="transparent" />
+                    <circle id="" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill="transparent" />
                 </svg>
                 <svg height="40" width="40" className={"startAnimSvg"}>
-                    <circle className="startCircleSvg circleSvg" cx="16" cy="16" r="14" stroke="red" stroke-width="3" fill="transparent" />
+                    <circle className="startCircleSvg circleSvg" cx="16" cy="16" r="14" stroke="red" stroke-width="2" fill="transparent" />
                 </svg>
                 <button className={"button-basic startCircle text-sm t-transform-lowercase text-button"}>
                     <div className={"startCircle-small"}></div>
-                    <p>start</p></button>
+                    <p>start</p></button></div>
             </div>
             {/*imports the three.js model (maybe commented out for better performance)*/}
             <div className="pos-absolute gradient-shadow"></div>
