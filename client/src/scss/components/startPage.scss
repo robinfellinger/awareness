@@ -1,8 +1,8 @@
 .startInfo {
   &-intro{
     &-textindent{
-      margin-top: 1%;
-    //  margin-left: 34%;
+      margin-top: 3%;
+      margin-left: 3%;
     }
   &_pos {
     right: 4.8%;
@@ -13,9 +13,9 @@
   }}
   &_pos {
 
-    top: 16vh;
+    top: 18vh;
     position: absolute;
-    margin-left: 9vh;
+    margin-left: 6vh;
     height: 20vh;
     width: 55%;
     z-index: 20;
@@ -32,23 +32,85 @@
   }
 }
 
-
 .startCircle {
 
-  height: 75px;
-  width: 75px;
+  height: 25px;
+  width: 25px;
   /* border: 1.5px solid white; */
   border-radius: 50%;
-  background-color: #fff;
   left: 0;
   right: 0;
   top: 38vh;
   position: absolute;
   margin: auto;
   transition:  0.3s ease-out;
+  border: 3px solid $button-start;
 
+  & p {
+    left: 37px;
+    top: 7px;
+    position: absolute;
+  }
+  &-small {
+    height: 9px;
+    width: 9px;
+    left: 7px;
+    top: 7px;
+    background-color: $button-start;
+    border-radius: 50%;
+    position: absolute;
+    /* border: 1px solid white; */
+    box-shadow: 0px 1px 5px #8b8b8b;
+  }
   &:hover {
     height: 70px;
     width: 70px;
+  }
+}
+.startButtonListener {
+  position: absolute;
+  //background-color: rgba(255, 99, 71, 0.31);
+  width: 103px;
+  height: 40px;
+  margin-top: 51.5vh;
+  left: 52.1%;
+  z-index: 90;
+  cursor: pointer;
+
+}
+
+.startButtonHoverAnimation{
+  -webkit-animation: hoverTransformation 0.5s forwards;
+  -o-animation: hoverTransformation 0.5s forwards;
+  animation: hoverTransformation 0.5s forwards;
+  border: #8de6ff solid !important;
+}
+.startButtonHoverAnimationLeave{
+  -webkit-animation: hoverTransformationLeave 0.5s forwards;
+  -o-animation: hoverTransformationLeave 0.5s forwards;
+  animation: hoverTransformationLeave 0.5s forwards;
+}
+
+/* START ANIMATIONS */
+@keyframes hoverTransformation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+
+  }
+}
+
+@keyframes hoverTransformationLeave {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

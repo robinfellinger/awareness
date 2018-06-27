@@ -73,28 +73,23 @@ class AccessLinks extends Component {
         console.log(firstTime);
 
         if (firstTime.length >= 0 && firstTime[0]) {
-           // firstTime[0].style.display = "none";
            firstTime[0].remove();
         }
 
         if (firstTime2.length >= 0 && firstTime2[0]) {
-            // firstTime[0].style.display = "none";
             firstTime2[0].remove();
          }
 
          
         if (body.length >= 0 && body[0]) {
-            // firstTime[0].style.display = "none";
             body[0].className = '';
          }
 
          if (active.length >= 0 && active[0]) {
-            // firstTime[0].style.display = "none";
             active[0].classList.remove("active");
          }
 
          if (stats.length >= 0 && stats[0]) {
-            // firstTime[0].style.display = "none";
             stats[0].className = 'container-statistics';
             stats[0].style = '';
          }
@@ -148,7 +143,7 @@ class AccessLinks extends Component {
                             strokeWidth="3px" stroke="white"/>
                     </svg>
                     <div className={"accesslinks_pos"}>
-                           <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.showChat()}>chat</button>
+                        <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.showChat()}>chat</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} id={"getActive"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>

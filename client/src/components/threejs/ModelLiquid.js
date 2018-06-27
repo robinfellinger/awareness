@@ -250,15 +250,25 @@ function mousemove() {
 
         }
         if(mousePosX < 0 && mousePosY > 0){
-            console.log("links unten");
+          //  console.log("links unten");
             mouseTimer++;
         }
         if(mousePosX > 0 && mousePosY > 0){
-            console.log("rechts unten");
+         //   console.log("rechts unten");
             mouseTimer++;
         }
         if(mousePosX > 0 && mousePosY < 0){
-            console.log("rechts oben");
+         //   console.log("rechts oben");
+
+            //console.log("links unten");
+            mouseTimer++;
+        }
+        if(mousePosX > 0 && mousePosY > 0){
+            //console.log("rechts unten");
+            mouseTimer++;
+        }
+        if(mousePosX > 0 && mousePosY < 0){
+            //console.log("rechts oben");
             mouseTimer++;
         }
     };
@@ -267,7 +277,7 @@ mousemove();
 function wakov(){
       if(Math.floor(Math.random()< 0.01)){
                 if(tRot > 1.5){
-                    tRot = 0;
+                    tRot = 0.3;
                 }else{
                     tRot += Math.floor(Math.random() * .1) + 0.25;
 
@@ -277,10 +287,10 @@ function wakov(){
 }
 function handleEmotions(emotion){
     if(emotion === "anger"){
-        console.log("anger")
+        //console.log("anger")
     }
     if(emotion === "joy"){
-        console.log("joy")
+        //console.log("joy")
         if(next === false){
             next = true;
             // setTimeout(function () {

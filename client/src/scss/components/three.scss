@@ -7,6 +7,8 @@
     transition: filter 2s cubic-bezier(0.1, 0.7, 1.0, 0.1);
     -webkit-transition : -webkit-filter 500ms linear;
     filter: blur(0.3px);
+    //filter: contrast(1.05);
+
     //filter: brightness(0.8) contrast(1.8) opacity(1) saturate(1.6);
     //filter: brightness(0.95) contrast(1.3) opacity(1) saturate(1) blur(0.1px);
 
