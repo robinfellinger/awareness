@@ -11,18 +11,45 @@ class Page_active extends Component {
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
+tryingTest(){
+    let test = document.getElementsByClassName("aktiv_description");
+    for(let i = 0; i < test.length; i++) {
+        console.log(test[i]);
+        let noo = test[i].getBoundingClientRect();
+        console.log(noo.top);
+        if(noo.top < 900){
+            test[i].style.transform = "translateY(-25rem);";
+            test[i].style.opacity = "1";
+            test[i].style.transition = "2s";
+            test[i].style.transitionDelay = "0.5s";
+            test[i].dataAos = "fade-up"
+        }
+    }
+}
+
+
+
+
+
     componentDidMount() {
         this.updateWindowDimensions();
+      //  this.tryingTest();
         window.addEventListener("resize", this.updateWindowDimensions.bind(this));
+
     }
 
     componentWillMount() {
+
         window.removeEventListener("resize", this.updateWindowDimensions.bind(this));
+
     }
 
     updateWindowDimensions() {
+
         this.setState({ widthS: window.innerWidth, heightS: window.innerHeight+5 });
     }
+
+
 
 
     render(){
@@ -48,6 +75,7 @@ class Page_active extends Component {
                                         <a className="aktiv_link" target="_blank" href={dynamicT.link}> {dynamicT.link} </a>
 
                                 </section>
+
                                 )
                             }
                         </div>
@@ -55,6 +83,11 @@ class Page_active extends Component {
                    </section>
             </div>
         );
+
+
     }
+
+
 }
+
 export default Page_active;
