@@ -16,7 +16,7 @@ class Interaction extends Component {
             mode: "standard"
         };
         this.update = this.update.bind(this);
-        this.writeData = this.writeData.bind(this);
+        //this.writeData = this.writeData.bind(this);
         this.app = firebase.initializeApp(DB_CONFIG);
         this.database = this.app.database().ref('/question/');
         this.answers = [];
@@ -30,7 +30,7 @@ class Interaction extends Component {
             this.state.finished = true;
     };
 
-    update(id, em,  answer, question, pid){
+    update(pid, id, em,  answer, question){
         this.setState({IDTest: id});
         if(em) {
             this.setState({emotion: em[0]});
@@ -47,11 +47,10 @@ class Interaction extends Component {
             this.state.finished = true;
         }
 
-        console.log(pid);
+        console.log(pid)
+        console.log(pid == 30 || pid == 29 || pid === 31);
         this.answers.push(pid);
-        if(this.index === 9) this.writeData(this.answers);
-
-
+        if(pid == 30 || pid == 29 || pid == 31) this.writeData(this.answers);
     }
 
     componentDidUpdate(){
@@ -100,11 +99,12 @@ class Interaction extends Component {
     }
 
     percentage(){
-        console.log(this.stats);
+        console.log('percentage');
         this.statLookup(18, 'andere toilette');
         this.statLookup(17, 'verständnisvoll');
         this.statLookup(5, 'verärgert');
         this.setState({mode: "end"})
+        console.log(this.statText);
     }
 
     statLookup(id, text){
@@ -118,6 +118,9 @@ class Interaction extends Component {
        if (match){
           this.statText = `Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`;
        }
+    }
+    componentDidMount(){
+        this.readData();
     }
 
     render(){
@@ -140,10 +143,8 @@ class Interaction extends Component {
                                         {said.question !== null && <p className={"chat-q text-sm"}>{said.question}</p>}
                                         {said.answer !== null &&<p className={"chat-a text-sm"}>{said.answer}</p>}
                                     </div>)
-
                                 }
                             </div>
-
                             <div className={"grid-item2"}>
                             {(typeof(question.links)==='object')?
                             question.links.map((subrowdata)=>
@@ -151,10 +152,9 @@ class Interaction extends Component {
                             <p className={"interaction-answer"}>
                                 {question.name === this.state.IDTest &&
                                 <button  className={"interaction-button text-sm"}
-                                         onClick={() => this.update(subrowdata.link, question.tags, subrowdata.name, question.text.split("\n\n")[0])}>{subrowdata.name}</button>
+                                         onClick={() => this.update(subrowdata.pid, subrowdata.link, question.tags, subrowdata.name, question.text.split("\n\n")[0])}>{subrowdata.name}</button>
                                 }
                             </p>
-
                             )
                             :null
                         }</div>
