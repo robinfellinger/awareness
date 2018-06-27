@@ -51,7 +51,7 @@
   }
   &-button {
     font-family: "Roboto Mono", sans-serif;
-    color: #007fe1;
+    color: $button-start;
     font-size: calc(#{$f-xs} + 0.4rem);
     letter-spacing: 3px;
     line-height: 1.4;

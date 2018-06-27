@@ -250,15 +250,15 @@ function mousemove() {
 
         }
         if(mousePosX < 0 && mousePosY > 0){
-            console.log("links unten");
+          //  console.log("links unten");
             mouseTimer++;
         }
         if(mousePosX > 0 && mousePosY > 0){
-            console.log("rechts unten");
+         //   console.log("rechts unten");
             mouseTimer++;
         }
         if(mousePosX > 0 && mousePosY < 0){
-            console.log("rechts oben");
+         //   console.log("rechts oben");
             mouseTimer++;
         }
     };

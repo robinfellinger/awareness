@@ -3,7 +3,7 @@ import data from "./text.json";
 import Type from "./type.js";
 import firebase from 'firebase';
 import {DB_CONFIG} from '../Config';
-import admin from 'firebase-admin';
+// import admin from 'firebase-admin';
 import { isNull } from 'util';
 
 class Interaction extends Component {
