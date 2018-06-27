@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import data from "./glossar.json";
-import final from "./glossar3.json";
-// import { Column, Row } from 'simple-flexbox';
+
 import { Link } from 'react-router-dom';
 
 import ue1 from "./glossarUE1.json";
 import ue2 from "./glossarUE2.json";
-
-
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 class Page_glossary extends Component {
@@ -61,38 +58,118 @@ class Page_glossary extends Component {
 
                 <div class="container-glossar2" style={{width: this.state.widthS, height: this.state.heightS}}>
                     <section className="glossarPage" style={{width: this.state.widthS, height: this.state.heightS}}>
-                    <h2 class="header__titel"> <span class="header__titel--highlight"></span></h2>
+
+        <h2 className="header__glossar"> GLOSSAR </h2>
 
 
-    <section className="glossarHeader" data-index="1">
-
-            { console.log(this.state.heightS)}
-
-        <h2 className="header__glossar"> Glossar </h2>
-
-        </section>
         <div className={"pos-absolute accesslinks__line-pos"}>
 
             </div>
 
                            <div id="einzug2">
                                <div  className="glossary4">
-                                   <div className="glossar_ue"> TRANSKULTUR </div>
-                                   <div className="glossar_ueDes">das ist jetzt eine probe das ist jetzt eine probe das ist jetzt eine probe das ist jetzt eine probe das ist jetzt eine probe das ist jetzt eine probe das ist jetzt eine probe </div>
+                                   <div className="glossar_ueT"> TRANSGENDER </div>
+                                   <div className="glossar_ueDesT">Transgender Menschen, überschreiten die sozialen Geschlechtsgrenzen (Gender). Ein  Geschlechtswechsel innerhalb des binären Geschlchtsmodells (Mann oder Frau) kann temporär aber auch permanent sein. Es kann aber auch bedeuten, dass eine Person sich in beiden Geschlechtern oder mit keinem der beiden Geschlechter identifiziert. </div>
 
 
-                                   <section className="glossar_test">
+                                   <section className="glossar_testT">
                                                {
-                                                   ue1.UE1.map((dynamicT, i) =>
+                                                   ue1.Transgender.map((dynamicT, i) =>
 
-                                                   <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}> {dynamicT.word} </b>
+                                                   <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
                                                    <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
 
 
                                                    )
                                                }
 
+
                                    </section>
+
+
+
+                                   <div className="glossar_ueG"> GESCHLECHT & GENDER </div>
+
+                                   <div className="glossar_ueDesG">In der englischen Sprache wird seit Jahrhunderten zwischen biologischem Geschlecht (Sex) und grammatischem Geschlecht (Gender) unterschieden. Gender bezeichnet die Geschlechtsidentität sowie die Geschlechterrollen und mit Sex das biologische Geschlecht. </div>
+
+
+                                   <section className="glossar_testG">
+                                       {
+                                           ue1.Geschlecht.map((dynamicT, i) =>
+
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a>  {dynamicT.word} </b>
+                                                   <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
+
+
+                                           )
+                                       }
+
+
+                                   </section>
+
+
+                                   <div className="glossar_ueA"> ÄUßERES ERSCHEINUNGSBILD </div>
+
+                                   <div className="glossar_ueDesA">Auch die äußere Erscheinung eines Menschen gehört zur Körpersprache und stellt damit einen Teilbereich der nonverbalen Kommunikation dar. Dazu gehören sämtliche Unterkategorien wie Kleidung, Abzeichen, Schmuck, Körperbau, Haar und Haut. </div>
+
+
+                                   <section className="glossar_testA">
+                                       {
+                                           ue1.Erscheinungsbild.map((dynamicT, i) =>
+
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
+                                                   <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
+
+
+                                           )
+                                       }
+
+
+                                   </section>
+
+
+
+                                   <div className="glossar_ueL"> LSBTQI* </div>
+
+                                   <div className="glossar_ueDesL">Ist die Abkürzung für Lesben, Schwule, Bisexuelle, Trans*, Queer und Inter*. Auch bekannt unter LGBTQI* - Lesbian, Gay, Bi*, Trans*, Queer, Inter*.</div>
+
+
+                                   <section className="glossar_testL">
+                                       {
+                                           ue1.LSBTQI.map((dynamicT, i) =>
+
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
+                                                   <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
+
+
+                                           )
+                                       }
+
+
+                                   </section>
+
+
+
+
+                                   <div className="glossar_ueE"> EINFLÜSSE DES UMFELDES </div>
+
+                                   <div className="glossar_ueDesE">Einflüsse, die aus dem sozialen Umfeld heraus (vor allem aus der Kernfamilie) auf die Entwicklung und Ausprägung der betroffenen Psyche einwirken können.</div>
+
+
+                                   <section className="glossar_testE">
+                                       {
+                                           ue1.Einfluesse.map((dynamicT, i) =>
+
+                                               <div className="glossar_box"><b className="glossary__glossarWord4" style={{order: dynamicT.id}}><a name={dynamicT.word}></a> {dynamicT.word} </b>
+                                                   <div className="glossary__glossarDescription4" style={{order: dynamicT.id}}> {dynamicT.description} </div></div>
+
+
+                                           )
+                                       }
+
+
+                                   </section>
+
 
                                </div>
                          </div>
