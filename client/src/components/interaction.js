@@ -3,8 +3,6 @@ import data from "./text.json";
 import Type from "./type.js";
 import firebase from 'firebase';
 import {DB_CONFIG} from '../Config';
-import admin from 'firebase-admin';
-import { isNull } from 'util';
 
 class Interaction extends Component {
 
@@ -13,17 +11,20 @@ class Interaction extends Component {
         this.state = {
             IDTest: "Start",
             emotion: "neutral",
-            mode: "standard"
+            mode: "standard",
+            index: 0
         }
         this.updateID = this.updateID.bind(this);
         this.writeData = this.writeData.bind(this);
+       // this.updateStat = this.updateStat.bind(this);
 
         this.app = firebase.initializeApp(DB_CONFIG);
         this.database = this.app.database().ref('/question/');
         this.answers = [];
         this.index = 0;
         this.stats = {};
-        this.statText;
+        this.statText = [];
+        this.statIndex = 0;
     }
 
     componentDidMount(){
@@ -38,9 +39,9 @@ class Interaction extends Component {
         }else{
             this.setState({emotion: "neutral"});
         }
-        console.log(this.index++);
+        console.log(pid);
         this.answers.push(pid);
-        if(this.index === 9) this.writeData(this.answers);
+        if(pid == 23 || pid == 16 || pid == 24) this.writeData(this.answers);
     }
 
      writeData(answers){
@@ -61,7 +62,7 @@ class Interaction extends Component {
         }
         console.log(updates);
         updates['count'] = this.stats['count'] + 1;
-        this.database.update(updates); 
+        this.database.update(updates);
         this.percentage();
      }
 
@@ -86,20 +87,28 @@ class Interaction extends Component {
          this.statLookup(18, 'andere toilette');
          this.statLookup(17, 'verständnisvoll');
          this.statLookup(5, 'verärgert');
-         this.setState({mode: "end"})
+
+         this.statText.push('sabhduas');
+
+
+         this.setState({mode: "end2"})
      }
 
      statLookup(id, text){
-         console.log(this.answers[3])
-        console.log(id);
         let match = false;
         for (let val of this.answers){
-            console.log(val)
             if (id == val) match = true;
         }
         if (match){
-           this.statText = `Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`;
+           this.statText.push(`Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`);
         }
+     }
+     updateStat(){
+        this.setState({index: 1});
+        
+        //this.setState({mode: 'end'});
+        console.log(this.state.index)
+        //if (this.statIndex > 1){}
      }
 
     render(){
@@ -137,15 +146,17 @@ class Interaction extends Component {
         }else if(this.state.mode === 'end'){
             return (
                 <div className={"interaction"}>
-    
                     {data.passages
                         .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
                         .map((question) =>
-    
-                            <div className={"interaction-question t-italic"} key={question.pid}>
-                                    {<Type strings={[this.statText ]}/>}
+                            <div className={"interaction-question t-italic"}>
                                     
-                            </div>
+                                    {this.statText[this.state.index]}
+                                    <button  className={"interaction-button text-sm col-sm-8"}
+                                                 onClick={() => {
+                                                     this.updateStat();
+                                                    }}>Weiter</button>
+                                                               </div>
                         )
                 }
                 </div>
