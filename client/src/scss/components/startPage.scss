@@ -77,8 +77,10 @@
 }
 .startAnimSvg {
   margin-top: 37.6vh;
-  margin-left: -1.1%;
+  margin-left: -16px;
   z-index: 90;
+  //box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.22);
+
   position: absolute;
 }
 .startButtonHoverAnimation{
@@ -123,15 +125,16 @@
 .startCircleSvg {
 
   stroke-dasharray: 100;
-  animation: dash 3.3s linear forwards;
+  animation: dash 6.3s linear forwards;
 }
 @keyframes dash {
   from {
     stroke-dashoffset: 100;
+    //transform: scale(1);
 
   }
   to {
-    stroke-dashoffset: 300;
-
+    stroke-dashoffset: 500;
+    //transform: scale(0.4);
   }
 }

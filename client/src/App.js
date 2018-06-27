@@ -80,16 +80,18 @@ class App extends Component {
     startStartButtonAnimation(){
 
         var startButton = document.getElementsByClassName("button-startAnim")[0];
-        var svg = document.getElementsByClassName("startCircleSvg")[0];console.log(svg);
+        var svg = document.getElementsByClassName("circleSvg")[0];console.log(svg);
         if(svg){
-        if(!svg.classList.contains("circleSvg")){
-            svg.classList.add("circleSvg");
-            // svg.classList.remove("")
-        }else {
-            svg.classList.remove("circleSvg");
-            // svg.classList.add("circleSvg");console.log("STARTCIRCLE")
-
-            }
+        // if(!svg.classList.contains("startCircleSvg")){
+            svg.classList.add("startCircleSvg");
+            setTimeout(() => {
+                svg.classList.remove("startCircleSvg");
+            }, 3000 )
+        // }else {
+        //     svg.classList.remove("startCircleSvg");
+        //     // svg.classList.add("circleSvg");console.log("STARTCIRCLE")
+        //
+        //     }
         }
 
 
