@@ -66,6 +66,7 @@
 
 
     <script>
+
       function animateValue(name, duration, end) {
         var current = 0;
         var range = end - current;
@@ -73,6 +74,7 @@
         var stepTime = Math.abs(Math.floor(duration / range));
         var obj = $(name);
         var timer = setInterval(request, stepTime);
+        
         function request() {
           clearInterval(timer);
           current += increment;
@@ -81,6 +83,7 @@
             clearInterval(timer);
             return;
           }
+          
           stepTime = stepTime - stepTime / 100;
           timer = setInterval(request, stepTime);
         }

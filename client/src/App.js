@@ -40,6 +40,8 @@ class App extends Component {
 
 
     }
+
+
     wakov(){
 
         if(Math.floor(Math.random()< 0.01)){
@@ -65,11 +67,13 @@ class App extends Component {
 
 
         setTimeout(() => {
+
            if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
            }
+
         }, 1000 / 30 )
 
 
@@ -127,9 +131,13 @@ class App extends Component {
         var button = document.getElementsByClassName("pos-centerText")[0];
         button.style.display = "none";
         this.setState({bounceFrequence: 800});
-        this.setState({emotion: "joy"});
 
     }
+
+    //CALLBACK INTERACTION
+    myCallback = (dataFromChild) => {
+        this.setState({emotion: dataFromChild});
+    };
 
 
     scrollExperience(event){
@@ -151,6 +159,8 @@ class App extends Component {
     }
 
 
+
+
     render() {
         const { color } = this.state;
         return (
@@ -165,7 +175,7 @@ class App extends Component {
 
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction_pos"}>
-                <Interaction></Interaction>
+                <Interaction callbackFromParent={this.myCallback}></Interaction>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION
                    
                     <button onClick={() => this.toggleStatisticPage()}>TO STATISTIC PAGE</button>
@@ -210,7 +220,7 @@ class App extends Component {
                     </PerspectiveCamera>
                 </TestScene>
             </div>
-           {/*<div id="noise"></div>*/}
+           <div id="noise"></div>
            <div className="contrast-gradient"></div>
             <div className="rectangle-gradient">
                 <img src={glow} alt="glow_rectangle"/>

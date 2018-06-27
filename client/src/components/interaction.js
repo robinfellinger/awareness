@@ -27,17 +27,19 @@ class Interaction extends Component {
     }
 
     myCallback = (dataFromChild) => {
-            this.state.chat.push({'answer': null, 'question':dataFromChild});
-            this.state.finished = true;
+        this.state.chat.push({'answer': null, 'question':dataFromChild});
+        this.state.finished = true;
     };
 
     update(pid, id, em,  answer, question){
         this.setState({IDTest: id});
+
         if(em) {
             this.setState({emotion: em[0]});
-            console.log(this.state.emotion);
+            this.props.callbackFromParent(em[0]);
         }else{
             this.setState({emotion: "neutral"});
+            this.props.callbackFromParent("neutral");
         }
 
         if(this.state.chat.length !== 0 && this.state.chat[this.state.chat.length-1].answer === null && this.state.chat[this.state.chat.length-1].question !== null){
@@ -122,6 +124,7 @@ class Interaction extends Component {
     }
     componentDidMount(){
         this.readData();
+
     }
 
     render(){
