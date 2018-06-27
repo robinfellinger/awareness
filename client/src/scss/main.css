@@ -303,7 +303,7 @@ $f-xl: 4.6rem; //16 * 4.6 = 73,6px
 
 
 
-.header__aktiv { letter-spacing: 5px; text-align: left; padding-left: 11rem; padding-top: 30rem; color: #4f4f4f; font-family: "Actor" sans-serif; font-size: 6.4rem; font-weight: 300; letter-spacing: 0.702rem; margin-bottom: 3rem; }
+.header__aktiv { letter-spacing: 6px; text-align: left; padding-left: 11rem; padding-top: 30rem; color: #4f4f4f; font-family: "Actor" sans-serif; font-size: 6.4rem; font-weight: 300; letter-spacing: 0.702rem; margin-bottom: 3rem; }
 
 .aktiv { width: 100vw; display: grid; grid-template-rows: repeat(minmax(0.5px, 0.5vh)); grid-template-columns: 0.5fr 0.4fr 0.3fr 2.1fr 1.9fr; font-family: "Montserrat",sans-serif; }
 .aktiv:hover > .aktiv__circle { width: 25px; height: 25px; }
