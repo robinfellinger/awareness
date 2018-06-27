@@ -12,7 +12,8 @@ class Interaction extends Component {
         super(props);
         this.state = {
             IDTest: "Start",
-            emotion: "neutral"
+            emotion: "neutral",
+            mode: "standard"
         }
         this.updateID = this.updateID.bind(this);
         this.writeData = this.writeData.bind(this);
@@ -22,12 +23,11 @@ class Interaction extends Component {
         this.answers = [];
         this.index = 0;
         this.stats = {};
+        this.statText;
     }
 
     componentDidMount(){
-
         this.readData();
-
     }
 
     updateID(id, em, pid){
@@ -47,8 +47,6 @@ class Interaction extends Component {
          console.log('write data');
          let updates = {};
          let val;
-         let k;
- //        var users = [];
         for (let i = 0; i < answers.length; i++){
             console.log('i  ' + i + ' y    ' + answers[i])
             console.log(this.stats);
@@ -88,6 +86,7 @@ class Interaction extends Component {
          this.statLookup(18, 'andere toilette');
          this.statLookup(17, 'verständnisvoll');
          this.statLookup(5, 'verärgert');
+         this.setState({mode: "end"})
      }
 
      statLookup(id, text){
@@ -99,11 +98,13 @@ class Interaction extends Component {
             if (id == val) match = true;
         }
         if (match){
-            console.log(`Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`);
+           this.statText = `Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`;
         }
      }
 
     render(){
+
+        if(this.state.mode === 'standard') {
             return (
             <div className={"interaction"}>
 
@@ -117,7 +118,6 @@ class Interaction extends Component {
                                 <div className={"answers interaction-flex"}>{
                                     (typeof(question.links)==='object')?
                                     question.links.map((subrowdata)=>
-
                                     <p className={"interaction-answer"}>
                                         {question.name === this.state.IDTest &&
                                         <button  className={"interaction-button text-sm col-sm-8"}
@@ -126,16 +126,32 @@ class Interaction extends Component {
                                                     }}>{subrowdata.name}</button>
                                         }
                                     </p>
-
                                     )
                                     :null
                                 }</div>
                         </div>
                     )
-
             }
             </div>
         )
+        }else if(this.state.mode === 'end'){
+            return (
+                <div className={"interaction"}>
+    
+                    {data.passages
+                        .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
+                        .map((question) =>
+    
+                            <div className={"interaction-question t-italic"} key={question.pid}>
+                                    {<Type strings={[this.statText ]}/>}
+                                    
+                            </div>
+                        )
+                }
+                </div>
+            )
+
+        }
     };
 
 }
