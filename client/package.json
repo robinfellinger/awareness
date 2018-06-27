@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "engines": {
-    "node": "8.11.2",
+    "node": "8.11.1",
     "npm": "5.6.0"
   },
   "private": true,
@@ -21,6 +21,7 @@
     "orbit-controls-es6": "^1.0.12",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.3.2",
     "react-easy-chart": "^1.0.0",
     "react-router": "^4.2.0",
@@ -32,8 +33,7 @@
     "scss": "^0.2.4",
     "simple-flexbox": "^1.2.0",
     "three": "^0.92.0",
-    "typed.js": "^2.0.6",
-    "webpack": "^3.11.0"
+    "typed.js": "^2.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,6 +47,7 @@
     "css-loader": "^0.28.11",
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0"
   }
 }
