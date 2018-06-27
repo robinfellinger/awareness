@@ -65,11 +65,11 @@ class App extends Component {
 
 
         setTimeout(() => {
-            // if(!this.state.once){
+            if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
-            // }
+            }
         }, 1000 / 30 )
 
 

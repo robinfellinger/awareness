@@ -52,21 +52,21 @@ body, .onepage-wrapper, html {
 .onepage-pagination li a:before{
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(0,0,0,0.85);
+  width: 8px;
+  height: 8px;
+  background: rgb(239, 239, 239);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
 }
 
 .onepage-pagination li a.active:before{
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   background: none;
-  border: 1px solid black;
+  border: 1px solid #eeebf7;
   margin-top: -4px;
-  left: 8px;
+  left: 6px;
 }
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
