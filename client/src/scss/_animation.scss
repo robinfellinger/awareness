@@ -1,0 +1,45 @@
+.fade1 {
+    opacity: 0;
+    transition: 2s;    
+    transition-delay: 0.5s;
+}
+
+.fade2 {
+    opacity: 0;
+    transition: 2s;
+    transition-delay: 0.75s;    
+}
+.fade3 {
+    opacity: 0;
+    transition: 2s;
+    transition-delay: 1s;    
+}
+.fade4 {
+    opacity: 0;
+    transition: 2s;
+    transition-delay: 1.25s;    
+}
+
+.fade5 {
+    opacity: 0;
+    transition: 2s;
+    transition-delay: 2.25s;    
+}
+
+.fadeBottom {
+    transform: translateY(25rem);
+}
+
+.fadeLeft {
+    transform: translateX(-25rem);
+}
+
+.fadeRight {
+    transform: translateX(25rem);
+}
+
+
+.fadeA {
+    opacity: 1;
+    transform: translate(0, 0);
+}

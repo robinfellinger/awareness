@@ -13,6 +13,41 @@
  * License: GPL v3
  *
  * ========================================================== */
+
+function infoAnimation() {
+	let bodily = document.getElementsByTagName("body");
+	let elements;
+	console.log(bodily);
+	if (bodily[0]) {
+		if (bodily[0].classList.contains("viewing-page-1")) {
+			elements = document.getElementsByClassName("info_page_1");
+		} else if (bodily[0].classList.contains("viewing-page-2")) {
+			elements = document.getElementsByClassName("info_page_2");
+		} else if (bodily[0].classList.contains("viewing-page-3")) {
+			elements = document.getElementsByClassName("info_page_3");
+		} else if (bodily[0].classList.contains("viewing-page-4")) {
+			elements = document.getElementsByClassName("info_page_4");
+		} else if (bodily[0].classList.contains("viewing-page-5")) {
+			elements = document.getElementsByClassName("info_page_5");
+		} else if (bodily[0].classList.contains("viewing-page-6")) {
+			elements = document.getElementsByClassName("info_page_6");
+		} else if (bodily[0].classList.contains("viewing-page-7")) {
+			elements = document.getElementsByClassName("info_page_7");
+		} else if (bodily[0].classList.contains("viewing-page-8")) {
+			elements = document.getElementsByClassName("info_page_8");
+		}
+
+		if (elements.length >= 0 && elements != undefined && elements[0]) {
+			for (let i = 0; i < elements.length; i++) {
+				if (elements[i] && elements[i] != undefined) {
+					elements[i].classList.add("fadeA");
+				}
+			}
+		}
+
+	}
+}
+
 	
 function onePageScroll(element, options) {
   
@@ -105,7 +140,8 @@ function onePageScroll(element, options) {
     
   	// }else{
   	  _addClass(document.querySelector(settings.sectionContainer + "[data-index='1']"), "active");
-  	  _addClass(body, "viewing-page-1");
+			_addClass(body, "viewing-page-1");
+			infoAnimation();
   		if(settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a[data-index='1']"), "active");
   	// }
     
@@ -407,6 +443,7 @@ function onePageScroll(element, options) {
 
 		body.className = body.className.replace(/\bviewing-page-\d.*?\b/g, '');
 		_addClass(body, "viewing-page-"+ next_index);
+		infoAnimation();
 
 		if (history.replaceState && settings.updateURL == true) {
 			var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (parseInt(index) + 1);
@@ -447,6 +484,8 @@ function onePageScroll(element, options) {
 		}
 		body.className = body.className.replace(/\bviewing-page-\d.*?\b/g, '');
 		_addClass(body, "viewing-page-"+ next_index);
+		infoAnimation();
+
 
 		if (history.replaceState && settings.updateURL == true) {
 			var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (parseInt(index) - 1);
@@ -475,6 +514,7 @@ function onePageScroll(element, options) {
 
 			body.className = body.className.replace(/\bviewing-page-\d.*?\b/g, '');
 			_addClass(body, "viewing-page-"+ next_index);
+			infoAnimation();
 
 			pos = ((page_index - 1) * 12.5) * -1;
 
