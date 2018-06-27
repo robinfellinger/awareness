@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Page_statistics from "../pages/page_statistics"
-import Page_active from "../pages/page_active"
-import Page_glossar from "../pages/page_glossary"
+import PageStatistics from "../pages/page_statistics"
+import PageActive from "../pages/page_active"
+import PageGlossar from "../pages/page_glossary"
 class AccessLinks extends Component {
     constructor(){
         super();
@@ -16,8 +15,7 @@ class AccessLinks extends Component {
     showChat(){
         this.setState({showGlossarPage: false});
         this.setState({showActivePage: false});
-        this. disablePagination();
-        
+        this.disablePagination();
         this.setState({showStatisticPage: false});
         this.moveRope("6rem", "-1rem");
         this.colorNav("white");
@@ -70,7 +68,6 @@ class AccessLinks extends Component {
         let body = document.getElementsByTagName("body");
         let active = document.getElementsByTagName("active");
         let stats = document.getElementsByClassName("container-statistics");
-        console.log(firstTime);
 
         if (firstTime.length >= 0 && firstTime[0]) {
            // firstTime[0].style.display = "none";
@@ -102,7 +99,6 @@ class AccessLinks extends Component {
 
     moveRope(width, left) {
         let underbar = document.getElementsByClassName("underbar");
-        console.log(underbar);
         underbar[0].style.width = width;
         underbar[0].style.left = left;
         
@@ -126,23 +122,23 @@ class AccessLinks extends Component {
             <div>
               <div className={"container-statistics"}>
                     {this.state.showStatisticPage &&
-                        <Page_statistics></Page_statistics>
+                        <PageStatistics></PageStatistics>
                     }
                </div>
 
                  <div className={"container-active"}>
                     {this.state.showActivePage &&
-                        <Page_active></Page_active>
+                        <PageActive></PageActive>
                     }
                  </div>
 
                 <div className={"container-glossar"}>
                     {this.state.showGlossarPage &&
-                        <Page_glossar></Page_glossar>
+                        <PageGlossar></PageGlossar>
                     }
                  </div>
 
-                <div className={" pos-absolute accesslinks__line-pos"} style={{"z-index": "50"}}>
+                <div className={" pos-absolute accesslinks__line-pos"} style={{"zIndex": "50"}}>
                     <svg className="margin-line" width="100%" height="5">
                         <line className={"accesslinks__line"} x1="0" y1="0" x2="100%" y2="0"
                             strokeWidth="3px" stroke="white"/>
@@ -152,7 +148,7 @@ class AccessLinks extends Component {
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleStatisticPage()}>infopage</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} id={"getActive"} onClick={() => this.toggleActivePage()}>werde aktiv</button>
                         <button className={"btn-text text-sm a-sm a-startAnim"} onClick={() => this.toggleGlossarPage()}>glossar</button>
-                        <div class="underbar"></div>
+                        <div className={"underbar"}></div>
                     </div>
                 </div>
             </div>
