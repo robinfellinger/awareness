@@ -20,8 +20,8 @@ class Page_statistics extends Component {
             script2.innerHTML = 'onePageScroll(".container-statistics", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
             script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, ';
             script2.innerHTML += 'afterMove: function(index) {'
-            script2.innerHTML += 'if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 1500, 56); animateValue("#percent2", 2500, 78);animateValue("#percent3", 1500, 37); animateValue("#percent4", 2500, 60);}';
-            script2.innerHTML += 'if (document.getElementById("gewaltNumbers").classList.contains("active")) {animateValue("#percent5", 2000, 50);animateValue("#percent6", 1500, 34); animateValue("#percent7", 1500, 8);}';
+            script2.innerHTML += 'if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 2000, 56); animateValue("#percent2", 3000, 78);animateValue("#percent3", 2000, 37); animateValue("#percent4", 3000, 60);}';
+            script2.innerHTML += 'if (document.getElementById("gewaltNumbers").classList.contains("active")) {animateValue("#percent5", 2500, 50);animateValue("#percent6", 2000, 34); animateValue("#percent7", 2000, 8);}';
             script2.innerHTML += '}, loop: false, keyboard: true,  responsiveFallback: false      });';
             
             //afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}},
