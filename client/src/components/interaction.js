@@ -27,8 +27,8 @@ class Interaction extends Component {
     }
 
     myCallback = (dataFromChild) => {
-        this.state.chat.push({'answer': null, 'question':dataFromChild});
-        this.state.finished = true;
+            this.state.chat.push({'answer': null, 'question':dataFromChild});
+            this.state.finished = true;
     };
 
     update(pid, id, em,  answer, question){
