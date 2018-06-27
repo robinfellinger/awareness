@@ -9,6 +9,7 @@ import Model from "./components/threejs/Model"
 import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
 import glow from './img/rahmen_glow.png'
+
 //console.log(Model);
 class App extends Component {
 
@@ -173,6 +174,7 @@ class App extends Component {
 
             {this.state.startExperience &&
                 <div className={"pos-absolute interaction_pos"}>
+                    <div id={"chatboxdeko"}></div>
                 <Interaction callbackFromParent={this.myCallback}></Interaction>
                     {/*TODO: MOVE INTERACTION TO THREE.JS FOR BETTER COMMUNICATION
                    
@@ -211,7 +213,7 @@ class App extends Component {
                                        position={{x: 0, y: 0, z: 47}}>
                     <Model rotationSpeed={this.state.rotationSpeed}/>
                     <ModelLiquid rgbColors={this.state.rgbColors}
-                                 modelColor={this.state.color}
+                                 // modelColor={this.state.color}
                                  bounceFrequence={this.state.bounceFrequence}
                                  rotationSpeed={this.state.rotationSpeed}
                                  emotion={this.state.emotion}/>
