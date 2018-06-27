@@ -12,7 +12,8 @@ class Interaction extends Component {
         super(props);
         this.state = {
             IDTest: "Start",
-            emotion: "neutral"
+            emotion: "neutral",
+            mode: "standard"
         }
         this.updateID = this.updateID.bind(this);
         this.writeData = this.writeData.bind(this);
@@ -21,29 +22,12 @@ class Interaction extends Component {
         this.database = this.app.database().ref('/question/');
         this.answers = [];
         this.index = 0;
-        this.obj = {};
+        this.stats = {};
+        this.statText;
     }
 
     componentDidMount(){
-
-        this.database.once('value', s => {
-            if(s.val()){
-              console.log(s.val());
-              //this.snap.push(s.val());
-              this.obj = s.val();
-              while(s.val() == null){
-                this.obj = s.val();
-              }
-
-
-            } else {
-              console.log('/whatever/whateverProperty node does not exist!');
-            }
-          }, function(error) {
-            // The Promise was rejected.
-            console.log(error);
-          });
-
+        this.readData();
     }
 
     updateID(id, em, pid){
@@ -59,34 +43,68 @@ class Interaction extends Component {
         if(this.index === 9) this.writeData(this.answers);
     }
 
-    dataAccess(answers){
-        //this.readData(answers);
-        this.writeData(answers);
-    }
      writeData(answers){
          console.log('write data');
          let updates = {};
          let val;
-         let k;
- //        var users = [];
         for (let i = 0; i < answers.length; i++){
             console.log('i  ' + i + ' y    ' + answers[i])
-            console.log(this.obj);
-            if (i in this.obj[i] == null){
+            console.log(this.stats);
+            if (i in this.stats == null){
                 val = 1;
+                console.log('nan');
             }else{
-                val = this.obj[i][answers[i]] +1;
+                val = this.stats[answers[i]] +1;
             }
 
-        updates[i + '/' + answers[i]] = val;
+        updates[answers[i]] = val;
         }
         console.log(updates);
-        updates['count/'] = this.obj['count'] + 1;
+        updates['count'] = this.stats['count'] + 1;
         this.database.update(updates); 
+        this.percentage();
      }
 
+     readData(){
+        this.database.once('value', s => {
+            if(s.val()){
+              console.log(s.val());
+              this.stats = s.val();
+              while(s.val() == null){
+                this.stats = s.val();
+              }
+            } else {
+              console.log('/whatever/whateverProperty node does not exist!');
+            }
+          }, function(error) {
+            console.log(error);
+          });
+     }
+
+     percentage(){
+         console.log(this.stats);
+         this.statLookup(18, 'andere toilette');
+         this.statLookup(17, 'verständnisvoll');
+         this.statLookup(5, 'verärgert');
+         this.setState({mode: "end"})
+     }
+
+     statLookup(id, text){
+         console.log(this.answers[3])
+        console.log(id);
+        let match = false;
+        for (let val of this.answers){
+            console.log(val)
+            if (id == val) match = true;
+        }
+        if (match){
+           this.statText = `Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen: ${text}`;
+        }
+     }
 
     render(){
+
+        if(this.state.mode === 'standard') {
             return (
             <div className={"interaction"}>
 
@@ -100,7 +118,6 @@ class Interaction extends Component {
                                 <div className={"answers interaction-flex"}>{
                                     (typeof(question.links)==='object')?
                                     question.links.map((subrowdata)=>
-
                                     <p className={"interaction-answer"}>
                                         {question.name === this.state.IDTest &&
                                         <button  className={"interaction-button text-sm col-sm-8"}
@@ -109,16 +126,32 @@ class Interaction extends Component {
                                                     }}>{subrowdata.name}</button>
                                         }
                                     </p>
-
                                     )
                                     :null
                                 }</div>
                         </div>
                     )
-
             }
             </div>
         )
+        }else if(this.state.mode === 'end'){
+            return (
+                <div className={"interaction"}>
+    
+                    {data.passages
+                        .filter(function(data){return data.name === this.state.IDTest ? data : null}, this)
+                        .map((question) =>
+    
+                            <div className={"interaction-question t-italic"} key={question.pid}>
+                                    {<Type strings={[this.statText ]}/>}
+                                    
+                            </div>
+                        )
+                }
+                </div>
+            )
+
+        }
     };
 
 }

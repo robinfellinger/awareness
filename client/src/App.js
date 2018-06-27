@@ -9,7 +9,7 @@ import Model from "./components/threejs/Model"
 import ModelLiquid from "./components/threejs/ModelLiquid.js"
 import PerspectiveCamera from "./components/threejs/Camera";
 import glow from './img/rahmen_glow.png'
-console.log(Model);
+//console.log(Model);
 class App extends Component {
 
     constructor() {

@@ -259,6 +259,16 @@ function mousemove() {
         }
         if(mousePosX > 0 && mousePosY < 0){
          //   console.log("rechts oben");
+
+            //console.log("links unten");
+            mouseTimer++;
+        }
+        if(mousePosX > 0 && mousePosY > 0){
+            //console.log("rechts unten");
+            mouseTimer++;
+        }
+        if(mousePosX > 0 && mousePosY < 0){
+            //console.log("rechts oben");
             mouseTimer++;
         }
     };
@@ -277,10 +287,10 @@ function wakov(){
 }
 function handleEmotions(emotion){
     if(emotion === "anger"){
-        console.log("anger")
+        //console.log("anger")
     }
     if(emotion === "joy"){
-        console.log("joy")
+        //console.log("joy")
         if(next === false){
             next = true;
             // setTimeout(function () {

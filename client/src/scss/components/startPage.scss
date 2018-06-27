@@ -83,7 +83,7 @@
   -webkit-animation: hoverTransformation 0.5s forwards;
   -o-animation: hoverTransformation 0.5s forwards;
   animation: hoverTransformation 0.5s forwards;
-  border: #e5ff00 solid !important;
+  border: #8de6ff solid !important;
 }
 .startButtonHoverAnimationLeave{
   -webkit-animation: hoverTransformationLeave 0.5s forwards;
@@ -107,7 +107,7 @@
 @keyframes hoverTransformationLeave {
   0% {
     transform: scale(0.8);
-    opacity: 0.4;
+    opacity: 0.7;
   }
   100% {
     opacity: 1;

@@ -32,7 +32,8 @@
     "scss": "^0.2.4",
     "simple-flexbox": "^1.2.0",
     "three": "^0.92.0",
-    "typed.js": "^2.0.6"
+    "typed.js": "^2.0.6",
+    "webpack": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,7 +47,6 @@
     "css-loader": "^0.28.11",
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.6.0"
+    "style-loader": "^0.21.0"
   }
 }

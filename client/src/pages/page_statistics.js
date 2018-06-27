@@ -5,12 +5,12 @@ class Page_statistics extends Component {
 
     constructor(props){
         super(props);  
+        this.clickFunction = this.clickFunction.bind(this);
     }
 
     componentDidMount () {
 
         let firstTime = document.getElementsByClassName("onepage-pagination");
-        console.log(firstTime);
 
         if (firstTime.length <= 0) {
 
@@ -18,9 +18,10 @@ class Page_statistics extends Component {
             script2.classList.add("onePageScript");
 
             script2.innerHTML = 'onePageScroll(".container-statistics", {sectionContainer: "section", easing: "ease", animationTime: 1000, pagination: true,'
-            script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}';
-            script2.innerHTML += '}, loop: false, keyboard: true,  responsiveFallback: false      });';
+            script2.innerHTML += ' updateURL: false, beforeMove: function(index) {}, ';
+            script2.innerHTML += 'loop: false, keyboard: true,  responsiveFallback: false      });';
             
+            //afterMove: function(index) {if (document.getElementById("numbers").classList.contains("active")) {animateValue("#percent1", 500); animateValue("#percent2", 1000);animateValue("#percent3", 1500); animateValue("#percent4", 2000);}},
             script2.async = true;
 
             document.body.appendChild(script2);
@@ -28,7 +29,7 @@ class Page_statistics extends Component {
     }
 
     clickFunction() {
-        console.log("Hi34");
+        console.log("Funktioniert button?");
         document.getElementById("getActive").click();
     }
 
@@ -196,7 +197,7 @@ const SectionHelfen = (props) => {
 const SectionStats = (props) => {
     return (
         <section className="ops-section">
-        <p className="stats__content info-content">{props.text}</p>
+        <div className="stats__content info-content">{props.text}</div>
         </section>
     )
 }
@@ -204,7 +205,7 @@ const SectionStats = (props) => {
 const SectionGewalt = (props) => {
     return (
         <section className="ops-section">
-        <p className="gewalt__content info-content">{props.text}</p>
+        <div className="gewalt__content info-content">{props.text}</div>
         </section>
     )
 }
