@@ -48,7 +48,7 @@ class StartInfo extends Component {
                 {/*</svg>*/}
                 <h2 className={this.state.headlinexlClasses}><span className={""}>hi, ich bin {this.state.name}!</span></h2>
                 <h3 className={this.state.headlinelgClasses}>
-                    Alex ist eine experience die Dich mit dem Thema Transgender in Österreich vertraut machen möchte
+                    Diese Seite möchte Dich mit dem Thema Transgender in Österreich vertraut machen!
                     <button className={"button-gradient startInfo-gradientbutton"}>erfahre mehr</button>
                 </h3>
 

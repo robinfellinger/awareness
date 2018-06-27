@@ -133,7 +133,7 @@ class TestScene extends Component {
         extraFromAbove.rotation.z -= 20;
 
         let helper = new THREE.DirectionalLightHelper( lightFront, 15 );
-        scene.add(helper);
+       // scene.add(helper);
 
 
 
