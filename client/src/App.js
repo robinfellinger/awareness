@@ -180,10 +180,10 @@ class App extends Component {
                 onClick={() => this.toggleExperience()}
                 ></div>
                 <div className="animWholeButton">
-                <svg height="40" width="40" className={"startAnimSvg"}>
+                <svg height="50" width="50" className={"startAnimSvg"}>
                     <circle id="" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill="transparent" />
                 </svg>
-                <svg height="40" width="40" className={"startAnimSvg"}>
+                <svg height="50" width="50" className={"startAnimSvg"}>
                     <circle className="startCircleSvg circleSvg" cx="16" cy="16" r="14" stroke="red" stroke-width="2" fill="transparent" />
                 </svg>
                 <button className={"button-basic startCircle text-sm t-transform-lowercase text-button"}>

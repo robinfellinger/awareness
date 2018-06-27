@@ -4,7 +4,7 @@
     //font-weight: 400;
     font-family: "Archivo Narrow", serif;
     color: $headline-main;
-    font-size: calc(#{$f-xl} - 1.5rem);
+    font-size: calc(#{$f-xl} + 0.8rem);
     font-weight: 900;
     letter-spacing: 5.2px;
     line-height: 1;
@@ -12,7 +12,9 @@
     text-transform: uppercase;
     text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.04);
     animation:   headline-xl-toggle 5s forwards; /* IE 10+, Fx 29+ */
-
+    @media screen and (max-width: 1440px) {
+      font-size: calc(#{$f-xl} - 1.2rem);
+    }
     &-animBack {
       animation:   headline-xl-toggleBack 2.5s forwards; /* IE 10+, Fx 29+ */
     }
@@ -35,7 +37,7 @@
   &-md {
     font-family: "Roboto Mono", sans-serif;
     color: $text-main;
-    font-size: calc(#{$f-xs} + 0.3rem);
+    font-size: calc(#{$f-xs} + 0.6rem);
     letter-spacing: 3px;
     line-height: 1.7;
     font-weight: 600;
@@ -52,7 +54,7 @@
   &-button {
     font-family: "Roboto Mono", sans-serif;
     color: $button-start;
-    font-size: calc(#{$f-xs} + 0.4rem);
+    font-size: calc(#{$f-xs} + 0.6rem);
     letter-spacing: 3px;
     line-height: 1.4;
     font-weight: 600;
