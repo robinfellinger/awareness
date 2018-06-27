@@ -27,6 +27,7 @@ class App extends Component {
             rotationSpeed: 0,
             emotion: "none",
             once: false,
+            startCircleClasses: "circleSvg",
         };
 
         this.scrollExperience = this.scrollExperience.bind(this);
@@ -51,6 +52,9 @@ class App extends Component {
     componentDidMount() {
         this.gameLoop();
         window.addEventListener("resize", this.updateDimensions);
+        setTimeout(() => {
+            this.setState({startCircleClasses: "startCircleSvg circleSvg"});
+        }, 4000 )
     }
     gameLoop = () => {
         // const { rotationSpeed } = this.state;
@@ -61,29 +65,48 @@ class App extends Component {
 
 
         setTimeout(() => {
-            if(!this.state.once){
+            // if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
-            }
+            // }
         }, 1000 / 30 )
 
 
         // this.wakov();
     }
 
-
+//hover start button
     startStartButtonAnimation(){
+
         var startButton = document.getElementsByClassName("button-startAnim")[0];
-        console.log(startButton);
+        var svg = document.getElementsByClassName("startCircleSvg")[0];console.log(svg);
+        if(svg){
+        if(!svg.classList.contains("circleSvg")){
+            svg.classList.add("circleSvg");
+            // svg.classList.remove("")
+        }else {
+            svg.classList.remove("circleSvg");
+            // svg.classList.add("circleSvg");console.log("STARTCIRCLE")
+
+            }
+        }
+
+
+            // svg.classList.remove("startButtonHoverAnimationLeave"); }
+
+
+
+        if(startButton){
         startButton.classList.add("startButtonHoverAnimation");
-        startButton.classList.remove("startButtonHoverAnimationLeave");
+        startButton.classList.remove("startButtonHoverAnimationLeave"); }
     }
     startLeaveStartButtonAnimation(){
         var startButton = document.getElementsByClassName("button-startAnim")[0];
+        if(startButton){
         console.log(startButton);
         startButton.classList.add("startButtonHoverAnimationLeave");
-        startButton.classList.remove("startButtonHoverAnimation");
+        startButton.classList.remove("startButtonHoverAnimation");}
     }
 
 
@@ -152,7 +175,14 @@ class App extends Component {
                 onMouseLeave={() => this.startLeaveStartButtonAnimation()}
                 onClick={() => this.toggleExperience()}
                 ></div>
-                <button className={"button-basic startCircle text-sm t-transform-lowercase button-startAnim text-button"}>
+
+                <svg height="40" width="40" className={"startAnimSvg"}>
+                    <circle id="" cx="16" cy="16" r="14" stroke="black" stroke-width="3" fill="transparent" />
+                </svg>
+                <svg height="40" width="40" className={"startAnimSvg"}>
+                    <circle className="startCircleSvg circleSvg" cx="16" cy="16" r="14" stroke="red" stroke-width="3" fill="transparent" />
+                </svg>
+                <button className={"button-basic startCircle text-sm t-transform-lowercase text-button"}>
                     <div className={"startCircle-small"}></div>
                     <p>start</p></button>
             </div>

@@ -32,8 +32,8 @@ class StartInfo extends Component {
         this.returnClasses();
     }
     returnClasses(){
-        (this.props.start === false) ? this.setState({headlinexlClasses: "headline-xl "}) : this.setState({headlinexlClasses: "headline-xl headline-xl-animBack"});
-        (this.props.start === false) ? this.setState({headlinelgClasses: "text-md startInfo-intro-textindent"}) : this.setState({headlinelgClasses: "text-md startInfo-intro-textindent headline-lg-animBack"});
+        (this.props.start === false) ? this.setState({headlinexlClasses: "headline-xl startAnimHeadline"}) : this.setState({headlinexlClasses: "headline-xl headline-xl-animBack"});
+        (this.props.start === false) ? this.setState({headlinelgClasses: "text-md startInfo-intro-textindent startAnimInfoText"}) : this.setState({headlinelgClasses: "text-md startInfo-intro-textindent headline-lg-animBack"});
     }
 
 
