@@ -50,3 +50,6 @@ client/package.json
 client/yarn.lock
 client/yarn.lock
 client/src/main.css
+client/src/scss/main.css
+client/src/scss/main.css
+client/src/main.css
