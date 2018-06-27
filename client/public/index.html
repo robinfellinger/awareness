@@ -66,15 +66,15 @@
 
 
     <script>
-      function animateValue(name, duration) {
+
+      function animateValue(name, duration, end) {
         var current = 0;
-        var end = $(name).html().replace('%', '');
-        console.log(end);
         var range = end - current;
         var increment = 1; //further tweak for duration change
         var stepTime = Math.abs(Math.floor(duration / range));
         var obj = $(name);
         var timer = setInterval(request, stepTime);
+        
         function request() {
           clearInterval(timer);
           current += increment;
@@ -83,6 +83,7 @@
             clearInterval(timer);
             return;
           }
+          
           stepTime = stepTime - stepTime / 100;
           timer = setInterval(request, stepTime);
         }
