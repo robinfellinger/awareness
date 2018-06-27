@@ -286,10 +286,11 @@ function wakov(){
                 cRot+=(tRot-cRot)/100;
 }
 function handleEmotions(emotion){
+
+    // console.log(emotion);
     if(emotion === "neutral"){
         if(next === false){
             next = true;
-            console.log("neutral");
 
             config.frequenz = 1.4;
             config.speed = 120;
@@ -306,7 +307,8 @@ function handleEmotions(emotion){
     }
 
     else if(emotion === "joy"){
-        if(next === false){
+
+
             next = true;
 
             config.frequenz = 0.5;
@@ -358,7 +360,7 @@ function handleEmotions(emotion){
             mesh.geometry.verticesNeedUpdate = true;
             mesh.geometry.elementsNeedUpdate = true;
             mesh.geometry.normalsNeedUpdate = true;
-        }
+
 
         if(config.frequenz > 0.7){
             config.frequenz -=0.01;
@@ -366,6 +368,7 @@ function handleEmotions(emotion){
     }
 
     if(emotion === "angry"){
+
         if(next === false){
             next = true;
             console.log("angry");
@@ -417,7 +420,8 @@ function handleEmotions(emotion){
     }
 
     if(emotion === "sad"){
-        if(next === false){
+
+
             next = true;
             config.frequenz = 1;
 
@@ -435,7 +439,7 @@ function handleEmotions(emotion){
             mesh.geometry.verticesNeedUpdate = true;
             mesh.geometry.elementsNeedUpdate = true;
             mesh.geometry.normalsNeedUpdate = true;
-        }
+
     }
 }
 
