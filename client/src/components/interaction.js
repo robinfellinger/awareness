@@ -60,6 +60,12 @@ class Interaction extends Component {
 
             this.state.chat.push({'answer': answer, 'question':question});
             this.state.finished = true;
+            this.statIndex++;
+            console.log(this.statIndex  + '  ' + this.statText.length)
+            if (this.statIndex  == this.statText.length){
+                this.setState({mode: 'standard'});
+                console.log('state changed')
+            }
         
     }
 
@@ -69,6 +75,7 @@ class Interaction extends Component {
             elem.scrollTop = elem.scrollHeight;
             this.state.finished = false;
         }
+
     }
     writeData(answers){
         console.log('write data');
@@ -111,17 +118,16 @@ class Interaction extends Component {
 
     percentage(){
         console.log('percentage');
-        this.statLookup(18, 'haben gefragt, warum ich nicht einfach eine andere Toilette nehme');
-        this.statLookup(17, 'verständnisvoll');
-        this.statLookup(5, 'verärgert');
+        this.statLookup(5, 'Menschen haben gefragt, warum ich nicht einfach eine andere Toilette nehme');
+        this.statLookup(6, 'Menschen, zeigten sich verständnisvoll für meine Lage ');
+        this.statLookup(7, 'Menschen konnten es nicht fassen, dass ich heutzutage noch diskriminiert werde');
 
-        this.statLookup(18, 'haben gesagt, warum ich nicht einfach eine andere Toilette nehme');
-        this.statLookup(17, 'wollten wissen, ');
-        this.statLookup(5, 'verärgert');
+        this.statLookup(11, 'Leute meinten, dass Transgender sein oft nur eine Phase sei');
+        this.statLookup(10, 'Leute wollten wissen, ob ich mich wohler in der Rolle eines anderen Geschlechts fühle');
 
-        this.statLookup(18, 'haben gefragt, warum ich nicht einfach eine andere Toilette nehme');
-        this.statLookup(17, 'verständnisvoll');
-        this.statLookup(5, 'verärgert');
+        this.statLookup(29, 'Teilnehmer finden, dass dieses Thema wichtig sei');
+        this.statLookup(30, 'Teilnehmer finden, dass Transgender zu sein seltsam sei');
+        this.statLookup(31, 'Teilnehmer zeigten Interesse an der Thematik');
         this.setState({mode: "end"})
         console.log(this.statText);
     }
@@ -135,7 +141,7 @@ class Interaction extends Component {
            if (id == val) match = true;
        }
        if (match){
-          this.statText.push(`Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der Menschen ${text}`);
+          this.statText.push(`Du und ${Math.round(((this.stats[id] + 1) / (this.stats['count'] + 1)) * 100)} Prozent der ${text}`);
        }
     }
     componentDidMount(){
@@ -177,7 +183,7 @@ class Interaction extends Component {
                             )
                             :null
                         }
-                        {this.state.mode == 'end'  && <button  className={"interaction-button text-sm"}
+                        {this.state.mode == 'end' && <button  className={"interaction-button text-sm"}
                                          onClick={() => this.updateStat(null,this.statText[this.statIndex])}>Weiter</button>}
                         </div>
 
