@@ -91,7 +91,7 @@ function wakov(){
 
         // object3d.castShadow = true;
         plane.receiveShadow = true;
-        console.log("PLANE");
+      
         scene.add( plane );
 
     }
