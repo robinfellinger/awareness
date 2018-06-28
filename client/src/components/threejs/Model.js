@@ -436,7 +436,7 @@ class Model extends Component {
 
 }
 const render = () => {
-    console.log("animation");
+  
     requestAnimationFrame(render);
     this.loop();
 };

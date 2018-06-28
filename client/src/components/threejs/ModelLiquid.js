@@ -144,7 +144,7 @@ class Model extends Component {
         warpVector = new THREE.Vector3(0, 50, 0); //50
         warpVector2 = new THREE.Vector3(20, 120, 0);
 
-        console.log(warpVector);
+        
 "#FFC500"
         var light = new THREE.DirectionalLight( 0xFFFBEA, 0.1 );
         light.position.set( 30, 0, 10 );
@@ -157,7 +157,7 @@ class Model extends Component {
         this.bounce();
 
         if(this.props.emotion === "joy"){
-            console.log("JOYYYY");
+          
         }
 
     }
@@ -408,7 +408,7 @@ function handleEmotions(emotion){
 
 }
 const render = () => {
-    console.log("animation");
+   
     requestAnimationFrame(render);
     this.loop();
 };

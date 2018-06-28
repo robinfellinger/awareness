@@ -22,7 +22,7 @@ class Page_glossary extends Component {
         this.setState({ show: !this.state.show})
         const tryIt = document.getElementById(id);
 
-        console.log(tryIt);
+   
 
         if(tryIt.parentNode.nextElementSibling.style.display === "none"){
             tryIt.parentNode.nextElementSibling.style.display = "block";

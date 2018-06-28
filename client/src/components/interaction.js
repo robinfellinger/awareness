@@ -35,8 +35,7 @@ class Interaction extends Component {
         this.setState({IDTest: id});
         if(em) {
             this.setState({emotion: em[0]});
-            console.log(this.state.emotion);
-        }else{
+                    }else{
             this.setState({emotion: "neutral"});
         }
 
@@ -49,8 +48,7 @@ class Interaction extends Component {
         }
 
 
-        console.log(pid)
-        console.log(pid == 30 || pid == 29 || pid === 31);
+       
         this.answers.push(pid);
         if(pid == 30 || pid == 29 || pid == 31) this.writeData(this.answers);
     }
@@ -61,10 +59,10 @@ class Interaction extends Component {
             this.state.chat.push({'answer': answer, 'question':question});
             this.state.finished = true;
             this.statIndex++;
-            console.log(this.statIndex  + '  ' + this.statText.length)
+           // console.log(this.statIndex  + '  ' + this.statText.length)
             if (this.statIndex  == this.statText.length){
                 this.setState({mode: 'standard'});
-                console.log('state changed')
+               // console.log('state changed')
             }
         
     }
@@ -78,22 +76,22 @@ class Interaction extends Component {
 
     }
     writeData(answers){
-        console.log('write data');
+       // console.log('write data');
         let updates = {};
         let val;
        for (let i = 0; i < answers.length; i++){
-           console.log('i  ' + i + ' y    ' + answers[i])
-           console.log(this.stats);
+         //  console.log('i  ' + i + ' y    ' + answers[i])
+          // console.log(this.stats);
            if (i in this.stats == null){
                val = 1;
-               console.log('nan');
+              // console.log('nan');
            }else{
                val = this.stats[answers[i]] +1;
            }
 
        updates[answers[i]] = val;
        }
-       console.log(updates);
+      // console.log(updates);
        updates['count'] = this.stats['count'] + 1;
        this.database.update(updates); 
        this.percentage();
@@ -103,7 +101,7 @@ class Interaction extends Component {
         this.setState({model: 'end'});
        this.database.once('value', s => {
            if(s.val()){
-             console.log(s.val());
+       
              this.stats = s.val();
              while(s.val() == null){
                this.stats = s.val();
@@ -117,7 +115,7 @@ class Interaction extends Component {
     }
 
     percentage(){
-        console.log('percentage');
+    
         this.statLookup(5, 'Menschen haben gefragt, warum ich nicht einfach eine andere Toilette nehme');
         this.statLookup(6, 'Menschen, zeigten sich verständnisvoll für meine Lage ');
         this.statLookup(7, 'Menschen konnten es nicht fassen, dass ich heutzutage noch diskriminiert werde');
@@ -129,15 +127,14 @@ class Interaction extends Component {
         this.statLookup(30, 'Teilnehmer finden, dass Transgender zu sein seltsam sei');
         this.statLookup(31, 'Teilnehmer zeigten Interesse an der Thematik');
         this.setState({mode: "end"})
-        console.log(this.statText);
+       
     }
 
     statLookup(id, text){
-        console.log(this.answers[3])
-       console.log(id);
+  
        let match = false;
        for (let val of this.answers){
-           console.log(val)
+        
            if (id == val) match = true;
        }
        if (match){
