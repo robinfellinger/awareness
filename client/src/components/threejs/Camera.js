@@ -51,7 +51,7 @@ class PerspectiveCamera extends Component {
         this._render();
     }
     componentWillMount(){
-        console.log("CAMERA UPDATE");
+        
         this.updateThree(this.props);
         this._render();
     }

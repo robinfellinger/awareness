@@ -68,11 +68,11 @@ class App extends Component {
 
 
         setTimeout(() => {
-           if(!this.state.once){
+           //if(!this.state.once){
             requestAnimationFrame(this.gameLoop);
             this.setState({rotationSpeed: this.state.rotationSpeed});
             this.setState({once: true});
-           }
+           //}
         }, 1000 / 30 )
 
 
@@ -115,7 +115,7 @@ class App extends Component {
     startLeaveStartButtonAnimation(){
         var startButton = document.getElementsByClassName("button-startAnim")[0];
         if(startButton){
-        console.log(startButton);
+        //console.logconsole.log(startButton);
         startButton.classList.add("startButtonHoverAnimationLeave");
         startButton.classList.remove("startButtonHoverAnimation");}
     }

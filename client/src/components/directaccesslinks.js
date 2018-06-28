@@ -70,7 +70,7 @@ class AccessLinks extends Component {
         let body = document.getElementsByTagName("body");
         let active = document.getElementsByTagName("active");
         let stats = document.getElementsByClassName("container-statistics");
-        console.log(firstTime);
+        
 
         if (firstTime.length >= 0 && firstTime[0]) {
            firstTime[0].remove();
@@ -97,7 +97,7 @@ class AccessLinks extends Component {
 
     moveRope(width, left) {
         let underbar = document.getElementsByClassName("underbar");
-        console.log(underbar);
+       
         underbar[0].style.width = width;
         underbar[0].style.left = left;
         

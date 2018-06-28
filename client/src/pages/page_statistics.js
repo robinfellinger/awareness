@@ -32,7 +32,7 @@ class Page_statistics extends Component {
     }
 
     clickFunction() {
-        console.log("Funktioniert button?");
+    
         document.getElementById("getActive").click();
     }
 
