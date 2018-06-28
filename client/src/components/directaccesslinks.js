@@ -41,7 +41,7 @@ class AccessLinks extends Component {
     //         firstTime[0].style.display = "initial";
     //     }
 
-        this.colorNav("#4F4F4F"); //COLOR CHANGE STATISTIC PAGE
+        this.colorNav("#ffffff"); //COLOR CHANGE STATISTIC PAGE
     }
 
     toggleActivePage(){
